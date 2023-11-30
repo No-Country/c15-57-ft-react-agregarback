@@ -4,6 +4,8 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Contact from './pages/Contact'
 import NotFound from './pages/NotFound'
+import './index.css'
+
 
 export default function App() {
   return (
