@@ -1,8 +1,8 @@
-import jungla from "../../assets/chris-lee-70l1tDAI6rM-unsplash 1.jpg";
-import logo from "../../assets/Frame 4048.png";
-import Input from "../../components/Input";
-import Button from "../../components/Button";
-import OtherSesion from "../../components/OtherSesion";
+import jungle from "../assets/chris-lee-70l1tDAI6rM-unsplash 1.jpg";
+import logo from "../assets/Frame 4048.png";
+import Input from "../components/Input";
+import Button from "../components/Button";
+import OtherSesion from "../components/OtherSesion";
 
 export default function Register() {
   return (
@@ -64,7 +64,7 @@ export default function Register() {
       {/* main image section */}
       <section className="w-1/2 ">
         <img
-          src={jungla}
+          src={jungle}
           alt="jungla"
           className="object-fill w-screen h-full"
         />
