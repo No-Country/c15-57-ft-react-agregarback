@@ -1,5 +1,4 @@
 export default function Button(props) {
-
   return (
     <>
       <div className="flex items-center justify-center">
@@ -10,5 +9,5 @@ export default function Button(props) {
         />
       </div>
     </>
-  );
+  )
 }

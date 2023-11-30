@@ -15,10 +15,8 @@ export default function Input(props) {
           placeholder={props.placeholder}
           required
         />
-        <p className="text-gray-600 text-xs italic">
-          {props.text}
-        </p>
+        <p className="text-gray-600 text-xs italic">{props.text}</p>
       </div>
     </div>
-  );
+  )
 }

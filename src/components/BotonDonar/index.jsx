@@ -1,10 +1,8 @@
 import './style.css'
-const BotonDonar = ({link,children}) =>{
-
+export default function BotonDonar({ link, children }) {
   return (
-<a href={link} className="BotonDonar"> <p className="BotonDonar-children">{children}</p>
-
-</a>
-)}
-
-export default BotonDonar
+    <a href={link} className="BotonDonar">
+      <p className="BotonDonar-children">{children}</p>
+    </a>
+  )
+}

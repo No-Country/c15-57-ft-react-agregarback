@@ -1,8 +1,8 @@
-import jungle from "../assets/chris-lee-70l1tDAI6rM-unsplash 1.jpg";
-import logo from "../assets/Frame 4048.png";
-import Input from "../components/Input";
-import Button from "../components/Button";
-import OtherSesion from "../components/OtherSesion";
+import jungle from '../assets/chris-lee-70l1tDAI6rM-unsplash 1.jpg'
+import logo from '../assets/Frame 4048.png'
+import Input from '../components/Input'
+import Button from '../components/Button'
+import OtherSesion from '../components/OtherSesion'
 
 export default function Register() {
   return (
@@ -26,7 +26,7 @@ export default function Register() {
                 placeholder="Usuario"
                 id="username"
               />
-              {/* /* email input */}
+              {/* email input */}
               <Input
                 name="correo electrónico"
                 text=""
@@ -58,7 +58,7 @@ export default function Register() {
             <hr className="w-2/5" />
           </div>
           {/* other options to register */}
-            <OtherSesion/>
+          <OtherSesion />
         </div>
       </section>
       {/* main image section */}
@@ -70,5 +70,5 @@ export default function Register() {
         />
       </section>
     </div>
-  );
+  )
 }
