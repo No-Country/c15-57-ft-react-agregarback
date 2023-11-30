@@ -6,10 +6,15 @@
   <a href="https://github.com/No-Country/c14-22-ft-java-react" target="_blank">
     <img src="Client\src\components\logo-cmp\logo.svg" alt="Banner">
   </a>
-<h3>Bienvenid@s a StockWise</h3></div>
+<h1>Bienvenid@s a Preservacion Animal</h1></div>
 <div>
   <p>
-    <strong>Sistema de Gestión de Inventario para pequeñas empresas</strong>. Ofrecemos una solución práctica y simple para ayudar a las mismas a mantener un control eficiente de su inventario, aumentando la rentabilidad y la eficiencia operativa.
+    <strong>
+  Plataforma de Preservación Animal Silvestre en Latinoamérica
+  </strong>
+
+     Descubre una manera única de contribuir a la preservación de la vida silvestre en Latinoamérica con WildGuard, una iniciativa que va más allá de la conservación tradicional. Nos enorgullece presentar un proyecto innovador que combina la pasión por la vida silvestre con oportunidades tangibles para marcar la diferencia.
+
   </p>
     <div align='center'>
     <a href="https://stockwise-client.vercel.app/" target="_blank">
@@ -28,15 +33,24 @@
 </div>
 <!-- ABOUT THE PROJECT -->
 <br>
-<h1> 
+<h2> 
 <img src="Client/public/favicon.svg" width="18px">
 Acerca del Proyecto
-</h1>
+</h2>
 
-StockWise es un Sistema de Gestión de Inventario <b>orientado a pequeñas empresas</b>. Esta innovadora aplicación ofrece una solución práctica y asequible para ayudarte a mantener un control eficiente del inventario.
-Con StockWise, puedes rastrear cada artículo en tu inventario, recibir alertas en tiempo real y generar informes detallados con facilidad, ayudando a eliminar el desorden, la confusión y el uso de planillas manuales, hojas de Excel o blocks de notas.
-<strong>¡Contrata StockWise hoy mismo y lleva tu empresa al siguiente nivel!</strong>
-Nuestra aplicación puede mejorar la rentabilidad y la eficiencia operativa de tu negocio, además te permitirá tener mayor tiempo libre para realizar otras actividades.
+<strong>Preservación Animal</strong> no es solo un proyecto; es un compromiso con la preservación de la biodiversidad en Latinoamérica. Nuestra plataforma ofrece una experiencia integral que incluye la venta de merchandising exclusivo, donaciones directas y oportunidades de voluntariado. Estamos aquí para brindarte una manera sencilla y significativa de contribuir al bienestar de la fauna silvestre mientras participas activamente en la protección de su hábitat.
+
+<h2>Descubre cómo puedes ser parte del cambio:</h2>
+
+<ol>
+<li>Merchandising Exclusivo:
+Explora nuestra tienda en línea y descubre una variedad de productos exclusivos. Desde camisetas y gorras hasta artículos de decoración, cada compra contribuye directamente a proyectos de conservación.
+<li>Donaciones Directas:
+   Tu generosidad importa. Realiza donaciones directas a proyectos específicos de preservación animal. Cada contribución cuenta y ayuda a financiar acciones concretas para proteger la vida silvestre.
+<li>Voluntariado en Acción:
+Únete a nuestro programa de voluntariado y vive la experiencia única de trabajar directamente en proyectos de conservación. Desde la liberación de animales rehabilitados hasta la restauración de hábitats, tu participación marca la diferencia.
+</ol>
+
 
 <h1> Tecnologias Usadas
 </h1>
@@ -94,24 +108,15 @@ Para instalar el proyecto localmente:
 Clonar repositorio
 
 ```sh
-git clone https://github.com/No-Country/c14-22-ft-java-react.git
+git clone https://github.com/No-Country/c15-57-ft-react-agregarback
 ```
 
 Instalar dependencias
 
 ```sh
-cd .\Client\ | npm install
+npm install
 ```
 
-Crear un archivo llamado '.env' con esta variable de entorno
-
-<!-- ```sh
-VITE_API_URL=https://stockwise.fly.dev
-``` -->
-
-```sh
-VITE_API_URL=https://stockwise-iowo.onrender.com
-```
 
 Correr el proyecto
 
@@ -120,7 +125,7 @@ npm run dev
 ```
 
 O simplemente clickea en el link de
-<a href="https://stockwise-client.vercel.app/" target="_blank">Ver Demo.</a>
+<a href="https://preservacion-animal.vercel.app/" target="_blank">Ver Demo.</a>
 
 <!-- USAGE EXAMPLES -->
 <h1> Uso
@@ -130,24 +135,24 @@ Puedes comenzar registrandote en nuestro portal, luego podras iniciar sesion y a
 
 <!-- TEAMS -->
 
-<h1> Equipo ( c14-22-ft-java-react )
-</h1>
+<h2> Equipo ( c15-57-ft-react-agregarback )
+</h2>
 
 <table align='center'>
   <tr>
     <td align='center'>
       <div >
-        <a href="https://github.com/alejoaraya" target="_blank" rel="author">
-          <img width="110" src="https://avatars.githubusercontent.com/u/82895574?v=4"/>
+        <a href="https://github.com/54albert54" target="_blank" rel="author">
+          <img width="110" src="https://avatars.githubusercontent.com/u/126289455?v=4"/>
         </a>
-        <a href="https://github.com/alejoaraya" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Alejo Araya</br><small>Front-End</small></h4>
+        <a href="https://github.com/54albert54" target="_blank" rel="author">
+          <h4 style="margin-top: 1rem;">Angel Bernechea</br><small>Front-End</small></h4>
         </a>
         <div style='display: flex; flex-direction: column'>
-        <a href="https://github.com/alejoaraya" target="_blank">
+        <a href="https://github.com/54albert54" target="_blank">
           <img style='width:8rem' src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
         </a>
-        <a href="https://www.linkedin.com/in/alejoaraya/" target="_blank">
+        <a href="https://www.linkedin.com/in/angel-bernechea/" target="_blank">
           <img style='width:8rem' src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
         </a>
         </div>
@@ -155,17 +160,17 @@ Puedes comenzar registrandote en nuestro portal, luego podras iniciar sesion y a
     </td>
     <td align='center'>
       <div >
-        <a href="https://github.com/jooseariias" target="_blank" rel="author">
-          <img width="110" src="https://avatars.githubusercontent.com/u/98505589?v=4"/>
+        <a href="https://github.com/Natsumychan" target="_blank" rel="author">
+          <img width="110" src="https://avatars.githubusercontent.com/u/94393112?v=4"/>
         </a>
-        <a href="https://github.com/jooseariias" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Joose Arias</br><small>Front-End</small></h4>
+        <a href="https://github.com/Natsumychan" target="_blank" rel="author">
+          <h4 style="margin-top: 1rem;">Diana Castaño</br><small>Front-End</small></h4>
         </a>
         <div style='display: flex; flex-direction: column'>
-        <a href="https://github.com/jooseariias" target="_blank">
+        <a href="https://github.com/Natsumychan" target="_blank">
           <img style='width:8rem' src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
         </a>
-        <a href="https://www.linkedin.com/in/joose-ari-b08729233/" target="_blank">
+        <a href="https://www.linkedin.com/in/diana-castaño-zapata-aba84284/" target="_blank">
           <img style='width:8rem' src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
         </a>
         </div>
@@ -173,17 +178,17 @@ Puedes comenzar registrandote en nuestro portal, luego podras iniciar sesion y a
     </td>
     <td align='center'>
       <div >
-        <a href="https://github.com/luisangelsalcedo" target="_blank" rel="author">
-          <img width="110" src="https://avatars.githubusercontent.com/u/8843955?v=4"/>
+        <a href="https://github.com/FabioDrizZt" target="_blank" rel="author">
+          <img width="110" src="https://avatars.githubusercontent.com/u/12085182?v=4"/>
         </a>
-        <a href="https://github.com/luisangelsalcedo" target="_blank" rel="author">
+        <a href="https://github.com/FabioDrizZt" target="_blank" rel="author">
           <h4 style="margin-top: 1rem;">Luis Salcedo</br><small>Front-End</small></h4>
         </a>
         <div style='display: flex; flex-direction: column'>
-        <a href="https://github.com/luisangelsalcedo" target="_blank">
+        <a href="https://github.com/FabioDrizZt" target="_blank">
           <img style='width:8rem' src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
         </a>
-        <a href="https://www.linkedin.com/in/luisangelsalcedo/" target="_blank">
+        <a href="https://www.linkedin.com/in/fabiodrizzt/" target="_blank">
           <img style='width:8rem' src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
         </a>
         </div>
@@ -191,62 +196,22 @@ Puedes comenzar registrandote en nuestro portal, luego podras iniciar sesion y a
     </td>
   </tr>
   </table>
-  <table align='center'>
-<tr>
-<td align='center'>
-      <div >
-        <a href="https://github.com/crishof" target="_blank" rel="author">
-          <img width="110" src="https://avatars.githubusercontent.com/u/113149470?v=4"/>
-        </a>
-        <a href="https://github.com/crishof" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Cristian Hoffmann</br><small>Back-End</small></h4>
-        </a>
-        <div style='display: flex; flex-direction: column'>
-        <a href="https://github.com/crishof" target="_blank">
-          <img style='width:8rem' src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
-        </a>
-        <a href="https://www.linkedin.com/in/cristianhof" target="_blank">
-          <img style='width:8rem' src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
-        </a>
-        </div>
-      </div>
-    </td>
-<td align='center'>
-      <div >
-        <a href="https://github.com/faviofz" target="_blank" rel="author">
-          <img width="110" src="https://avatars.githubusercontent.com/u/65041258?v=4"/>
-        </a>
-        <a href="https://github.com/faviofz" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Favio Fernandez</br><small>Back-End</small></h4>
-        </a>
-        <div style='display: flex; flex-direction: column'>
-        <a href="https://github.com/faviofz" target="_blank">
-          <img style='width:8rem' src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
-        </a>
-        <a href="https://www.linkedin.com/in/faviofernandez/" target="_blank">
-          <img style='width:8rem' src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
-        </a>
-        </div>
-      </div>
-    </td>
   
-</tr>
-</table>
 <table align='center'>
   <tr>
-<td align='center'>
+    <td align='center'>
       <div >
-        <a href="https://github.com/alvarodvc" target="_blank" rel="author">
-          <img width="110" src="https://ca.slack-edge.com/T02KS88FB0E-U05UEK6G8P6-a2808b4d92a3-512"/>
+        <a href="https://github.com/JornabeDV" target="_blank" rel="author">
+          <img width="110" src="https://avatars.githubusercontent.com/u/103864663?v=4"/>
         </a>
-        <a href="https://github.com/alvarodvc" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Alvaro Deveze</br><small>QA</small></h4>
+        <a href="https://github.com/JornabeDV" target="_blank" rel="author">
+          <h4 style="margin-top: 1rem;">Jorge Beja</br><small>Front-End</small></h4>
         </a>
-        <div style='display: flex; flex-direction: column; width: 100%'>
-        <a href="https://github.com/alvarodvc" target="_blank">
+        <div style='display: flex; flex-direction: column'>
+        <a href="https://github.com/JornabeDV" target="_blank">
           <img style='width:8rem' src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
         </a>
-        <a href="https://www.linkedin.com/in/alvaro-deveze/" target="_blank">
+        <a href="https://www.linkedin.com/in/jorge-nahuel-beja-rosa/" target="_blank">
           <img style='width:8rem' src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
         </a>
         </div>
@@ -254,30 +219,45 @@ Puedes comenzar registrandote en nuestro portal, luego podras iniciar sesion y a
     </td>
     <td align='center'>
       <div >
-        <a href="https://github.com/Melina1599" target="_blank" rel="author">
-          <img width="110" src="https://avatars.githubusercontent.com/u/72995774?v=4"/>
+        <a href="https://github.com/JRIVERADDIAZ" target="_blank" rel="author">
+          <img width="110" src="https://avatars.githubusercontent.com/u/67973899?v=4"/>
         </a>
-        <a href="https://github.com/Melina1599" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Melina Valdez</br><small>QA</small></h4>
+        <a href="https://github.com/JRIVERADDIAZ" target="_blank" rel="author">
+          <h4 style="margin-top: 1rem;">Jovahin Rivera</br><small>Front-End</small></h4>
         </a>
         <div style='display: flex; flex-direction: column'>
-        <a href="https://github.com/Melina1599" target="_blank">
+        <a href="https://github.com/JRIVERADDIAZ" target="_blank">
           <img style='width:8rem' src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
         </a>
-        <a href="https://www.linkedin.com/in/melina-delosangeles-valdez/" target="_blank">
+        <a href="https://www.linkedin.com/in/jovahin-abraham-rivera-diaz-8559bb110/" target="_blank">
           <img style='width:8rem' src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
         </a>
         </div>
       </div>
     </td>
-    </tr>
-</table>
-
+    <td align='center'>
+      <div >
+        <a href="https://github.com/RodriAllende" target="_blank" rel="author">
+          <img width="110" src="https://avatars.githubusercontent.com/u/90284758?v=4"/>
+        </a>
+        <a href="https://github.com/RodriAllende" target="_blank" rel="author">
+          <h4 style="margin-top: 1rem;">Rodrigo Allende</br><small>Front-End</small></h4>
+        </a>
+        <div style='display: flex; flex-direction: column'>
+        <a href="https://github.com/RodriAllende" target="_blank">
+          <img style='width:8rem' src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
+        </a>
+        <a href="https://www.linkedin.com/in/rodrigo-javier-allende/" target="_blank">
+          <img style='width:8rem' src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
+        </a>
+        </div>
+      </div>
+    </td>
+  </tr>
+  </table>
 <!-- Video -->
-<h1> Video
-</h1>
-<p><a href="https://www.youtube.com/watch?v=QVgfj7hjp8g" target="_blank"><img src="https://img.youtube.com/vi/QVgfj7hjp8g/maxresdefault.jpg"/></a></p>
-<br/>
+<h2> Video </h2>
+
 
 <!-- ACKNOWLEDGMENTS -->
 
