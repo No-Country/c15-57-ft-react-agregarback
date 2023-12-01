@@ -1,13 +1,13 @@
 import { createServer, Model } from 'miragejs'
 import { jaguarImg, osoAnteojos, ballenasFrancas } from '../assets/img-hero'
 
-export function makeServer() {
+export function makeServer () {
   return createServer({
     models: {
       animal: Model,
       user: Model
     },
-    seeds(server) {
+    seeds (server) {
       // Animals
       server.create('animal', {
         id: 1,
@@ -80,28 +80,30 @@ export function makeServer() {
       })
     },
 
+
     routes() {
       // ANIMALS NAMESPACE
+
       this.namespace = 'api/animals'
       this.get('/', (schema, request) => {
         return schema.animals.all()
       })
       this.get('/:id', (schema, request) => {
-        let id = request.params.id
+        const id = request.params.id
         return schema.animals.find(id)
       })
       this.put('/:id', (schema, request) => {
-        let newAttrs = JSON.parse(request.requestBody)
-        let id = request.params.id
-        let product = schema.animals.find(id)
+        const newAttrs = JSON.parse(request.requestBody)
+        const id = request.params.id
+        const product = schema.animals.find(id)
         return product.update(newAttrs)
       })
       this.post('/', (schema, request) => {
-        let attrs = JSON.parse(request.requestBody)
+        const attrs = JSON.parse(request.requestBody)
         return schema.animals.create(attrs)
       })
       this.delete('/:id', (schema, request) => {
-        let id = request.params.id
+        const id = request.params.id
         return schema.animals.find(id).destroy()
       })
       // USERS NAMESPACE
@@ -189,6 +191,7 @@ export function makeServer() {
         })
 
         return user
+
       })
     }
   })
