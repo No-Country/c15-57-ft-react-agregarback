@@ -1,3 +1,7 @@
-export default function index() {
-  return <footer>Todos los derechos reserva2 ©</footer>
+export default function Footer() {
+  return (
+    <div>
+      <p>Footer</p>
+    </div>
+  )
 }

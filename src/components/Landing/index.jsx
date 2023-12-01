@@ -1,3 +1,3 @@
 export default function Landing() {
-  return <section>index</section>
+  return <div>Landing</div>
 }
