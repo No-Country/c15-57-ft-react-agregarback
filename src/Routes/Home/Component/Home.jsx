@@ -1,6 +1,6 @@
-import { Hero } from '../../../components/Hero'
+import { Hero } from '../../../components/'
 
-export default function Home() {
+export default function Home () {
   return (
     <>
       <Hero />
