@@ -81,7 +81,7 @@ export function makeServer() {
     },
 
     routes() {
-      // animals
+      // ANIMALS NAMESPACE
       this.namespace = 'api/animals'
       this.get('/', (schema, request) => {
         return schema.animals.all()
@@ -104,28 +104,91 @@ export function makeServer() {
         let id = request.params.id
         return schema.animals.find(id).destroy()
       })
-      // users
+      // USERS NAMESPACE
       this.namespace = 'api/users'
-      this.get('/', (schema, request) => {
-        return schema.users.all()
+
+      // Login route
+      this.post('/login', (schema, request) => {
+        const { username, password } = request.requestBody
+
+        const user = schema.User.find({ username })
+        if (user && user.password === password) {
+          return user
+        } else {
+          return {
+            success: false,
+            message: 'Invalid username or password'
+          }
+        }
       })
-      this.get('/:id', (schema, request) => {
-        let id = request.params.id
-        return schema.users.find(id)
-      })
-      this.put('/:id', (schema, request) => {
-        let newAttrs = JSON.parse(request.requestBody)
-        let id = request.params.id
-        let product = schema.users.find(id)
-        return product.update(newAttrs)
-      })
-      this.post('/', (schema, request) => {
-        let attrs = JSON.parse(request.requestBody)
-        return schema.users.create(attrs)
-      })
-      this.delete('/:id', (schema, request) => {
-        let id = request.params.id
-        return schema.users.find(id).destroy()
+
+      // Register route
+      this.post('/register', (schema, request) => {
+        const { username, password, name, lastName, email } =
+          request.requestBody
+
+        const user = schema.User.create({
+          username,
+          password,
+          name,
+          lastName,
+          email
+        })
+        // CRUD
+        // Fetch all users
+        this.get('/', (schema, request) => {
+          return schema.User.all()
+        })
+
+        // Fetch a user by ID
+        this.get('/:id', (schema, request) => {
+          const id = request.params.id
+          const user = schema.User.find(id)
+
+          if (user) {
+            return user
+          } else {
+            return {
+              success: false,
+              message: `User with ID ${id} not found`
+            }
+          }
+        })
+
+        // Update a user
+        this.put('/:id', (schema, request) => {
+          const id = request.params.id
+          const updatedUserAttrs = JSON.parse(request.requestBody)
+          const user = schema.User.find(id)
+
+          if (user) {
+            user.update(updatedUserAttrs)
+            return user
+          } else {
+            return {
+              success: false,
+              message: `User with ID ${id} not found`
+            }
+          }
+        })
+
+        // Delete a user
+        this.delete('/:id', (schema, request) => {
+          const id = request.params.id
+          const user = schema.User.find(id)
+
+          if (user) {
+            user.destroy()
+            return { success: true }
+          } else {
+            return {
+              success: false,
+              message: `User with ID ${id} not found`
+            }
+          }
+        })
+
+        return user
       })
     }
   })
