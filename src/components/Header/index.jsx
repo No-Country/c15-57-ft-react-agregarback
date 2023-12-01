@@ -1,20 +1,20 @@
 import { Link } from 'react-router-dom'
 
-export default function Header() {
+export default function Header () {
   return (
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to='/'>Home</Link>
           </li>
           <li>
-            <Link to="/login">Login</Link>
+            <Link to='/login'>Login</Link>
           </li>
           <li>
-            <Link to="/register">Register</Link>
+            <Link to='/register'>Register</Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link to='/contact'>Contact</Link>
           </li>
         </ul>
       </nav>

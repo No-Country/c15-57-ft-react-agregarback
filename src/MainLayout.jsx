@@ -6,14 +6,12 @@ import './index.css'
 export const MainLayout = () => {
   return (
     <div>
-      <header>
+      <nav>
         <Header />
-      </header>
-      <hr />
+      </nav>
       <main>
         <Outlet />
       </main>
-      <hr />
       <footer>
         <Footer />
       </footer>
