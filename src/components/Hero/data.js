@@ -37,3 +37,5 @@ dataHero.push(new HeroInfo({
   detalle:'Con sus extremidades anteriores convertidas en aletas, su gruesa capa de grasa y su capacidad para bucear, algunas a grandes profundidades.',
   link:'/info-BALLENA'
 }));
+//
+
