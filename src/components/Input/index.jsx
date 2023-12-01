@@ -1,25 +1,25 @@
-import { Field } from "formik";
+import { Field, ErrorMessage } from 'formik'
 
-export default function Input(props) {
+export default function Input ({ id, name, type, placeholder, text, errors }) {
   return (
-    <div className="mb-4">
-      <div>
+    <div>
+      <div className='mb-4'>
         <label
-          className="block text-gray-700 text-sm font-bold mb-2"
-          htmlFor={props.id}
+          className='block text-gray-700 text-sm mb-2'
+          htmlFor={id}
         >
-          {props.name}
+          {name}
         </label>
         <Field
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id={props.id}
-          type={props.type}
-          name={props.name}
-          placeholder={props.placeholder}
-          required
+          className='shadow appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline
+          invalid:border-red-600 invalid:text-red-600 focus:invalid:border-red-600 focus:invalid:ring-red-500'
+          id={id}
+          type={type}
+          placeholder={placeholder}
+          name={id}
         />
-        <p className="text-gray-600 text-xs italic">{props.text}</p>
+        {errors ? <ErrorMessage name={id} component='p' className='text-red-600 text-xs italic' /> : <p className='text-gray-600 text-xs italic'>{text}</p>}
       </div>
     </div>
-  );
+  )
 }
