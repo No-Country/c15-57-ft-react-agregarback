@@ -13,6 +13,7 @@ export default function Input(props) {
           id={props.id}
           type={props.type}
           placeholder={props.placeholder}
+          name={props.id}
           required
         />
         <p className="text-gray-600 text-xs italic">{props.text}</p>

@@ -27,7 +27,7 @@ export default function Register() {
                 text="20 caracteres maximo y se permiten caracteres especiales"
                 type="text"
                 placeholder="Usuario"
-                id="username"
+                id="name"
                 />
               {/* email input */}
               <Input
