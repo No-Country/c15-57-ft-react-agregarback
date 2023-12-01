@@ -5,7 +5,7 @@ import './style.css'
 import BarraHero from '../BarraHero'
 import axios from 'axios'
 
-export function Hero() {
+export default function Hero () {
   const [mostrar, setMostrar] = useState(0)
   const [dataHero, setDataHero] = useState([])
 

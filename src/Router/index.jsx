@@ -2,8 +2,7 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import { MainLayout } from '../MainLayout'
 
-import  {Contact,Home, Login, NotFound, Register, Store} from "../Routes"
-
+import { Contact, Home, Login, NotFound, Register, Store } from '../Routes'
 
 export const router = createBrowserRouter([
   {
@@ -49,5 +48,4 @@ add a new object with the path and element properties
       },
 
       inside the children propertie.
-
 */
