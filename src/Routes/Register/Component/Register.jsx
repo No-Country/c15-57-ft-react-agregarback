@@ -54,7 +54,7 @@ export default function Register() {
                 />
             </form>
           </div>
-          {/* horizontal role */}
+          {/* horizontal rule */}
           <div className="flex justify-center items-center">
             <hr className="w-2/5" />
             <span className="w-1/5 text-center"> o</span>
