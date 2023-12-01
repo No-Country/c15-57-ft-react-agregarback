@@ -1,11 +1,18 @@
 import { useEffect, useState } from 'react'
 import BotonDonar from '../BotonDonar'
-import { dataHero } from './data'
+// import { dataHero } from './data'
 import './style.css'
 import BarraHero from '../BarraHero'
+import axios from 'axios'
 
 export function Hero() {
-  let [mostrar, setMostrar] = useState(0)
+  const [mostrar, setMostrar] = useState(0)
+  const [dataHero, setDataHero] = useState([])
+
+  useEffect(() => {
+    axios('api/animals')
+    .then((res) => setDataHero(res.data.animals))
+  }, [])
 
   useEffect(() => {
     const tiempoDiaPositiva = 5000
@@ -28,19 +35,19 @@ export function Hero() {
   return (
     <header className="hero-container">
       <img
-        style={{ backgroundImage: datosMostrar.img }}
+        style={{ backgroundImage: datosMostrar?.img }}
         className="hero-img"
-        src={datosMostrar.img}
-        alt={datosMostrar.name}
+        src={datosMostrar?.img}
+        alt={datosMostrar?.name}
       />
       <section className="hero-sectio">
         <div className="hero-info">
           <div>
-            <p className="hero-name">{datosMostrar.name}</p>
-            <p className="hero-titular">{datosMostrar.titular}</p>
+            <p className="hero-name">{datosMostrar?.name}</p>
+            <p className="hero-titular">{datosMostrar?.titular}</p>
           </div>
-          <p className="hero-detalle">{datosMostrar.detalle}</p>
-          <BotonDonar link={datosMostrar.link}>¡DONA AHORA!</BotonDonar>
+          <p className="hero-detalle">{datosMostrar?.detalle}</p>
+          <BotonDonar link={datosMostrar?.link}>¡DONA AHORA!</BotonDonar>
 
           <BarraHero
             mostrar={mostrar}
