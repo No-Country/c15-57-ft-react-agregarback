@@ -22,9 +22,7 @@ const Hero = () => {
           data={animals}
         />
       ))}
-      <div
-        className={`bg-[url("${datosMostrar?.img}")] absolute z-0 w-full h-full flex-shrink-0 bg-cover bg-no-repeat  `}
-      />
+      <img className='absolute z-0 w-full h-full flex-shrink-0 bg-cover bg-no-repeat' src={datosMostrar?.img} alt={datosMostrar?.name} />
     </header>
   )
 }
@@ -62,7 +60,7 @@ const HeroOption = ({ name }) => {
 
 const HeroInfo = ({ data }) => {
   return (
-    <div className='hero-info  w-[460px] h-[410px] flex flex-col gap-4 relative '>
+    <div className='hero-info mx-10  w-[460px] h-[410px] flex flex-col gap-4 relative '>
       <div>
         <p className='text-teal-300 font-semibold text-[20px]'>{data.name}</p>
         <p className='text-[48px] text-white leading-none font-semibold'>
