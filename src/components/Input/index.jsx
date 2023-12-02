@@ -1,6 +1,6 @@
 import { Field, ErrorMessage } from 'formik'
 
-export default function Input ({ id, name, type, placeholder, text, errors }) {
+export default function Input ({ id, name, type, placeholder }) {
   return (
     <div>
       <div className='mb-4'>
@@ -18,7 +18,7 @@ export default function Input ({ id, name, type, placeholder, text, errors }) {
           placeholder={placeholder}
           name={id}
         />
-        {errors ? <ErrorMessage name={id} component='p' className='text-red-600 text-xs italic' /> : <p className='text-gray-600 text-xs italic'>{text}</p>}
+        <ErrorMessage name={id} component='p' className='text-red-600 text-xs italic' />
       </div>
     </div>
   )

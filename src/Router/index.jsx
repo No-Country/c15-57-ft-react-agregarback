@@ -4,7 +4,7 @@ import { MainLayout } from '../MainLayout'
 
 import Home from '../Routes/Home'
 import Contact from '../Routes/Contact'
-import Login from '../Routes/Login'
+import Login from '../Routes/Login/Presentation/Login'
 import Register from '../Routes/Register/Presentation/Register'
 
 import { NotFound } from '../Routes/NotFound'

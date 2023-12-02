@@ -12,7 +12,6 @@ const FormularioComponent = () => {
   }
   const validationSchema = Yup.object().shape({
     // Definir la validación del esquema Yup para los campos del formulario
-    name: Yup.string().min(2, 'muy corto').max(20, 'Que nombre tan largo').required('El nombre es requerido'),
     email: Yup.string().email('El correo no es válido').required('El correo es requerido'),
     password: Yup.string().min(8, 'La contraseña debe tener mínimo 8 caracteres')
       .matches(
@@ -54,7 +53,6 @@ const FormularioComponent = () => {
       {({ errors }) => (
         <Form className='rounded pt-6 pb-5'>
           {/* Campos del formulario */}
-          <Input name='Nombre' type='text' placeholder='Ingrese nombre' errors={errors} id='name' />
           <Input name='Correo electrónico' type='email' placeholder='Ingrese correo electrónico' errors={errors} id='email' />
           <div className='relative'>
             <Input name='Contraseña' type={showPassword ? 'text' : 'password'} placeholder='Ingrese contraseña' id='password' />
