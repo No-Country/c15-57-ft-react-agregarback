@@ -1,5 +1,6 @@
 import googleLogo from '../../assets/icons8-google.png'
 import facebookLogo from '../../assets/icons8-facebook.png'
+import { Link } from 'react-router-dom'
 
 export default function OtherSesion () {
   return (
@@ -27,7 +28,7 @@ export default function OtherSesion () {
             Iniciar con Facebook
           </span>
         </button>
-        <p className='text-center'>iniciar sesión</p>
+        <Link to='/login' className='text-center'>Iniciar sesión</Link>
       </div>
     </>
   )
