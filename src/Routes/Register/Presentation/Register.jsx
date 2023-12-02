@@ -9,10 +9,10 @@ export default function Register () {
   return (
     <div className='flex'>
       {/* Sección del formulario utilizando FormularioComponent */}
-      <section className='w-1/2 flex flex-col items-center justify-center p-2.5 gap-2.5 h-auto mt-8'>
-        <div className='flex flex-col justify-center px-8 pt-6 pb-8 mb-4 font-display'>
-          <img src={logo} alt='' className='w-80 h-7 mt-6' />
-          <h2 className='text-3xl font-normal leading-10 mt-6 text-center'>Bienvenido</h2>
+      <section className='w-1/2 flex flex-col items-center justify-center gap-2 h-[100dvh] mt-2'>
+        <div className='flex flex-col justify-center px-2 pt-6 pb-8 mb-2 font-display'>
+          <img src={logo} alt='' className='w-80 h-7 mt-2' />
+          <h2 className='text-3xl font-normal leading-10 mt-4 text-center'>Bienvenido</h2>
           <div className='w-full max-w-xs'>
             <FormularioComponent />
           </div>
@@ -22,12 +22,12 @@ export default function Register () {
             <span className='w-1/5 text-center'> o</span>
             <hr className='w-2/5' />
           </div>
-          <OtherSesion />
+          <OtherSesion text='Iniciar sesión' to='/login' />
         </div>
       </section>
       {/* Sección de la imagen */}
       <section className='w-1/2 '>
-        <img src={jungle} alt='jungla' className='object-fill w-screen h-full' />
+        <img src={jungle} alt='jungla' className='object-fill w-screen h-[100dvh]' />
       </section>
     </div>
   )

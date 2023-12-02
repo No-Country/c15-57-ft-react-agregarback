@@ -1,19 +1,17 @@
-import googleLogo from '../../assets/icons8-google.png'
-import facebookLogo from '../../assets/icons8-facebook.png'
+import googleLogo from '../../assets/icons8-google.svg'
+import facebookLogo from '../../assets/icons8-facebook.svg'
 import { Link } from 'react-router-dom'
 
-export default function OtherSesion () {
+export default function OtherSesion ({ text, to }) {
   return (
     <>
-      <div className='flex flex-col gap-2'>
+      <div className='flex flex-col gap-2 pt-2 mt-3'>
         <button className='flex justify-center rounded bg-neutral-100 item-center border '>
-
-          {/* {' '} */}
 
           <img
             src={googleLogo}
             alt='gogle-logo'
-            className='py-1.5 object-fill h-full'
+            className='py-1.5 object-fill h-[36px] w-[36px]'
           />
           <span className='py-1.5 text-center w-9/12'>Iniciar con Google</span>
         </button>
@@ -22,13 +20,13 @@ export default function OtherSesion () {
           <img
             src={facebookLogo}
             alt='gogle-logo'
-            className='py-1.5 object-fill h-full'
+            className='py-1.5 object-fill h-[36px] w-[36px]'
           />
           <span className='py-1.5 text-center w-9/12'>
             Iniciar con Facebook
           </span>
         </button>
-        <Link to='/login' className='text-center'>Iniciar sesión</Link>
+        <Link to={to} className='text-center mt-1.5'>{text}</Link>
       </div>
     </>
   )

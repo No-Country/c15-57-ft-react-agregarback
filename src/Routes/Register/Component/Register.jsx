@@ -10,7 +10,7 @@ const FormularioComponent = () => {
     // Definir la validación del esquema Yup para los campos del formulario
     name: Yup.string().min(2, 'muy corto').max(20, 'Que nombre tan largo').required('El nombre es requerido'),
     email: Yup.string().email('El correo no es válido').required('El correo es requerido'),
-    password: Yup.string().min(8, 'La contraseña debe contener mínimo 8 caracteres, con al menos 1 de cada: mayúscula, minúscula, número y caracter especial')
+    password: Yup.string().min(8, 'La contraseña debe tener mínimo 8 caracteres')
       .matches(
         /^(?=.*[a-z])/,
         'Debe contener al menos una letra en minúscula'
@@ -44,7 +44,7 @@ const FormularioComponent = () => {
       onSubmit={onSubmit}
     >
       {({ errors }) => (
-        <Form className='rounded px-8 pt-6 pb-7 mb-4'>
+        <Form className='rounded px-8 pt-2  mb-4 w-full'>
           {/* Campos del formulario */}
           <Input name='Nombre' type='text' placeholder='Nombre' errors={errors} id='name' />
           <Input name='Correo electrónico' type='email' placeholder='Correo electrónico' errors={errors} id='email' />
