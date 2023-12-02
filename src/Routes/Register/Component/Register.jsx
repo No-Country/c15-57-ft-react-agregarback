@@ -50,7 +50,7 @@ const FormularioComponent = () => {
           <Input name='Correo electrónico' type='email' placeholder='Correo electrónico' errors={errors} id='email' />
           <Input name='Contraseña' type='password' placeholder='Contraseña' errors={errors} id='password' />
           {/* Botón de envío del formulario */}
-          <Button text='Registrarme' color='bg-green-900' />
+          <Button text='Registrarme' color='bg-green-600' hover='hover:bg-green-900' />
         </Form>
       )}
     </Formik>
