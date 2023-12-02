@@ -14,11 +14,11 @@
 }
 @keyframes moverDiv {
   0% {
-    scale: 0.8;
+    
     transform: translateX(60px) translateY(10px); /* Mover -30px en el eje X */
   }
   100% {
-    scale: 1;
+    
     transform: translateX(0px) translateY(0px);
   }
 }
