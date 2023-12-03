@@ -1,8 +1,12 @@
 import { Input, Button } from '../../../components/'
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
+import { useState } from 'react'
+import { FaEye, FaEyeSlash } from 'react-icons/fa'
 
 const FormularioComponent = () => {
+  const [showPassword, setShowPassword] = useState(false)
+
   const onSubmit = (values) => {
     console.log(values)
   }
@@ -37,6 +41,10 @@ const FormularioComponent = () => {
     password: ''
   }
 
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword) // Cambia el estado para mostrar u ocultar la contraseña
+  }
+
   return (
     <Formik
       initialValues={initialValues}
@@ -44,11 +52,19 @@ const FormularioComponent = () => {
       onSubmit={onSubmit}
     >
       {({ errors }) => (
-        <Form className='rounded px-8 pt-2  mb-4 w-full'>
+        <Form className='rounded pt-6 pb-5'>
           {/* Campos del formulario */}
-          <Input name='Nombre' type='text' placeholder='Nombre' errors={errors} id='name' />
-          <Input name='Correo electrónico' type='email' placeholder='Correo electrónico' errors={errors} id='email' />
-          <Input name='Contraseña' type='password' placeholder='Contraseña' errors={errors} id='password' />
+          <Input name='Nombre' type='text' placeholder='Ingrese nombre' errors={errors} id='name' />
+          <Input name='Correo electrónico' type='email' placeholder='Ingrese correo electrónico' errors={errors} id='email' />
+          <div className='relative'>
+            <Input name='Contraseña' type={showPassword ? 'text' : 'password'} placeholder='Ingrese contraseña' id='password' />
+            <span
+              className='absolute right-5 text-neutral-600 top-[70%] transform -translate-y-1/2 cursor-pointer'
+              onClick={togglePasswordVisibility}
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </span>
+          </div>
           {/* Botón de envío del formulario */}
           <Button text='Registrarme' color='bg-green-600' hover='hover:bg-green-900' />
         </Form>

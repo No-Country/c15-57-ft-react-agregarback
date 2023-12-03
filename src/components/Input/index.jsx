@@ -1,5 +1,4 @@
 import { Field, ErrorMessage } from 'formik'
-
 export default function Input ({ id, name, type, placeholder, errors }) {
   const invalid = 'invalid:border-red-600 invalid:text-red-600 focus:invalid:border-red-600 focus:invalid:ring-red-500'
 
@@ -22,7 +21,7 @@ export default function Input ({ id, name, type, placeholder, errors }) {
           placeholder={placeholder}
           name={id}
         />
-        {errors ? <ErrorMessage name={id} component='p' className='text-red-600 text-xs italic' /> : ''}
+        <ErrorMessage name={id} component='p' className='text-red-600 text-xs italic' />
       </div>
     </div>
   )
