@@ -2,12 +2,12 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import { MainLayout } from '../MainLayout'
 
-import Home from '../Routes/Home'
+import Home from '../Routes/Home/Component/Home'
 import Contact from '../Routes/Contact'
 import Login from '../Routes/Login/Presentation/Login'
 import Register from '../Routes/Register/Presentation/Register'
 import Store from '../Routes/Store/Presentation/Login'
-import { NotFound } from '../Routes/NotFound'
+import NotFound from '../Routes/NotFound/Component/NotFound'
 
 export const router = createBrowserRouter([
   {

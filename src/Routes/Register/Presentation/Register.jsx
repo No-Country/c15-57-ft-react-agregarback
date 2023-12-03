@@ -25,7 +25,7 @@ export default function Register () {
       </section>
       {/* Sección de la imagen */}
       <section className='w-1/2 '>
-        <img src={jungle} alt='jungla' className='' />
+        <img src={jungle} alt='jungla' className='h-full object-fill' />
       </section>
     </div>
   )
