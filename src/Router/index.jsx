@@ -3,6 +3,7 @@ import { createBrowserRouter } from 'react-router-dom'
 import { MainLayout } from '../MainLayout'
 
 import  {Contact,Home, Login, NotFound, Register, Store} from "../Routes"
+import LandingPage from '../Routes/LandingPage/Presentation/LandingPage'
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
       {
         path: '/Store',
         element: <Store />
+      },
+      {
+        path: '/:animal',
+        element: <LandingPage />
       },
     ]
   }

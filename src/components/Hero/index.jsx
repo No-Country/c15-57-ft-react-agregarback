@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import BotonDonar from '../BotonDonar'
 import './style.css'
 import axios from 'axios'
+import HeroInfo from './Component/HeroInfo'
 
 const Hero = () => {
   const [mostrar, setMostrar] = useState(0)
@@ -12,7 +13,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <header className='w-screen h-screen relative flex flex-row'>
+    <header className='w-screen h-screen min-w-[1080px] relative flex flex-row'>
       {heroes?.map((animals, index) => (
         <HeroSecction
           setMostrar={setMostrar}
@@ -42,7 +43,7 @@ const HeroSecction = ({ setMostrar, mostrar, data, index }) => {
           <HeroOption name={data.name} />
           )
         : (
-          <HeroInfo data={data} />
+          <HeroInfo data={data} donar={false} />
           )}
     </section>
   )
@@ -58,19 +59,6 @@ const HeroOption = ({ name }) => {
   )
 }
 
-const HeroInfo = ({ data }) => {
-  return (
-    <div className='hero-info mx-10  w-[460px] h-[410px] flex flex-col gap-4 relative '>
-      <div>
-        <p className='text-teal-300 font-semibold text-[20px]'>{data.name}</p>
-        <p className='text-[48px] text-white leading-none font-semibold'>
-          {data.titular}
-        </p>
-      </div>
-      <p className='w-[450px] text-white text-base'>{data.detalle}</p>
-      <BotonDonar link={data.link}>¡DONA AHORA!</BotonDonar>
-    </div>
-  )
-}
+
 
 export default Hero

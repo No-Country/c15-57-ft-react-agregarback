@@ -16,7 +16,7 @@ export function makeServer () {
         titular: 'Se encuentra en la Lista Roja de las especias amenazadas',
         detalle:
           'Hoy el jaguar es una especie amenazada que ha perdido aproximadamente 50% de su hábitat histórico en todo el continente.',
-        link: '/info-JAGUAR'
+        link: 'JAGUAR'
       })
       server.create('animal', {
         id: 2,
@@ -26,7 +26,7 @@ export function makeServer () {
           'La deforestación son una de las principales amenazas que enfrenta.',
         detalle:
           'A pesar de ser un animal tímido que no hay registros de ataques contra humanos, Por eso, algunos campesinos los cazan para evitar que destruyan sus cultivos.',
-        link: '/info-OSO'
+        link: 'OSO-ANTEOJOS'
       })
       server.create('animal', {
         id: 3,
@@ -35,7 +35,7 @@ export function makeServer () {
         titular: 'las hembras tienen sólo una cría cada tres años.',
         detalle:
           'Con sus extremidades anteriores convertidas en aletas, su gruesa capa de grasa y su capacidad para bucear, algunas a grandes profundidades.',
-        link: '/info-BALLENA'
+        link: 'BALLENA-FRANCA'
       })
       // Users
       server.create('user', {
