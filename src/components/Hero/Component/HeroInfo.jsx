@@ -1,8 +1,14 @@
 import BotonDonar from "../../BotonDonar";
 
 
-const HeroInfo = ({ data ,donar }) => {
-  const donatePage = 'pagina-donancion/'
+const HeroInfo = ({ domine, data  }) => {
+ 
+  console.log('domine',domine + data.link);
+  
+  const linkTo = domine + data.link;
+  console.log('data',data.link);
+  
+  
   
   return (
     <div className='hero-info mx-10  w-[460px] h-[410px] flex flex-col gap-4 relative '>
@@ -13,7 +19,7 @@ const HeroInfo = ({ data ,donar }) => {
         </p>
       </div>
       <p className='w-[450px] text-white text-base'>{data.detalle}</p>
-      <BotonDonar link={donar?(donatePage + data.link):data.link}>¡DONA AHORA!</BotonDonar>
+      <BotonDonar  link={ linkTo }>¡DONA AHORA!</BotonDonar>
     </div>
   )
 }

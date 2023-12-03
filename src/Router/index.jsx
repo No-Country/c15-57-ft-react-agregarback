@@ -35,8 +35,16 @@ export const router = createBrowserRouter([
         element: <Store />
       },
       {
-        path: '/:animal',
+        path: '/:id',
         element: <LandingPage />
+      },
+      {
+        path: 'toDonate/:id',
+        element: <div className='w-full h-[340px] flex justify-center items-center text-[72px] font-bold' > envia ala pagina de donar</div>
+      },
+      {
+        path: 'to-products/:id',
+        element: <div className='w-full h-[340px] flex justify-center items-center text-[72px] font-bold' > envia ala pagina de ver mas productos</div>
       },
     ]
   }

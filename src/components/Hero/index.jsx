@@ -9,11 +9,15 @@ const Hero = () => {
   const [heroes, setHeroes] = useState([])
   const datosMostrar = heroes[mostrar]
   useEffect(() => {
-    axios('api/animals').then((res) => setHeroes(res.data.animals))
-  }, [])
+    axios('/api/animals').then((res) => setHeroes(res.data.animals.slice(0,3)));
+    console.log('heroes',heroes);
+    
+ 
+
+  }, []);
 
   return (
-    <header className='w-screen h-screen min-w-[1080px] relative flex flex-row'>
+    <header className='w-screen h-screen m-w-[1080px] relative flex flex-row'>
       {heroes?.map((animals, index) => (
         <HeroSecction
           setMostrar={setMostrar}
@@ -43,7 +47,7 @@ const HeroSecction = ({ setMostrar, mostrar, data, index }) => {
           <HeroOption name={data.name} />
           )
         : (
-          <HeroInfo data={data} donar={false} />
+          <HeroInfo domine={'/'} data={data}  />
           )}
     </section>
   )
