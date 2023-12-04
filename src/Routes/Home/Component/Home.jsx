@@ -1,9 +1,10 @@
-import { Hero } from '../../../components/Hero'
+import { Carrousel } from "../../../components";
 
 export default function Home() {
   return (
     <>
-      <Hero />
+      <Carrousel />
     </>
   )
 }
+
