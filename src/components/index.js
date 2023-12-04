@@ -1,6 +1,6 @@
 import Landing from './Landing/'
 import Footer from './Footer/Component/Footer'
-import Header from './Header/Component/Header'
+import NavBar from './NavBar/Component/NavBar'
 import Carrousel from './Carrousel/Component/Carrousel'
 
-export { Landing, Footer, Header, Carrousel }
+export { Landing, Footer, NavBar, Carrousel }
