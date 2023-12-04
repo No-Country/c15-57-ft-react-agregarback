@@ -10,6 +10,7 @@ export default function BarraHero({ mostrar, list, setMostrar }) {
   return (
     <div className="BarraHero">
     {
+      /*
       list.map((item, index) => (
 
         <div
@@ -26,7 +27,8 @@ export default function BarraHero({ mostrar, list, setMostrar }) {
 
       )
       )
-      }
+      */
+    }
     </div>
   )
 }
