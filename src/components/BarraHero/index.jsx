@@ -1,6 +1,7 @@
-import './style.css'
+import '../Presentation/style.css'
 
 export default function BarraHero({ mostrar, list, setMostrar }) {
+  
   const mostrarUno = (index) => {
     setMostrar(index)
   }

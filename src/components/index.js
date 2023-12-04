@@ -1,6 +1,6 @@
 import Landing from './Landing/'
-import Footer from './Footer'
-import Header from './Header'
-import Hero from './Hero'
+import Footer from './Footer/Component/Footer'
+import Header from './Header/Component/Header'
+import Carrousel from './Carrousel/Component/Carrousel'
 
-export { Landing, Footer, Header, Hero }
+export { Landing, Footer, Header, Carrousel }

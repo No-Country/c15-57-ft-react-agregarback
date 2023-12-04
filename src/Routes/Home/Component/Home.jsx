@@ -1,9 +1,10 @@
-import { Hero } from '../../../components/'
+import { Carrousel } from "../../../components";
 
-export default function Home () {
+export default function Home() {
   return (
     <>
-      <Hero />
+      <Carrousel />
     </>
   )
 }
+
