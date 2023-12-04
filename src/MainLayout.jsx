@@ -9,9 +9,7 @@ export const MainLayout = () => {
   return (
     <div>
       <header>
-        <navgit >
-          <NavBar />
-        </navg>
+        <NavBar />
       </header>
       <hr />
       <main>
