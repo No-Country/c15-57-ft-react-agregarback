@@ -1,8 +1,8 @@
 import './style.css'
-export default function BotonDonar({ link, children }) {
+export default function BotonDonar ({ link, children }) {
   return (
-    <a href={link} className="BotonDonar">
-      <p className="BotonDonar-children">{children}</p>
+    <a href={link} className='BotonDonar'>
+      <p className='BotonDonar-children'>{children}</p>
     </a>
   )
 }
