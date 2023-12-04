@@ -182,7 +182,7 @@ Puedes comenzar registrandote en nuestro portal, luego podras iniciar sesion y a
           <img width="110" src="https://avatars.githubusercontent.com/u/12085182?v=4"/>
         </a>
         <a href="https://github.com/FabioDrizZt" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Luis Salcedo</br><small>Front-End</small></h4>
+          <h4 style="margin-top: 1rem;">Fabio D. Argañaraz</br><small>Front-End</small></h4>
         </a>
         <div style='display: flex; flex-direction: column'>
         <a href="https://github.com/FabioDrizZt" target="_blank">
@@ -235,34 +235,52 @@ Puedes comenzar registrandote en nuestro portal, luego podras iniciar sesion y a
         </div>
       </div>
     </td>
+    
+  </tr>
+  </table>
+  
+<table align='center'>
+  <tr>
     <td align='center'>
       <div >
-        <a href="https://github.com/RodriAllende" target="_blank" rel="author">
-          <img width="110" src="https://avatars.githubusercontent.com/u/90284758?v=4"/>
+        <a href="https://www.linkedin.com/in/emmanuel-páez-620692215" target="_blank" rel="author">
+          <img width="110" src="https://cdn.discordapp.com/avatars/362665822071554048/df82fed7376a20ae8faf58369b31c627.webp?size=128"/>
         </a>
-        <a href="https://github.com/RodriAllende" target="_blank" rel="author">
-          <h4 style="margin-top: 1rem;">Rodrigo Allende</br><small>Front-End</small></h4>
+        <a href="https://www.linkedin.com/in/emmanuel-páez-620692215" target="_blank" rel="author">
+          <h4 style="margin-top: 1rem;">Emmanuel Páez</br><small>Diseñador UX/UI</small></h4>
         </a>
         <div style='display: flex; flex-direction: column'>
-        <a href="https://github.com/RodriAllende" target="_blank">
-          <img style='width:8rem' src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
+        <a href="https://www.linkedin.com/in/emmanuel-páez-620692215" target="_blank">
+          <img style='width:8rem' src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
         </a>
-        <a href="https://www.linkedin.com/in/rodrigo-javier-allende/" target="_blank">
+        </div>
+      </div>
+    </td>
+    <td align='center'>
+      <div >
+        <a href="https://www.linkedin.com/in/carolinanin-uxuidesign" target="_blank" rel="author">
+          <img width="110" src="https://media.licdn.com/dms/image/D5603AQEDvJ1muPIyCw/profile-displayphoto-shrink_800_800/0/1689954182213?e=1706745600&v=beta&t=aHuSeZ8rKAZVVxQAkSBLDZvx5c83LEir1Sv3MWIlQgo"/>
+        </a>
+        <a href="https://www.linkedin.com/in/carolinanin-uxuidesign" target="_blank" rel="author">
+          <h4 style="margin-top: 1rem;">Carolina Nin</br><small>Diseñador UX/UI</small></h4>
+        </a>
+        <div style='display: flex; flex-direction: column'>
+        <a href="https://www.linkedin.com/in/carolinanin-uxuidesign" target="_blank">
           <img style='width:8rem' src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
         </a>
         </div>
       </div>
     </td>
   </tr>
-  </table>
+</table>
+
 <!-- Video -->
 <h2> Video </h2>
-
 
 <!-- ACKNOWLEDGMENTS -->
 
 <div align='center'>
-<h3>Agradecimientos</h3>
+  <h3>Agradecimientos</h3>
   <a href="https://www.nocountry.tech/" target="_blank">
     <img style='background-color:black;' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsukYB3HL90LSwYv_RIR2O2OlCV8Sbkx2eNHv8nRvOu8L16FxLQ0nPzY02wQ_BJOfQZw&usqp=CAU" width="200">
   </a>
