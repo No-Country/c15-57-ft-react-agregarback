@@ -5,5 +5,6 @@ import Hero from '../components/Hero'
 import Button from '../components/Button'
 import OtherSesion from '../components/OtherSesion'
 import Input from '../components/Input'
+import InputPassword from './InputPassword'
 
-export { Landing, Footer, Header, Hero, Button, OtherSesion, Input }
+export { Landing, Footer, Header, Hero, Button, OtherSesion, Input, InputPassword }

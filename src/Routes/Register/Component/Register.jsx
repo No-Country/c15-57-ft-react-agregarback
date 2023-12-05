@@ -1,15 +1,28 @@
-import { Input, Button } from '../../../components/'
+import { Input, Button, InputPassword } from '../../../components/'
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import { useState } from 'react'
-import { FaEye, FaEyeSlash } from 'react-icons/fa'
+import axios from 'axios'
 
 const FormularioComponent = () => {
   const [showPassword, setShowPassword] = useState(false)
+  const [error, setError] = useState('')
 
-  const onSubmit = (values) => {
-    console.log(values)
+  // Manejar el post del API
+  const onSubmit = async (values) => {
+    const newUser = values
+    try {
+      await axios.post('/api/users/', newUser)
+      setError('')
+    } catch (error) {
+      if (error.response.status === 400 && error.response.data.error === 'El correo ya está registrado') {
+        setError('El correo ya está registrado. Por favor use uno distinto.')
+      } else {
+        setError('Error al registrar usuario')
+      }
+    }
   }
+
   const validationSchema = Yup.object().shape({
     // Definir la validación del esquema Yup para los campos del formulario
     name: Yup.string().min(2, 'muy corto').max(20, 'Que nombre tan largo').required('El nombre es requerido'),
@@ -36,6 +49,7 @@ const FormularioComponent = () => {
 
   const initialValues = {
     // Definir los valores iniciales del formulario
+    id: crypto.randomUUID(),
     name: '',
     email: '',
     password: ''
@@ -51,22 +65,25 @@ const FormularioComponent = () => {
       validationSchema={validationSchema}
       onSubmit={onSubmit}
     >
-      {({ errors }) => (
-        <Form className='rounded pt-6 pb-5'>
+      {({ errors, values }) => (
+        <Form className='rounded pt-6 pb-5 h-[410px]'>
           {/* Campos del formulario */}
-          <Input name='Nombre' type='text' placeholder='Ingrese nombre' errors={errors} id='name' />
-          <Input name='Correo electrónico' type='email' placeholder='Ingrese correo electrónico' errors={errors} id='email' />
-          <div className='relative'>
-            <Input name='Contraseña' type={showPassword ? 'text' : 'password'} placeholder='Ingrese contraseña' id='password' />
+          <Input name='Nombre' type='text' placeholder='Ingrese nombre' errors={errors} id='name' value={values.name} />
+          <Input name='Correo electrónico' type='email' placeholder='Ingrese correo electrónico' errors={errors} id='email' value={values.email} />
+          {/* <div className='relative'>
+            <Input name='Contraseña' type={showPassword ? 'text' : 'password'} placeholder='Ingrese contraseña' id='password' value={values.password} />
             <span
               className='absolute right-5 text-neutral-600 top-[70%] transform -translate-y-1/2 cursor-pointer'
               onClick={togglePasswordVisibility}
             >
               {showPassword ? <FaEyeSlash /> : <FaEye />}
             </span>
-          </div>
+          </div> */}
+          <InputPassword name='Contraseña' placeholder='Ingrese contraseña' id='password' value={values.password} showPassword={showPassword} togglePasswordVisibility={togglePasswordVisibility} />
           {/* Botón de envío del formulario */}
           <Button text='Registrarme' color='bg-green-600' hover='hover:bg-green-900' />
+          {/* error de registro */}
+          {error && <p className='text-red-600 text-xs italic text-center'>{error}</p>}
         </Form>
       )}
     </Formik>

@@ -1,12 +1,12 @@
 import { Field, ErrorMessage } from 'formik'
-export default function Input ({ id, name, type, placeholder, errors }) {
+export default function Input ({ id, name, type, placeholder, errors, value }) {
   const invalid = 'invalid:border-red-600 invalid:text-red-600 focus:invalid:border-red-600 focus:invalid:ring-red-500'
 
   const normal = 'focus:outline-none focus:shadow-outline text-gray-700 '
 
   return (
     <div>
-      <div className='mb-4'>
+      <div className='mb-4  h-[80px]'>
         <label
           className='block text-gray-700 text-sm mb-2'
           htmlFor={id}
@@ -20,6 +20,7 @@ export default function Input ({ id, name, type, placeholder, errors }) {
           type={type}
           placeholder={placeholder}
           name={id}
+          value={value || ''}
         />
         <ErrorMessage name={id} component='p' className='text-red-600 text-xs italic' />
       </div>

@@ -1,13 +1,13 @@
-import { createServer, Model } from 'miragejs'
+import { createServer, Model, Response } from 'miragejs'
 import { jaguarImg, osoAnteojos, ballenasFrancas } from '../assets/img-hero'
 
-export function makeServer() {
+export function makeServer () {
   return createServer({
     models: {
       animal: Model,
       user: Model
     },
-    seeds(server) {
+    seeds (server) {
       // Animals
       server.create('animal', {
         id: 1,
@@ -57,15 +57,15 @@ export function makeServer() {
       server.create('user', {
         id: 3,
         username: 'peterjones',
-        password: 'password3',
+        password: 'Password3%',
         name: 'Peter',
         lastName: 'Jones',
-        email: 'peterjones@example.com'
+        email: 'jonesjj@example.com'
       })
       server.create('user', {
         id: 4,
         username: 'maryjones',
-        password: 'password4',
+        password: 'Password4&',
         name: 'Mary',
         lastName: 'Jones',
         email: 'maryjones@example.com'
@@ -73,35 +73,35 @@ export function makeServer() {
       server.create('user', {
         id: 5,
         username: 'davidsmith',
-        password: 'password5',
+        password: 'Password5$',
         name: 'David',
         lastName: 'Smith',
         email: 'davidsmith@example.com'
       })
     },
 
-    routes() {
+    routes () {
       // animals
       this.namespace = 'api/animals'
       this.get('/', (schema, request) => {
         return schema.animals.all()
       })
       this.get('/:id', (schema, request) => {
-        let id = request.params.id
+        const id = request.params.id
         return schema.animals.find(id)
       })
       this.put('/:id', (schema, request) => {
-        let newAttrs = JSON.parse(request.requestBody)
-        let id = request.params.id
-        let product = schema.animals.find(id)
+        const newAttrs = JSON.parse(request.requestBody)
+        const id = request.params.id
+        const product = schema.animals.find(id)
         return product.update(newAttrs)
       })
       this.post('/', (schema, request) => {
-        let attrs = JSON.parse(request.requestBody)
+        const attrs = JSON.parse(request.requestBody)
         return schema.animals.create(attrs)
       })
       this.delete('/:id', (schema, request) => {
-        let id = request.params.id
+        const id = request.params.id
         return schema.animals.find(id).destroy()
       })
       // users
@@ -110,21 +110,39 @@ export function makeServer() {
         return schema.users.all()
       })
       this.get('/:id', (schema, request) => {
-        let id = request.params.id
+        const id = request.params.id
         return schema.users.find(id)
       })
       this.put('/:id', (schema, request) => {
-        let newAttrs = JSON.parse(request.requestBody)
-        let id = request.params.id
-        let product = schema.users.find(id)
+        const newAttrs = JSON.parse(request.requestBody)
+        const id = request.params.id
+        const product = schema.users.find(id)
         return product.update(newAttrs)
       })
       this.post('/', (schema, request) => {
-        let attrs = JSON.parse(request.requestBody)
+        const attrs = JSON.parse(request.requestBody)
+        const existingUser = schema.users.findBy({ email: attrs.email })
+
+        if (existingUser) {
+          return new Response(400, {}, { error: 'El correo ya está registrado' })
+        }
         return schema.users.create(attrs)
       })
+      this.post('/login', (schema, request) => {
+        const { email, password } = JSON.parse(request.requestBody)
+        const user = schema.users.findBy({ email, password })
+        if (user) {
+          return {
+            token: user.id,
+            email: user.email,
+            password: user.password
+          }
+        } else {
+          return new Response(400, {}, { error: 'Correo o contraseña invalida' })
+        }
+      })
       this.delete('/:id', (schema, request) => {
-        let id = request.params.id
+        const id = request.params.id
         return schema.users.find(id).destroy()
       })
     }
