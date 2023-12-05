@@ -6,6 +6,7 @@ import Home from '../Routes/Home'
 import Contact from '../Routes/Contact'
 import Login from '../Routes/Login/Presentation/Login'
 import Register from '../Routes/Register/Presentation/Register'
+import ForgotPassword from '../Routes/ForgotPassword/Presentation/ForgotPassword'
 
 import { NotFound } from '../Routes/NotFound'
 
@@ -30,6 +31,10 @@ export const router = createBrowserRouter([
       {
         path: '/Register',
         element: <Register />
+      },
+      {
+        path: '/reset-password',
+        element: <ForgotPassword />
       }
 
     ]

@@ -1,7 +1,6 @@
 import jungle from '../../../assets/chris-lee-70l1tDAI6rM-unsplash 1.jpg'
 import logo from '../../../assets/Frame 4048.png'
-import { OtherSesion } from '../../../components'
-import FormularioComponent from '../Component/Login' // Importa el componente del formulario aquí
+import FormularioComponent from '../Component/ForgotPassword' // Importa el componente del formulario aquí
 
 export default function Register () {
   return (
@@ -14,13 +13,6 @@ export default function Register () {
           <div className='w-full max-w-xs'>
             <FormularioComponent />
           </div>
-          {/* Otros elementos del formulario */}
-          <div className='flex justify-center items-center pb-5'>
-            <hr className='w-2/5' />
-            <span className='w-1/5 text-center'> o </span>
-            <hr className='w-2/5' />
-          </div>
-          <OtherSesion text='¿Nuevo Usuario? Registrarse' to='/register' />
         </div>
       </section>
       {/* Sección de la imagen */}
