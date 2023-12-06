@@ -66,20 +66,12 @@ const FormularioComponent = () => {
       onSubmit={onSubmit}
     >
       {({ errors, values }) => (
-        <Form className='rounded pt-6 pb-5 h-[410px]'>
+        <Form className='rounded pt-6 pb-5'>
           {/* Campos del formulario */}
           <Input name='Nombre' type='text' placeholder='Ingrese nombre' errors={errors} id='name' value={values.name} />
           <Input name='Correo electrónico' type='email' placeholder='Ingrese correo electrónico' errors={errors} id='email' value={values.email} />
-          {/* <div className='relative'>
-            <Input name='Contraseña' type={showPassword ? 'text' : 'password'} placeholder='Ingrese contraseña' id='password' value={values.password} />
-            <span
-              className='absolute right-5 text-neutral-600 top-[70%] transform -translate-y-1/2 cursor-pointer'
-              onClick={togglePasswordVisibility}
-            >
-              {showPassword ? <FaEyeSlash /> : <FaEye />}
-            </span>
-          </div> */}
           <InputPassword name='Contraseña' placeholder='Ingrese contraseña' id='password' value={values.password} showPassword={showPassword} togglePasswordVisibility={togglePasswordVisibility} />
+
           {/* Botón de envío del formulario */}
           <Button text='Registrarme' color='bg-green-600' hover='hover:bg-green-900' />
           {/* error de registro */}

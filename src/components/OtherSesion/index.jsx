@@ -12,7 +12,8 @@ export default function OtherSesion ({ to, text }) {
         </button>
 
         <button className='flex justify-center rounded bg-neutral-100 item-center border '>
-          <BsFacebook />
+          {' '}
+          <BsFacebook className='fle content-center' />
           <span className='py-1.5 text-center w-9/12'>
             Iniciar con Facebook
           </span>

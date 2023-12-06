@@ -3,6 +3,7 @@ import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import { useState } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const FormularioComponent = () => {
   const [showPassword, setShowPassword] = useState(false)
@@ -92,28 +93,21 @@ const FormularioComponent = () => {
       onSubmit={onSubmit}
     >
       {({ errors, values }) => (
-        <Form className='rounded pt-6 pb-5 h-[320px]'>
+        <Form className='rounded pt-6 pb-5'>
           {/* Campos del formulario */}
           <Input name='Correo electrónico' type='email' placeholder='Ingrese correo electrónico' errors={errors} id='email' value={values.email} />
-          {/* input contraseña v1.0 */}
-          {/* <div className='relative'>
-            <Input name='Contraseña' type={showPassword ? 'text' : 'password'} placeholder='Ingrese contraseña' id='password' value={values.password}  />
-            <span
-              className='absolute right-5 text-neutral-600 top-[70%] transform -translate-y-1/2 cursor-pointer'
-              onClick={togglePasswordVisibility}
-            >
-              {showPassword ? <FaEyeSlash /> : <FaEye />}
-            </span>
-          </div> */}
           {/* input contraseña v2.0 */}
           <InputPassword name='Contraseña' placeholder='Ingrese contraseña' id='password' value={values.password} showPassword={showPassword} togglePasswordVisibility={togglePasswordVisibility} />
           {/* checkbox */}
-          <div>
-            <input id='checkbox' type='checkbox' value='' className='w-4 h-4 text-green-800 bg-gray-100 border-gray-300 rounded focus:ring-transparent dark:bg-white-700 dark:border-gray-600' checked={actualState} onChange={handleCheckboxChange} />
-            <label htmlFor='checkbox' className='ms-2 text-sm font-medium text-black-900 dark:text-black-300'>Recordarme</label>
+          <div className='flex justify-between'>
+            <div>
+              <input id='checkbox' type='checkbox' value='' className='w-4 h-4 text-green-800 bg-gray-100 border-gray-300 rounded focus:ring-transparent dark:bg-white-700 dark:border-gray-600' checked={actualState} onChange={handleCheckboxChange} />
+              <label htmlFor='checkbox' className='ms-2 text-sm font-medium text-black-900 dark:text-black-300'>Recordarme</label>
+            </div>
+            <Link className=' text-sm font-medium text-black-900 dark:text-black-300' to='/reset-password '>¿Olvidaste tu contraseña?</Link>
           </div>
           {/* Botón de envío del formulario */}
-          <Button text='Iniciar sesión' color='bg-green-600' hover='hover:bg-green-900' />
+          <Button text='Registrarme' color='bg-green-600' hover='hover:bg-green-900' />
           {error && <p className='text-red-600 text-xs italic text-center'>{error}</p>}
         </Form>
       )}
