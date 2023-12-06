@@ -22,15 +22,15 @@ export default function OtherSesion ({ to, text }) {
   }
   return (
     <>
-      <div className='flex flex-col gap-2 pt-2 mt-3'>
-        <button className='flex justify-center rounded bg-neutral-100 item-center border' onClick={handleGoogleLogin}>
+      <div className='flex flex-col gap-2'>
+        <button className='flex justify-center rounded items-center bg-neutral-100 item-center border' onClick={handleGoogleLogin}>
+          {' '}
           <FcGoogle />
           <span className='py-1.5 text-center w-9/12'>Iniciar con Google</span>
         </button>
-
-        <button className='flex justify-center rounded bg-neutral-100 item-center border ' onClick={handleFacebookLogin}>
+        <button className='flex justify-center rounded items-center bg-neutral-100 item-center border' onClick={handleFacebookLogin}>
           {' '}
-          <BsFacebook className='fle content-center' />
+          <BsFacebook className='flex content-center' />
           <span className='py-1.5 text-center w-9/12'>
             Iniciar con Facebook
           </span>

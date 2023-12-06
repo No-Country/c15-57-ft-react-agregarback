@@ -107,7 +107,7 @@ const FormularioComponent = () => {
             <Link className=' text-sm font-medium text-black-900 dark:text-black-300' to='/reset-password '>¿Olvidaste tu contraseña?</Link>
           </div>
           {/* Botón de envío del formulario */}
-          <Button text='Registrarme' color='bg-green-600' hover='hover:bg-green-900' />
+          <Button text='Iniciar Sesión' color='bg-green-600' hover='hover:bg-green-900' />
           {error && <p className='text-red-600 text-xs italic text-center'>{error}</p>}
         </Form>
       )}

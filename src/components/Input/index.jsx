@@ -5,7 +5,7 @@ export default function Input ({ id, name, type, placeholder, errors, value }) {
 
   return (
     <div>
-      <div className='mb-4  h-[80px]'>
+      <div className='mb-4 h-[90px]'>
         <label
           className='block text-gray-700 text-sm mb-2'
           htmlFor={id}

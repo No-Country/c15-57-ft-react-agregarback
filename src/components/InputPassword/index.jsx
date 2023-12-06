@@ -7,7 +7,7 @@ export default function InputPassword ({ id, name, showPassword, placeholder, er
 
   return (
     <div>
-      <div className='mb-4'>
+      <div className='mb-4 h-[90px]'>
         <label
           className='block text-gray-700 text-sm mb-2'
           htmlFor={id}

@@ -8,7 +8,7 @@ import Login from '../Routes/Login/Presentation/Login'
 import Register from '../Routes/Register/Presentation/Register'
 import Store from '../Routes/Store/Presentation/Login'
 import NotFound from '../Routes/NotFound/Component/NotFound'
-import ForgotPassword from '../Routes/ForgotPassword/Presentation/ForgotPassword'
+import ResetPassword from '../Routes/ResetPassword/Presentation/ResetPassword'
 
 export const router = createBrowserRouter([
   {
@@ -38,7 +38,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/reset-password',
-        element: <ForgotPassword />
+        element: <ResetPassword />
       }
     ]
   }

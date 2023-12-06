@@ -141,7 +141,7 @@ export function makeServer () {
           return new Response(400, {}, { error: 'Correo o contraseña invalida' })
         }
       })
-      this.put('/reset-password', (schema, request) => {
+      this.post('/reset-password', (schema, request) => {
         const { email, password } = JSON.parse(request.requestBody)
 
         const user = schema.users.findBy({ email })
