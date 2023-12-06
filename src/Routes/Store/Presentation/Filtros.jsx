@@ -1,7 +1,7 @@
 export default function Filtros ({ type = 'Remeras', filter = ['Talle', 'S', 'M', 'L', 'XL'] }) {
   return (
     <>
-      <p className="w-20 py-6 text-slate-800 text-xl font-medium font-['Helvetica Neue'] ">
+      <p className='w-20 py-6 text-slate-800 text-xl font-medium font-display '>
         {type}
       </p>
       <div className='pb-6 justify-start items-start gap-3 inline-flex'>

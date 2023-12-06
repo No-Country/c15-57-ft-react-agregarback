@@ -12,10 +12,10 @@ export default function ProductDetails () {
           />
         </div>
         <div className='flex flex-col gap-5'>
-          <h2 className="text-gray-800 text-5xl font-medium font-['Helvetica Neue']">
+          <h2 className='text-gray-800 text-5xl font-medium font-display'>
             Remera
           </h2>
-          <p className="text-gray-800 text-3xl font-medium font-['Helvetica Neue']">
+          <p className='text-gray-800 text-3xl font-medium font-display'>
             $800
           </p>
           <ul>
@@ -34,21 +34,21 @@ export default function ProductDetails () {
           </ul>
           <div className='mt-4'>
             <h3 className='text-xl font-bold mb-2'>Size</h3>
-            <ul className='flex gap-3 '>
+            <ul className='flex gap-3 font-display'>
               <div className='w-6 h-6 px-1.5 pt-0.5 bg-green-800 rounded-xl flex-col justify-center items-center gap-2.5 inline-flex'>
-                <div className="text-gray-100 text-base font-medium font-['Helvetica Neue']">S</div>
+                <div className='text-gray-100 text-base font-medium '>S</div>
               </div>
               <div className='w-6 h-6 px-1 pt-0.5 bg-green-300 bg-opacity-40 rounded-xl flex-col justify-center items-center gap-2.5 inline-flex'>
-                <div className="text-gray-800 text-base font-medium font-['Helvetica Neue']">M</div>
+                <div className='text-gray-800 text-base font-medium font-display'>M</div>
               </div>
               <div className='w-6 h-6 px-1 pt-0.5 bg-green-300 bg-opacity-40 rounded-xl flex-col justify-center items-center gap-2.5 inline-flex'>
-                <div className="text-gray-800 text-base font-medium font-['Helvetica Neue']">L</div>
+                <div className='text-gray-800 text-base font-medium font-display'>L</div>
               </div>
               <div className='w-6 h-6 px-1.5 pt-0.5 bg-gray-300 rounded-xl flex-col justify-center items-center gap-2.5 inline-flex'>
-                <div className="text-gray-400 text-xs font-medium font-['Helvetica Neue']">XL</div>
+                <div className='text-gray-400 text-xs font-medium font-display'>XL</div>
               </div>
               <div className='w-6 h-6 px-1 pt-0.5 bg-green-300 bg-opacity-40 rounded-xl flex-col justify-center items-center gap-2.5 inline-flex'>
-                <div className="text-gray-800 text-xs font-medium font-['Helvetica Neue']">XXL</div>
+                <div className='text-gray-800 text-xs font-medium font-display'>XXL</div>
               </div>
             </ul>
           </div>
@@ -61,12 +61,12 @@ export default function ProductDetails () {
           </div>
           <div className='mt-4 flex gap-5'>
             <button className='w-24 h-10 px-4 py-3 rounded-3xl border border-black justify-start items-end gap-4 inline-flex'>
-              <div className="w-2 h-4 text-center text-gray-800 text-base font-medium font-['Helvetica Neue']">-</div>
-              <div className="w-2 h-4 text-center text-gray-800 text-base font-medium font-['Helvetica Neue']">2</div>
-              <div className="w-2 h-4 text-center text-gray-800 text-base font-medium font-['Helvetica Neue']">+</div>
+              <div className='w-2 h-4 text-center text-gray-800 text-sm font-medium font-display'>-</div>
+              <div className='w-2 h-4 text-center text-gray-800 text-sm font-medium font-display'>2</div>
+              <div className='w-2 h-4 text-center text-gray-800 text-sm font-medium font-display'>+</div>
             </button>
             <button className='w-40 h-10 px-4 py-2 bg-green-700 rounded-full justify-start items-center inline-flex'>
-              <span className="text-center text-gray-100 text-base font-medium font-['Helvetica Neue'] leading-normal">
+              <span className='text-center text-gray-100 text-base font-medium font-display leading-normal'>
                 Agregar al carrito
               </span>
             </button>
@@ -74,8 +74,8 @@ export default function ProductDetails () {
           <br />
           <hr />
           <div className='mt-4 flex gap-5'>
-            <span className="text-gray-800 text-base font-medium font-['Helvetica Neue']">Categoría:</span>
-            <span className="text-gray-500 text-base font-light font-['Helvetica Neue']">Remera - Jaguar</span>
+            <span className='text-gray-800 text-base font-medium font-display'>Categoría:</span>
+            <span className='text-gray-500 text-base font-light font-display'>Remera - Jaguar</span>
           </div>
         </div>
       </div>

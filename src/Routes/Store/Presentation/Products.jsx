@@ -26,7 +26,7 @@ export default function Products () {
         <li
           onClick={openModal}
           key={product.id}
-          className='w-64 pb-4 bg-white rounded-lg shadow border border-zinc-200 flex-col justify-center items-center gap-3 inline-flex'
+          className='w-64 pb-4 cursor-pointer bg-white rounded-lg shadow border border-zinc-200 flex-col justify-center items-center gap-3 inline-flex'
         >
           <figure className='self-stretch h-72 relative'>
             <img

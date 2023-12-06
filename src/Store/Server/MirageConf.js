@@ -8,10 +8,24 @@ import {
   osoConAnteojos
 } from '../../assets/animals'
 import { gorras, remeras, tazas, vasos } from '../../assets/products'
-import { taza01, taza02, taza03, taza04, taza05, taza06 } from '../../assets/products/tazas'
-import { remera01, remera02, remera03, remera04, remera05, remera06 } from '../../assets/products/remeras'
+import {
+  taza01,
+  taza02,
+  taza03,
+  taza04,
+  taza05,
+  taza06
+} from '../../assets/products/tazas'
+import {
+  remera01,
+  remera02,
+  remera03,
+  remera04,
+  remera05,
+  remera06
+} from '../../assets/products/remeras'
 
-export function makeServer () {
+export function makeServer() {
   return createServer({
     models: {
       animal: Model,
@@ -20,7 +34,7 @@ export function makeServer () {
       productC: Model,
       product: Model
     },
-    seeds (server) {
+    seeds(server) {
       // Animals
       server.create('animal', {
         id: 1,
@@ -249,7 +263,7 @@ export function makeServer () {
       })
     },
 
-    routes () {
+    routes() {
       // ANIMALS NAMESPACE
       this.namespace = 'api/animals'
       this.get('/', (schema, request) => {
@@ -307,21 +321,19 @@ export function makeServer () {
       // CRUD
       // Fetch all users
       this.get('/', (schema, request) => {
-        return schema.User.all()
+        return schema.users.all()
       })
       // Fetch a user by ID
-      this.get('/:id', (schema, request) => {
-        const id = request.params.id
-        const user = schema.User.find(id)
+      this.get('/:email', (schema, request) => {
+        const email = request.params.email
+        const user = schema.users.findBy({ email })
 
-        if (user) {
-          return user
-        } else {
-          return {
+        return (
+          user || {
             success: false,
-            message: `User with ID ${id} not found`
+            message: `User with id ${email} not found`
           }
-        }
+        )
       })
       // Update a user
       this.put('/:id', (schema, request) => {
@@ -407,12 +419,12 @@ export function makeServer () {
 
       // TAZAS ROUTE
       this.get('/tazas', (schema, request) => {
-        return schema.products.all().filter(item => item.type === 'Raza')
+        return schema.products.all().filter((item) => item.type === 'Raza')
       })
 
       // REMERAS ROUTE
       this.get('/remeras', (schema, request) => {
-        return schema.products.all().filter(item => item.type === 'Remera')
+        return schema.products.all().filter((item) => item.type === 'Remera')
       })
 
       // PRODUCT GENERAL ROUTES
