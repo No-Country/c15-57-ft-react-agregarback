@@ -1,8 +1,8 @@
 import jungle from '../../../assets/chris-lee-70l1tDAI6rM-unsplash 1.jpg'
 import logo from '../../../assets/Frame 4048.png'
-import FormularioComponent from '../Component/ForgotPassword' // Importa el componente del formulario aquí
+import ResetPasswordComponent from '../Component/ResetPassword' // Importa el componente del formulario aquí
 
-export default function Register () {
+export default function ResetPassword () {
   return (
     <div className='flex'>
       {/* Sección del formulario utilizando FormularioComponent */}
@@ -11,7 +11,7 @@ export default function Register () {
           <img src={logo} alt='' className='w-80 h-7 mt-6 ' />
           <h2 className='font-display text-3xl font-normal mt-6 text-center'>Bienvenido</h2>
           <div className='w-full max-w-xs'>
-            <FormularioComponent />
+            <ResetPasswordComponent />
           </div>
         </div>
       </section>

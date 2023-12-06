@@ -7,12 +7,20 @@ import axios from 'axios'
 const FormularioComponent = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState('')
+  const [selectedQuestion, setSelectedQuestion] = useState('')
+  const [secretQuestion, setSecretQuestion] = useState('')
+  const [secretAnswer, setSecretAnswer] = useState('')
 
   // Manejar el post del API
   const onSubmit = async (values) => {
-    const newUser = values
+    const newUser = {
+      values,
+      question: selectedQuestion
+    }
     try {
       await axios.post('/api/users/', newUser)
+      setSecretQuestion(selectedQuestion)
+      setSecretAnswer(values.answer)
       setError('')
     } catch (error) {
       if (error.response.status === 400 && error.response.data.error === 'El correo ya está registrado') {
@@ -44,7 +52,8 @@ const FormularioComponent = () => {
         /^(?=.*[!@#/$%/^&/*])/,
         'Debe contener al menos un caracter especial'
       )
-      .required('La contraseña es requerida')
+      .required('La contraseña es requerida'),
+    answer: Yup.string().required('La respuesta secreta es requerida')
   })
 
   const initialValues = {
@@ -52,11 +61,16 @@ const FormularioComponent = () => {
     id: crypto.randomUUID(),
     name: '',
     email: '',
-    password: ''
+    password: '',
+    answer: ''
   }
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword) // Cambia el estado para mostrar u ocultar la contraseña
+  }
+
+  const handleSelectChange = (event) => {
+    setSelectedQuestion(event.target.value)
   }
 
   return (
@@ -66,11 +80,21 @@ const FormularioComponent = () => {
       onSubmit={onSubmit}
     >
       {({ errors, values }) => (
-        <Form className='rounded pt-6 pb-5'>
+        <Form className='rounded h-[600px]'>
           {/* Campos del formulario */}
           <Input name='Nombre' type='text' placeholder='Ingrese nombre' errors={errors} id='name' value={values.name} />
           <Input name='Correo electrónico' type='email' placeholder='Ingrese correo electrónico' errors={errors} id='email' value={values.email} />
           <InputPassword name='Contraseña' placeholder='Ingrese contraseña' id='password' value={values.password} showPassword={showPassword} togglePasswordVisibility={togglePasswordVisibility} />
+          <div className='mb-3 h-[90px]'>
+            <p className='block text-gray-700 text-sm mb-2'>Pregunta secreta</p>
+            <select name='preguntaSecreta' onChange={handleSelectChange} className='shadow appearance-none border rounded w-full py-3 px-3 leading-tight'>
+              <option value=''>Seleccione una pregunta secreta</option>
+              <option value='opcion1'>¿Cuál es el nombre de tu mascota?</option>
+              <option value='opcion2'>¿En qué ciudad naciste?</option>
+              <option value='opcion3'>¿Cuál es tu comida favorita?</option>
+            </select>
+          </div>
+          <Input name='Respuesta secreta' type='text' placeholder='Ingrese respuesta secreta' errors={errors} id='answer' value={values.answer} />
 
           {/* Botón de envío del formulario */}
           <Button text='Registrarme' color='bg-green-600' hover='hover:bg-green-900' />
