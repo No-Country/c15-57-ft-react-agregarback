@@ -4,7 +4,6 @@ import { Outlet } from 'react-router-dom'
 import { NavBar, Footer } from './components'
 
 import './index.css'
-import Products from './Routes/Store/Presentation/Products'
 
 export const MainLayout = () => {
   return (
@@ -14,8 +13,7 @@ export const MainLayout = () => {
       </header>
       <hr />
       <main>
-        {/* <Outlet /> */}
-        <Products />
+        <Outlet />
       </main>
       <hr />
       <footer>
