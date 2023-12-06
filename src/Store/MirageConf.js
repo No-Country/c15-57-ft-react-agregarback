@@ -152,6 +152,28 @@ export function makeServer () {
           return { message: 'Usuario no encontrado' }
         }
       })
+      this.post('/google-login', (_, request) => {
+        // Aquí puedes simular el inicio de sesión con Google
+        // Devuelve los datos del usuario simulados para este ejemplo
+        return {
+          user: {
+            id: crypto.randomUUID(),
+            name: 'Usuario de Google',
+            email: 'google@example.com'
+          }
+        }
+      })
+      this.post('/facebook-login', (_, request) => {
+        // Aquí puedes simular el inicio de sesión con Facebook
+        // Devuelve los datos del usuario simulados para este ejemplo
+        return {
+          user: {
+            id: crypto.randomUUID(),
+            name: 'Usuario de Facebook',
+            email: 'facebook@example.com'
+          }
+        }
+      })
       this.delete('/:id', (schema, request) => {
         const id = request.params.id
         return schema.users.find(id).destroy()
