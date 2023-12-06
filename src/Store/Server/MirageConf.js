@@ -66,43 +66,33 @@ export function makeServer() {
       })
       // Users
       server.create('user', {
-        id: 1,
-        username: 'johndoe',
-        password: 'password1',
+        id: crypto.randomUUID(),
         name: 'John',
-        lastName: 'Doe',
+        password: 'password1',
         email: 'johndoe@example.com'
       })
       server.create('user', {
-        id: 2,
-        username: 'janedoe',
+        id: crypto.randomUUID(),
         password: 'password2',
         name: 'Jane',
-        lastName: 'Doe',
         email: 'janedoe@example.com'
       })
       server.create('user', {
-        id: 3,
-        username: 'peterjones',
+        id: crypto.randomUUID(),
         password: 'password3',
         name: 'Peter',
-        lastName: 'Jones',
         email: 'peterjones@example.com'
       })
       server.create('user', {
-        id: 4,
-        username: 'maryjones',
+        id: crypto.randomUUID(),
         password: 'password4',
         name: 'Mary',
-        lastName: 'Jones',
         email: 'maryjones@example.com'
       })
       server.create('user', {
-        id: 5,
-        username: 'davidsmith',
+        id: crypto.randomUUID(),
         password: 'password5',
         name: 'David',
-        lastName: 'Smith',
         email: 'davidsmith@example.com'
       })
       // AnimalCs
@@ -263,7 +253,8 @@ export function makeServer() {
       })
     },
 
-    routes() {
+
+    routes () {
       // ANIMALS NAMESPACE
       this.namespace = 'api/animals'
       this.get('/', (schema, request) => {
@@ -291,29 +282,33 @@ export function makeServer() {
       this.namespace = 'api/users'
       // Login route
       this.post('/login', (schema, request) => {
-        const { username, password } = request.requestBody
+        const { email, password } = request.requestBody
 
-        const user = schema.User.find({ username })
+        const user = schema.User.find({ email })
         if (user && user.password === password) {
           return user
         } else {
           return {
             success: false,
-            message: 'Invalid username or password'
+            message: 'Invalid email or password'
           }
         }
       })
       // Register route
       this.post('/register', (schema, request) => {
-        const { username, password, name, lastName, email } =
-          request.requestBody
-
+        const { email, password, name } = request.requestBody
         const user = schema.User.create({
-          username,
+          id: crypto.randomUUID(),
+          email,
           password,
-          name,
-          lastName,
-          email
+          name
+        })
+
+
+        // CRUD
+        // Fetch all users
+        this.get('/', (schema, request) => {
+          return schema.User.all()
         })
 
         return user
