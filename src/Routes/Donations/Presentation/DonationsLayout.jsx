@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ContactLayout = ({ children }) => {
+const DonationsLayout = ({ children }) => {
     return (
         <div
         style={{
@@ -14,4 +14,4 @@ const ContactLayout = ({ children }) => {
     )
 }
 
-export default ContactLayout
+export default DonationsLayout

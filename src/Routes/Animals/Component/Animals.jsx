@@ -1,7 +1,7 @@
+
 import { useECommerceContext } from "../../../Store/contextStore/ECommerceContext";
 import { useUserContext } from "../../../Store/contextStore/UserContext";
 import Carrousel from "../../../components/Carrousel/Presentation/Carrousel";
-
 
 export default function Home() {
 

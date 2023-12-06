@@ -1,30 +1,24 @@
-a {
-  text-decoration: none;
-  color: inherit;
+ /* Style for the dropdown */
+ .dropdown {
+  position: relative;
 }
-.BotonDonar {
-  width: 209px;
-  height: 46px;
-  background-color: #70ffe5;
-  border-radius: 24px;
-  font-size: 16px;
-  color: #302e39;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.dropdown-content {
+  display: none;
   position: absolute;
-  bottom: -30px;
+  top: 100%;
+  left: 0;
+  background-color: #444;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-.BotonDonar:hover {
-  background-color: #459e8d;
-  cursor: pointer;
-  color: #fffefe;
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
-.BotonDonar-children {
-  font-family: Roboto;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 24px; /* 150% */
-  letter-spacing: 1.6px;
+
+.dropdown-content a {
+  color: #fff;
+  padding: 10px;
+  display: block;
 }

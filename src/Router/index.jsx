@@ -1,38 +1,132 @@
+import { Suspense } from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 
-import { MainLayout } from '../MainLayout'
+import { MainLayout, PrivateLayout } from '../Layouts'
 
-import  {Contact,Home, Login, NotFound, Register, Store} from "../Routes"
+import { Donations, Animals, Volunteers, Login, NotFound, Register, Store, loaderStoreItems, User, MyVolunteers, MyPurchases } from "../Routes"
+
+import { InfoPageContainer, loaderItem } from "../components"
 
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <MainLayout />,
+    element: (
+      <Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
+        <MainLayout />
+      </Suspense>
+    ),
     errorElement: <NotFound />,
     children: [
       {
         index: true,
-        element: <Home />
+        element: (
+          <Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
+            <Animals />
+          </Suspense>
+        )
       },
       {
-        path: '/Contact',
-        element: <Contact />
+        path: '/Donations',
+        element: (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
+          <Donations />
+        </Suspense>)
+      },
+      {
+        path: '/Volunteers',
+        element: (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
+          <Volunteers />
+        </Suspense>)
+      },
+      {
+        path: '/Store',
+        element: (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
+          <Store />
+        </Suspense>),
+        loader: loaderStoreItems
+      },
+      {
+        path: '/Store/:id',
+        element: (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
+          <InfoPageContainer />
+        </Suspense>),
+        loader: loaderItem
       },
       {
         path: '/Login',
-        element: <Login />
+        element:
+          (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
+            <Login />
+          </Suspense>)
       },
-     /*
-     {
-       path: '/Register',
-       element: <Register />
-      }
-      ,
-      */
       {
-        path: '/Store',
-        element: <Store />
+        path: '/Register',
+        element:
+          (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
+            <Register />
+          </Suspense>
+          )
       },
+
+      /*
+      * Private Routes
+      */
+      
+      {
+        path: '/User',
+        errorElement: <NotFound />,
+        element:
+          (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
+            <PrivateLayout />
+          </Suspense>
+          ),
+        children: [
+          {
+            index: true,
+            element:
+              (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
+                <User />
+              </Suspense>
+              )
+          },
+        ]
+      },
+      {
+        path: '/MyVolunteers',
+        element:
+          (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
+            <PrivateLayout />
+          </Suspense>
+          ),
+        children: [
+          {
+            index: true,
+            element:
+              (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
+                <MyVolunteers />
+              </Suspense>
+              )
+          },
+        ]
+      },
+      {
+        path: '/MyPurchases',
+        element:
+          (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
+            <PrivateLayout />
+          </Suspense>
+          ),
+        children: [
+          {
+            index: true,
+            element:
+              (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
+                <MyPurchases />
+              </Suspense>
+              ),
+
+          },
+        ]
+      }
     ]
   }
 ])
