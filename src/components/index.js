@@ -1,10 +1,9 @@
-import Landing from './Landing/Landing'
-import Footer from './Footer/Footer'
+import Landing from './Landing/'
+import Footer from './Footer/Component/Footer'
 import Header from './Header/Header'
-import Hero from '../components/Hero'
-import Button from '../components/Button'
+import Button from './Button/'
 import OtherSesion from '../components/OtherSesion'
-import Input from '../components/Input'
+import Input from '../components/Input/Component'
 import InputPassword from './InputPassword'
 
-export { Landing, Footer, Header, Hero, Button, OtherSesion, Input, InputPassword }
+export { Landing, Footer, Header, OtherSesion, Input, InputPassword, Button }

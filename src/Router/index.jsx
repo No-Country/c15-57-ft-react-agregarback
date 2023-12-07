@@ -1,15 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom'
-import { createBrowserRouter } from 'react-router-dom'
 
 import { MainLayout } from '../MainLayout'
-import { MainLayout } from '../MainLayout'
 
-import Home from "../Routes/Home";
-import Contact from "../Routes/Contact";
-import Login from "../Routes/Login";
-import Register from "../Routes/Register"
-
-import { NotFound } from "../Routes/NotFound";
+import { Contact, Home, Login, NotFound, Register, Store } from '../Routes'
 
 export const router = createBrowserRouter([
   {
@@ -29,16 +22,33 @@ export const router = createBrowserRouter([
         path: '/Login',
         element: <Login />
       },
+
       {
         path: '/Register',
         element: <Register />
       },
-      {
-        path: '/reset-password',
-        element: <ResetPassword />
-      }
 
+      {
+        path: '/Store',
+        element: <Store />
+      }
     ]
   }
-
 ])
+
+/*
+if you wants to add a new route please create a new component
+on the  routes file ./Routes
+
+then
+
+add a new object with the path and element properties
+
+    {
+        path: '',
+        element: <>
+      },
+
+      inside the children propertie.
+
+*/
