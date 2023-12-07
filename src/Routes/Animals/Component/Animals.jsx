@@ -12,7 +12,7 @@ export default function Home() {
 
   return (
     <>
-      <Carrousel />
+   
     // aqui inicia la revision de la estructura del carrousel
       home
     </>
