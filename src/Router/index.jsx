@@ -2,7 +2,7 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import { MainLayout } from '../MainLayout'
 
-import  {Contact,Home, Login, NotFound, Register, Store} from "../Routes"
+import { Contact, Home, Login, NotFound, Register, Store } from '../Routes'
 
 export const router = createBrowserRouter([
   {
@@ -22,27 +22,25 @@ export const router = createBrowserRouter([
         path: '/Login',
         element: <Login />
       },
-     /*
-     {
-       path: '/Register',
-       element: <Register />
-      }
-      ,
-      */
+
+      {
+        path: '/Register',
+        element: <Register />
+      },
+
       {
         path: '/Store',
         element: <Store />
-      },
+      }
     ]
   }
 ])
 
-
 /*
-if you wants to add a new route please create a new component 
+if you wants to add a new route please create a new component
 on the  routes file ./Routes
 
-then 
+then
 
 add a new object with the path and element properties
 
@@ -52,5 +50,5 @@ add a new object with the path and element properties
       },
 
       inside the children propertie.
-      
+
 */

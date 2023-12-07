@@ -6,9 +6,9 @@ export default {
 
   ],
   theme: {
-    fontFamily: {
-      display: [
-        'Helvetica Neue', 'sans-serif'
+    fontFamily:{
+      'display':[
+          'Helvetica Neue', 'sans-serif'
       ]
     },
     extend: {
