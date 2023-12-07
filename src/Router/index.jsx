@@ -1,7 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom'
-
 import { MainLayout } from '../MainLayout'
-
 import { Contact, Home, Login, NotFound, Register, Store } from '../Routes'
 
 export const router = createBrowserRouter([
