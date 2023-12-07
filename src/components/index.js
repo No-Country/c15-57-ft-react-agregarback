@@ -1,6 +1,9 @@
 import Landing from './Landing/'
 import Footer from './Footer/Component/Footer'
-import NavBar from './NavBar/Component/NavBar'
-import Carrousel from './Carrousel/Component/Carrousel'
+import Header from './Header/Header'
+import Button from './Button/'
+import OtherSesion from '../components/OtherSesion'
+import Input from '../components/Input/Component'
+import InputPassword from './InputPassword'
 
-export { Landing, Footer, NavBar, Carrousel }
+export { Landing, Footer, Header, OtherSesion, Input, InputPassword, Button }
