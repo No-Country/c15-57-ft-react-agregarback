@@ -1,11 +1,11 @@
-import BannerInfo from "./BannerInfo"
-import BannerOption from "./BannerOption"
+import BannerInfo from './BannerInfo'
+import BannerOption from './BannerOption'
 
-export default function BannerShowArea({ setMostrar, mostrar, data, index }) {
+export default function BannerShowArea ({ setMostrar, mostrar, data, index }) {
   const isSeleccionado = mostrar === index
   return (
     <section
-      onClick={() => {setMostrar(index)}}
+      onClick={() => { setMostrar(index) }}
       className={` w-full h-full z-10 flex justify-center items-center transition-all transition-300 ease-in-out
      ${isSeleccionado && 'w-[180%] bg-black bg-opacity-75'}`}
     >
@@ -14,7 +14,7 @@ export default function BannerShowArea({ setMostrar, mostrar, data, index }) {
           <BannerOption name={data.name} />
           )
         : (
-          <BannerInfo data={data}  />
+          <BannerInfo data={data} />
           )}
     </section>
   )

@@ -1,4 +1,4 @@
-export default function BannerOption({ name }){
+export default function BannerOption ({ name }) {
   return (
     <div className='hero-cambiarSeccion text-white transition duration-2000 ease-in-out hover:cursor-pointer'>
       <p className='w-full flex text-[72px] justify-center items-center hero-icon'>
