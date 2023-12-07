@@ -2,13 +2,7 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import { MainLayout } from '../MainLayout'
 
-import Home from '../Routes/Home/Component/Home'
-import Contact from '../Routes/Contact'
-import Login from '../Routes/Login/Presentation/Login'
-import Register from '../Routes/Register/Presentation/Register'
-import Store from '../Routes/Store/Presentation/Login'
-import NotFound from '../Routes/NotFound/Component/NotFound'
-import ResetPassword from '../Routes/ResetPassword/Presentation/ResetPassword'
+import { Contact, Home, Login, NotFound, Register, Store, ResetPassword } from '../Routes'
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +25,11 @@ export const router = createBrowserRouter([
       {
         path: '/Register',
         element: <Register />
+      },
+
+      {
+        path: '/Store',
+        element: <Store />
       },
       {
         path: '/Store',
@@ -58,4 +57,8 @@ add a new object with the path and element properties
       },
 
       inside the children propertie.
+<<<<<<< HEAD
+=======
+
+>>>>>>> d7772f7ec8d4cd6077345e03dd3a544709524ea7
 */

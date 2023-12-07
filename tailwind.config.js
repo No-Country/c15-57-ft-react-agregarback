@@ -2,13 +2,13 @@
 export default {
   content: [
     './index.html',
-    './src/**/*.{js,ts,jsx,tsx}',
+    './src/**/*.{js,ts,jsx,tsx}'
 
   ],
   theme: {
-    fontFamily: {
-      display: [
-        'Helvetica Neue', 'sans-serif'
+    fontFamily:{
+      'display':[
+          'Helvetica Neue', 'sans-serif'
       ]
     },
     extend: {
@@ -16,5 +16,5 @@ export default {
   },
   plugins: [
     require('@tailwindcss/forms')
-  ],
+  ]
 }
