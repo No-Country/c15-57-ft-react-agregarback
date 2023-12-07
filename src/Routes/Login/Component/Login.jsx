@@ -93,15 +93,14 @@ const FormularioComponent = () => {
       onSubmit={onSubmit}
     >
       {({ errors, values }) => (
-        <Form className='rounded pt-6 pb-5'>
+        <Form className='rounded pt-6 h-[340px] font-robot font-light'>
           {/* Campos del formulario */}
           <Input name='Correo electrónico' type='email' placeholder='Ingrese correo electrónico' errors={errors} id='email' value={values.email} />
-          {/* input contraseña v2.0 */}
           <InputPassword name='Contraseña' placeholder='Ingrese contraseña' id='password' value={values.password} showPassword={showPassword} togglePasswordVisibility={togglePasswordVisibility} />
           {/* checkbox */}
-          <div className='flex justify-between'>
-            <div>
-              <input id='checkbox' type='checkbox' value='' className='w-4 h-4 text-green-800 bg-gray-100 border-gray-300 rounded focus:ring-transparent dark:bg-white-700 dark:border-gray-600' checked={actualState} onChange={handleCheckboxChange} />
+          <div className='flex flex-col lg:flex-row justify-between items-center'>
+            <div className='flex items-center '>
+              <input id='checkbox' type='checkbox' value='' className='focus:outline-none w-4 h-4 text-green-800 bg-gray-100 mb-2 lg:border-gray-300 rounded focus:ring-transparent dark:bg-white-700 dark:border-gray-600' checked={actualState} onChange={handleCheckboxChange} />
               <label htmlFor='checkbox' className='ms-2 text-sm font-medium text-black-900 dark:text-black-300'>Recordarme</label>
             </div>
             <Link className=' text-sm font-medium text-black-900 dark:text-black-300' to='/reset-password '>¿Olvidaste tu contraseña?</Link>
