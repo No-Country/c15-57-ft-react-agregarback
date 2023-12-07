@@ -39,44 +39,52 @@ export function makeServer () {
       })
       // Users
       server.create('user', {
-        id: 1,
-        username: 'johndoe',
-        password: 'password1',
+        id: crypto.randomUUID(),
+        password: 'Password1@',
         name: 'John',
-        lastName: 'Doe',
-        email: 'johndoe@example.com'
+        email: 'johndoe@example.com',
+        question: 'opcion1',
+        answer: 'balto'
       })
       server.create('user', {
-        id: 2,
-        username: 'janedoe',
-        password: 'password2',
+        id: crypto.randomUUID(),
+        password: 'Password2&',
         name: 'Jane',
-        lastName: 'Doe',
-        email: 'janedoe@example.com'
+        email: 'janedoe@example.com',
+        question: 'opcion2',
+        answer: 'Ciudad de Mexico'
       })
       server.create('user', {
-        id: 3,
-        username: 'peterjones',
+        id: crypto.randomUUID(),
         password: 'Password3%',
         name: 'Peter',
-        lastName: 'Jones',
-        email: 'jonesjj@example.com'
+        email: 'jonesjj@example.com',
+        question: 'opcion3',
+        answer: 'tacos'
       })
       server.create('user', {
-        id: 4,
-        username: 'maryjones',
+        id: crypto.randomUUID(),
         password: 'Password4&',
         name: 'Mary',
-        lastName: 'Jones',
-        email: 'maryjones@example.com'
+        email: 'maryjones@example.com',
+        question: 'opcion3',
+        answer: 'pizza'
       })
       server.create('user', {
-        id: 5,
-        username: 'davidsmith',
+        id: crypto.randomUUID(),
         password: 'Password5$',
         name: 'David',
-        lastName: 'Smith',
-        email: 'davidsmith@example.com'
+        email: 'davidsmith@example.com',
+        question: 'opcion2',
+        answer: 'Buenos aires'
+      })
+      server.create('user', {
+        id: crypto.randomUUID(),
+        password: 'Password6$',
+        name: 'David',
+        email: 'carlssmith@example.com',
+        question: 'opcion1',
+        answer: 'fluffy'
       })
     },
 
@@ -141,20 +149,7 @@ export function makeServer () {
           return new Response(400, {}, { error: 'Correo o contraseña invalida' })
         }
       })
-      this.post('/reset-password', (schema, request) => {
-        const { email, password } = JSON.parse(request.requestBody)
-
-        const user = schema.users.findBy({ email })
-        if (user) {
-          user.update({ newPassword: password })
-          return { message: 'Contraseña cambiada con éxito' }
-        } else {
-          return { message: 'Usuario no encontrado' }
-        }
-      })
       this.post('/google-login', (_, request) => {
-        // Aquí puedes simular el inicio de sesión con Google
-        // Devuelve los datos del usuario simulados para este ejemplo
         return {
           user: {
             id: crypto.randomUUID(),
@@ -164,14 +159,34 @@ export function makeServer () {
         }
       })
       this.post('/facebook-login', (_, request) => {
-        // Aquí puedes simular el inicio de sesión con Facebook
-        // Devuelve los datos del usuario simulados para este ejemplo
         return {
           user: {
             id: crypto.randomUUID(),
             name: 'Usuario de Facebook',
             email: 'facebook@example.com'
           }
+        }
+      })
+      this.post('/check-question', (schema, request) => {
+        const { email } = JSON.parse(request.requestBody)
+        const user = schema.users.findBy({ email })
+        if (user) {
+          return {
+            question: user.question
+          }
+        } else {
+          return new Response(400, {}, { error: 'Correo invalida' })
+        }
+      })
+      this.post('/find-password', (schema, request) => {
+        const { email, answer } = JSON.parse(request.requestBody)
+        const user = schema.users.findBy({ email, answer })
+        if (user) {
+          return {
+            password: user.password
+          }
+        } else {
+          return new Response(400, {}, { error: 'Correo invalida' })
         }
       })
       this.delete('/:id', (schema, request) => {

@@ -9,7 +9,7 @@ export default function Register () {
       {/* Sección del formulario utilizando FormularioComponent */}
       <section className='w-1/2 flex flex-col items-center justify-center p-2.5 gap-2.5 h-auto mt-8'>
         <div className='flex flex-col justify-center px-8 pt-6 pb-8 mb-4'>
-          <img src={logo} alt='' className='w-80 h-7 mt-6 ' />
+          <img src={logo} alt='' className='w-80 h-7 mt-2 ' />
           <h2 className='font-display text-3xl font-normal mt-6 text-center'>Bienvenido</h2>
           <div className='w-full max-w-xs'>
             <FormularioComponent />

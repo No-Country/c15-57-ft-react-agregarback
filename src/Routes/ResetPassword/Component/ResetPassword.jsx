@@ -5,68 +5,53 @@ import { useState } from 'react'
 import axios from 'axios'
 
 const ResetPasswordComponent = () => {
+  const [userEmail, setUserEmail] = useState(null)
   const [showPassword, setShowPassword] = useState(false)
-  const [message, setMessage] = useState('')
   const [selectedQuestion, setSelectedQuestion] = useState('')
+  const [recoverPassword, setRecoverPassword] = useState('')
+  const [errorEmail, setErrorEmail] = useState('')
+  const [errorAnswer, setErrorAnswer] = useState('')
 
-  const handleResetPassword = async (values) => {
+  const onSubmitPassword = async (values) => {
     try {
-      // Hacer una solicitud para obtener la pregunta secreta asociada al correo electrónico
-      const secretQuestionResponse = await axios.get(`/api/users/${values.email}`)
-
-      // Verificar si se encontró la pregunta secreta y configurarla en el estado
-      if (secretQuestionResponse.data.question) {
-        setSelectedQuestion(secretQuestionResponse.data.question)
+      const response = await axios.post('/api/users/check-question', values)
+      setUserEmail(values.email)
+      setErrorEmail('')
+      if (response.data.error) {
+        setErrorEmail('password', { message: response.data.error })
       } else {
-        setMessage('No se encontró la pregunta secreta para este usuario')
-        return
-      }
-      // Validar la respuesta secreta
-      if (values.answer === secretQuestionResponse.data.answer) {
-        // Si la respuesta es correcta, mostrar la contraseña guardada
-        setMessage(`Tu contraseña es: ${secretQuestionResponse.data.password}`)
-      } else {
-        setMessage('La respuesta secreta no coincide')
+        setSelectedQuestion(response.data.question)
       }
     } catch (error) {
-      setMessage('Error al recuperar la contraseña')
+      if (error.response.status === 400 && error.response.data.error === 'Correo o contraseña invalida') {
+        setErrorEmail('Error dato no encontrado')
+      } else {
+        setErrorEmail('Error correo no encontrado')
+      }
     }
   }
 
-  const handleFindSecretQuestion = async (values) => {
+  const handleFindPassword = async (values) => {
     try {
-      const secretQuestionResponse = await axios.get(`/api/users/${values.email}`)
-
-      if (secretQuestionResponse.data.question) {
-        setSelectedQuestion(secretQuestionResponse.data.question)
+      const secretPasswordResponse = await axios.post('/api/users/find-password', values)
+      setErrorAnswer('')
+      if (secretPasswordResponse.data.password) {
+        setRecoverPassword(secretPasswordResponse.data.password)
       } else {
-        setMessage('No se encontró la pregunta secreta para este usuario')
+        setErrorAnswer('No se encontró la pregunta secreta para este usuario')
+        setRecoverPassword('')
       }
     } catch (error) {
-      setMessage('Error al recuperar la pregunta secreta')
+      setErrorAnswer('Error al revisar la pregunta secreta')
+      setRecoverPassword('')
     }
   }
+  const validationSchemaEmail = Yup.object().shape({
+    email: Yup.string().email('El correo no es válido').required('El correo es requerido')
+  })
   const validationSchema = Yup.object().shape({
     // Definir la validación del esquema Yup para los campos del formulario
-    email: Yup.string().email('El correo no es válido').required('El correo es requerido'),
-    password: Yup.string().min(8, 'La contraseña debe tener mínimo 8 caracteres')
-      .matches(
-        /^(?=.*[a-z])/,
-        'Debe contener al menos una letra en minúscula'
-      )
-      .matches(
-        /^(?=.*[A-Z])/,
-        'Debe contener al menos una letra en mayúscula'
-      )
-      .matches(
-        /^(?=.*[0-9])/,
-        'Debe contener al menos un número'
-      )
-      .matches(
-        /^(?=.*[!@#/$%/^&/*])/,
-        'Debe contener al menos un caracter especial'
-      )
-      .required('La contraseña es requerida')
+    answer: Yup.string().required('La respuesta es requerida')
   })
 
   const togglePasswordVisibility = () => {
@@ -74,31 +59,47 @@ const ResetPasswordComponent = () => {
   }
 
   return (
-    <Formik
-      initialValues={{ email: '', password: '', answer: '' }}
-      validationSchema={validationSchema}
-      onSubmit={(values, { setSubmitting }) => {
-        handleResetPassword(values)
-        setSubmitting(false)
-      }}
-    >
-      {({ errors, values, isSubmitting, handleChange }) => (
-        <Form className='rounded pt-6 pb-5'>
-          {/* Campos del formulario */}
-          <Input name='Correo electrónico' onChange={handleChange} type='email' placeholder='Ingrese correo electrónico' errors={errors} id='email' value={values.email} />
-          <Button disabled={isSubmitting} onClick={() => handleFindSecretQuestion(values)} text='Buscar Pregunta secreta' color='bg-green-600' hover='hover:bg-green-900' />
-
-          <Input name='Pregunta secreta' value={selectedQuestion} type='email' placeholder='Pregunta secreta' errors={errors} id='question' />
-
-          <Input name='Respuesta secreta' onChange={handleChange} type='text' placeholder='Ingrese respuesta secreta' errors={errors} id='answer' value={values.answer} />
-          <InputPassword name='Password recuperado' placeholder='Password a recuperar' onChange={handleChange} id='password' value={values.password} showPassword={showPassword} togglePasswordVisibility={togglePasswordVisibility} />
-          {/* Botón de envío del formulario */}
-          <Button disabled={isSubmitting} text='Cambiar Contraseña' color='bg-green-600' hover='hover:bg-green-900' />
-
-          {message && <p className='text-red-600 text-xs italic text-center'>{message}</p>}
-        </Form>
-      )}
-    </Formik>
+    <>
+      <Formik
+        initialValues={{ email: '' }}
+        validationSchema={validationSchemaEmail}
+        onSubmit={onSubmitPassword}
+      >
+        {({ errors, values, handleChange }) => (
+          <Form className='rounded pt-6'>
+            {/* Campos del formulario */}
+            <Input name='Correo electrónico' onChange={handleChange} type='email' placeholder='Ingrese correo electrónico' errors={errors} id='email' value={values.email} />
+            {!userEmail && <Button text='Buscar Pregunta secreta' color='bg-green-600' hover='hover:bg-green-900' />}
+            {errorEmail && <p className='text-red-600 text-xs italic text-center'>{errorEmail}</p>}
+          </Form>
+        )}
+      </Formik>
+      {userEmail &&
+        <Formik
+          initialValues={{ email: userEmail, answer: '' }}
+          validationSchema={validationSchema}
+          onSubmit={handleFindPassword}
+        >
+          {({ errors, values, handleChange }) => (
+            <Form className='rounded pt-2 pb-5'>
+              <div className='mb-3 h-[90px]'>
+                <p className='block text-gray-700 text-sm mb-2'>Pregunta secreta</p>
+                <select name='preguntaSecreta' onChange={handleChange} className='shadow appearance-none border rounded w-full py-3 px-3 leading-tight' value={selectedQuestion}>
+                  <option value=''>Seleccione una pregunta secreta</option>
+                  <option value='opcion1'>¿Cuál es el nombre de tu mascota?</option>
+                  <option value='opcion2'>¿En qué ciudad naciste?</option>
+                  <option value='opcion3'>¿Cuál es tu comida favorita?</option>
+                </select>
+              </div>
+              <Input name='Respuesta secreta' onChange={handleChange} type='text' placeholder='Ingrese respuesta secreta' errors={errors} id='answer' value={values.answer} />
+              {recoverPassword && <InputPassword name='Password recuperado' placeholder='Password a recuperar' onChange={handleChange} id='password' value={recoverPassword} showPassword={showPassword} togglePasswordVisibility={togglePasswordVisibility} />}
+              {/* Botón de envío del formulario */}
+              <Button text='Recuperar Contraseña' color='bg-green-600' hover='hover:bg-green-900' />
+              {errorAnswer && <p className='text-red-600 text-xs italic text-center'>{errorAnswer}</p>}
+            </Form>
+          )}
+        </Formik>}
+    </>
   )
 }
 
