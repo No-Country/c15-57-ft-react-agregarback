@@ -6,18 +6,15 @@ export default {
 
   ],
   theme: {
-    fontFamily: {
-      display: [
-        'Helvetica Neue', 'sans-serif'
-      ],
-      robot: [
-        'Roboto', 'sans-serif'
+    fontFamily:{
+      'display':[
+          'Helvetica Neue', 'sans-serif'
       ]
     },
     extend: {
     }
   },
   plugins: [
-    require('@tailwindcss/forms')
-  ]
+    require('@tailwindcss/forms'),
+  ],
 }
