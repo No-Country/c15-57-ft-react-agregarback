@@ -5,7 +5,7 @@ import { createContext, useContext, useState, useEffect } from "react";
 export const ContentContext = createContext()
 
 const ContentProvider = ({ children }) => {
-  //Dropdown navbar opne and close handler 
+  //Dropdown navbar open and close handler 
   const [isOpen, setIsOpen] = useState(false)
 
   const openDropdown = () => {
