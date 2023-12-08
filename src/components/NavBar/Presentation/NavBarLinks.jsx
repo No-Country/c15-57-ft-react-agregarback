@@ -8,8 +8,10 @@ const NavBarLinks = ({ links }) => {
                 <li key={to}>
                     <Link to={to}>{link}</Link>
                 </li>
+
             ))}
         </>
+
     )
 }
 

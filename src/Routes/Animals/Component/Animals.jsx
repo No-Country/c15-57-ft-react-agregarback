@@ -1,8 +1,7 @@
+
 import { useECommerceContext } from "../../../Store/contextStore/ECommerceContext";
 import { useUserContext } from "../../../Store/contextStore/UserContext";
 import Carrousel from "../../../components/Carrousel/Presentation/Carrousel";
-import LandingPage from "../../LandingPage/Component/LandingPage";
-
 
 export default function Home() {
 
@@ -13,8 +12,7 @@ export default function Home() {
 
   return (
     <>
-      {/* <Carrousel /> */}
-      <LandingPage/>
+   
     // aqui inicia la revision de la estructura del carrousel
       home
     </>

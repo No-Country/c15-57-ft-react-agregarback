@@ -1,104 +1,86 @@
-import { Input, Button, InputPassword } from '../../../components/'
-import { Formik, Form } from 'formik'
-import * as Yup from 'yup'
-import { useState } from 'react'
-import axios from 'axios'
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-const FormularioComponent = () => {
-  const [showPassword, setShowPassword] = useState(false)
-  const [error, setError] = useState('')
-  const [selectedQuestion, setSelectedQuestion] = useState('')
+import { useUserContext } from "../../../Store/contextStore/UserContext";
 
-  // Manejar el post del API
-  const onSubmit = async (values) => {
-    const newUser = {
-      ...values,
-      question: selectedQuestion
-    }
-    try {
-      await axios.post('/api/users/', newUser)
-      setError('')
-    } catch (error) {
-      if (error.response.status === 400 && error.response.data.error === 'El correo ya está registrado') {
-        setError('El correo ya está registrado. Por favor use uno distinto.')
-      } else {
-        setError('Error al registrar usuario')
-      }
-    }
-  }
+export default function Register() {
 
-  const validationSchema = Yup.object().shape({
-    // Definir la validación del esquema Yup para los campos del formulario
-    name: Yup.string().min(2, 'muy corto').max(20, 'Que nombre tan largo').required('El nombre es requerido'),
-    email: Yup.string().email('El correo no es válido').required('El correo es requerido'),
-    password: Yup.string().min(8, 'La contraseña debe tener mínimo 8 caracteres')
-      .matches(
-        /^(?=.*[a-z])/,
-        'Debe contener al menos una letra en minúscula'
-      )
-      .matches(
-        /^(?=.*[A-Z])/,
-        'Debe contener al menos una letra en mayúscula'
-      )
-      .matches(
-        /^(?=.*[0-9])/,
-        'Debe contener al menos un número'
-      )
-      .matches(
-        /^(?=.*[!@#/$%/^&/*])/,
-        'Debe contener al menos un caracter especial'
-      )
-      .required('La contraseña es requerida'),
-    answer: Yup.string().required('La respuesta secreta es requerida')
-  })
+  const {user, setUser } = useUserContext();
+  const navigate = useNavigate();
 
-  const initialValues = {
-    // Definir los valores iniciales del formulario
-    id: crypto.randomUUID(),
-    name: '',
-    email: '',
-    password: '',
-    answer: ''
-  }
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword) // Cambia el estado para mostrar u ocultar la contraseña
-  }
-
-  const handleSelectChange = (event) => {
-    setSelectedQuestion(event.target.value)
-  }
+  useEffect(() => {
+    if (user) navigate("/User");
+  }, [user]);
 
   return (
-    <Formik
-      initialValues={initialValues}
-      validationSchema={validationSchema}
-      onSubmit={onSubmit}
-    >
-      {({ errors, values }) => (
-        <Form className='rounded h-[610px]'>
-          {/* Campos del formulario */}
-          <Input name='Nombre' type='text' placeholder='Ingrese nombre' errors={errors} id='name' value={values.name} />
-          <Input name='Correo electrónico' type='email' placeholder='Ingrese correo electrónico' errors={errors} id='email' value={values.email} />
-          <InputPassword name='Contraseña' placeholder='Ingrese contraseña' id='password' value={values.password} showPassword={showPassword} togglePasswordVisibility={togglePasswordVisibility} />
-          <div className='mb-3 h-[90px]'>
-            <p className='block text-gray-700 text-sm mb-2'>Pregunta secreta</p>
-            <select name='preguntaSecreta' onChange={handleSelectChange} className='shadow appearance-none border rounded w-full py-3 px-3 leading-tight' required>
-              <option value=''>Seleccione una pregunta secreta</option>
-              <option value='opcion1'>¿Cuál es el nombre de tu mascota?</option>
-              <option value='opcion2'>¿En qué ciudad naciste?</option>
-              <option value='opcion3'>¿Cuál es tu comida favorita?</option>
-            </select>
-          </div>
-          <Input name='Respuesta secreta' type='text' placeholder='Ingrese respuesta secreta' errors={errors} id='answer' value={values.answer} />
+    <div className="flex">
+      {/* form section */}
+  /*
+  
+   
+       <section className="w-1/2 flex flex-col items-center justify-center p-2.5 gap-2.5 h-auto mt-8">
+        <div className="flex flex-col justify-center  shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          <img src={logo} alt="" className="w-80 h-7 mt-6 " />
+          <h2 className="font-display text-3xl font-light leading-10 mt-6 text-center">
+            Bienvenido
+          </h2>
 
-          {/* Botón de envío del formulario */}
-          <Button text='Registrarme' color='bg-green-600' hover='hover:bg-green-900' />
-          {/* error de registro */}
-          {error && <p className='text-red-600 text-xs italic text-center'>{error}</p>}
-        </Form>
-      )}
-    </Formik>
+          <div className="w-full max-w-xs">
+            {/* beginning of the form */}
+            <form className=" rounded px-8 pt-6 pb-7 mb-4">
+              {/* username input */}
+              <Input
+                name="usuario"
+                text="20 caracteres maximo y se permiten caracteres especiales"
+                type="text"
+                placeholder="Usuario"
+                id="username"
+                />
+              {/* email input */}
+              <Input
+                name="correo electrónico"
+                text=""
+                type="email"
+                placeholder="juanito@gmail.com"
+                id="email"
+                />
+              {/* password input */}
+              <Input
+                name="contraseña"
+                text="Máx 8 caracteres, debe contener al menos una mayúscula, debe
+                contener al menos un número"
+                type="password"
+                placeholder="******************"
+                id="password"
+                />
+              {/* submit button input */}
+              <Button
+                text="Registrarme"
+                color="bg-green-600"
+                colorHover="hover:bg-green-900"
+                />
+            </form>
+          </div>
+          {/* horizontal role */}
+          <div className="flex justify-center items-center">
+            <hr className="w-2/5" />
+            <span className="w-1/5 text-center"> o</span>
+            <hr className="w-2/5" />
+          </div>
+          {/* other options to register */}
+          <OtherSesion />
+        </div>
+      </section>
+      {/* main image section */}
+      <section className="w-1/2 ">
+        <img
+          src={jungle}
+          alt="jungla"
+          className="object-fill w-screen h-full"
+          />
+      </section>
+      */
+    </div>
   )
 }
 
