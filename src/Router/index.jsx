@@ -58,13 +58,6 @@ export const router = createBrowserRouter([
             <Login />
           </Suspense>)
       },
-     /*
-     {
-       path: '/Register',
-       element: <Register />
-      }
-      ,
-      */
       {
         path: '/User',
         errorElement: <NotFound />,
@@ -120,7 +113,8 @@ export const router = createBrowserRouter([
 
           },
         ]
-      }
+      },
+      {
         path: '/Store',
         element: <Store />
       },
@@ -131,20 +125,3 @@ export const router = createBrowserRouter([
     ]
   }
 ])
-
-/*
-if you wants to add a new route please create a new component
-on the  routes file ./Routes
-
-then
-
-add a new object with the path and element properties
-
-    {
-        path: '',
-        element: <>
-      },
-
-      inside the children propertie.
-
-*/
