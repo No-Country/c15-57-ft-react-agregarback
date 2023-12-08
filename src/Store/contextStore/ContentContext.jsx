@@ -5,6 +5,12 @@ import { createContext, useContext, useState, useEffect } from "react";
 export const ContentContext = createContext()
 
 const ContentProvider = ({ children }) => {
+  //Dropdown navbar opne and close handler 
+  const [isOpen, setIsOpen] = useState(false)
+
+  const openDropdown = () => {
+    setIsOpen(!isOpen)
+}
 
   const [mostrar, setMostrar] = useState(0)
   const [dataHero, setDataHero] = useState(0)
@@ -19,9 +25,9 @@ const ContentProvider = ({ children }) => {
 
       console.log(error);
 
-  };
+    };
 
-}
+  }
 
   useEffect(() => {
     setTimeout(() => {
@@ -48,7 +54,7 @@ const ContentProvider = ({ children }) => {
 
   return (
 
-    <ContentContext.Provider value={{ datosMostrar, dataHero, mostrar, setMostrar }} >
+    <ContentContext.Provider value={{ datosMostrar, dataHero, mostrar, setMostrar, isOpen, openDropdown }} >
       {children}
     </ContentContext.Provider>
 
