@@ -5,11 +5,13 @@ const NavBarLinks = ({ links }) => {
     return (
         <>
             {links.map(({ to, link }) => (
-                <li key={to}>
+                <li key={to} className="">
                     <Link to={to}>{link}</Link>
                 </li>
+
             ))}
         </>
+
     )
 }
 
