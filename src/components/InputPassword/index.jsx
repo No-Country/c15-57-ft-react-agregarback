@@ -6,8 +6,8 @@ export default function InputPassword ({ id, name, showPassword, placeholder, er
   const normal = 'focus:outline-none focus:shadow-outline text-gray-700 '
 
   return (
-    <div>
-      <div className='mb-4 h-[90px]'>
+    <div className='mb-4 h-[90px]'>
+      <div className='mb-4'>
         <label
           className='block text-gray-700 text-sm mb-2'
           htmlFor={id}

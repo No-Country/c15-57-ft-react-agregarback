@@ -6,11 +6,14 @@ export const UserContext = createContext()
 
 const UserProvider = ({ children }) => {
 
-    const [item2, setItem2] = useState('hello from user context')
+    const [user, setUser] = useState(false)
+    //firebase 
+    //oauth
+    // jwt
 
     return (
 
-    <UserContext.Provider value={{ item2 }} >
+    <UserContext.Provider value={{ user, setUser }} >
       {children}
     </UserContext.Provider>
 
