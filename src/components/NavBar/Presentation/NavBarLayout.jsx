@@ -90,8 +90,6 @@ const NavBarLayout = ({ children }) => {
                         )
                 }
             </ul>
-
-
         </div>
     )
 

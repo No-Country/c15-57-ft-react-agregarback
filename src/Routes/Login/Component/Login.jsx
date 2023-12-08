@@ -9,7 +9,7 @@ import * as Yup from 'yup'
 import { Input, Button, InputPassword } from '../../../components/'
 import { Formik, Form } from 'formik'
 
-const Login() => {
+const Login = () => {
 
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState('') // Manejar el llamdao de errores

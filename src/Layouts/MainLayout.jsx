@@ -27,12 +27,7 @@ const MainLayout = () => {
       </header>
       <hr />
       <main
-        className=" 
-        sm:row-start-1 sm:row-end-3 sm:grid-col-span-1 
-        md:row-start-1 sm:row-end-3 md:grid-col-span-1
-        lg:row-start-2 lg:row-end-4 lg:grid-col-span-1
-        xl:row-start-2 lg:row-end-4 xl:grid-col-span-1
-       "
+      
       >
         <Outlet /> 
       </main>

@@ -3,7 +3,7 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import { MainLayout, PrivateLayout } from '../Layouts'
 
-import { Donations, Animals, Volunteers, Login, NotFound, Register, Store, loaderStoreItems, User, MyVolunteers, MyPurchases } from "../Routes"
+import { Donations, Animals, Volunteers, Login, NotFound, Register, Store, User, MyVolunteers, MyPurchases } from "../Routes"
 
 import { InfoPageContainer, loaderItem } from "../components"
 
@@ -41,8 +41,13 @@ export const router = createBrowserRouter([
         path: '/Store',
         element: (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
           <Store />
-        </Suspense>),
-        loader: loaderStoreItems
+        </Suspense>)
+      },
+      {
+        path: '/Register',
+        element: (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
+          <Register />
+        </Suspense>)
       },
       {
         path: '/Store/:id',
