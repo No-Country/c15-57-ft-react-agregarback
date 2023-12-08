@@ -8,6 +8,7 @@ const Login = lazy(() => import("./Login/Component/Login"));
 const NotFound = lazy(() => import("./NotFound/Component/NotFound"));
 const Register = lazy(() => import("./Register/Component/Register"));
 const Volunteers = lazy(() => import("./Volunteers/Component/Volunteers"))
+
 // Protected Routes
 
 const User = lazy(() => import("./User/Container/User"))
@@ -16,4 +17,4 @@ const MyPurchases = lazy(() => import("./MyPurchases/Container/MyPurchases"))
 
 import Store, { loaderStoreItems } from "./Store/Component/Store"
 
-export  {Contact,Home, Login, NotFound, Register, Store} 
+export  {Animals, Donations, Volunteers, Login, NotFound, Register, Store, loaderStoreItems, User, MyVolunteers, MyPurchases} 

@@ -5,7 +5,7 @@ import ShowMerchandise from '../Presentation/ShowMerchandise'
 import AnimalsCategory from '../Presentation/AnimalsCategory'
 import Banner from '../Presentation/Baner'
 
-export default function LandingPage () {
+const LandingPage = ()  => {
   const [animalInfo, setAnimalInfo] = useState([])
   const [bannerAnimals, setBannerAnimals] = useState([])
   const [mostrar, setMostrar] = useState(0)
@@ -26,3 +26,5 @@ export default function LandingPage () {
     </>
   )
 }
+
+export default LandingPage;

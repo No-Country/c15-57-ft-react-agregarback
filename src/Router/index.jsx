@@ -114,14 +114,16 @@ export const router = createBrowserRouter([
           },
         ]
       },
-      {
-        path: '/Store',
-        element: <Store />
-      },
-      {
-        path: '/reset-password',
-        element: <ResetPassword />
-      }
     ]
   }
 ])
+/* 
+ {
+    path: '/Store',
+    element: <Store />
+  },
+  {
+    path: '/reset-password',
+    element: <ResetPassword />
+  }
+  */

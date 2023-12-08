@@ -34,7 +34,7 @@ const MainLayout = () => {
         xl:row-start-2 lg:row-end-4 xl:grid-col-span-1
        "
       >
-        <Outlet />
+        <Outlet /> 
       </main>
       <hr />
       <footer
