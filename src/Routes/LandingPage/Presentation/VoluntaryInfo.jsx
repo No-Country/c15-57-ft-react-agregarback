@@ -1,4 +1,3 @@
-
 export default function VoluntaryInfo(){
   return(
     <section className={`relative w-[1080px] h-[549px] mx-auto my-16 bg-rzed-300
