@@ -1,0 +1,47 @@
+
+
+.hero-icon{
+  opacity: 0;
+  transition:  .6s ease-out;
+}
+.hero-cambiarSeccion{
+  transition: .6s ease-in-out;
+}
+.hero-cambiarSeccion:hover{
+ transform: translateY(30px); 
+}
+.hero-cambiarSeccion:hover .hero-icon{
+  opacity: 1;
+  scale: 1.5;
+}
+@keyframes moverDiv {
+  0% {
+   
+    transform: translateX(30px) ; /* Mover -30px en el eje X */
+  }
+ 
+
+  100%{
+    
+    transform: translateX(0px)  ;
+  }
+}
+
+
+.hero-info{
+  animation: moverDiv .4s ease-in-out; 
+}
+.navbarHome{
+  position: relative;
+  z-index: 999;
+  background-color: black;
+  color: white;
+  box-shadow: 0px 5px 30px  30px #000;
+}
+.navbarOthert{
+  position: relative;
+  z-index: 999;
+  background-color: white;
+  color: rgb(0, 0, 0);
+  box-shadow: 0px 5px 30px  30px #ffffff;
+}

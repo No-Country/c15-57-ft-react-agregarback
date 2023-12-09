@@ -2,35 +2,44 @@ import { Link } from 'react-router-dom';
 import { useUserContext } from '../../../Store/contextStore/UserContext';
 
 import { useContaintContext } from '../../../Store/contextStore/ContentContext';
+import '../../../components/Carrousel/Presentation/style.css'
 
+import logoblack from '../../../assets/Layout-logo.png'
+import logowhite from '../../../assets/Logollogowhite.png'
 
-import logo from '../../../assets/Layout-logo.png'
-
-const NavBarLayout = ({ children }) => {
+const NavBarLayout = ({ children ,checkHome , isInHome }) => {
 
     const { user, setUser, } = useUserContext();
     const { isOpen, openDropdown } = useContaintContext();
 
 
     return (
-        <div className='
+        <div className={`
         grid 
         gap-4 
         grid-cols-3 
         grid-rows-1
         justify-items-center
-        '>
+        h-10
+        ${isInHome? 'navbarHome':'navbarOthert'}
+       
+        `}
+       
+        >
             <figure>
-                <img className="sticky" src={logo} alt="Description of the image" />
+                <img className="sticky" src={isInHome?logowhite:logoblack} alt="Description of the image" />
                 <figcaption className='hidden'>This is a caption for the image.</figcaption>
             </figure>
 
-            <ul className="
+            <ul 
+            onClick={()=>checkHome()}
+            className="
         grid 
         gap-8 
         grid-cols-6
         grid-rows-1
         place-items-center	
+
         ">
                 {children}
                 {

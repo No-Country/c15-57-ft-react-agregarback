@@ -1,5 +1,8 @@
 
+import { useEffect, useState } from 'react'
 import NavBarContainer from '../Presentation/NavBar'
+
+
 
 const navigationLinks = [
   {
@@ -24,6 +27,30 @@ const navigationLinks = [
   },
 ]
 
+
+
 export default function NavBar() {
-  return <NavBarContainer navigationLinks={navigationLinks} />
+
+ 
+  
+  const [isInHome , setIsInHome] = useState(true);
+  const checkHome = ()=>{
+    const currentPath = window.location.pathname;
+   setTimeout(()=>{
+    if ( currentPath === '/'){
+      setIsInHome(true)
+    }else{ 
+      setIsInHome(false)
+      
+    }
+   },0)
+    
+  }
+  useEffect(()=>{
+    // Obtener la ruta actual
+     
+    checkHome()
+
+},[])
+  return <NavBarContainer checkHome={checkHome} isInHome={isInHome} navigationLinks={navigationLinks} />
 }

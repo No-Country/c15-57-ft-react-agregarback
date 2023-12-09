@@ -6,9 +6,10 @@ export default function BannerShowArea ({ setMostrar, mostrar, data, index }) {
   return (
     <section
       onClick={() => { setMostrar(index) }}
-      className={` w-full h-full z-10 flex justify-center items-center transition-all transition-300 ease-in-out
-     ${isSeleccionado && 'w-[180%] bg-black bg-opacity-75'}`}
+      className={` w-full h-full z-10 flex justify-center items-center BannerShowArea
+      ${isSeleccionado && 'w-[250%] bg-black bg-opacity-50'}`}
     >
+      
       {!isSeleccionado
         ? (
           <BannerOption name={data.name} />
