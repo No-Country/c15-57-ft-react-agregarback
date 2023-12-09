@@ -2,28 +2,36 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { NavBar, Footer } from '../components';
 import '../index.css'
+import HamburguerMenu from '../components/HamburguerMenu/Component/HamburguerMenu';
 const MainLayout = () => {
   return (
     <div className="
-    
-    "
-    >
-      <header className="
+    w-screen 
+    h-screen
+    justify-self-center
+    items-center
+    sm:grid-rows-[auto,auto,100px] gap-4
+    lg:grid-rows-[auto,auto,100px] gap-4
 
-  
+">
+      <header className="
+      top-[-3px]
+      lg:absolute
       "
       >
         <NavBar />
       </header>
       <hr />
       <main
-       
+        className="
+        p-4
+        "
       >
-        <Outlet /> 
+        <Outlet />
       </main>
       <hr />
       <footer
-        className=" "
+        className="p-4 "
       >
         <Footer />
       </footer>
