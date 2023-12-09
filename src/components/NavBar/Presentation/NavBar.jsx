@@ -1,8 +1,8 @@
 import NavBarLinks from "./NavBarLinks"
 import NavBarLayout from "./NavBarLayout"
-const NavBarContainer = ({navigationLinks}) => {
+const NavBarContainer = ({navigationLinks ,isInHome , checkHome}) => {
     return (
-        <NavBarLayout>
+        <NavBarLayout checkHome={checkHome} isInHome={isInHome}>
            <NavBarLinks links={navigationLinks} />
         </NavBarLayout>
     )

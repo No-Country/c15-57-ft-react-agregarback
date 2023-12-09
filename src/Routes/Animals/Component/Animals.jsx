@@ -16,21 +16,26 @@ export default function Home() {
   
 
   return (
-    <section className="absolute z-0 w-full top-[130px]">
-      <div className="w-auto  p-5 "> 
-        <Banner showAnimals={bannerAnimals} classBaner={classBaner} setMostrar={setMostrar} mostrar={mostrar} />
-        <ShowMerchandise animalLink={animalInfo[mostrar]?.link} animalIcon={animalInfo[mostrar]?.icon} />
-        <AnimalsCategory animals={animalInfo} />
-        <InfoContainer/>
-        <ListInfo pointData={infoData}/>
-        <VoluntaryInfo/>
-        <p>hola</p>
-       
-        {/* 
-        */}
-      
-       
-      </div>
-    </section>
+    // <div  className="h-[1000px] w-20 row-start-1 row-end-2 bg-red-300">
+    // <div >
+    //   hola
+    // </div>
+    <>
+    <LandingPage/>
+    </>
+    
+    // <section className="absolute z-0 w-full top-[130px]">
+    //   <div className="w-auto  p-5 "> 
+    //     <Banner showAnimals={bannerAnimals} classBaner={classBaner} setMostrar={setMostrar} mostrar={mostrar} />
+    //     <ShowMerchandise animalLink={animalInfo[mostrar]?.link} animalIcon={animalInfo[mostrar]?.icon} />
+    //     <AnimalsCategory animals={animalInfo} />
+    //     <InfoContainer/>
+    //     <ListInfo pointData={infoData}/>
+    //     <VoluntaryInfo/>
+    //     <p>hola</p>
+    //     </div>
+    // </section>
   )
-}
+};
+
+

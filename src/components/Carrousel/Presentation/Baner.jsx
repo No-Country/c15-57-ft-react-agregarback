@@ -1,5 +1,6 @@
 import BannerContainer from './BannerContainer'
 import BannerShowArea from './BannerShowArea'
+import './style.css'
 
 export default function Banner ({ showAnimals, classBaner, setMostrar, mostrar }) {
   const datosMostrar = showAnimals[mostrar]
