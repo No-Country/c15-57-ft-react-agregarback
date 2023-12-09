@@ -6,8 +6,8 @@ const ShowMerchandise = ({ animalLink, animalIcon }) => {
     <section className='  w-[1440px] h-[630px] p-[75px]  flex  mx-auto '>
       <header className='w-[50%] pt-[60px]'>
         <div className='mb-8'>
-          <p className='text-green-00 font-josefin-sans text-6xl font-normal'>¡Conseguí algunos de estos productos <br />
-            <span className='text-black font-josefin-sans text-6xl font-normal'>y ayuda a los animales! </span>
+          <p className='text-green-00  text-6xl font-normal'>¡Conseguí algunos de estos productos <br />
+            <span className='text-black  text-6xl font-normal'>y ayuda a los animales! </span>
           </p>
         </div>
         <BotonBanner path='store' link={animalLink}>Ver productos.</BotonBanner>
