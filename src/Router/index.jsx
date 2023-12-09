@@ -50,13 +50,6 @@ export const router = createBrowserRouter([
         </Suspense>)
       },
       {
-        path: '/Store/:id',
-        element: (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
-          <InfoPageContainer />
-        </Suspense>),
-        loader: loaderItem
-      },
-      {
         path: '/Login',
         element:
           (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>

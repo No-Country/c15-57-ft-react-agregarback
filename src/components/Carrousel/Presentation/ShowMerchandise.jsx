@@ -3,7 +3,7 @@ import BotonBanner from './BotonBanner'
 
 const ShowMerchandise = ({ animalLink, animalIcon }) => {
   return (
-    <section className='  w-[1440px] h-[630px] p-[75px]  flex  mx-auto '>
+    <section className='  w-[100%] h-[630px] p-[75px]  flex  mx-auto '>
       <header className='w-[50%] pt-[60px]'>
         <div className='mb-8'>
           <p className='text-green-00  text-6xl font-normal'>¡Conseguí algunos de estos productos <br />
@@ -12,7 +12,7 @@ const ShowMerchandise = ({ animalLink, animalIcon }) => {
         </div>
         <BotonBanner path='store' link={animalLink}>Ver productos.</BotonBanner>
       </header>
-      <nav className='w-[50%] h-full relative'>
+      <nav className='w-[35%] h-full relative'>
         {/* camisa con su icono */}
         <img className='absolute z-10 w-[920px] h-[620px] bottom-[2px] left-[140px]' src={camisa} alt='camisa' />
         <img className='absolute z-10 w-[220px] left-[340px] top-[80px]' src={animalIcon} alt='animalIcon' />

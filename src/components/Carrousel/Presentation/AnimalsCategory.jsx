@@ -3,7 +3,7 @@ import { categoryBG } from '../../../assets/img-hero'
 
 const AnimalsCategory = ({ animals }) => {
   return (
-    <section className='relative w-[1440px] h-[660px] flex-shrink-0 bg-cover bg-no-repeat px-[136px] pt-[86px] pb-[48px] mx-auto mb-12 '>
+    <section className='relative w-[100%] h-[660px] flex-shrink-0 bg-cover bg-no-repeat px-[136px] pt-[86px] pb-[48px] mx-auto mb-12 '>
       <img className=' absolute right-[100px] bottom-2 w-[90%]' src={categoryBG} alt='BackGround-category' />
       <div className=' m-w-[1080px] h-[630px]  mx-auto relative  z-10'>
         <div className='w-full flex flex-col items-center'>
