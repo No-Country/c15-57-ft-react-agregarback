@@ -20,7 +20,7 @@ const LandingPage = ()  => {
 
 
   return (
-    <div className='w-full relative z-0 top-[-10px]'>
+    <div className='relative z-0 top-[-10px]'>
       <Banner showAnimals={bannerAnimals} classBaner={classBaner} setMostrar={setMostrar} mostrar={mostrar} />
       <ShowMerchandise animalLink={animalInfo[mostrar]?.link} animalIcon={animalInfo[mostrar]?.icon} />
       <AnimalsCategory animals={animalInfo} />
