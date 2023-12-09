@@ -1,5 +1,5 @@
 import { Formik, Form } from 'formik'
-import { InputPassword, Input, Button } from '../../../components/'
+import { InputPassword, InputForm, Button, InputSelectForm } from '../../../components/'
 import * as Yup from 'yup'
 import { useState } from 'react'
 import axios from 'axios'
@@ -68,7 +68,7 @@ const ResetPasswordComponent = () => {
         {({ errors, values, handleChange }) => (
           <Form className='rounded pt-6'>
             {/* Campos del formulario */}
-            <Input name='Correo electrónico' onChange={handleChange} type='email' placeholder='Ingrese correo electrónico' errors={errors} id='email' value={values.email} />
+            <InputForm name='Correo electrónico' onChange={handleChange} type='email' placeholder='Ingrese correo electrónico' errors={errors} id='email' value={values.email} />
             {!userEmail && <Button text='Buscar Pregunta secreta' color='bg-green-600' hover='hover:bg-green-900' />}
             {errorEmail && <p className='text-red-600 text-xs italic text-center'>{errorEmail}</p>}
           </Form>
@@ -81,17 +81,9 @@ const ResetPasswordComponent = () => {
           onSubmit={handleFindPassword}
         >
           {({ errors, values, handleChange }) => (
-            <Form className='rounded pt-2 pb-5'>
-              <div className='mb-3 h-[90px]'>
-                <p className='block text-gray-700 text-sm mb-2'>Pregunta secreta</p>
-                <select name='preguntaSecreta' onChange={handleChange} className='shadow appearance-none border rounded w-full py-3 px-3 leading-tight' value={selectedQuestion}>
-                  <option value=''>Seleccione una pregunta secreta</option>
-                  <option value='opcion1'>¿Cuál es el nombre de tu mascota?</option>
-                  <option value='opcion2'>¿En qué ciudad naciste?</option>
-                  <option value='opcion3'>¿Cuál es tu comida favorita?</option>
-                </select>
-              </div>
-              <Input name='Respuesta secreta' onChange={handleChange} type='text' placeholder='Ingrese respuesta secreta' errors={errors} id='answer' value={values.answer} />
+            <Form className='rounded pt-2 pb-5 font-roboto'>
+              <InputSelectForm values={selectedQuestion} />
+              <InputForm name='Respuesta secreta' onChange={handleChange} type='text' placeholder='Ingrese respuesta secreta' errors={errors} id='answer' value={values.answer} />
               {recoverPassword && <InputPassword name='Password recuperado' placeholder='Password a recuperar' onChange={handleChange} id='password' value={recoverPassword} showPassword={showPassword} togglePasswordVisibility={togglePasswordVisibility} />}
               {/* Botón de envío del formulario */}
               <Button text='Recuperar Contraseña' color='bg-green-600' hover='hover:bg-green-900' />

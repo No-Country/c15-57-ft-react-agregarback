@@ -6,9 +6,16 @@ export default {
 
   ],
   theme: {
-    fontFamily:{
-      'display':[
-          'Helvetica Neue', 'sans-serif'
+    fontFamily: {
+      display: [
+        'Helvetica Neue', 'sans-serif'
+      ],
+      roboto: [
+        'Roboto', 'sans-serif',
+        'Roboto', 'sans-serif'
+      ],
+      robotoM: [
+        'Roboto Medium', 'sans-serif'
       ]
     },
     extend: {

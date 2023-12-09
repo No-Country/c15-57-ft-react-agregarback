@@ -1,4 +1,4 @@
-import { Input, Button, InputPassword } from '../../../components/'
+import { InputForm, Button, InputPassword } from '../../../components/'
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import { useState } from 'react'
@@ -93,9 +93,9 @@ const FormularioComponent = () => {
       onSubmit={onSubmit}
     >
       {({ errors, values }) => (
-        <Form className='rounded pt-6 h-[340px] font-robot font-light'>
+        <Form className='rounded pt-6 h-[340px] font-roboto'>
           {/* Campos del formulario */}
-          <Input name='Correo electrónico' type='email' placeholder='Ingrese correo electrónico' errors={errors} id='email' value={values.email} />
+          <InputForm name='Correo electrónico' type='email' placeholder='Ingrese correo electrónico' errors={errors} id='email' value={values.email} />
           <InputPassword name='Contraseña' placeholder='Ingrese contraseña' id='password' value={values.password} showPassword={showPassword} togglePasswordVisibility={togglePasswordVisibility} />
           {/* checkbox */}
           <div className='flex flex-col lg:flex-row justify-between items-center'>

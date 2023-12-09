@@ -16,7 +16,7 @@ export default function InputPassword ({ id, name, showPassword, placeholder, er
         </label>
         <div className='relative'>
           <Field
-            className={`shadow appearance-none border rounded w-full py-3 px-3 leading-tight
+            className={`font-roboto shadow appearance-none border rounded w-full py-3 px-3 leading-tight
           ${errors ? invalid : normal}`}
             id={id}
             type={showPassword ? 'text' : 'password'}
