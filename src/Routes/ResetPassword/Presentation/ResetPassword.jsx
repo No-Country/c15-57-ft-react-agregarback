@@ -38,11 +38,11 @@ const ResetPasswordComponent = () => {
       if (secretPasswordResponse.data.password) {
         setRecoverPassword(secretPasswordResponse.data.password)
       } else {
-        setErrorAnswer('No se encontró la pregunta secreta para este usuario')
+        setErrorAnswer('No se encontró la respuesta secreta para este usuario')
         setRecoverPassword('')
       }
     } catch (error) {
-      setErrorAnswer('Error al revisar la pregunta secreta')
+      setErrorAnswer('Error al revisar la respuesta secreta')
       setRecoverPassword('')
     }
   }
@@ -69,7 +69,7 @@ const ResetPasswordComponent = () => {
           <Form className='rounded pt-6'>
             {/* Campos del formulario */}
             <InputForm name='Correo electrónico' onChange={handleChange} type='email' placeholder='Ingrese correo electrónico' errors={errors} id='email' value={values.email} />
-            {!userEmail && <Button text='Buscar Pregunta secreta' color='bg-green-600' hover='hover:bg-green-900' />}
+            {!userEmail && <Button text='Buscar pregunta secreta' color='bg-green-600' hover='hover:bg-green-900' />}
             {errorEmail && <p className='text-red-600 text-xs italic text-center'>{errorEmail}</p>}
           </Form>
         )}
