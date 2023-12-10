@@ -5,7 +5,7 @@ import { useState } from 'react'
 import axios from 'axios'
 
 const ResetPasswordComponent = () => {
-  const [userEmail, setUserEmail] = useState(null)
+  const [userEmail, setUserEmail] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
   const [selectedQuestion, setSelectedQuestion] = useState('')
   const [recoverPassword, setRecoverPassword] = useState('')
@@ -15,12 +15,12 @@ const ResetPasswordComponent = () => {
   const onSubmitPassword = async (values) => {
     try {
       const response = await axios.post('/api/users/check-question', values)
-      setUserEmail(values.email)
       setErrorEmail('')
       if (response.data.error) {
         setErrorEmail('password', { message: response.data.error })
       } else {
         setSelectedQuestion(response.data.question)
+        setUserEmail(response.data.email)
       }
     } catch (error) {
       if (error.response.status === 400 && error.response.data.error === 'Correo o contraseña invalida') {
