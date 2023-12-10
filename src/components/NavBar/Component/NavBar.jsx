@@ -1,29 +1,29 @@
-
 import NavBarContainer from '../Presentation/NavBar'
 
 const navigationLinks = [
   {
-    to: "/",
-    link: "Animals"
+    to: '/',
+    link: 'Animals'
   },
   {
-    to: "/Store",
-    link: "Store"
+    to: '/Store',
+    link: 'Store'
   },
   /* {
-    to:"/register",
-    link: "Register"
-  },*/
+    to:'/register',
+    link: 'Register'
+  },
+  */
   {
-    to: "/Donations",
-    link: "Donations"
+    to: '/Donations',
+    link: 'Donations'
   },
   {
-    to: "/Volunteers",
-    link: "Volunteers"
-  },
+    to: '/Volunteers',
+    link: 'Volunteers'
+  }
 ]
 
-export default function NavBar() {
+export default function NavBar () {
   return <NavBarContainer navigationLinks={navigationLinks} />
 }
