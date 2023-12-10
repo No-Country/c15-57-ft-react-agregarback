@@ -9,10 +9,12 @@ const MainLayout = () => {
       h-screen
       justify-self-center
       items-center
+      overflow-x-hidden
       sm:grid-rows-[auto,auto,100px] gap-4
       md:grid-rows-[auto,auto,100px] gap-4
       lg:grid-rows-[auto,auto,100px] gap-4
-      xl:grid-rows-[auto,auto,100px] gap-4'
+      xl:grid-rows-[auto,auto,100px] gap-4
+      '
     >
       <header className='p-4'>
         <NavBar />
