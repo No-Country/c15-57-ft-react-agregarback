@@ -11,7 +11,7 @@ export default function ResetPassword () {
           <div className='flex flex-col justify-center px-8 pt-6 pb-8 mb-4'>
             <img src={logo} alt='' className='w-80 h-7 mt-6 ' />
             <h2 className='font-display text-3xl font-normal mt-6 text-center'>Bienvenido</h2>
-            <div className='w-full max-w-xs'>
+            <div className='w-full max-w-xs h-[520px]'>
               <ResetPasswordComponent />
             </div>
           </div>

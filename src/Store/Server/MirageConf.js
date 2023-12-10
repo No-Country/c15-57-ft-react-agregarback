@@ -1,4 +1,4 @@
-import { createServer, Model } from 'miragejs'
+import { createServer, Model, Response } from 'miragejs'
 import { jaguarImg, osoAnteojos, ballenasFrancas, jaguarIcon, ballenaIcon, osoIcon, ajolote, ajoleteIcon } from '../../../src/assets/img-hero'
 import {
   alojote,

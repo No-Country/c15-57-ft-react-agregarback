@@ -1,5 +1,5 @@
 import { Input, Button, InputPassword } from '../../../components/'
-import { Formik, Form } from 'formik'
+import { Formik, Form, ErrorMessage, Field } from 'formik'
 import * as Yup from 'yup'
 import { useState } from 'react'
 import axios from 'axios'
@@ -7,16 +7,11 @@ import axios from 'axios'
 const FormularioComponent = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState('')
-  const [selectedQuestion, setSelectedQuestion] = useState('')
 
   // Manejar el post del API
   const onSubmit = async (values) => {
-    const newUser = {
-      ...values,
-      question: selectedQuestion
-    }
     try {
-      await axios.post('/api/users/', newUser)
+      await axios.post('/api/users/', values)
       setError('')
     } catch (error) {
       if (error.response.status === 400 && error.response.data.error === 'El correo ya está registrado') {
@@ -49,7 +44,8 @@ const FormularioComponent = () => {
         'Debe contener al menos un caracter especial'
       )
       .required('La contraseña es requerida'),
-    answer: Yup.string().required('La respuesta secreta es requerida')
+    answer: Yup.string().required('La respuesta secreta es requerida'),
+    question: Yup.string().required('La pregunta secreta es requerida')
   })
 
   const initialValues = {
@@ -58,15 +54,12 @@ const FormularioComponent = () => {
     name: '',
     email: '',
     password: '',
-    answer: ''
+    answer: '',
+    question: ''
   }
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword) // Cambia el estado para mostrar u ocultar la contraseña
-  }
-
-  const handleSelectChange = (event) => {
-    setSelectedQuestion(event.target.value)
   }
 
   return (
@@ -82,13 +75,14 @@ const FormularioComponent = () => {
           <Input name='Correo electrónico' type='email' placeholder='Ingrese correo electrónico' errors={errors} id='email' value={values.email} />
           <InputPassword name='Contraseña' placeholder='Ingrese contraseña' id='password' value={values.password} showPassword={showPassword} togglePasswordVisibility={togglePasswordVisibility} />
           <div className='mb-3 h-[90px]'>
-            <p className='block text-gray-700 text-sm mb-2'>Pregunta secreta</p>
-            <select name='preguntaSecreta' onChange={handleSelectChange} className='shadow appearance-none border rounded w-full py-3 px-3 leading-tight' required>
+            <label className='block text-gray-700 text-sm mb-2' htmlFor='question'>Pregunta secreta</label>
+            <Field as='select' name='question' className='shadow appearance-none border rounded w-full py-3 px-3 leading-tight' id='question' value={values.question}>
               <option value=''>Seleccione una pregunta secreta</option>
               <option value='opcion1'>¿Cuál es el nombre de tu mascota?</option>
               <option value='opcion2'>¿En qué ciudad naciste?</option>
               <option value='opcion3'>¿Cuál es tu comida favorita?</option>
-            </select>
+            </Field>
+            <ErrorMessage name='question' component='p' className='text-red-600 text-xs italic' />
           </div>
           <Input name='Respuesta secreta' type='text' placeholder='Ingrese respuesta secreta' errors={errors} id='answer' value={values.answer} />
 
