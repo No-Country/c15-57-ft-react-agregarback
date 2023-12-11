@@ -1,117 +1,44 @@
-import { InputForm, Button, InputPassword } from '../../../components/'
-import { Formik, Form } from 'formik'
-import * as Yup from 'yup'
-import { useState } from 'react'
-import axios from 'axios'
+import jungle from '../../../assets/jaguarete.jpg'
+import jungleMobile from '../../../assets/jaguarete2.jpg'
+import logo from '../../../assets/logo.png'
+import { OtherSesion } from '../../../components'
+import FormularioComponent from '../Presentation/LoginFunctions' // Importa el componente del formulario aquí
 import { Link } from 'react-router-dom'
 
-const FormularioComponent = () => {
-  const [showPassword, setShowPassword] = useState(false)
-  const [error, setError] = useState('') // Manejar el llamdao de errores
-  // manejar estados para local storage
-  const storedPassword = window.localStorage.getItem('savedPassword' || ' ')
-  const storedUser = window.localStorage.getItem('savedUser' || ' ')
-  const [userEmail, setUserEmail] = useState(storedUser)
-  const [userPassword, setUserPassword] = useState(storedPassword)
-  const [actualState, changeCheckState] = useState(!!(storedUser && storedPassword))
-
-  // Recuperar datos del Local Storage al montar el componente
-  const handleCheckboxChange = (e) => {
-    const isChecked = e.target.checked
-    changeCheckState(isChecked)
-
-    if (!isChecked) {
-      // Limpiar el estado y Local Storage si el checkbox no está marcado
-      setUserEmail('')
-      setUserPassword('')
-      window.localStorage.removeItem('savedUser')
-      window.localStorage.removeItem('savedPassword')
-    }
-  }
-
-  // Manelar el Post del API para confirmar correo y contraseña
-  const onSubmit = async (values) => {
-    try {
-      const response = await axios.post('/api/users/login', values)
-      setError('')
-      if (response.data.error) {
-        setError('password', { message: response.data.error })
-      } else {
-        // Manejar el éxito del inicio de sesión, por ejemplo, almacenar el token en el estado global.
-        console.log('Login successful! Token:', response.data.token)
-        // Guardar en Local Storage solo si el checkbox está marcado
-        if (actualState) {
-          window.localStorage.setItem('savedUser', response.data.email)
-          window.localStorage.setItem('savedPassword', response.data.password)
-        }
-      }
-    } catch (error) {
-      if (error.response.status === 400 && error.response.data.error === 'Correo o contraseña invalida') {
-        setError('Correo o contraseña invalida')
-      } else {
-        setError('Error al registrar usuario')
-      }
-    }
-  }
-  const validationSchema = Yup.object().shape({
-    // Definir la validación del esquema Yup para los campos del formulario
-    email: Yup.string().email('El correo no es válido').required('El correo es requerido'),
-    password: Yup.string().min(8, 'La contraseña debe tener mínimo 8 caracteres')
-      .matches(
-        /^(?=.*[a-z])/,
-        'Debe contener al menos una letra en minúscula'
-      )
-      .matches(
-        /^(?=.*[A-Z])/,
-        'Debe contener al menos una letra en mayúscula'
-      )
-      .matches(
-        /^(?=.*[0-9])/,
-        'Debe contener al menos un número'
-      )
-      .matches(
-        /^(?=.*[!@#/$%/^&/*])/,
-        'Debe contener al menos un caracter especial'
-      )
-      .required('La contraseña es requerida')
-  })
-
-  const initialValues = {
-    // Definir los valores iniciales del formulario
-    email: userEmail,
-    password: userPassword
-  }
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword) // Cambia el estado para mostrar u ocultar la contraseña
-  }
-
+const Login = () => {
   return (
-    <Formik
-      initialValues={initialValues}
-      validationSchema={validationSchema}
-      onSubmit={onSubmit}
-    >
-      {({ errors, values }) => (
-        <Form className='rounded pt-6 h-[340px] font-roboto'>
-          {/* Campos del formulario */}
-          <InputForm name='Correo electrónico' type='email' placeholder='Ingrese correo electrónico' errors={errors} id='email' value={values.email} />
-          <InputPassword name='Contraseña' placeholder='Ingrese contraseña' id='password' value={values.password} showPassword={showPassword} togglePasswordVisibility={togglePasswordVisibility} />
-          {/* checkbox */}
-          <div className='flex flex-col lg:flex-row justify-between items-center'>
-            <div className='flex items-center '>
-              <input id='checkbox' type='checkbox' value='' className='focus:outline-none w-4 h-4 text-green-800 bg-gray-100 mb-2 lg:border-gray-300 rounded focus:ring-transparent dark:bg-white-700 dark:border-gray-600' checked={actualState} onChange={handleCheckboxChange} />
-              <label htmlFor='checkbox' className='ms-2 text-sm font-medium text-black-900 dark:text-black-300'>Recordarme</label>
+    <div className='relative font-roboto'>
+      <div className='flex flex-col lg:flex-row'>
+        {/* Sección del formulario utilizando FormularioComponent */}
+        <section className='lg:w-1/2 flex flex-col items-center justify-center ml-5 lg:ml-0 mr-5 lg:mr-0  p-2.5 gap-2.5 h-auto mt-8 mb-8 bg-gray-100 lg:bg-none bg-opacity-60 lg:bg-opacity-0 rounded-xl'>
+          <div className='flex flex-col justify-center  pt-6 pb-8 mb-4 '>
+            <img src={logo} alt='' className='w-80 h-7 mt-6' />
+            <h2 className='font-roboto text-3xl mt-6 mb-2 text-center'>Bienvenido otra vez</h2>
+            <div className='w-full max-w-xs'>
+              <FormularioComponent />
             </div>
-            <Link className=' text-sm font-medium text-black-900 dark:text-black-300' to='/reset-password '>¿Olvidaste tu contraseña?</Link>
+            {/* Otros elementos del formulario */}
+            <div className='flex justify-between items-center pb-3 pt-3'>
+              <hr className='w-3/5' />
+              <span className='w-1/5 text-center bg-white mt-5 mb-5'> o </span>
+              <hr className='w-3/5' />
+            </div>
+            <OtherSesion />
+            <div className='flex flex-col justify-center text-lg text-center lg:flex-row'>
+              <p className='lg:mr-2'>¿Nuevo usuario?</p>
+              <Link to='/register' className='font-robotoM'>Registrarse</Link>
+            </div>
           </div>
-          {/* Botón de envío del formulario */}
-          <Button text='Iniciar Sesión' color='bg-green-600' hover='hover:bg-green-900' />
-          {error && <p className='text-red-600 text-xs italic text-center'>{error}</p>}
-        </Form>
-      )}
-    </Formik>
+        </section>
+        {/* Sección de la imagen */}
+        <section className='lg:w-1/2 order-2 lg:order-1 absolute lg:relative lg:none top-0 left-0 w-full lg:h-auto h-full lg:z-0 z-[-10]'>
+          <img src={jungleMobile} alt='jungla2' className='lg:hidden block h-full object-cover rounded-none' />
+          <img src={jungle} alt='jungla' className='hidden lg:block h-full object-fill rounded-none' />
+        </section>
+      </div>
+    </div>
   )
 }
+//  <LoginContainer />;
 
-export default FormularioComponent
+export default Login

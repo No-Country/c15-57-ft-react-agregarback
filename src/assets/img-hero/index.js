@@ -7,10 +7,11 @@ import ballenaIcon from './ballenaIcon.png'
 import osoIcon from './osoIcon.png'
 import ajolote from './ajolote.jpg'
 import categoryBG from './category-container.png'
+import voluntaryBG from './voluntaryBG.jpeg'
 
 
 
 export {
-  jaguarImg,osoAnteojos,ballenasFrancas, jaguarIcon ,ballenaIcon ,osoIcon ,ajolote ,ajoleteIcon ,categoryBG
+  jaguarImg,osoAnteojos,ballenasFrancas, jaguarIcon ,ballenaIcon ,osoIcon ,ajolote ,ajoleteIcon ,categoryBG ,voluntaryBG
 
 }

@@ -1,11 +1,12 @@
-import Landing from './Landing/'
 import Footer from './Footer/Component/Footer'
-import Header from './Header/Header'
 import Button from './Button/'
 import OtherSesion from '../components/OtherSesion'
-import Input from '../components/Input/Component'
+import NavBar from './MainNavBar/NavBar/Component/NavBar'
+import InputForm from './InputForm/Component/index'
 import InputPassword from './InputPassword'
-import InputForm from '../components/InputForm/Component'
-import InputSelectForm from '../components/InputSelectForm/Component'
+import InputSelectForm from './InputSelectForm/Component'
+import LandingPage from '../components/Carrousel/Component/LandingPage'
 
-export { Landing, Footer, Header, OtherSesion, Input, InputPassword, Button, InputForm, InputSelectForm }
+import InfoPageContainer, { loaderItem } from './InfoPage/Container/InfoPage'
+
+export { LandingPage, Footer, OtherSesion, InputPassword, Button, NavBar, InfoPageContainer, loaderItem, InputForm, InputSelectForm }

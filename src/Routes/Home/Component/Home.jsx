@@ -1,7 +1,7 @@
-import { useECommerceContext } from "../../../Store/contextStore/ECommerceContext";
-import { useUserContext } from "../../../Store/contextStore/UserContext";
-import Carrousel from "../../../components/Carrousel/Presentation/Carrousel";
-import LandingPage from "../../LandingPage/Component/LandingPage";
+import { useECommerceContext } from '../../../Store/contextStore/ECommerceContext'
+import { useUserContext } from '../../../Store/contextStore/UserContext'
+import Carrousel from '../../../components/Carrousel/Presentation/Carrousel'
+import LandingPage from '../../LandingPage/Component/LandingPage'
 
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
   const { item } = useECommerceContext()
   const { item2 } = useUserContext()
 
-  console.table(item, item2);
+  console.table(item, item2)
 
   return (
     <>
