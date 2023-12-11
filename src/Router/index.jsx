@@ -5,7 +5,7 @@ import { MainLayout, PrivateLayout } from '../Layouts'
 
 import { Donations, Animals, Volunteers, Login, NotFound, Register, Store, User, MyVolunteers, MyPurchases } from "../Routes"
 
-import { InfoPageContainer, loaderItem } from "../components"
+//import { Contact, Home, Login, NotFound, Register, Store } from '../Routes'
 
 export const router = createBrowserRouter([
   {
@@ -50,19 +50,25 @@ export const router = createBrowserRouter([
         </Suspense>)
       },
       {
-        path: '/Store/:id',
-        element: (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
-          <InfoPageContainer />
-        </Suspense>),
-        loader: loaderItem
-      },
-      {
         path: '/Login',
         element:
           (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
             <Login />
           </Suspense>)
       },
+      {
+        path: '/Register',
+        element:
+          (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
+            <Register />
+          </Suspense>
+          )
+      },
+
+      /*
+      * Private Routes
+      */
+      
       {
         path: '/User',
         errorElement: <NotFound />,
@@ -118,17 +124,25 @@ export const router = createBrowserRouter([
 
           },
         ]
-      },
+      }
     ]
   }
 ])
-/* 
- {
-    path: '/Store',
-    element: <Store />
-  },
-  {
-    path: '/reset-password',
-    element: <ResetPassword />
-  }
-  */
+
+
+/*
+if you wants to add a new route please create a new component 
+on the  routes file ./Routes
+
+then 
+
+add a new object with the path and element properties
+
+    {
+        path: '',
+        element: <>
+      },
+
+      inside the children propertie.
+      
+*/

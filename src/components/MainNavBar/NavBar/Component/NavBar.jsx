@@ -1,5 +1,8 @@
 
-import NavBarContainer from '../Presentation/NavBar'
+import { useEffect, useState } from 'react'
+import NavBarContainer from '../Presentation/NavBar.jsx'
+
+
 
 const navigationLinks = [
   {
@@ -10,19 +13,17 @@ const navigationLinks = [
     to: "/Store",
     link: "Store"
   },
-  /* {
-    to:"/register",
-    link: "Register"
-  },*/
   {
     to: "/Donations",
-    link: "Donations"
+    link: "Donation"
   },
   {
     to: "/Volunteers",
-    link: "Volunteers"
+    link: "Volunteer"
   },
 ]
+
+
 
 export default function NavBar() {
   return <NavBarContainer navigationLinks={navigationLinks} />

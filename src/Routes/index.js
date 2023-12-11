@@ -8,7 +8,6 @@ const Login = lazy(() => import("./Login/Component/Login"));
 const NotFound = lazy(() => import("./NotFound/Component/NotFound"));
 const Register = lazy(() => import("./Register/Presentation/Register"));
 const Volunteers = lazy(() => import("./Volunteers/Component/Volunteers"))
-
 // Protected Routes
 
 const User = lazy(() => import("./User/Container/User"))

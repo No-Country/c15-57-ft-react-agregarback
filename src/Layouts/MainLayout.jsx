@@ -1,37 +1,33 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import { NavBar, Footer } from '../components';
+import { Footer, NavBar } from '../components';
+
 import '../index.css'
+
 const MainLayout = () => {
-  return (
-    <div className="
-    w-screen 
-    h-screen
+    return (
+        <div className="
+    w-full
+    h-full
     justify-self-center
     items-center
-    sm:grid-rows-[auto,auto,100px] gap-4
-    md:grid-rows-[auto,auto,100px] gap-4
-    lg:grid-rows-[auto,auto,100px] gap-4
-    xl:grid-rows-[auto,auto,100px] gap-4
+    grid-cols-1
+    grid-rows-[1fr,auto,1fr]
+    lg:grid-rows-[1r,auto,1fr]
 ">
-      <header className="p-4"
-      >
-        <NavBar />
-      </header>
-      <hr />
-      <main
-        className="p-4"
-      >
-        <Outlet />
-      </main>
-      <hr />
-      <footer
-        className="p-4"
-      >
-        <Footer />
-      </footer>
-    </div>
-  );
+            <header>
+                <NavBar/>
+            </header>
+            <hr/>
+            <main className='row-span-2 '>
+                <Outlet/>
+            </main>
+            <hr/>
+            <footer className='bg-amber-500'>
+                <Footer/>
+            </footer>
+        </div>
+    );
 };
 
 export default MainLayout;
