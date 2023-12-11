@@ -25,3 +25,6 @@ dist-ssr
 package-lock.json
 pnpm-lock.yaml
 yarn.lock
+# Performance
+
+src/performance

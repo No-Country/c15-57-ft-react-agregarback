@@ -1,11 +1,16 @@
-import { Input, Button, InputPassword } from '../../../components/'
-import { Formik, Form } from 'formik'
-import * as Yup from 'yup'
+
+
+// import LoginContainer from "../Presentation/Login";
+import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import * as Yup from 'yup'
+// llamadas sincronas asincronas etc
+import { Input, Button, InputPassword } from '../../../components/'
+import { Formik, Form } from 'formik'
 
-const FormularioComponent = () => {
+const Login = () => {
+
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState('') // Manejar el llamdao de errores
   // manejar estados para local storage
@@ -14,12 +19,12 @@ const FormularioComponent = () => {
   const [userEmail, setUserEmail] = useState(storedUser)
   const [userPassword, setUserPassword] = useState(storedPassword)
   const [actualState, changeCheckState] = useState(!!(storedUser && storedPassword))
-
+  
   // Recuperar datos del Local Storage al montar el componente
   const handleCheckboxChange = (e) => {
     const isChecked = e.target.checked
     changeCheckState(isChecked)
-
+    
     if (!isChecked) {
       // Limpiar el estado y Local Storage si el checkbox no está marcado
       setUserEmail('')
@@ -72,7 +77,7 @@ const FormularioComponent = () => {
       .matches(
         /^(?=.*[!@#/$%/^&/*])/,
         'Debe contener al menos un caracter especial'
-      )
+        )
       .required('La contraseña es requerida')
   })
 
@@ -81,11 +86,11 @@ const FormularioComponent = () => {
     email: userEmail,
     password: userPassword
   }
-
+  
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword) // Cambia el estado para mostrar u ocultar la contraseña
   }
-
+  
   return (
     <Formik
       initialValues={initialValues}
@@ -111,7 +116,10 @@ const FormularioComponent = () => {
         </Form>
       )}
     </Formik>
+  
+
   )
 }
+//  <LoginContainer />;
 
-export default FormularioComponent
+export default Login
