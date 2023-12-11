@@ -19,9 +19,12 @@ export default {
       ]
     },
     extend: {
-    }
-  },
-  plugins: [
-    require('@tailwindcss/forms')
-  ]
+      colors: {
+        colorFooter: '#434343'
+      }
+    },
+    plugins: [
+      require('@tailwindcss/forms')
+    ]
+  }
 }
