@@ -5,7 +5,7 @@ import ShowMerchandise from '../Presentation/ShowMerchandise'
 import AnimalsCategory from '../Presentation/AnimalsCategory'
 import Banner from '../Presentation/Baner'
 import { useECommerceContext } from '../../../Store/contextStore/ECommerceContext'
-import { useContaintContext } from '../../../Store/contextStore/ContentContext'
+import { useContentContext } from '../../../Store/contextStore/ContentContext'
 import InfoContainer from '../Presentation/InfoContainer'
 import ListInfo from '../Presentation/ListInfo'
 import VoluntaryInfo from '../Presentation/VoluntaryInfo'
@@ -13,7 +13,7 @@ import VoluntaryInfo from '../Presentation/VoluntaryInfo'
 const LandingPage = ()  => {
   const { item } = useECommerceContext()
   const { animalInfo, setAnimalInfo,bannerAnimals, setBannerAnimals,
-    mostrar, setMostrar,classBaner,infoData} = useContaintContext()
+    mostrar, setMostrar,classBaner,infoData} = useContentContext()
 
   
 

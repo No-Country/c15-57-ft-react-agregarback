@@ -15,7 +15,7 @@ const ShowMerchandise = ({ animalLink, animalIcon }) => {
       <nav className='w-[35%] h-full relative'>
         {/* camisa con su icono */}
         <img className='absolute z-10 w-[920px] h-[620px] bottom-[2px] left-[140px]' src={camisa} alt='camisa' />
-        <img className='absolute z-10 w-[220px] left-[340px] top-[80px]' src={animalIcon} alt='animalIcon' />
+        <img className='absolute z-10 w-[220px] left-[12%] top-[80px]' src={animalIcon} alt='animalIcon' />
         {/* tasa con su icono */}
         <img className='absolute z-20  top-[72px]' src={tasa} alt='tasa' />
         <img className='absolute z-20 w-[120px] left-[125px] top-[240px]' src={animalIcon} alt='animalIcon' />

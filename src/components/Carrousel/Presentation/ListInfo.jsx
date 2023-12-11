@@ -6,7 +6,7 @@ export default function ListInfo({pointData}){
           const curretNumber = index + 1;
           const isOdd = index % 2 ===0;
           return(
-            <div className={`flex ${isOdd?'flex-row':'flex-row-reverse'} gap-10 items-center w-[1080px] mx-auto`} key={index}>
+            <div className={`flex ${isOdd?'flex-row':'flex-row-reverse'} gap-10 items-center w-[100%] mx-auto`} key={index}>
               <div className='w-20 h-20 bg-green-700 bg-opacity-60 rounded-full flex justify-center items-center'>
                <p className='text-white font-semibold text-[38px]'> {curretNumber} </p>
                 </div>
