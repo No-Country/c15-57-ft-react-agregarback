@@ -5,8 +5,6 @@ import { MainLayout, PrivateLayout } from '../Layouts'
 
 import { Donations, Animals, Volunteers, Login, NotFound, Register, Store, User, MyVolunteers, MyPurchases } from "../Routes"
 
-//import { Contact, Home, Login, NotFound, Register, Store } from '../Routes'
-
 export const router = createBrowserRouter([
   {
     path: '/',
@@ -56,15 +54,7 @@ export const router = createBrowserRouter([
             <Login />
           </Suspense>)
       },
-      {
-        path: '/Register',
-        element:
-          (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
-            <Register />
-          </Suspense>
-          )
-      },
-
+   
       /*
       * Private Routes
       */
