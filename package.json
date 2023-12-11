@@ -11,7 +11,6 @@
     "test": "standard && node my-tests.js"
   },
   "dependencies": {
-    "@react-buddy/ide-toolbox": "^2.4.0",
     "axios": "^1.6.2",
     "formik": "^2.4.5",
     "miragejs": "^0.1.48",
