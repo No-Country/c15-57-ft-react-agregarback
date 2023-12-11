@@ -368,6 +368,7 @@ export function makeServer () {
         const user = schema.users.findBy({ email })
         if (user) {
           return {
+            email,
             question: user.question
           }
         } else {
