@@ -17,9 +17,13 @@ export default {
         'Roboto Medium', 'sans-serif'
       ]
     },
-    extend: {}
-  },
-  plugins: [
-    require('@tailwindcss/forms')
-  ]
+    extend: {
+      colors: {
+        colorFooter: '#434343'
+      }
+    },
+    plugins: [
+      require('@tailwindcss/forms')
+    ]
+  }
 }
