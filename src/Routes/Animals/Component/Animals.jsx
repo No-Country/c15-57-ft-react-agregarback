@@ -2,18 +2,11 @@ import { useECommerceContext } from '../../../Store/contextStore/ECommerceContex
 import { useUserContext } from '../../../Store/contextStore/UserContext'
 import { LandingPage } from '../../../components'
 
-import { LandingPage } from "../../../components";
-
 export default function Home() {
 
   return (
-
     <>
       <LandingPage />
     </>
-
-
   )
 };
-
-
