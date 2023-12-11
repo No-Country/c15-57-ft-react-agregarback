@@ -1,5 +1,4 @@
 import Footer from './Footer/Component/Footer';
-import Header from './Header/Header'
 import Button from './Button/'
 import OtherSesion from '../components/OtherSesion';
 import NavBar from './MainNavBar/NavBar/Component/NavBar';
@@ -11,4 +10,4 @@ import LandingPage from '../components/Carrousel/Component/LandingPage';
 
 import InfoPageContainer, { loaderItem } from './InfoPage/Container/InfoPage';
 
-export { LandingPage, Footer, Header, OtherSesion, Input, InputPassword, Button, CardStoreContainerCard, InfoPageContainer, loaderItem, NavBar }
+export { LandingPage, Footer, OtherSesion, Input, InputPassword, Button, CardStoreContainerCard, InfoPageContainer, loaderItem, NavBar }
