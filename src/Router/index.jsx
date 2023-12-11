@@ -3,13 +3,13 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import { MainLayout, PrivateLayout } from '../Layouts'
 
-import { Donations, Animals, Volunteers, Login, NotFound, Register, Store, User, MyVolunteers, MyPurchases } from "../Routes"
+import { Donations, Animals, Volunteers, Login, NotFound, Register, Store, User, MyVolunteers, MyPurchases, ResetPassword } from '../Routes'
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: (
-      <Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
+      <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
         <MainLayout />
       </Suspense>
     ),
@@ -18,113 +18,117 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: (
-          <Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
+          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
             <Animals />
           </Suspense>
         )
       },
       {
         path: '/Donations',
-        element: (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
-          <Donations />
-        </Suspense>)
+        element: (
+          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+            <Donations />
+          </Suspense>)
       },
       {
         path: '/Volunteers',
-        element: (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
-          <Volunteers />
-        </Suspense>)
+        element: (
+          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+            <Volunteers />
+          </Suspense>)
       },
       {
         path: '/Store',
-        element: (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
-          <Store />
-        </Suspense>)
+        element: (
+          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+            <Store />
+          </Suspense>)
       },
       {
         path: '/Register',
-        element: (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
-          <Register />
-        </Suspense>)
+        element: (
+          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+            <Register />
+          </Suspense>)
       },
       {
         path: '/Login',
-        element:
-          (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
+        element: (
+          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
             <Login />
           </Suspense>)
       },
-   
+
       /*
       * Private Routes
       */
-      
+
+      {
+        path: '/Reset-password',
+        element: (
+          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+            <ResetPassword />
+          </Suspense>)
+      },
       {
         path: '/User',
         errorElement: <NotFound />,
-        element:
-          (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
+        element: (
+          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
             <PrivateLayout />
-          </Suspense>
-          ),
+          </Suspense>),
         children: [
           {
             index: true,
-            element:
-              (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
+            element: (
+              <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
                 <User />
-              </Suspense>
-              )
-          },
+              </Suspense>)
+          }
         ]
       },
       {
         path: '/MyVolunteers',
-        element:
-          (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
+        element: (
+          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
             <PrivateLayout />
-          </Suspense>
-          ),
+          </Suspense>),
         children: [
           {
             index: true,
-            element:
-              (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
+            element: (
+              <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
                 <MyVolunteers />
               </Suspense>
-              )
-          },
+            )
+          }
         ]
       },
       {
         path: '/MyPurchases',
-        element:
-          (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
+        element: (
+          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
             <PrivateLayout />
-          </Suspense>
-          ),
+          </Suspense>),
         children: [
           {
             index: true,
-            element:
-              (<Suspense fallback={<div style={{ textAlign: "center" }}>Loading..</div>}>
+            element: (
+              <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
                 <MyPurchases />
-              </Suspense>
-              ),
-
-          },
+              </Suspense>)
+          }
         ]
       }
     ]
   }
 ])
 
-
 /*
-if you wants to add a new route please create a new component 
+if you wants to add a new route please create a new component
 on the  routes file ./Routes
 
-then 
+then
 
 add a new object with the path and element properties
 
@@ -134,5 +138,4 @@ add a new object with the path and element properties
       },
 
       inside the children propertie.
-      
 */
