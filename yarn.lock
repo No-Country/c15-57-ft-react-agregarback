@@ -218,10 +218,10 @@
     "@babel/helper-validator-identifier" "^7.22.20"
     to-fast-properties "^2.0.0"
 
-"@esbuild/darwin-arm64@0.19.8":
+"@esbuild/linux-x64@0.19.8":
   version "0.19.8"
-  resolved "https://registry.npmjs.org/@esbuild/darwin-arm64/-/darwin-arm64-0.19.8.tgz"
-  integrity sha512-RQw9DemMbIq35Bprbboyf8SmOr4UXsRVxJ97LgB55VKKeJOOdvsIPy0nFyF2l8U+h4PtBx/1kRf0BelOYCiQcw==
+  resolved "https://registry.npmjs.org/@esbuild/linux-x64/-/linux-x64-0.19.8.tgz"
+  integrity sha512-lytMAVOM3b1gPypL2TRmZ5rnXl7+6IIk8uB3eLsV1JwcizuolblXRrc5ShPrO9ls/b+RTp+E6gbsuLWHWi2zGg==
 
 "@eslint-community/eslint-utils@^4.2.0":
   version "4.4.0"
@@ -332,15 +332,25 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@react-buddy/ide-toolbox@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.npmjs.org/@react-buddy/ide-toolbox/-/ide-toolbox-2.4.0.tgz"
+  integrity sha512-TWHX6gwa0Gop7215uHhjFMbYLLdjM/b9rr0wYE3E0m7GNJ56gbPpbZiq86w9uI8zksl827acqGeT437MkuO64w==
+
 "@remix-run/router@1.13.1":
   version "1.13.1"
   resolved "https://registry.npmjs.org/@remix-run/router/-/router-1.13.1.tgz"
   integrity sha512-so+DHzZKsoOcoXrILB4rqDkMDy7NLMErRdOxvzvOKb507YINKUP4Di+shbTZDhSE/pBZ+vr7XGIpcOO0VLSA+Q==
 
-"@rollup/rollup-darwin-arm64@4.7.0":
+"@rollup/rollup-linux-x64-gnu@4.7.0":
   version "4.7.0"
-  resolved "https://registry.npmjs.org/@rollup/rollup-darwin-arm64/-/rollup-darwin-arm64-4.7.0.tgz"
-  integrity sha512-4VXG1bgvClJdbEYYjQ85RkOtwN8sqI3uCxH0HC5w9fKdqzRzgG39K7GAehATGS8jghA7zNoS5CjSKkDEqWmNZg==
+  resolved "https://registry.npmjs.org/@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.7.0.tgz"
+  integrity sha512-cCkoGlGWfBobdDtiiypxf79q6k3/iRVGu1HVLbD92gWV5WZbmuWJCgRM4x2N6i7ljGn1cGytPn9ZAfS8UwF6vg==
+
+"@rollup/rollup-linux-x64-musl@4.7.0":
+  version "4.7.0"
+  resolved "https://registry.npmjs.org/@rollup/rollup-linux-x64-musl/-/rollup-linux-x64-musl-4.7.0.tgz"
+  integrity sha512-R2oBf2p/Arc1m+tWmiWbpHBjEcJnHVnv6bsypu4tcKdrYTpDfl1UT9qTyfkIL1iiii5D4WHxUHCg5X0pzqmxFg==
 
 "@tailwindcss/forms@^0.5.7":
   version "0.5.7"
@@ -1337,11 +1347,6 @@ fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   integrity sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==
-
-fsevents@~2.3.2, fsevents@~2.3.3:
-  version "2.3.3"
-  resolved "https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz"
-  integrity sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==
 
 function-bind@^1.1.1, function-bind@^1.1.2:
   version "1.1.2"
@@ -2352,7 +2357,7 @@ react-router@6.20.1:
   dependencies:
     "@remix-run/router" "1.13.1"
 
-react@*, react@^18.2.0, react@>=16.8, react@>=16.8.0:
+react@*, "react@^17.0.0 || ^18.0.0", react@^18.2.0, react@>=16.8, react@>=16.8.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
@@ -2889,10 +2894,10 @@ version-guard@^1.1.1:
   resolved "https://registry.npmjs.org/version-guard/-/version-guard-1.1.1.tgz"
   integrity sha512-MGQLX89UxmYHgDvcXyjBI0cbmoW+t/dANDppNPrno64rYr8nH4SHSuElQuSYdXGEs0mUzdQe1BY+FhVPNsAmJQ==
 
-"vite@^4.2.0 || ^5.0.0", vite@^5.0.0:
-  version "5.0.7"
-  resolved "https://registry.npmjs.org/vite/-/vite-5.0.7.tgz"
-  integrity sha512-B4T4rJCDPihrQo2B+h1MbeGL/k/GMAHzhQ8S0LjQ142s6/+l3hHTT095ORvsshj4QCkoWu3Xtmob5mazvakaOw==
+"vite@^4.2.0 || ^5.0.0", vite@5.0.5:
+  version "5.0.5"
+  resolved "https://registry.npmjs.org/vite/-/vite-5.0.5.tgz"
+  integrity sha512-OekeWqR9Ls56f3zd4CaxzbbS11gqYkEiBtnWFFgYR2WV8oPJRRKq0mpskYy/XaoCL3L7VINDhqqOMNDiYdGvGg==
   dependencies:
     esbuild "^0.19.3"
     postcss "^8.4.32"
