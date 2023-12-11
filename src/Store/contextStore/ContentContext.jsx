@@ -1,11 +1,36 @@
 
 import axios from "axios";
 import { createContext, useContext, useState, useEffect } from "react";
+import {useLocation} from "react-router-dom";
 
 export const ContentContext = createContext()
 
 const ContentProvider = ({ children }) => {
-  //Dropdown navbar open and close handler 
+
+  //Dropdown navbar open and close handler ->
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
+
+  //Router handler for the animal navbar page ->
+  const onAnimalRouteChecker = () => {
+    const [onAnimalRoute, setOnAnimalRoute] = useState(true);
+    const location = useLocation();
+
+    useEffect(() => {
+      if (location.pathname === '/') {
+        setOnAnimalRoute(true);
+      } else {
+        setOnAnimalRoute(false);
+      }
+    }, [location.pathname]);
+
+    return onAnimalRoute;
+  };
+
+  //
+
   const [animalInfo, setAnimalInfo] = useState([])
   const [bannerAnimals, setBannerAnimals] = useState([])
   const [mostrar, setMostrar] = useState(0)
@@ -69,8 +94,17 @@ const ContentProvider = ({ children }) => {
   }, []);
 
 const constextValue = {
-  animalInfo, setAnimalInfo,bannerAnimals, setBannerAnimals,
-  mostrar, setMostrar,classBaner,infoData
+  isOpen,
+  toggle,
+  onAnimalRouteChecker,
+  animalInfo,
+  setAnimalInfo,
+  bannerAnimals,
+  setBannerAnimals,
+  mostrar,
+  setMostrar,
+  classBaner,
+  infoData
 }
 
   return (
@@ -84,4 +118,4 @@ const constextValue = {
 
 export default ContentProvider;
 
-export const useContaintContext = () => useContext(ContentContext);
+export const useContentContext = () => useContext(ContentContext);

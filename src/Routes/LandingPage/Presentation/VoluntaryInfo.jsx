@@ -1,7 +1,7 @@
 
 export default function VoluntaryInfo(){
   return(
-    <section className={`relative w-[1080px] h-[549px] mx-auto my-16 bg-rzed-300
+    <section className={`relative w-[100%] h-[549px] mx-auto my-16 bg-rzed-300
     bg-no-repeat bg-cover bg-[url('/src/assets/img-hero/voluntaryBG.jpeg')]
     overflow-hidden rounded-[50px] flex justify-center items-center mt-20  `}
     >
