@@ -1,13 +1,14 @@
 
 
 // import LoginContainer from "../Presentation/Login";
-import { Link } from 'react-router-dom'
+import {Link, redirect} from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
 import * as Yup from 'yup'
 // llamadas sincronas asincronas etc
 import { Input, Button, InputPassword } from '../../../components/'
 import { Formik, Form } from 'formik'
+import {useUserContext} from "../../../Store/contextStore/UserContext.jsx";
 
 const Login = () => {
 
@@ -26,7 +27,9 @@ const Login = () => {
     changeCheckState(isChecked)
     
     if (!isChecked) {
+      //jwt - json web token - token de seguridad
       // Limpiar el estado y Local Storage si el checkbox no está marcado
+      // user loged
       setUserEmail('')
       setUserPassword('')
       window.localStorage.removeItem('savedUser')
@@ -116,7 +119,6 @@ const Login = () => {
         </Form>
       )}
     </Formik>
-  
 
   )
 }
