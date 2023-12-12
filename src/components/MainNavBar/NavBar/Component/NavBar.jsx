@@ -6,12 +6,12 @@ import NavBarContainer from '../Presentation/NavBar.jsx'
 
 const navigationLinks = [
   {
-    to: "/",
-    link: "Animals"
+    to: '/',
+    link: 'Animals'
   },
   {
-    to: "/Store",
-    link: "Store"
+    to: '/Store',
+    link: 'Store'
   },
   {
     to: "/Donations",

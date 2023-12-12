@@ -1,14 +1,12 @@
-import Footer from './Footer/Component/Footer';
-import Header from './Header/Header'
+import Footer from './Footer/Component/Footer'
 import Button from './Button/'
-import OtherSesion from '../components/OtherSesion';
-import NavBar from './MainNavBar/NavBar/Component/NavBar';
+import OtherSesion from '../components/OtherSesion'
+import NavBar from './MainNavBar/NavBar/Component/NavBar'
+import InputForm from './InputForm/Component/index'
+import InputPassword from './InputPassword'
+import InputSelectForm from './InputSelectForm/Component'
+import LandingPage from '../components/Carrousel/Component/LandingPage'
 
-import Input from '../components/Input/Component'
-import InputPassword from './InputPassword';
-import CardStoreContainerCard from './StoreCard/Component/CardStore';
-import LandingPage from '../components/Carrousel/Component/LandingPage';
+import InfoPageContainer, { loaderItem } from './InfoPage/Container/InfoPage'
 
-import InfoPageContainer, { loaderItem } from './InfoPage/Container/InfoPage';
-
-export { LandingPage, Footer, Header, OtherSesion, Input, InputPassword, Button, CardStoreContainerCard, InfoPageContainer, loaderItem, NavBar }
+export { LandingPage, Footer, OtherSesion, InputPassword, Button, NavBar, InfoPageContainer, loaderItem, InputForm, InputSelectForm }

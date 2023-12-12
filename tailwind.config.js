@@ -5,9 +5,25 @@ export default {
     './src/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
-    extend: {}
-  },
-  plugins: [
-    require('@tailwindcss/forms')
-  ]
+    fontFamily: {
+      display: [
+        'Helvetica Neue', 'sans-serif'
+      ],
+      roboto: [
+        'Roboto', 'sans-serif',
+        'Roboto', 'sans-serif'
+      ],
+      robotoM: [
+        'Roboto Medium', 'sans-serif'
+      ]
+    },
+    extend: {
+      colors: {
+        colorFooter: '#434343'
+      }
+    },
+    plugins: [
+      require('@tailwindcss/forms')
+    ]
+  }
 }
