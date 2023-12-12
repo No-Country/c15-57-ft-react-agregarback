@@ -18,7 +18,7 @@ export default function Footer () {
         </div>
 
       </div>
-      <div className='flex flex-row pl-[200px] font-thin text-sm'>
+      <div className='xl:flex absolute  flex-row hidden pl-[200px] font-thin text-sm'>
         <div className='text-white p-5'>
           <p className='pb-2 font-robotoM text-lg'>Quienes somos</p>
           <p className='pb-2'>Sobre prevención Animal</p>

@@ -35,6 +35,7 @@ const ContentProvider = ({ children }) => {
   const [bannerAnimals, setBannerAnimals] = useState([])
   const [mostrar, setMostrar] = useState(0)
   const classBaner = 'img-container'
+  const [movileIndex , setMovileIndex]=useState(0)
   const infoData =[
     {
       title:'Conservación de Hábitats',
@@ -93,6 +94,17 @@ const ContentProvider = ({ children }) => {
     }, 2000);
   }, []);
 
+  const lefMovileIndex=(currentIndex)=>{
+    if(currentIndex > 0){
+  setMovileIndex(currentIndex-1)
+}
+}
+const rightMovileIndex=(currentIndex)=>{
+  if(currentIndex < infoData.length - 1){
+setMovileIndex(currentIndex +1)
+}
+}
+
 const constextValue = {
   isOpen,
   toggle,
@@ -104,7 +116,8 @@ const constextValue = {
   mostrar,
   setMostrar,
   classBaner,
-  infoData
+  infoData,
+  movileIndex , rightMovileIndex, lefMovileIndex
 }
 
   return (
