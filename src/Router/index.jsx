@@ -3,7 +3,7 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import { MainLayout, PrivateLayout } from '../Layouts'
 
-import { Donations, Animals, Volunteers, Login, NotFound, Register, Store, User, MyVolunteers, MyPurchases, ResetPassword } from '../Routes'
+import { Donations, Animals, Volunteers, Login, NotFound, Register, Store, User, MyVolunteers, MyPurchases, ResetPassword, ShippingInformation } from '../Routes'
 
 export const router = createBrowserRouter([
   {
@@ -56,6 +56,13 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
             <Login />
+          </Suspense>)
+      },
+      {
+        path: '/Shipping-information',
+        element: (
+          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+            <ShippingInformation />
           </Suspense>)
       },
 

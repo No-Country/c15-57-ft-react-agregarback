@@ -10,11 +10,11 @@ const NotFound = lazy(() => import('./NotFound/Component/NotFound'))
 const Register = lazy(() => import('./Register/Component/Register'))
 const Volunteers = lazy(() => import('./Volunteers/Component/Volunteers'))
 const ResetPassword = lazy(() => import('./ResetPassword/Component/ResetPassword'))
-
+const ShippingInformation = lazy(() => import('./ShippingInformation/Component/ShippingInformation'))
 // Protected Routes
 
 const User = lazy(() => import('./User/Container/User'))
 const MyVolunteers = lazy(() => import('./MyPurchases/Container/MyPurchases'))
 const MyPurchases = lazy(() => import('./MyPurchases/Container/MyPurchases'))
 
-export { Animals, Donations, Volunteers, Login, NotFound, Register, Store, User, MyVolunteers, MyPurchases, ResetPassword }
+export { Animals, Donations, Volunteers, Login, NotFound, Register, Store, User, MyVolunteers, MyPurchases, ResetPassword, ShippingInformation }

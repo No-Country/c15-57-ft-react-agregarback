@@ -23,7 +23,7 @@ const MainLayout = () => {
                 <Outlet/>
             </main>
             <hr/>
-            <footer className='bg-amber-500'>
+            <footer className=''>
                 <Footer/>
             </footer>
         </div>

@@ -13,7 +13,7 @@ export default function InputForm ({ id, name, type, placeholder, errors, value 
           {name}
         </label>
         <Field
-          className={`font-roboto shadow appearance-none border rounded w-full py-3 px-3 leading-tight text-[0.6rem] sm:text-[0.8rem] lg:text-[1rem]
+          className={`font-roboto shadow appearance-none border rounded w-full py-3 px-3 leading-tight text-[0.8rem] lg:text-[1rem]
           ${errors ? invalid : normal}`}
           id={id}
           type={type}

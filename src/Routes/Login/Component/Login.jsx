@@ -32,7 +32,7 @@ const Login = () => {
         </section>
         {/* Sección de la imagen */}
         <section className='lg:w-1/2 order-2 lg:order-1 absolute lg:relative lg:none top-0 left-0 w-full lg:h-auto h-full lg:z-0 z-[-10]'>
-          <img src={jungleMobile} alt='jungla2' className='lg:hidden block h-full object-cover rounded-none' />
+          <img src={jungleMobile} alt='jungla2' className='lg:hidden block h-full w-full object-cover rounded-none' />
           <img src={jungle} alt='jungla' className='hidden lg:block h-full object-fill rounded-none' />
         </section>
       </div>

@@ -19,7 +19,8 @@ export default {
     },
     extend: {
       colors: {
-        colorFooter: '#434343'
+        colorFooter: '#434343',
+        shoppingTitle: 'rgba(22, 101, 52, 0.10)'
       }
     },
     plugins: [
