@@ -6,52 +6,61 @@ import { useECommerceContext } from '../../../Store/contextStore/ECommerceContex
 import { useContentContext } from '../../../Store/contextStore/ContentContext'
 import InfoContainer from '../Presentation/InfoContainer'
 import ListInfo from '../Presentation/ListInfo'
-import VoluntaryInfo from '../Presentation/VoluntaryInfo'
+import MovileList from '../Presentation/MovileList'
+import { talar } from '../../../assets/img-hero'
+
+
 
 const LandingPage = ()  => {
   const { item } = useECommerceContext()
   const { animalInfo,bannerAnimals,
-    mostrar, setMostrar,classBaner,infoData} = useContentContext()
+    mostrar, setMostrar,classBaner,infoData } = useContentContext()
 
   
 
 
 
   return (
-    <div className='w-screen  relative z-0 top-[-10px]'>
-      <Banner showAnimals={bannerAnimals} classBaner={classBaner} setMostrar={setMostrar} mostrar={mostrar} />
+    <div className='w-[430px]  relative z-0 top-[-10px]'>
+    <Banner showAnimals={bannerAnimals} classBaner={classBaner} setMostrar={setMostrar} mostrar={mostrar} /> 
+    <div className='w-screen h-auto justify-center flex flex-col '>
+      <FirstInfo/>
+    
+      
       <ShowMerchandise animalLink={animalInfo[mostrar]?.link} animalIcon={animalInfo[mostrar]?.icon} />
-      <AnimalsCategory animals={animalInfo} />
+      <AnimalsCategory animals={animalInfo} /> 
      
       <InfoContainer/>
       <ListInfo pointData={infoData}/>
      
         <MovileList data={infoData}/>
+        </div>
       
-      <VoluntaryInfo/>
+      {/* <VoluntaryInfo/> */}
     </div>
   )
 }
 
 export default LandingPage;
 
-const MovileList = ({ data})=>{
-  const { movileIndex, rightMovileIndex, lefMovileIndex} = useContentContext()
-  
-  const curretNumber = movileIndex + 1
+function FirstInfo (){
+  const articulo = 'La pérdida de árboles a nivel global tiene entre sus principales contribuyentes a la deforestación en América Latina. Un total de 15 billones de árboles se talan cada año en el mundo, e imágenes satelitales muestran que el planeta perdió un área de cobertura forestal del tamaño de Reino Unido en 2019. El 95 por ciento de este desmonte se da en regiones tropicales, y esto incluye a los bosques de países latinoamericanos. De hecho, entre 1990 y 2015, en esta región se deforestaron 97 millones de hectáreas aproximadamente, lo que representa un alto riesgo para la supervivencia de los ecosistemas.'
   return(
-    <section className=' max-w-[500px] mx-auto sm:hidden flex flex-row justify-center items-center px-'>
-    <div onClick={()=>lefMovileIndex(movileIndex)} className={` h-full w-10 flex justify-center items-center text-[82px]`}> <p className={`${movileIndex === 0 && 'hidden'}`}> {'<'}</p></div>
+    <section className='relative flex-col  w-[430px] h-[350px] flex justify-center my-24'>
+      <div className='absolute   z-0 w-[240px] h-[600px] bottom-[-140px] left-24 border border-transparent border-t-black border-b-black'></div>
+    <div className='w-[300px] h-20   mx-auto'>
+      <p className='text-[18px]'>Al deforestación un alto riesgo para <br/> la supervivencia de los ecosistemas.</p>
+    </div>
+    <figure className='my-3'>
 
-    <section className='w-[320px]  mx-auto bg-green-200 rounded-[22px] h-[300px] flex flex-col items-center mt-24 px-6 relative pt-20 gap-6'>
-      <div className='w-[125px]  h-[125px] bg-green-700 border-white border-[10px] rounded-full flex justify-center items-center  absolute top-[-70px] bottom-[70px] '>
-               <p className='text-white font-semibold text-[56px]  '> {curretNumber} </p>
-                </div>
-               <p className='font-bold text-lg'>{data[movileIndex].title} </p>
-               <p className='font-[200]' >{data[movileIndex].information}</p>
-    </section>
-    <p onClick={()=>rightMovileIndex(movileIndex)} className='h-full w-10 flex justify-center items-center text-[82px]'>{'>'}</p>
-    </section>
+    <img className='bg-category-Animals' src={talar} alt="" />
+    </figure>
+    <div className='w-[430px] h-[500px] relative  px-4'>
+      <p className='text-[3.5vw]'>{articulo}</p>
+       </div>
 
+    </section>
   )
+
 }
+

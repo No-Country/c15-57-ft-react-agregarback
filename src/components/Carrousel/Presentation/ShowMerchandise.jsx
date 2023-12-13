@@ -3,24 +3,30 @@ import BotonBanner from './BotonBanner'
 
 const ShowMerchandise = ({ animalLink, animalIcon }) => {
   return (
-    <section className='xl:w-[1440px]
+    <section className='
     p-0
     my-32
-    sm:px-8
+    w-[430px]
+   
+    sm:px-36
     sm:flex-row
     sm:justify-between
-    sm:max-w-[1440px]
-    sm:mx-auto
+    sm:w-screen
+    md:w-[1440px]
+    mx-auto
      h-[100%] relative
      flex flex-col-reverse  '>
-      <header className=' pt-[60px]  mx-auto sm:mx-0   flex  flex-col items-start  m-0 mb-8 '>
+      <header className=' pt-[60px]  mx-auto sm:mx-0 sm:w-[40%]  flex  flex-col items-start  m-0 mb-8 '>
         <div className='mb-8 w-full max-w-[600px] flex flex-col justify-center items-center sm:items-start '>
-          <p className='text-green-400  text-[5vw] sm:text-[40px] font-normal'>¡Conseguí algunos de estos productos  </p>
+          <p className='text-green-400  text-[5vw] sm:text-[3vw] font-normal'>¡Conseguí algunos de estos productos  </p>
           <p className='text-black  text-[5vw] sm:text-[40px] font-normal'>y ayuda a los animales! </p>
         </div>
+        <div className='w-[180px] place-self-center'>
+
         <BotonBanner path='store' link={animalLink}>Ver productos.</BotonBanner>
+        </div>
       </header>
-      <nav className=' w-[430px] h-[480px] relative bg-red-300s overflow-hidden sm:mr-24'>
+      <nav className=' w-[430px] h-[480px] relative  overflow-hidden sm:mr-24'>
         {/* camisa con su icono */}
         <div className='relative right-10 bottom-8'>
         <img className='absolute z-10 w-[920px] h-[520px] top-[-42px] left-[100px]' src={camisa} alt='camisa' />
@@ -34,7 +40,7 @@ const ShowMerchandise = ({ animalLink, animalIcon }) => {
         </div>
         
         {/* vectores decorativos */}
-        <div className='relative bg-red-400'>
+        <div className='relative '>
 
         <img className='w-[200px] h-[200px] z-0 absolute top-[60px] left-8' src={vector1} alt='vector1' />
         <img className='w-[150px] h-[150px] z-0 absolute top-[260px] right-5' src={vector2} alt='vector2' />

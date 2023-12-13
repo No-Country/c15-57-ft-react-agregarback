@@ -12,25 +12,6 @@ const ContentProvider = ({ children }) => {
   const toggle = () => {
     setIsOpen(!isOpen);
   };
-
-  //Router handler for the animal navbar page ->
-  const onAnimalRouteChecker = () => {
-    const [onAnimalRoute, setOnAnimalRoute] = useState(true);
-    const location = useLocation();
-
-    useEffect(() => {
-      if (location.pathname === '/') {
-        setOnAnimalRoute(true);
-      } else {
-        setOnAnimalRoute(false);
-      }
-    }, [location.pathname]);
-
-    return onAnimalRoute;
-  };
-
-  //
-
   const [animalInfo, setAnimalInfo] = useState([])
   const [bannerAnimals, setBannerAnimals] = useState([])
   const [mostrar, setMostrar] = useState(0)
@@ -69,6 +50,30 @@ const ContentProvider = ({ children }) => {
       information:'Adoptar un estilo de vida de consumo consciente, eligiendo productos que sean respetuosos con el medio ambiente y no contribuyan a la degradación de hábitats naturales.'
     },
   ]
+  const moreDataDonate = ` Prevenir la extinción de los animales es un desafío global que involucra la colaboración 
+  de gobiernos, organizaciones ambientales, comunidades locales y personas individuales. 
+  Aquí hay algunas acciones clave que se pueden tomar para contribuir a la prevención de  la extinción de animales:
+ `
+
+  //Router handler for the animal navbar page ->
+  const onAnimalRouteChecker = () => {
+    const [onAnimalRoute, setOnAnimalRoute] = useState(true);
+    const location = useLocation();
+
+    useEffect(() => {
+      if (location.pathname === '/') {
+        setOnAnimalRoute(true);
+      } else {
+        setOnAnimalRoute(false);
+      }
+    }, [location.pathname]);
+
+    return onAnimalRoute;
+  };
+
+  //
+
+
 
 
 
@@ -116,7 +121,7 @@ const constextValue = {
   mostrar,
   setMostrar,
   classBaner,
-  infoData,
+  infoData,moreDataDonate,
   movileIndex , rightMovileIndex, lefMovileIndex
 }
 

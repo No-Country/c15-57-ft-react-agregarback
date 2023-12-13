@@ -6,7 +6,7 @@ import { IoBasketballOutline } from 'react-icons/io5'
 
 export default function Footer () {
   return (
-    <div className='flex flex-row h-full mt-5 p-5 w-full absolut bg-colorFooter rounded-tr-[45px]'>
+    <div className=' flex flex-row h-full mt-5 p-5 w-full absolut bg-colorFooter rounded-tr-[45px]'>
       <div className='w-[400px] pt-5 pr-5 pl-10 flex flex-col items-center'>
         <img src={logoWhite} alt='' className='h-auto w-[300px] ' />
         <p className='font-roboto text-center text-white text-sm pt-2'>LATINOAMERICA</p>
