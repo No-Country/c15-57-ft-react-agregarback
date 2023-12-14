@@ -5,27 +5,34 @@ const ShowMerchandise = ({ animalLink, animalIcon }) => {
   return (
     <section className='
     p-0
-    my-32
-    w-[430px]
+    sm:mb-32
+    sm:grid
    
-    sm:px-36
-    sm:flex-row
-    sm:justify-between
-    sm:w-screen
-    md:w-[1440px]
-    mx-auto
-     h-[100%] relative
-     flex flex-col-reverse  '>
-      <header className=' pt-[60px]  mx-auto sm:mx-0 sm:w-[40%]  flex  flex-col items-start  m-0 mb-8 '>
-        <div className='mb-8 w-full max-w-[600px] flex flex-col justify-center items-center sm:items-start '>
+    sm:grid-cols-2 
+    
+    sm:max-w-[1080px]
+    sm:mx-auto
+    -w-screen
+    -md:w-[1440px]
+    -mx-auto
+     -h-[100%] relative
+     flex
+      justify-center
+      items-center
+     flex-col-reverse  '>
+      <header className=' pt-[60px]  mx-auto sm:mx-0 flex w-full gap-7   flex-col items-center justify-center     sm:items-start  m-0 mb-8 '>
+       
+        <div className='mb-2 w-full flex justify-center flex-col  items-center sm:items-start '>
           <p className='text-green-400  text-[5vw] sm:text-[3vw] font-normal'>¡Conseguí algunos de estos productos  </p>
           <p className='text-black  text-[5vw] sm:text-[40px] font-normal'>y ayuda a los animales! </p>
         </div>
-        <div className='w-[180px] place-self-center'>
+        <div className='w-[180px]  flex   flex-col items-center justify-center '>
 
         <BotonBanner path='store' link={animalLink}>Ver productos.</BotonBanner>
         </div>
+        
       </header>
+
       <nav className=' w-[430px] h-[480px] relative  overflow-hidden sm:mr-24'>
         {/* camisa con su icono */}
         <div className='relative right-10 bottom-8'>

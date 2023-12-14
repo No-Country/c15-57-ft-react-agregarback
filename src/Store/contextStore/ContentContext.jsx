@@ -14,7 +14,7 @@ const ContentProvider = ({ children }) => {
   };
   const [animalInfo, setAnimalInfo] = useState([])
   const [bannerAnimals, setBannerAnimals] = useState([])
-  const [mostrar, setMostrar] = useState(0)
+  const [mostrar, setMostrar] = useState(1)
   const classBaner = 'img-container'
   const [movileIndex , setMovileIndex]=useState(0)
   const infoData =[
