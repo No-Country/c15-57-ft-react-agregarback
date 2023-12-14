@@ -3,25 +3,55 @@ import BotonBanner from './BotonBanner'
 
 const ShowMerchandise = ({ animalLink, animalIcon }) => {
   return (
-    <section className='  w-[100%] h-[630px] p-[75px]  flex  mx-auto '>
-      <header className='w-[50%] pt-[60px]'>
-        <div className='mb-8'>
-          <p className='text-green-00  text-6xl font-normal'>¡Conseguí algunos de estos productos <br />
-            <span className='text-black  text-6xl font-normal'>y ayuda a los animales! </span>
-          </p>
+    <section className='
+    p-0
+    sm:mb-32
+    sm:grid
+   
+    sm:grid-cols-2 
+    
+    sm:max-w-[1080px]
+    sm:mx-auto
+    -w-screen
+    -md:w-[1440px]
+    -mx-auto
+     -h-[100%] relative
+     flex
+      justify-center
+      items-center
+     flex-col-reverse  '>
+      <header className=' pt-[60px]  mx-auto sm:mx-0 flex w-full gap-7   flex-col items-center justify-center     sm:items-start  m-0 mb-8 '>
+       
+        <div className='mb-2 w-full flex justify-center flex-col  items-center sm:items-start '>
+          <p className='text-green-400  text-[5vw] sm:text-[3vw] font-normal'>¡Conseguí algunos de estos productos  </p>
+          <p className='text-black  text-[5vw] sm:text-[40px] font-normal'>y ayuda a los animales! </p>
         </div>
+        <div className='w-[180px]  flex   flex-col items-center justify-center '>
+
         <BotonBanner path='store' link={animalLink}>Ver productos.</BotonBanner>
+        </div>
+        
       </header>
-      <nav className='w-[35%] h-full relative'>
+
+      <nav className=' w-[430px] h-[480px] relative  overflow-hidden sm:mr-24'>
         {/* camisa con su icono */}
-        <img className='absolute z-10 w-[920px] h-[620px] bottom-[2px] left-[140px]' src={camisa} alt='camisa' />
-        <img className='absolute z-10 w-[220px] left-[12%] top-[80px]' src={animalIcon} alt='animalIcon' />
+        <div className='relative right-10 bottom-8'>
+        <img className='absolute z-10 w-[920px] h-[520px] top-[-42px] left-[100px]' src={camisa} alt='camisa' />
+        <img className='absolute z-10 w-[220px] sm:w-[200px] sm:left-[180px] top-[150px] left-[200px] sm:top-[150px]' src={animalIcon} alt='animalIcon' />
+        </div>
         {/* tasa con su icono */}
-        <img className='absolute z-20  top-[72px]' src={tasa} alt='tasa' />
-        <img className='absolute z-20 w-[120px] left-[125px] top-[240px]' src={animalIcon} alt='animalIcon' />
+        <div className='relative w-full '>
+        <img className='absolute z-20 w-[290px]  sm:w-[90%] top-[170px] left-[25px]' src={tasa} alt='tasa' />
+        <img className='absolute z-20 w-[25%] sm:w-[33%] sm:left-[140px] left-[110px] sm:top-[310px] top-[290px]' src={animalIcon} alt='animalIcon' />
+
+        </div>
+        
         {/* vectores decorativos */}
-        <img className='w-[360px] h-[340px] z-0' src={vector1} alt='vector1' />
-        <img className='w-[216px] h-[230px] z-0 absolute top-[240px] right-0' src={vector2} alt='vector2' />
+        <div className='relative '>
+
+        <img className='w-[200px] h-[200px] z-0 absolute top-[60px] left-8' src={vector1} alt='vector1' />
+        <img className='w-[150px] h-[150px] z-0 absolute top-[260px] right-5' src={vector2} alt='vector2' />
+        </div>
       </nav>
 
     </section>

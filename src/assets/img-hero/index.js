@@ -8,10 +8,19 @@ import osoIcon from './osoIcon.png'
 import ajolote from './ajolote.jpg'
 import categoryBG from './category-container.png'
 import voluntaryBG from './voluntaryBG.jpeg'
+import babyOso from './babyOso.jpeg'
+import separadorDown from './separadorDown.png'
+import separadorUP from './separadorUP.png'
+import rigthIcon from './ArrowRight.svg'
+import leftIcon from './Arrowleft.svg'
+import talar from './talar.jpeg'
+
+
 
 
 
 export {
-  jaguarImg,osoAnteojos,ballenasFrancas, jaguarIcon ,ballenaIcon ,osoIcon ,ajolote ,ajoleteIcon ,categoryBG ,voluntaryBG
+  separadorUP,separadorDown ,rigthIcon, leftIcon,talar,
+  jaguarImg,osoAnteojos,ballenasFrancas, jaguarIcon ,ballenaIcon ,osoIcon ,ajolote ,ajoleteIcon ,categoryBG ,voluntaryBG ,babyOso
 
 }
