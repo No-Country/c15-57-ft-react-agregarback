@@ -1,17 +1,10 @@
 import React from 'react'
 
 const DonationsLayout = ({ children }) => {
-    return (
-        <div
-        style={{
-            backgroundColor:'#212122',
-            padding: '20px', // Added padding to the div
-            color: 'azure'
-        }}
-        >
-            {children}
-        </div>
-    )
+  return (
+    <div>
+      {children}
+    </div>
+  )
 }
-
 export default DonationsLayout

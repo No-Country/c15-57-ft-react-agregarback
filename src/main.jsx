@@ -10,11 +10,11 @@ import { makeServer } from './Store/Server/MirageConf'
 
 makeServer()
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <ContentProvider>
-        <ECommerceProvider>
-            <UserProvider>
-                    <RouterProvider router={router}/>
-            </UserProvider>
-        </ECommerceProvider>
-    </ContentProvider>
+  <ContentProvider>
+    <ECommerceProvider>
+      <UserProvider>
+        <RouterProvider router={router} />
+      </UserProvider>
+    </ECommerceProvider>
+  </ContentProvider>
 )
