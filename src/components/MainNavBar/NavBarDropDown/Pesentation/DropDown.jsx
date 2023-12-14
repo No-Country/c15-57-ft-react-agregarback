@@ -2,10 +2,10 @@ import {DropDownLayout} from "./DropDownLayout.jsx";
 import {DropDownLinks} from "./DropDownLinks.jsx";
 
 const routes = [{
-    name: "My Volunteers",
+    name: "Mis Donaciones",
     path:"/MyVolunteers"
 },{
-    name: "My Purchases",
+    name: "Mis Compras",
     path: "/MyPurchases"
 }
 ]

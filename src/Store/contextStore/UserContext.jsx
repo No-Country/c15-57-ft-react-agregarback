@@ -5,15 +5,23 @@ import { createContext, useContext, useState } from "react";
 export const UserContext = createContext()
 
 const UserProvider = ({ children }) => {
-
-    const [user, setUser] = useState(false)
-    //firebase 
+    //firebase
     //oauth
     // jwt
 
+    const [user, setUser] = useState(true)
+
+    const logControl = () => {
+        if (user) {
+            setUser(null)
+        } else {
+            setUser(true)
+        }
+    }
+
     return (
 
-    <UserContext.Provider value={{ user, setUser }} >
+    <UserContext.Provider value={{ logControl, user }} >
       {children}
     </UserContext.Provider>
 

@@ -1,9 +1,5 @@
-import { useState } from 'react'
-import { InputForm, Button, InputCard, InputCCV } from '../../../components'
-import osoHormiguero from '../../../assets/OsoHormiguero.png'
-import DonateButton from '../../../components/DonateButton/Component'
-import { Formik, Form } from 'formik'
-import * as Yup from 'yup'
+import React from 'react'
+const WhoWeAreInfo = ({ info }) => {
 
 const DonationsInfo = () => {
   const [showForm, setShowForm] = useState(false)
@@ -101,4 +97,8 @@ const DonationsInfo = () => {
   )
 }
 
+<<<<<<< HEAD:src/Routes/Donations/Presentation/DonationsInfo.jsx
 export default DonationsInfo
+=======
+export default WhoWeAreInfo
+>>>>>>> 26729d6ede7f36270a5a92b1125dab68287a6022:src/Routes/WhoWeAre/Presentation/WhoWeAreInfo.jsx

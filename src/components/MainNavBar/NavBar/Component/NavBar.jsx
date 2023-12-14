@@ -1,29 +1,24 @@
-
-import { useEffect, useState } from 'react'
 import NavBarContainer from '../Presentation/NavBar.jsx'
-
 
 
 const navigationLinks = [
   {
     to: '/',
-    link: 'Animals'
+    link: 'Animales'
   },
   {
     to: '/Store',
-    link: 'Store'
+    link: 'Tienda'
   },
   {
-    to: "/Donations",
-    link: "Donation"
+    to: "/WhoWeAre",
+    link: "¿Quienes Somos?"
   },
   {
-    to: "/Volunteers",
-    link: "Volunteer"
-  },
+    to: "VulnerableSpecies",
+    link: "Especies Vulnerables"
+  }
 ]
-
-
 
 export default function NavBar() {
   return <NavBarContainer navigationLinks={navigationLinks} />
