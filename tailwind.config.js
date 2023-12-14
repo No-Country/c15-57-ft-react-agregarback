@@ -10,7 +10,6 @@ export default {
         'Helvetica Neue', 'sans-serif'
       ],
       roboto: [
-        'Roboto', 'sans-serif',
         'Roboto', 'sans-serif'
       ],
       robotoM: [
@@ -23,6 +22,7 @@ export default {
       }
     },
     plugins: [
+      require('daisyui'),
       require('@tailwindcss/forms')
     ]
   }
