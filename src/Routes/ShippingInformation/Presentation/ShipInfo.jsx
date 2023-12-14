@@ -3,7 +3,7 @@ import { RiArrowRightDoubleFill } from 'react-icons/ri'
 
 export default function ShipInfo () {
   return (
-    <div className='w-full flex flex-col justify-center items-center rounded fixed md:static  max-w-[339px] bg-white md:self-start md:mt-[48px]'>
+    <div className='w-full flex flex-col justify-center items-center rounded fixed left-0 sm:left-[25%] md:static max-w-[339px] bg-white md:self-start md:mt-[48px]'>
       <img src={dhl} alt='DHL logo' className='w-[90%] mb-2' />
       <h2 className='mx-4 text-base font-robotoM self-start mb-[19px] md:hidden'>
         Envío por DHL Express Worldwide
