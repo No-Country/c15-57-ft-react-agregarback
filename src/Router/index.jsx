@@ -3,7 +3,7 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import { MainLayout, PrivateLayout } from '../Layouts'
 
-import { Animals, WhoWeAre, VulnerableSpecies, Store, Register, Login, NotFound, User, MyVolunteers, MyPurchases, ResetPassword, ShippingInformation } from '../Routes'
+import { Animals, WhoWeAre, VulnerableSpecies, Store, Register, Login, NotFound, User, MyVolunteers, MyPurchases, ResetPassword, ShippingInformation, ShoppingCart } from '../Routes'
 
 export const router = createBrowserRouter([
   {
@@ -65,11 +65,6 @@ export const router = createBrowserRouter([
             <ShippingInformation />
           </Suspense>)
       },
-
-      /*
-      * Private Routes
-      */
-
       {
         path: '/Reset-password',
         element: (
@@ -77,6 +72,17 @@ export const router = createBrowserRouter([
             <ResetPassword />
           </Suspense>)
       },
+      {
+        path: '/ShoppingCart',
+        element: (
+          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+            <ShoppingCart />
+          </Suspense>)
+      },
+
+      /*
+      * Private Routes
+      */
       {
         path: '/User',
         errorElement: <NotFound />,
