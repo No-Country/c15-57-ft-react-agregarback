@@ -13,6 +13,7 @@
 .hero-cambiarSeccion:hover .hero-icon{
   opacity: 1;
   scale: 1.5;
+  
 }
 @keyframes moverDiv {
   0% {
@@ -44,4 +45,8 @@
   background-color: white;
   color: rgb(0, 0, 0);
   box-shadow: 0px 5px 30px  30px #ffffff;
+}
+
+.bg-category-Animals{
+border-radius:0 80px 0 80px ;
 }

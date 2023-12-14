@@ -1,5 +1,3 @@
-import axios from 'axios'
-import { useEffect, useState } from 'react'
 
 import ShowMerchandise from '../Presentation/ShowMerchandise'
 import AnimalsCategory from '../Presentation/AnimalsCategory'
@@ -8,28 +6,35 @@ import { useECommerceContext } from '../../../Store/contextStore/ECommerceContex
 import { useContentContext } from '../../../Store/contextStore/ContentContext'
 import InfoContainer from '../Presentation/InfoContainer'
 import ListInfo from '../Presentation/ListInfo'
-import VoluntaryInfo from '../Presentation/VoluntaryInfo'
+import MovileList from '../Presentation/MovileList'
+import HighlightBox from '../Presentation/HighlightBox'
+import LandingLayout from '../Presentation/LandingLayout'
+
+
 
 const LandingPage = ()  => {
   const { item } = useECommerceContext()
-  const { animalInfo, setAnimalInfo,bannerAnimals, setBannerAnimals,
-    mostrar, setMostrar,classBaner,infoData} = useContentContext()
+  const { animalInfo,bannerAnimals,
+    mostrar, setMostrar,classBaner,infoData } = useContentContext()
 
-  
-
-
-
-  return (
-    <div className='w-full relative z-0 top-[-10px]'>
-      <Banner showAnimals={bannerAnimals} classBaner={classBaner} setMostrar={setMostrar} mostrar={mostrar} />
+  return (   
+    <LandingLayout>
+      <Banner showAnimals={bannerAnimals} classBaner={classBaner} setMostrar={setMostrar} mostrar={mostrar} /> 
+      <HighlightBox/>      
       <ShowMerchandise animalLink={animalInfo[mostrar]?.link} animalIcon={animalInfo[mostrar]?.icon} />
-      <AnimalsCategory animals={animalInfo} />
-     
+      <AnimalsCategory animals={animalInfo} />      
       <InfoContainer/>
-      <ListInfo pointData={infoData}/>
-      <VoluntaryInfo/>
-    </div>
+      <ListInfo pointData={infoData}/>     
+      <MovileList data={infoData}/>
+    </LandingLayout>
+      
+    
   )
 }
 
 export default LandingPage;
+
+
+
+
+
