@@ -7,7 +7,8 @@ import InputPassword from './InputPassword'
 import InputSelectForm from './InputSelectForm/Component'
 import LandingPage from '../components/Carrousel/Component/LandingPage'
 import SubtitleInfoStore from './SubtitleInfoStore/Component'
-
+import InputCard from '../components/InputCard/Component/index'
+import InputCCV from '../components/InputCCV/Component/index'
 import InfoPageContainer, { loaderItem } from './InfoPage/Container/InfoPage'
 
-export { LandingPage, Footer, OtherSesion, InputPassword, Button, NavBar, InfoPageContainer, loaderItem, InputForm, InputSelectForm, SubtitleInfoStore }
+export { LandingPage, Footer, OtherSesion, InputPassword, Button, NavBar, InfoPageContainer, loaderItem, InputForm, InputSelectForm, SubtitleInfoStore, InputCCV, InputCard }

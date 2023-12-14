@@ -1,30 +1,30 @@
-
-import axios from "axios";
-import { createContext, useContext, useState, useEffect } from "react";
+import axios from 'axios'
+import { createContext, useContext, useState, useEffect } from 'react'
 
 export const ContentContext = createContext()
 
 const ContentProvider = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [NavBarDropDown, setNavBarDropDown] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
+  const [NavBarDropDown, setNavBarDropDown] = useState(false)
 
-  //Dropdown navbar open and close handler ->
+  // Dropdown navbar open and close handler ->
 
   const toggle = () => {
-    setIsOpen(!isOpen);
-  };
+    setIsOpen(!isOpen)
+  }
 
   // open and close handler for the dropdown navbar when user is authenticated->
   const openDropdown = () => {
-    setNavBarDropDown(!NavBarDropDown);
-  };
+    setNavBarDropDown(!NavBarDropDown)
+  }
 
   //
 
   const [animalInfo, setAnimalInfo] = useState([])
   const [bannerAnimals, setBannerAnimals] = useState([])
-  const [mostrar, setMostrar] = useState(0)
+  const [mostrar, setMostrar] = useState(1)
   const classBaner = 'img-container'
+  const [movileIndex, setMovileIndex] = useState(0)
   const infoData = [
     {
       title: 'Conservación de Hábitats',
@@ -56,39 +56,63 @@ const ContentProvider = ({ children }) => {
     }, {
       title: 'Consumo Consciente',
       information: 'Adoptar un estilo de vida de consumo consciente, eligiendo productos que sean respetuosos con el medio ambiente y no contribuyan a la degradación de hábitats naturales.'
-    },
+    }
   ]
+  const moreDataDonate = ` Prevenir la extinción de los animales es un desafío global que involucra la colaboración
+  de gobiernos, organizaciones ambientales, comunidades locales y personas individuales.
+  Aquí hay algunas acciones clave que se pueden tomar para contribuir a la prevención de  la extinción de animales:
+ `
 
+  // Router handler for the animal navbar page ->
+  const onAnimalRouteChecker = () => {
+    const [onAnimalRoute, setOnAnimalRoute] = useState(true)
+    const location = useLocation()
 
+    useEffect(() => {
+      if (location.pathname === '/') {
+        setOnAnimalRoute(true)
+      } else {
+        setOnAnimalRoute(false)
+      }
+    }, [location.pathname])
+
+    return onAnimalRoute
+  }
+
+  //
 
   const fetchData = async () => {
-
     try {
       axios('api/animals').then((res) => {
         setAnimalInfo(res.data.animals.slice(0, 4))
         setBannerAnimals(res.data.animals.slice(0, 3))
       })
-
-
     } catch (error) {
-
-      console.log(error);
-
+      console.log(error)
     };
-
   }
 
   useEffect(() => {
     setTimeout(() => {
       fetchData()
-    }, 2000);
-  }, []);
+    }, 2000)
+  }, [])
+
+  const lefMovileIndex = (currentIndex) => {
+    if (currentIndex > 0) {
+      setMovileIndex(currentIndex - 1)
+    }
+  }
+  const rightMovileIndex = (currentIndex) => {
+    if (currentIndex < infoData.length - 1) {
+      setMovileIndex(currentIndex + 1)
+    }
+  }
 
   const constextValue = {
     isOpen,
-    toggle,  
-    openDropdown,
-    NavBarDropDown,
+    toggle,
+    onAnimalRouteChecker,
     animalInfo,
     setAnimalInfo,
     bannerAnimals,
@@ -96,18 +120,22 @@ const ContentProvider = ({ children }) => {
     mostrar,
     setMostrar,
     classBaner,
-    infoData
+    infoData,
+    moreDataDonate,
+    movileIndex,
+    rightMovileIndex,
+    lefMovileIndex
   }
 
   return (
 
-    <ContentContext.Provider value={constextValue} >
+    <ContentContext.Provider value={constextValue}>
       {children}
     </ContentContext.Provider>
 
   )
 }
 
-export default ContentProvider;
+export default ContentProvider
 
-export const useContentContext = () => useContext(ContentContext);
+export const useContentContext = () => useContext(ContentContext)
