@@ -13,7 +13,7 @@ const AnimalsCategory = ({ animals }) => {
             <p className='ml-4 hover:cursor-pointer w-8 hover:font-bold'>{'>'}</p>
           </div>
         </div>
-        <div className='w-full m-w-[1440px] h-full flex flex-col items-center px-[30px] pt-[40px]'>
+        <div className='w-full m-w-[1440%] h-full flex flex-col items-center px-[30px] pt-[40px]'>
           <div className='w-full h-full flex gap-[40px]  justify-center '>
             {animals.map((animal, index) => (
               <CategoryCard key={index} animal={animal} />
