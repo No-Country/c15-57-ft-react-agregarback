@@ -24,8 +24,8 @@ const FormularioComponent = () => {
 
   const validationSchema = Yup.object().shape({
     // Definir la validación del esquema Yup para los campos del formulario
-    name: Yup.string().min(2, 'muy corto').max(20, 'Que nombre tan largo').required('El nombre es requerido'),
-    email: Yup.string().email('El correo no es válido').required('El correo es requerido'),
+    name: Yup.string().min(3, 'Mínimo de 3 caractares').max(20, 'Máximo 20 caracteres').required('Nombre requerido'),
+    email: Yup.string().email('Correo eléctronico no válido').required('Correo eléctronico requerido'),
     password: Yup.string().min(8, 'La contraseña debe tener mínimo 8 caracteres')
       .matches(
         /^(?=.*[a-z])/,
@@ -79,7 +79,7 @@ const FormularioComponent = () => {
           {/* Botón de envío del formulario */}
           <Button text='Registrarme' color='bg-green-600' hover='hover:bg-green-900' />
           {/* error de registro */}
-          {error && <p className='text-red-600 text-xs italic text-center'>{error}</p>}
+          {error && <p className='text-red-600 text-xs font-roboto text-center'>{error}</p>}
         </Form>
       )}
     </Formik>

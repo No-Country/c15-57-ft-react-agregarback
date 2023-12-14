@@ -1,21 +1,31 @@
 import BannerContainer from './BannerContainer'
-import BannerShowArea from './BannerShowArea'
+import BannerInfo from './BannerInfo'
+import BannerOption from './BannerOption'
+
 import './style.css'
 
 export default function Banner ({ showAnimals, classBaner, setMostrar, mostrar }) {
   const datosMostrar = showAnimals[mostrar]
+ 
+  
 
   return (
     <BannerContainer datosMostrar={datosMostrar} classBaner={classBaner}>
-      {showAnimals?.map((animals, index) => (
-        <BannerShowArea
-          setMostrar={setMostrar}
-          mostrar={mostrar}
-          key={index}
-          index={index}
-          data={animals}
-        />
-      ))}
+      {/* select cards */}
+      <div className='hidden  absolute z-40 sm:flex flex-row w-full h-full items-center justify-between'>
+      {showAnimals?.map((animals, index) =>{
+        if (index != mostrar){
+      return <BannerOption setMostrar={setMostrar} index={index} key={index} name={animals.name} />
+    }else{
+      return <BannerInfo key={index} data={animals} />
+    }
+     }
+        
+      )}
+
+      </div>
+      
+   
     </BannerContainer>
   )
 }

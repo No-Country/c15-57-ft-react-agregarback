@@ -1,6 +1,6 @@
-import MyPurchases from "../Presentation/MyPurchases";
+import MyPurchases from '../Presentation/MyPurchases'
 
 const MyPurchasess = () => {
-    return <MyPurchases />;
+  return <MyPurchases />
 }
-export default MyPurchasess;
+export default MyPurchasess

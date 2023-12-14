@@ -1,15 +1,12 @@
-import React from 'react'
 const WhoWeAreInfo = ({ info }) => {
-
-    console.log(info);
-    
-    return (
+  console.log(info)
+  return (
     <div>
-       <p>
-         {info}
-        </p>
+      <p>
+        {info}
+      </p>
     </div>
-    )
+  )
 }
 
 export default WhoWeAreInfo

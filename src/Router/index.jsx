@@ -3,7 +3,7 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import { MainLayout, PrivateLayout } from '../Layouts'
 
-import { Animals, WhoWeAre, VulnerableSpecies, Store, Register, Login, NotFound, User, MyVolunteers, MyPurchases, ResetPassword } from '../Routes'
+import { Animals, WhoWeAre, VulnerableSpecies, Store, Register, Login, NotFound, User, MyVolunteers, MyPurchases, ResetPassword, Donations,ShippingInformation, ShoppingCart } from '../Routes'
 
 export const router = createBrowserRouter([
   {
@@ -28,6 +28,13 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
             <WhoWeAre />
+          </Suspense>)
+      },
+      {
+        path: '/Donations',
+        element: (
+          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+            <Donations />
           </Suspense>)
       },
       {
@@ -58,11 +65,13 @@ export const router = createBrowserRouter([
             <Login />
           </Suspense>)
       },
-
-      /*
-      * Private Routes
-      */
-
+      {
+        path: '/Shipping-information',
+        element: (
+          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+            <ShippingInformation />
+          </Suspense>)
+      },
       {
         path: '/Reset-password',
         element: (
@@ -70,6 +79,17 @@ export const router = createBrowserRouter([
             <ResetPassword />
           </Suspense>)
       },
+      {
+        path: '/ShoppingCart',
+        element: (
+          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+            <ShoppingCart />
+          </Suspense>)
+      },
+
+      /*
+      * Private Routes
+      */
       {
         path: '/User',
         errorElement: <NotFound />,
