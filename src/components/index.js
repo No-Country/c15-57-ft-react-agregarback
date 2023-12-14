@@ -6,7 +6,9 @@ import InputForm from './InputForm/Component/index'
 import InputPassword from './InputPassword'
 import InputSelectForm from './InputSelectForm/Component'
 import LandingPage from '../components/Carrousel/Component/LandingPage'
+import InputCard from '../components/InputCard/Component/index'
+import InputCCV from '../components/InputCCV/Component/index'
 
 import InfoPageContainer, { loaderItem } from './InfoPage/Container/InfoPage'
 
-export { LandingPage, Footer, OtherSesion, InputPassword, Button, NavBar, InfoPageContainer, loaderItem, InputForm, InputSelectForm }
+export { LandingPage, Footer, OtherSesion, InputPassword, Button, NavBar, InfoPageContainer, loaderItem, InputForm, InputSelectForm, InputCCV, InputCard }
