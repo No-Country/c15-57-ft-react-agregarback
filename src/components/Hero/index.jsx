@@ -11,7 +11,7 @@ export default function Hero () {
 
   useEffect(() => {
     axios('api/animals')
-    .then((res) => setDataHero(res.data.animals))
+      .then((res) => setDataHero(res.data.animals))
   }, [])
 
   useEffect(() => {
@@ -33,20 +33,20 @@ export default function Hero () {
   const datosMostrar = dataHero[mostrar]
 
   return (
-    <header className="hero-container">
+    <header className='hero-container'>
       <img
         style={{ backgroundImage: datosMostrar?.img }}
-        className="hero-img"
+        className='hero-img'
         src={datosMostrar?.img}
         alt={datosMostrar?.name}
       />
-      <section className="hero-sectio">
-        <div className="hero-info">
+      <section className='hero-sectio'>
+        <div className='hero-info'>
           <div>
-            <p className="hero-name">{datosMostrar?.name}</p>
-            <p className="hero-titular">{datosMostrar?.titular}</p>
+            <p className='hero-name'>{datosMostrar?.name}</p>
+            <p className='hero-titular'>{datosMostrar?.titular}</p>
           </div>
-          <p className="hero-detalle">{datosMostrar?.detalle}</p>
+          <p className='hero-detalle'>{datosMostrar?.detalle}</p>
           <BotonDonar link={datosMostrar?.link}>¡DONA AHORA!</BotonDonar>
 
           <BarraHero
