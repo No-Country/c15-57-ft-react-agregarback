@@ -1,19 +1,16 @@
 import { Link } from "react-router-dom"
-import {useContentContext} from "../../../../Store/contextStore/ContentContext.jsx";
+
+import useRouterChecker from "../../../Hooks/useRouterChecker.jsx";
 
 const NavBarLinks = ({ links }) => {
-    const {onAnimalRouteChecker} = useContentContext()
-    const onAnimalRoute = onAnimalRouteChecker();
-
+  const {animalRouterChecker} =  useRouterChecker()
     return (
         <>
             {
-                links.map(({to, link}) => (
+                links.map(({ to, link }) => (
                     <li key={to} className={`
-                ${onAnimalRoute ? "text-white" : "text-black"}
-                text-center height-[25%]
-                text-[8vw] sm:pl-[1%] sm:text-center
-                lg:text-[2.05vw] pl-[1%] 
+                   md:text-[1.3vw] lg:text-[1.7vw]  2xl:text-xl 
+                ${ animalRouterChecker ? "text-white" : "text-black"}
                 `}>
                         <Link to={to}>{link}</Link>
                     </li>

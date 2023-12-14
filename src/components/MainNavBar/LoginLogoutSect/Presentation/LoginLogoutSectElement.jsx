@@ -1,17 +1,17 @@
 import {Link} from "react-router-dom";
-import {useContentContext} from "../../../../Store/contextStore/ContentContext.jsx";
+
+import useRouterChecker from "../../../Hooks/useRouterChecker.jsx";
 
 export const LoginLogoutSectElement = ({routes}) => {
-    const {onAnimalRouteChecker} = useContentContext()
-    const onAnimalRoute = onAnimalRouteChecker();
+ 
+    const {animalRouterChecker} = useRouterChecker();
     return (
         <>
             {
                 routes.map((route) => (
                         <li key={route.name} className={`
-                ${onAnimalRoute ? 'text-white' : 'text-black'} 
-                sm:text-[8vw] sm:pl-[1%] sm:text-center
-                lg:text-[2.05vw]
+                        lg:text-[1.7vw] 2xl:text-xl
+                ${animalRouterChecker ? 'text-white' : 'text-black'} 
                 `}>
                             <Link to={route.path}> {route.name} </Link>
                         </li>
