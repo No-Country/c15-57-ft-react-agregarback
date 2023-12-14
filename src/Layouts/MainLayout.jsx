@@ -12,7 +12,7 @@ const MainLayout = () => {
     items-center
     grid-cols-1
     grid-rows-[1fr,auto,1fr]
-    lg:grid-rows-[1r,auto,1fr]
+    lg:grid-rows-[1r,auto,1fr]'
 >
             <header>
                 <NavBar />
