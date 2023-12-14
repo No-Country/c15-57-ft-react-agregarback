@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 
-import useRouterChecker from "../../../Hooks/useRouterChecker.jsx";
+import useRouterChecker from "../../../../Hooks/useRouterChecker.jsx";
 
 export const LoginLogoutSectElement = ({routes}) => {
  
