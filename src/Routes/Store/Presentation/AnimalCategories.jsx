@@ -19,30 +19,42 @@ export default function AnimalCategories () {
   return (
     <>
       <img
-        className='w-64 h-36 rounded-xl'
+        className='hidden md:block w-64 h-36 rounded-xl'
         src={jaguar}
       />
-      <div className='w-72 p-3 rounded-xl justify-center items-center gap-2.5 inline-flex'>
-        <p className="w-60 text-center text-gray-800 text-xl font-normal font-['Roboto'] ">
-          Con la compra de uno de los productos solidarios estás contribuyendo
-          directamente con la labor que las ONG realiza en beneficio a los
-          animales que se encuentran en Peligro de extinción en Latinoamérica
+      <div className='hidden md:inline-flex w-72 p-3 rounded-xl justify-center items-center gap-2.5'>
+        <p className='w-60 text-center text-gray-800 text-xl font-normal font-roboto '>
+          Con la compra de uno de los productos solidarios estás contribuyendo  directamente con la labor que las ONG realiza en beneficio a los animales que se encuentran en Peligro de extinción en Latinoamérica
         </p>
       </div>
-      <div className='h-px border border-gray-300 w-36' />
-      <h2 className="text-slate-800 text-base font-light font-['Roboto'] ">
+      <div className='hidden md:block h-px border border-gray-300 w-36' />
+      <h2 className='text-[0.9375rem] font-light leading-[137%] tracking-[-0.05rem] font-Roboto '>
         Categorías de productos por animales
       </h2>
-      <ul className='flex flex-col items-center justify-center flex-shrink-0 gap-3 w-34 h-132'>
+      <ul className='carousel carousel-center p-4 mx-4 rounded-box md:flex md:flex-col md:items-center md:justify-center md:flex-shrink-0 gap-3  '>
         {animals.map((animal) => (
-          <li key={animal.id}>
+          <li
+            className='carousel-item'
+            key={animal.id}
+          >
             <img
+              className='rounded-box w-[15.5rem] h-[6.0625rem]'
               src={animal.img}
               alt={animal.name}
             />
           </li>
         ))}
       </ul>
+      <div className='flex:row md:hidden w-full p-3 rounded-xl justify-center items-center gap-2.5'>
+        <p className='w-full text-center text-gray-800 p-3 text-xl font-normal font-roboto '>
+          Con la compra de uno de los productos solidarios estás contribuyendo
+          directamente con la labor que las ONG realiza en beneficio a los
+          animales que se encuentran en Peligro de extinción en Latinoamérica
+        </p>
+        <p className='w-full text-center pb-3 text-[0.9375rem] font-roboto not-italic font-light leading-[137%] tracking-[-0.05rem] '>
+          Tipos de productos
+        </p>
+      </div>
     </>
   )
 }

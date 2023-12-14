@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import { useECommerceContext } from '../../../Store/contextStore/ECommerceContext'
 
 export default function ProductsCategories () {
+  const { setCategory } = useECommerceContext()
   const [products, setProducts] = useState([])
   const url = 'api/productCs'
 
@@ -17,14 +19,14 @@ export default function ProductsCategories () {
 
   return (
     <>
-      <section className='w-full flex flex-col gap-[1rem] pt-26 pb-4'>
-        <p className="w-full py-6 text-slate-800 text-3xl font-bold font-['Roboto'] bg-emerald-600 bg-opacity-10 rounded-tl-xl rounded-tr-xl text-center">
-          Productos
-        </p>
-
-        <ul className='flex flex-row items-center justify-center gap-8'>
+      <section className='w-full flex flex-col gap-[1rem] md:pt-26 p-4'>
+        <ul className='carousel carousel-center md:flex md:flex-row md:items-center sm:justify-center gap-8'>
           {products.map((product) => (
-            <li key={product.id}>
+            <li
+              onClick={() => setCategory(product.name)}
+              className='cursor-pointer carousel-item'
+              key={product.id}
+            >
               <div className='flex flex-col items-center'>
                 <img
                   className='w-[5.625rem] h-[5.625rem]'

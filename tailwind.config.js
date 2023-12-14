@@ -24,7 +24,8 @@ export default {
         shoppingTitle: 'rgba(22, 101, 52, 0.10)'
       },
       plugins: [
-        require('@tailwindcss/forms')
+        require('@tailwindcss/forms'),
+        require('daisyui')
       ]
     }
   }

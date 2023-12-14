@@ -1,84 +1,170 @@
-import defaultImage from '../../../assets/products/remeras/remeras-02.png'
+import { useLocalStorage } from '../../../components/Hooks/useStorage'
+import { useNavigate } from 'react-router-dom'
+import { useECommerceContext } from '../../../Store/contextStore/ECommerceContext'
 
 export default function ProductDetails () {
+  const navigate = useNavigate()
+  const { product, setProduct } = useECommerceContext()
+  const [, setCart, remove] = useLocalStorage('cart', [])
+
+  const increment = () => {
+    setProduct((prevProduct) => ({
+      ...prevProduct,
+      quantity: prevProduct.quantity + 1
+    }))
+  }
+
+  const decrement = () => {
+    if (product.quantity > 1) {
+      setProduct((prevProduct) => ({
+        ...prevProduct,
+        quantity: prevProduct.quantity - 1
+      }))
+    }
+  }
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setProduct((prevProduct) => ({
+      ...prevProduct,
+      [name]: value
+    }))
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setCart((prevCart) => [...prevCart, product])
+    console.table({ product })
+    // navigate('/cart')
+  }
+
   return (
-    <div className='container m-12'>
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
-        <div className=''>
-          <img
-            className='w-full h-full'
-            src={defaultImage}
-            alt='Jaguar Remera'
-          />
+    <form
+      className='m-12 grid grid-cols-1 md:grid-cols-2 gap-12'
+      onSubmit={handleSubmit}
+    >
+      <input
+        type='image'
+        name='img'
+        className='cursor-default w-full h-full object-cover'
+        src={product.img}
+        alt={product.title}
+      />
+      <div className='flex flex-col gap-5'>
+        <h2 className='text-gray-800 text-5xl font-medium font-display'>
+          {product.title}
+        </h2>
+        <p className='text-gray-800 text-3xl font-medium font-display'>
+          {product.price.toLocaleString('es-AR', {
+            style: 'currency',
+            currency: 'ARS'
+          })}
+        </p>
+        <ul>
+          {product.descriptions?.map((description, index) => (
+            <li key={index}>{description} </li>
+          ))}
+        </ul>
+        <div className='mt-4'>
+          <h3 className='text-xl font-bold mb-2'>Size</h3>
+          <div
+            name='size'
+            className='flex gap-3 font-display'
+          >
+            {product.sizes?.map((size, index) => (
+              <label
+                title={size}
+                key={index}
+                htmlFor={size}
+                className={
+                  product.size === size
+                    ? 'cursor-pointer w-10 h-10 px-1 pt-0.5 bg-green-800  rounded-full flex-col justify-center items-center gap-2.5 inline-flex text-gray-100 text-base font-medium font-display'
+                    : 'cursor-pointer w-10 h-10 px-1 pt-0.5 bg-green-300 bg-opacity-40 rounded-full flex-col justify-center items-center gap-2.5 inline-flex text-gray-800 text-base font-medium font-display'
+                }
+              >
+                {size}
+                <input
+                  type='radio'
+                  name='size'
+                  id={size}
+                  value={size}
+                  checked={product.size === size}
+                  onChange={handleChange}
+                  hidden
+                />
+              </label>
+            ))}
+          </div>
         </div>
-        <div className='flex flex-col gap-5'>
-          <h2 className='text-gray-800 text-5xl font-medium font-display'>
-            Remera
-          </h2>
-          <p className='text-gray-800 text-3xl font-medium font-display'>
-            $800
-          </p>
-          <ul>
-            <li>
-              - Confeccionamos con telas de primera calidad, Algodón 100% jersey
-              24/1 de textura suave y liviana.
-            </li>
-            <li>
-              - Toda la prenda se arma en Overlock de 4 hilos reforzando
-              costuras de seguridad.
-            </li>
-            <li>
-              - Cuello de Reeb fino al tono (Sin TapaCostura).- Tirillera de
-              hombro a hombro con hilos de Algodón.
-            </li>
-          </ul>
-          <div className='mt-4'>
-            <h3 className='text-xl font-bold mb-2'>Size</h3>
-            <ul className='flex gap-3 font-display'>
-              <div className='w-6 h-6 px-1.5 pt-0.5 bg-green-800 rounded-xl flex-col justify-center items-center gap-2.5 inline-flex'>
-                <div className='text-gray-100 text-base font-medium '>S</div>
-              </div>
-              <div className='w-6 h-6 px-1 pt-0.5 bg-green-300 bg-opacity-40 rounded-xl flex-col justify-center items-center gap-2.5 inline-flex'>
-                <div className='text-gray-800 text-base font-medium font-display'>M</div>
-              </div>
-              <div className='w-6 h-6 px-1 pt-0.5 bg-green-300 bg-opacity-40 rounded-xl flex-col justify-center items-center gap-2.5 inline-flex'>
-                <div className='text-gray-800 text-base font-medium font-display'>L</div>
-              </div>
-              <div className='w-6 h-6 px-1.5 pt-0.5 bg-gray-300 rounded-xl flex-col justify-center items-center gap-2.5 inline-flex'>
-                <div className='text-gray-400 text-xs font-medium font-display'>XL</div>
-              </div>
-              <div className='w-6 h-6 px-1 pt-0.5 bg-green-300 bg-opacity-40 rounded-xl flex-col justify-center items-center gap-2.5 inline-flex'>
-                <div className='text-gray-800 text-xs font-medium font-display'>XXL</div>
-              </div>
-            </ul>
+        <div className='mt-4'>
+          <h3 className='text-xl font-bold mb-2'>Color</h3>
+          <div
+            name='color'
+            className='flex gap-5 '
+          >
+            {product.colors?.map((color, index) => (
+              <label
+                htmlFor={color}
+                key={index}
+                title={color}
+                value={color}
+                className={
+                  product.color === color
+                    ? `w-6 h-6 bg-[${color}] scale-150 border-2 border-gray-200 rounded-3xl cursor-pointer`
+                    : `w-6 h-6 bg-[${color}] rounded-3xl border cursor-pointer`
+                }
+              >
+                <input
+                  id={color}
+                  type='radio'
+                  name='color'
+                  value={color}
+                  checked={product.color === color}
+                  onChange={handleChange}
+                  hidden
+                />
+              </label>
+            ))}
           </div>
-          <div className='mt-4'>
-            <h3 className='text-xl font-bold mb-2'>Color</h3>
-            <ul className='flex gap-5 '>
-              <li className='w-6 h-6 bg-gray-100 rounded-3xl border border-black' />
-              <li className='w-6 h-6 bg-black rounded-3xl' />
-            </ul>
-          </div>
-          <div className='mt-4 flex gap-5'>
-            <button className='w-24 h-10 px-4 py-3 rounded-3xl border border-black justify-start items-end gap-4 inline-flex'>
-              <div className='w-2 h-4 text-center text-gray-800 text-sm font-medium font-display'>-</div>
-              <div className='w-2 h-4 text-center text-gray-800 text-sm font-medium font-display'>2</div>
-              <div className='w-2 h-4 text-center text-gray-800 text-sm font-medium font-display'>+</div>
+        </div>
+        <div className='mt-4 flex gap-5'>
+          <div className='w-24 h-10 px-4 py-3 rounded-3xl border border-black justify-start items-end gap-4 inline-flex'>
+            <button
+              onClick={decrement}
+              className='w-2 h-4 text-center text-gray-800 text-sm font-medium font-display'
+            >
+              -
             </button>
-            <button className='w-40 h-10 px-4 py-2 bg-green-700 rounded-full justify-start items-center inline-flex'>
-              <span className='text-center text-gray-100 text-base font-medium font-display leading-normal'>
-                Agregar al carrito
-              </span>
+            <p className='w-2 h-4 text-center text-gray-800 text-sm font-medium font-display'>
+              {product.quantity}
+            </p>
+            <button
+              onClick={increment}
+              className='w-2 h-4 text-center text-gray-800 text-sm font-medium font-display'
+            >
+              +
             </button>
           </div>
-          <br />
-          <hr />
-          <div className='mt-4 flex gap-5'>
-            <span className='text-gray-800 text-base font-medium font-display'>Categoría:</span>
-            <span className='text-gray-500 text-base font-light font-display'>Remera - Jaguar</span>
-          </div>
+          <button
+            type='submit'
+            className='w-40 h-10 px-4 py-2 bg-green-700 rounded-full justify-start items-center inline-flex'
+          >
+            <span className='text-center text-gray-100 text-base font-medium font-display leading-normal'>
+              Agregar al carrito
+            </span>
+          </button>
+        </div>
+        <br />
+        <hr />
+        <div className='mt-4 flex gap-5'>
+          <span className='text-gray-800 text-base font-medium font-display'>
+            Categoría:
+          </span>
+          <span className='text-gray-500 text-base font-light font-display'>
+            {product.title} - {product.category}
+          </span>
         </div>
       </div>
-    </div>
+    </form>
   )
 }
