@@ -110,6 +110,8 @@ const ContentProvider = ({ children }) => {
   }
 
   const constextValue = {
+    openDropdown,
+    NavBarDropDown,
     isOpen,
     toggle,
     onAnimalRouteChecker,
