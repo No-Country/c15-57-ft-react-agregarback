@@ -1,5 +1,5 @@
 import React from 'react'
-const DonationsInfo = ({ info }) => {
+const WhoWeAreInfo = ({ info }) => {
 
     console.log(info);
     
@@ -12,4 +12,4 @@ const DonationsInfo = ({ info }) => {
     )
 }
 
-export default DonationsInfo
+export default WhoWeAreInfo

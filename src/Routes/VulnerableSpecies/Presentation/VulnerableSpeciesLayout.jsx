@@ -1,6 +1,6 @@
 import React from 'react'
 
-const VolunterrsLayout = ({ children }) => {
+const VulnerableSpeciesLayout = ({ children }) => {
     return (
         <div>
             {children}
@@ -8,4 +8,4 @@ const VolunterrsLayout = ({ children }) => {
     )
 }
 
-export default VolunterrsLayout
+export default VulnerableSpeciesLayout

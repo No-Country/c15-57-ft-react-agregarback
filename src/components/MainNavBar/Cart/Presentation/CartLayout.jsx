@@ -1,6 +1,7 @@
 export const CartLayout = ({children}) => {
     return (
-        <figcaption>
+        <figcaption className="
+         ">
             {children}
         </figcaption>
     )

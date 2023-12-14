@@ -7,7 +7,7 @@ import '../index.css'
 const MainLayout = () => {
     return (
         <div className="
-    w-full
+    w-full	
     h-full
     justify-self-center
     items-center
@@ -16,15 +16,13 @@ const MainLayout = () => {
     lg:grid-rows-[1r,auto,1fr]
 ">
             <header>
-                <NavBar/>
+                <NavBar />
             </header>
-            <hr/>
-            <main className='row-span-2 '>
-                <Outlet/>
+            <main className='row-start-2 '>
+                <Outlet />
             </main>
-            <hr/>
-            <footer className='bg-amber-500'>
-                <Footer/>
+            <footer>
+                <Footer />
             </footer>
         </div>
     );
