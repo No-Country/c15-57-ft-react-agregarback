@@ -20,7 +20,8 @@ export default {
       colors: {
         colorFooter: '#434343',
         colorInputFooter: '#4B4B4B',
-        colorDonation: '#6B7280'
+        colorDonation: '#6B7280',
+        shoppingTitle: 'rgba(22, 101, 52, 0.10)'
       },
       plugins: [
         require('@tailwindcss/forms')
