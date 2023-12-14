@@ -10,7 +10,6 @@ export default {
         'Helvetica Neue', 'sans-serif'
       ],
       roboto: [
-        'Roboto', 'sans-serif',
         'Roboto', 'sans-serif'
       ],
       robotoM: [
