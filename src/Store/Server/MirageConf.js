@@ -1,12 +1,6 @@
 import { createServer, Model, Response } from 'miragejs'
 import { jaguarImg, osoAnteojos, ballenasFrancas, jaguarIcon, ballenaIcon, osoIcon, ajolote, ajoleteIcon } from '../../../src/assets/img-hero'
-import {
-  alojote,
-  ballenaFranca,
-  gatoAndino,
-  jaguar,
-  osoConAnteojos
-} from '../../assets/animals'
+import { alojote, ballenaFranca, gatoAndino, jaguar, osoConAnteojos, aguaraGuazu } from '../../assets/animals'
 import { gorras, remeras, tazas, vasos } from '../../assets/products'
 import {
   taza01,
@@ -151,6 +145,11 @@ export function makeServer () {
         id: 5,
         name: 'Oso Con Anteojos',
         img: osoConAnteojos
+      })
+      server.create('animalC', {
+        id: 6,
+        name: 'Aguara Guazu',
+        img: aguaraGuazu
       })
       // productCs
       server.create('productC', {
@@ -442,12 +441,12 @@ export function makeServer () {
       this.namespace = 'api/products'
 
       // TAZAS ROUTE
-      this.get('/tazas', (schema, request) => {
-        return schema.products.all().filter((item) => item.type === 'Raza')
+      this.get('/Tazas', (schema, request) => {
+        return schema.products.all().filter((item) => item.type === 'Taza')
       })
 
       // REMERAS ROUTE
-      this.get('/remeras', (schema, request) => {
+      this.get('/Remeras', (schema, request) => {
         return schema.products.all().filter((item) => item.type === 'Remera')
       })
 
