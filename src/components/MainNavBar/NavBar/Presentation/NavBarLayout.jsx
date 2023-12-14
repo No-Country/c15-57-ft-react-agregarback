@@ -69,7 +69,7 @@ const NavBarLayout = ({ children }) => {
 
                                     <li className="
                                             sm:grid sm:row-[span_1_/_span_6] sm:z-50
-                                            md:text-[1.3vw] lg:text-[1.7vw]  lg: col-span-3 lg:text-white lg:z-50">
+                                              lg: col-span-3 lg:text-white lg:z-50">
                                         <Dropdown />
                                     </li>
                                     <Cart />

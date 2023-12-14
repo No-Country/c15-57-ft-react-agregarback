@@ -7,17 +7,20 @@ export const DropDownLayout = ({ children }) => {
 
     const { openDropdown, NavBarDropDown } = useContentContext();
     const { logControl } = useUserContext();
-    const { onAnimalRouteChecker } = useRouterChecker();
+    const { animalRouterChecker } = useRouterChecker();
 
     return (
 
         <div className='dropdown relative '>
             <button
                 className={`
-                ${!onAnimalRouteChecker ? 'text-white' : 'text-black'} 
-                md:text-[1.3vw] lg:text-[1.7vw] rounded inline-flex items-center 
+                ${
+                    animalRouterChecker 
+                    ? 'text-white' 
+                    : 'text-black'
+                } 
+                md:text-[1.3vw] 2xl:text-xl rounded inline-flex items-center 
                         `}
-
                 onClick={() => openDropdown()}
                 tabIndex={0}
             >
@@ -28,7 +31,8 @@ export const DropDownLayout = ({ children }) => {
                 </svg>
             </button>
             <div className="bg-blue-100">
-                <ul className={`${NavBarDropDown
+                <ul className={`${
+                    NavBarDropDown
                     ? 'block  absolute text-gray-700 pt-1 rounded-lg '
                     : 'hidden'
                     }
