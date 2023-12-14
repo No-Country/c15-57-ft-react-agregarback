@@ -49,7 +49,7 @@ const DonationsInfo = () => {
 
   return (
     <div className='relative bg h-full '>
-      <img src={osoHormiguero} alt='Jaguarete' className='min-h-screen bg-fixed bg-cover ' />
+      <img src={osoHormiguero} alt='Jaguarete' className='object-cover min-h-full  ' />
       <div className='absolute inset-0 flex flex-col items-center justify-center ml-[10%]'>
         <div className='content-center relative'>
           <div className='p-6 text-white font-roboto backdrop-blur-lg shadow-lg rounded-md max-w-[32%] '>
