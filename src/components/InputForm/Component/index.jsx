@@ -1,5 +1,8 @@
 import { Field, ErrorMessage } from 'formik'
 export default function InputForm ({ id, name, type, placeholder, errors, value }) {
+  const invalid = 'invalid:border-red-600 invalid:text-red-600 invalid:border-red-600 focus:invalid:ring-red-500'
+
+  const normal = 'focus:outline-none focus:shadow-outline text-gray-700 '
   return (
     <div>
       <div className='mb-4 h-[80px]'>
