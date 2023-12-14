@@ -1,12 +1,12 @@
-import MyPurchasesView from "./MyPurchasesView"
-import MyPurchasesLayout from "../Presentation/MyPurchasesLayout"
+import MyPurchasesView from './MyPurchasesView'
+import MyPurchasesLayout from '../Presentation/MyPurchasesLayout'
 
 const MyPurchases = () => {
-    return (
-        <MyPurchasesLayout>
-            <MyPurchasesView />
-        </MyPurchasesLayout>
-    )
+  return (
+    <MyPurchasesLayout>
+      <MyPurchasesView />
+    </MyPurchasesLayout>
+  )
 }
 
-export default MyPurchases;
+export default MyPurchases

@@ -1,14 +1,13 @@
 import React from 'react'
-
 import DonationsLayout from './DonationsLayout'
 import DonationsInfo from './DonationsInfo'
 
-const Donations = ({ info }) => {
-console.log(info);
-    return (
-        <DonationsLayout>
-            <DonationsInfo info={info} />
-        </DonationsLayout>)
+const Donations = () => {
+  return (
+    <DonationsLayout>
+      <DonationsInfo />
+    </DonationsLayout>
+  )
 }
 
 export default Donations

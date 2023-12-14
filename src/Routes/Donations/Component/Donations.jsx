@@ -1,10 +1,9 @@
-import { useState } from "react";
-import Contact from "../Presentation/Donations";
+import Donations from '../Presentation/Donations'
 
-export default function DonationsContainer() {
- 
-  const [text, setText] = useState('hello from contact')
-
-return <Contact info={text} />
-
+const DonationsContainer = () => {
+  return (
+    <Donations />
+  )
 }
+
+export default DonationsContainer

@@ -1,10 +1,9 @@
-
 const MyPurchasesLayout = ({ children }) => {
-    return (
-        <div>
-            {children}
-        </div>
-    );
+  return (
+    <div>
+      {children}
+    </div>
+  )
 }
 
-export default MyPurchasesLayout;
+export default MyPurchasesLayout
