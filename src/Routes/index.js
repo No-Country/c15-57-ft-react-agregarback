@@ -13,7 +13,7 @@ const ResetPassword = lazy(() => import('./ResetPassword/Component/ResetPassword
 const ShippingInformation = lazy(() => import('./ShippingInformation/Component/ShippingInformation'))
 const ShoppingCart = lazy(() => import('./ShoppingCart/Component/ShoppingCart'))
 const Donations = lazy(() => import('./Donations/Component/Donations'))
-const AnimalsByEcosystem = lazy(() => import('./AnimalsEcosystem/Componet/AnimalsByEcosystem'))
+const EcosystemPage = lazy(() => import('../Routes/AnimalsEcosystem/Componets/EcosystemPage'))
 
 // Protected Routes
 
@@ -21,4 +21,4 @@ const User = lazy(() => import('./User/Container/User'))
 const MyVolunteers = lazy(() => import('./MyPurchases/Container/MyPurchases'))
 const MyPurchases = lazy(() => import('./MyPurchases/Container/MyPurchases'))
 
-export { Animals, WhoWeAre, VulnerableSpecies, Login, NotFound, Register, Store, User, MyVolunteers, MyPurchases, ResetPassword, ShippingInformation, ShoppingCart, Donations ,AnimalsByEcosystem }
+export { Animals, WhoWeAre, VulnerableSpecies, Login, NotFound, Register, Store, User, MyVolunteers, MyPurchases, ResetPassword, ShippingInformation, ShoppingCart, Donations ,EcosystemPage }
