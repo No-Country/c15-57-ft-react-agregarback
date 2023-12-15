@@ -1,4 +1,5 @@
-import { tasa, camisa, vector2, vector1 } from '../../../assets/landig'
+import { productImg } from '../../../assets/img-hero'
+
 import BotonBanner from './BotonBanner'
 
 const ShowMerchandise = ({ animalLink, animalIcon }) => {
@@ -33,26 +34,9 @@ const ShowMerchandise = ({ animalLink, animalIcon }) => {
         
       </header>
 
-      <nav className=' w-[430px] h-[480px] relative  overflow-hidden sm:mr-24'>
-        {/* camisa con su icono */}
-        <div className='relative right-10 bottom-8'>
-        <img className='absolute z-10 w-[920px] h-[520px] top-[-42px] left-[100px]' src={camisa} alt='camisa' />
-        <img className='absolute z-10 w-[220px] sm:w-[200px] sm:left-[180px] top-[150px] left-[200px] sm:top-[150px]' src={animalIcon} alt='animalIcon' />
-        </div>
-        {/* tasa con su icono */}
-        <div className='relative w-full '>
-        <img className='absolute z-20 w-[290px]  sm:w-[90%] top-[170px] left-[25px]' src={tasa} alt='tasa' />
-        <img className='absolute z-20 w-[25%] sm:w-[33%] sm:left-[140px] left-[110px] sm:top-[310px] top-[290px]' src={animalIcon} alt='animalIcon' />
-
-        </div>
-        
-        {/* vectores decorativos */}
-        <div className='relative '>
-
-        <img className='w-[200px] h-[200px] z-0 absolute top-[60px] left-8' src={vector1} alt='vector1' />
-        <img className='w-[150px] h-[150px] z-0 absolute top-[260px] right-5' src={vector2} alt='vector2' />
-        </div>
-      </nav>
+      <figure className=' sm-screen sm:w-[430px] h-[430px]  relative  overflow-hidden sm:mr-24'>
+        <img className='w-full h-full object-cover' src={productImg} alt="product-Img" />
+      </figure>
 
     </section>
   )

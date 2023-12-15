@@ -20,7 +20,7 @@ const AnimalsCategory = ({ animals }) => {
           </p>
           <div className='flex '>
             <p className='font-light  text-[18px] '>
-              Mira todas las carateristicas{' '}
+              Mira todas las carateristicas
             </p>
             <div className=' hover:cursor-pointer w-8 flex justify-center items-center hover:font-bold'>
               <img
@@ -31,14 +31,29 @@ const AnimalsCategory = ({ animals }) => {
             </div>
           </div>
         </div>
-        <div className='w-full m-w-[1440%] h-full flex flex-col items-center px-[30px] pt-[40px]'>
-          <div className='w-full h-full flex gap-[40px]  justify-center '>
+        <div className='w-full m-w-[1440%] h-full flex flex-col items-start px-[30px] pt-[40px] overflow-auto'>
+          <div className='w-auto h-full flex gap-[10px]   items-start'>
+            <div className='h-[320px] w-10  flex justify-center items-center'>
+            <img
+                className='h-6 '
+                src={leftIcon}
+                alt=''
+              />
+            </div>
+        
             {animals.map((animal, index) => (
               <CategoryCard
                 key={index}
                 animal={animal}
               />
             ))}
+            <div className='h-[320px] w-10  flex justify-center items-center'>
+            <img
+                className='h-6'
+                src={rigthIcon}
+                alt=''
+              />
+            </div>
           </div>
         </div>
       </div>

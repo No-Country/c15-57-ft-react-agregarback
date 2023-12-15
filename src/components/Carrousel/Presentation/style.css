@@ -50,3 +50,7 @@
 .bg-category-Animals{
 border-radius:0 80px 0 80px ;
 }
+.clase{
+  transition:  .3s ease-in-out ;
+  
+}
