@@ -1,4 +1,8 @@
 import { EllipseBosque, EllipseDesierto, EllipseMontaña, EllipseOceano } from "../../../assets/ecosystem"
+import { bosqueAnimalBottom, bosqueAnimalCenter, bosqueAnimalLeft, bosqueAnimalRightDown, bosqueAnimalRigthTop } from "../../../assets/ecosystem/bosques"
+import { desiertoAnimalBottom, desiertoAnimalCenter, desiertoAnimalLeft, desiertoAnimalRightDown, desiertoAnimalRigthTop } from "../../../assets/ecosystem/decierto"
+import { montañaAnimalBottom, montañaAnimalCenter, montañaAnimalLeft, montañaAnimalRightTop } from "../../../assets/ecosystem/montaña"
+import { oceanoAnimalBottom, oceanoAnimalCenter, oceanoAnimalLeft, oceanoAnimalRightDown, oceanoAnimalRigthTop } from "../../../assets/ecosystem/oceano"
 import { sabanaAnimalBottom, sabanaAnimalCenter, sabanaAnimalLeft, sabanaAnimalRightDown, sabanaAnimalRightTop } from "../../../assets/ecosystem/sabana"
 const nameExaple = 'Lindo Bichito'
 const textExample = `Los ecosistemas de sabanas y pastizales en América Latina son verdaderos tesoros de biodiversidad, destacándose por su amplitud y singularidad. Con estaciones secas y húmedas, estos entornos dinámicos impulsan la adaptación de la flora y fauna a las cambiantes condiciones climáticas. Esta diversidad brinda un hábitat propicio para una variedad de mamíferos, aves, reptiles e insectos. Los habitantes de estas tierras abiertas han evolucionado con astutas adaptaciones, desde sistemas de camuflaje hasta complejos patrones migratorios y sociales. 
@@ -6,7 +10,7 @@ Estos ecosistemas desempeñan un papel vital en la conservación del suelo, adem
 const allEcosystem = [ ]
 export const MAIN_AREA = 'SABANAS'
 
-// , , ,  ,
+//   , ,  ,
 allEcosystem.push({
   id:1,
   title:`SABANAS Y PASTIZALES`,
@@ -17,29 +21,29 @@ allEcosystem.push({
     left:{
       img:sabanaAnimalLeft,
       link: '#',
-      name:nameExaple
+      name:'Tapir de Baird'
     },
     center:{
       img:sabanaAnimalCenter,
       link: '#',
-      name:nameExaple
+      name:'Huemul'
     },
     right:{
       top:{
         img:sabanaAnimalRightTop,
         link: '#',
-        name:nameExaple
+        name:'Tatú Gigante'
       },
       down:{
         img:sabanaAnimalRightDown,
         link: '#',
-        name:nameExaple
+        name:'Cardenal  Amarillo'
       }
     },
     bottom:{
       img:sabanaAnimalBottom,
       link: '#',
-      name:nameExaple
+      name:'Oso homiguero gigante'
     },
   }
 })
@@ -49,6 +53,35 @@ allEcosystem.push({
   area:'DESIERTO',
   text:textExample,
   iconImg:EllipseDesierto,
+  allAnimals:{
+    left:{
+      img:desiertoAnimalLeft,
+      link: '#',
+      name:nameExaple
+    },
+    center:{
+      img:desiertoAnimalCenter,
+      link: '#',
+      name:nameExaple
+    },
+    right:{
+      top:{
+        img:desiertoAnimalRigthTop,
+        link: '#',
+        name:nameExaple
+      },
+      down:{
+        img:desiertoAnimalRightDown,
+        link: '#',
+        name:nameExaple
+      }
+    },
+    bottom:{
+      img:desiertoAnimalBottom,
+      link: '#',
+      name:nameExaple
+    },
+  }
 
 })
 allEcosystem.push({
@@ -57,6 +90,30 @@ allEcosystem.push({
   area:'MONTAÑAS',
   text:textExample,
   iconImg: EllipseMontaña,
+  allAnimals:{
+    left:{
+      img:montañaAnimalLeft,
+      link: '#',
+      name:nameExaple
+    },
+    center:{
+      img:montañaAnimalCenter,
+      link: '#',
+      name:nameExaple
+    },
+    right:{
+      top:{
+        img:montañaAnimalRightTop,
+        link: '#',
+        name:nameExaple
+      }
+    },
+    bottom:{
+      img:montañaAnimalBottom,
+      link: '#',
+      name:nameExaple
+    },
+  }
 })
 allEcosystem.push({
   id:4,
@@ -64,6 +121,35 @@ allEcosystem.push({
   area:'OCEANOS',
   text: textExample,
   iconImg: EllipseOceano,
+  allAnimals:{
+    left:{
+      img:oceanoAnimalLeft,
+      link: '#',
+      name:nameExaple
+    },
+    center:{
+      img:oceanoAnimalCenter,
+      link: '#',
+      name:nameExaple
+    },
+    right:{
+      top:{
+        img:oceanoAnimalRigthTop,
+        link: '#',
+        name:nameExaple
+      },
+      down:{
+        img:oceanoAnimalRightDown,
+        link: '#',
+        name:nameExaple
+      }
+    },
+    bottom:{
+      img:oceanoAnimalBottom,
+      link: '#',
+      name:nameExaple
+    },
+  }
 })
 allEcosystem.push({
   id:5,
@@ -71,6 +157,35 @@ allEcosystem.push({
   area:'BOSQUES',
   text:textExample,
   iconImg:EllipseBosque,
+  allAnimals:{
+    left:{
+      img:bosqueAnimalLeft,
+      link: '#',
+      name:nameExaple
+    },
+    center:{
+      img:bosqueAnimalCenter,
+      link: '#',
+      name:nameExaple
+    },
+    right:{
+      top:{
+        img:bosqueAnimalRigthTop,
+        link: '#',
+        name:nameExaple
+      },
+      down:{
+        img:bosqueAnimalRightDown,
+        link: '#',
+        name:nameExaple
+      }
+    },
+    bottom:{
+      img:bosqueAnimalBottom,
+      link: '#',
+      name:nameExaple
+    },
+  }
 })
 
 export default allEcosystem;

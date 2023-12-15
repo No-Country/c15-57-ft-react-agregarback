@@ -43,6 +43,7 @@ function CollageAnimasEcosystem({getAnimals}){
     <section className="max-w-[1200px] max-h-[1120px] flex flex-col gap-[2px] overflow-hidden ">
     <header className="max-w-[1200px] max-h-[744px] grid grid-cols-3">
       <CardByEcosystem animal={getAnimals?.allAnimals?.left} />
+      
       <CardByEcosystem animal={getAnimals?.allAnimals?.center} />
         <div className="w-full h-full flex flex-col"> 
           <CardByEcosystem animal={getAnimals?.allAnimals?.right?.top} />
@@ -67,7 +68,9 @@ function CardByEcosystem ({animal}){
   return(
     <section className="relative group">
       <div onMouseEnter={showLink} onMouseLeave={hiddenLink}className="  transition">
-        <img className=" relative z-0 w-full h-full object-cover" src={animal?.img} alt="" />
+        <figure className="w-full h-full bg-red-300 ">
+          <img className="bg-red-300 relative z-0 w-full    " src={animal?.img} alt="" />
+        </figure>
         <div className={` absolute bottom-0  ${isHover?'flex':'hidden' } flex-col z-20 w-full h-full bg-black bg-opacity-60 justify-center items-center    top-0 left-0 p-4`}>
           <p className="text-white font-[600] mb-6 sm:text-[4vw] md:text-[40px]">{animal?.name}</p>
           <a className="w-12 h-12 bg-green-950 rounded-full flex justify-center items-center  "  href={animal?.link}> 
@@ -88,14 +91,15 @@ function CardByEcosystem ({animal}){
       {showVideo ? <EcosystemVideo/>: <img className="w-full h-full object-cover " src={bannerAllEcosystems} alt="" />}
       </figure>
       <div className="relative z-10">
-        <p className="text-white text-[64px]">{areaTitle}</p>
+        <p className="text-white text-[32px] sm:text-[64px]">{areaTitle}</p>
       </div>
     </section>
   )
  } 
+
  function EcosystemInfoDectail ({showText}){
   return (
-    <section className="max-w-[1076px] ">
+    <section className="max-w-[1076px]  px-8 h-[420px] sm:h-auto sm:px-0 overflow-auto">
       <p className="text-[20px] font-[400px] text-gray-950">{showText}</p>
     </section>
   )
@@ -113,13 +117,13 @@ function CardByEcosystem ({animal}){
  function  EcosystemsLinksContainer ({areaIndex, setAreaIndex, otherAreas}){
  
   return(
-    <section className="flex flex-col max-w-[1080px] gap-[30px] items-center mb-[123px]">
+    <section className="flex flex-col max-w-[1080px] gap-[10px] sm:gap-[30px] items-center mb-[123px]">
       <div className=" h-[72px] flex flex-row gap-[18px] items-center justify-center">
-        <div className="w-[120px] h-[2px] bg-black"></div>
-        <p className="text-gray-950 text-[32px] font-[500]" >OTROS ECOSISTEMAS</p>
-        <div className="w-[120px] h-[2px] bg-black"></div>
+        <div className="w-[60px] sm:w-[120px] h-[2px] bg-black"></div>
+        <p className="text-gray-950 min-w-[165px] sm:text-[32px] font-[500]" >OTROS ECOSISTEMAS</p>
+        <div className="w-[60px] sm:w-[120px] h-[2px] bg-black"></div>
       </div>
-    <div className=" max-w-[1080px]  grid grid-cols-4 gap-[24px]">
+    <div className=" max-w-[1080px]  grid grid-cols-4 sm:gap-[24px]">
       {
         otherAreas.map((area , index )=>{
         
@@ -143,9 +147,9 @@ function CardByEcosystem ({animal}){
   }
   return(
     <div className="relative mx-2 " onMouseEnter={showLink} onMouseLeave={hiddenLink}  onClick={changeArea}>
-    <figure className="relative w-auto overflow-hidden">
+    <figure className="relative  h-full w-full overflow-hidden">
 
-      <img className="  rounded-full ]" src={iconImg} alt="" />
+      <img className="  h-full w-full  " src={iconImg} alt="" />
       <div className={`absolute bottom-0 hover:cursor-pointer ${isHover?'flex':'hidden' }  w-full rounded-full h-full bg-opacity-60 bg-black justify-center items-center`} >
       <p className="text-white text-[30px]">{children}</p>
     </div>
