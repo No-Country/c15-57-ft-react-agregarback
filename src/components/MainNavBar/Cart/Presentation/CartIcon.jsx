@@ -1,7 +1,16 @@
-export const CartIcon = ({iconUrl}) => {
-    return (
-        <>
-        <img className='bg-blue-300 w-[100%] h-[15%]' src={iconUrl} alt="Cart"/>
-        </>
-    )
+
+import useRouterChecker from "../../../../Hooks/useRouterChecker";
+
+export const CartIcon = ({ icon }) => {
+
+    const { animalRouterChecker } = useRouterChecker()
+    const CurrentIcon = icon
+
+    return <CurrentIcon className={`
+                    ${animalRouterChecker
+                      ? 'text-white'
+                      : 'text-black'
+        }
+                    `}
+    />
 }

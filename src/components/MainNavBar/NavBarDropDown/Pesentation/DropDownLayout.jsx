@@ -16,10 +16,10 @@ export const DropDownLayout = ({ children }) => {
                 className={`
                 ${
                     animalRouterChecker 
-                    ? 'text-white' 
-                    : 'text-black'
+                    ? 'text-white rounded inline-flex items-center ' 
+                    : 'text-black rounded inline-flex items-center '
                 } 
-                md:text-[1.3vw] 2xl:text-xl rounded inline-flex items-center 
+                
                         `}
                 onClick={() => openDropdown()}
                 tabIndex={0}
