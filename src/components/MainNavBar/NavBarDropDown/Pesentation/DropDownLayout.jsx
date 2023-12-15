@@ -24,6 +24,9 @@ export const DropDownLayout = ({ children }) => {
                     ? 'text-white rounded inline-flex items-center ' 
                     : 'text-black rounded inline-flex items-center '
                 } 
+
+                md:text-[1.5vw]
+
                         `}
                 onClick={() => openDropdown()}
                 tabIndex={0}
