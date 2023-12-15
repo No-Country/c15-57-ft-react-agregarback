@@ -15,7 +15,7 @@ export const DropDownLinks = ({ routes }) => {
                         <li key={route.path}>
                             <Link
                                 className={`
-                                    " w-[7vw] text-[.75rem] text-left pl-[6px] bg-gray-200 hover:bg-gray-400 block whitespace-no-wrap"
+                                    " w-[7vw] text-left pl-[6px] bg-gray-200 hover:bg-gray-400 block whitespace-no-wrap"
                                     ${isOpen && "w-[100%]"}
                                     ${!animalRouterChecker || isOpen && "text-black"}
                                     ${animalRouterChecker || isOpen && "text-white"}
