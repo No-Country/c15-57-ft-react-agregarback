@@ -30,14 +30,13 @@ const NavBarLayout = ({ children }) => {
                 {/* hamburguer menu hidden --> */}
 
                 <nav
-                    className={`${ 
-                        animalRouterChecker
-                        ?   "col-start-1 col-end-2 w-[27%] top-[17%] left-[24%] self-center absolute flex justify-between items-center z-4550 sm:w-[21%] sm:top-[24%] md:hidden z-100"
-                        :   "col-start-1 col-end-2 w-[7%] top-[2.3%] left-[7%] self-center absolute flex justify-between items-center z-4550 sm:w-[21%] sm:top-[24%] md:hidden z-100"
-                      
-                    } `
+                    className={`${animalRouterChecker
+                        ? "col-start-1 col-end-2 w-[27%] self-center justify-self-center absolute flex justify-between items-center z-4550 sm:w-[21%] sm:top-[24%] md:hidden z-100"
+                        : "col-start-1 col-end-2 w-[27%] self-center justify-self-center  flex justify-between items-center z-4550 sm:w-[21%] sm:top-[3.6%] md:hidden z-100"
+
+                        } `
                     }
-                    >
+                >
                     <HamburguerMenu />
                 </nav>
 
@@ -69,10 +68,14 @@ const NavBarLayout = ({ children }) => {
 
                                     <li className="
                                             sm:grid sm:row-[span_1_/_span_6] sm:z-50
-                                              lg: col-span-3 lg:text-white lg:z-50">
+                                            md:text-[1.7vw] lg:text-[1.7vw] 2xl:text-xl
+                                              lg: col-span-3  lg:z-50">
                                         <Dropdown />
                                     </li>
-                                    <Cart />
+                                    <li className="flex">
+                                        <Cart />
+                                    </li>
+
                                 </>
 
                             )
@@ -87,7 +90,7 @@ const NavBarLayout = ({ children }) => {
 
                 {/* cart icon shown when it is in a small vieport size -Responsive-  --> */}
 
-                <section className="w-[10vw]  min-[509px]:left-[1vw] min-[509px]:top-[2vw] col-start-3 col-end-4 row-start-1 row-end-3 place-self-center sm:h-[30%] sm:relative sm:top-[0vh] sm:left-[0vw] md:hidden">
+                <section className="w-[4vw]  sm:w-[0vw]  min-[509px]:left-[1vw] min-[509px]:top-[2vw] col-start-3 col-end-4 row-start-1 row-end-3 place-self-center sm:h-[30%] sm:relative sm:top-[0vh] sm:left-[0vw] md:hidden">
                     {
                         user && <Cart />
                     }

@@ -1,11 +1,13 @@
 import React from 'react'
+import CartCounterElement from './CartCounterElement'
+import CartCounterLayout from './CartCounterLayout'
 
-function CartCounterContainer () {
-  return (
-     <CartLayout>
-         <CartIcon />
-     </CartLayout>
+const CartCounterContainer = () => {
+    return (
+        <CartCounterLayout>
+            <CartCounterElement />
+        </CartCounterLayout>
     )
 }
 
-export default CartCounter
+export default CartCounterContainer
