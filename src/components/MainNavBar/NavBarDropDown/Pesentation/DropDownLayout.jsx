@@ -5,7 +5,7 @@ import useRouterChecker from "../../../../Hooks/useRouterChecker.jsx";
 
 export const DropDownLayout = ({ children }) => {
 
-    const { openDropdown, NavBarDropDown } = useContentContext();
+    const { openDropdown, NavBarDropDown, isOpen } = useContentContext();
     const { logControl } = useUserContext();
     const { animalRouterChecker } = useRouterChecker();
 
@@ -14,12 +14,16 @@ export const DropDownLayout = ({ children }) => {
         <div className='dropdown relative '>
             <button
                 className={`
+                ${isOpen && "w-[100%]"}
+                ${!animalRouterChecker || isOpen && "text-black"}
+                ${animalRouterChecker || isOpen && "text-white"}
+                ${animalRouterChecker && "text-white"}
+                ${!animalRouterChecker || !isOpen && "text-white"}
                 ${
                     animalRouterChecker 
                     ? 'text-white rounded inline-flex items-center ' 
                     : 'text-black rounded inline-flex items-center '
                 } 
-                
                         `}
                 onClick={() => openDropdown()}
                 tabIndex={0}
