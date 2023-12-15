@@ -1,23 +1,30 @@
 
 import { useContentContext } from "../../../../Store/contextStore/ContentContext.jsx";
 import { useUserContext } from "../../../../Store/contextStore/UserContext.jsx";
-import useRouterChecker from "../../../Hooks/useRouterChecker.jsx";
+import useRouterChecker from "../../../../Hooks/useRouterChecker.jsx";
 
 export const DropDownLayout = ({ children }) => {
 
-    const { openDropdown, NavBarDropDown } = useContentContext();
+    const { openDropdown, NavBarDropDown, isOpen } = useContentContext();
     const { logControl } = useUserContext();
-    const { onAnimalRouteChecker } = useRouterChecker();
+    const { animalRouterChecker } = useRouterChecker();
 
     return (
 
         <div className='dropdown relative '>
             <button
                 className={`
-                ${!onAnimalRouteChecker ? 'text-white' : 'text-black'} 
-                md:text-[1.3vw] lg:text-[1.7vw] rounded inline-flex items-center 
+                ${isOpen && "w-[100%]"}
+                ${!animalRouterChecker || isOpen && "text-black"}
+                ${animalRouterChecker || isOpen && "text-white"}
+                ${animalRouterChecker && "text-white"}
+                ${!animalRouterChecker || !isOpen && "text-white"}
+                ${
+                    animalRouterChecker 
+                    ? 'text-white rounded inline-flex items-center ' 
+                    : 'text-black rounded inline-flex items-center '
+                } 
                         `}
-
                 onClick={() => openDropdown()}
                 tabIndex={0}
             >
@@ -28,7 +35,8 @@ export const DropDownLayout = ({ children }) => {
                 </svg>
             </button>
             <div className="bg-blue-100">
-                <ul className={`${NavBarDropDown
+                <ul className={`${
+                    NavBarDropDown
                     ? 'block  absolute text-gray-700 pt-1 rounded-lg '
                     : 'hidden'
                     }
