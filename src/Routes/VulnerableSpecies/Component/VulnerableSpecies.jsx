@@ -1,8 +1,5 @@
-import React from 'react'
 import VulnerableSpeciesContainer from '../Presentation/VulnerableSpecies'
 
-const VulnerableSpecies = () => {
+export default function VulnerableSpecies () {
   return <VulnerableSpeciesContainer />
 }
-
-export default VulnerableSpecies
