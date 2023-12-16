@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { createContext, useContext, useState, useEffect } from 'react'
+import useScrollerReader from '../../Hooks/useScrollerReader'
 
 export const ContentContext = createContext()
 
@@ -12,6 +13,8 @@ const ContentProvider = ({ children }) => {
   const toggle = () => {
     setIsOpen(!isOpen)
   }
+
+  //
 
   // open and close handler for the dropdown navbar when user is authenticated->
   const openDropdown = () => {
