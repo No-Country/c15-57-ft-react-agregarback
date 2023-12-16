@@ -24,7 +24,7 @@ import EcosystemsLinksContainer from "../Presentation/EcosystemsLinksContainer";
    
   return(
   <EcosystemLayaout>
-    <EcosystemHero mainArea={MAIN_AREA} aratoShow={curretArea?.area} areaBanner={curretArea?.banerFondo}  areaTitle={curretArea?.title}/>
+    <EcosystemHero mainArea={MAIN_AREA} aratoShow={curretArea?.area} areaBanner={curretArea?.banerFondo}  areaTitle={curretArea?.title} />
     <EcosystemInfoDectail showText={curretArea?.text}/>
     <EcosystemCollageAnimas getAnimals={curretArea} />
     <EcosystemsLinksContainer areaIndex={areaIndex} setAreaIndex={setAreaIndex}  otherAreas={dataEcosystems}/>

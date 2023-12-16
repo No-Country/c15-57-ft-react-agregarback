@@ -5,7 +5,10 @@ export default function LandingLayout({children}){
     return(
       <section className='w-[430px]  relative z-0 top-[-10px]'>
         {banner}
-        <a href="Ecosystems"> mi nueva dddd</a>
+        <div className=" w-screen  flex items-center justify-center">
+        <a href="Ecosystems"> Animales Por Ecocismta {'<'}----</a>
+        </div>
+          
       <div className='w-screen h-auto justify-center flex flex-col '>{toRender} </div>
        </section>
     )
