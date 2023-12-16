@@ -4,7 +4,7 @@ export default function  EcosystemHero ({mainArea, aratoShow, areaTitle ,areaBan
 
   
   return(
-    <section className="relative w-full  min-h-[220px] h-auto lg:h-[810px] flex justify-center items-center overflow-hidden">
+    <section className="relative w-full  min-h-[220px] sm:h-[430px] lg:h-[610px] flex justify-center items-center overflow-hidden">
       <figure className='absolute top-2 z-0 w-screen h-auto ' >
        <EcosystemVideo videoToShow={areaBanner} /> 
       </figure>
