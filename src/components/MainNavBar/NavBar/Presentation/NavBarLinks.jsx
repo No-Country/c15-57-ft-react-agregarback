@@ -12,7 +12,7 @@ const NavBarLinks = ({ links }) => {
                 links.map(({ to, link }) => (
                     <li key={to} className={`
                     hover:bg-sky-700 text-center 
-                   font-roboto h-[15.6%] md:text-[1.5vw]
+                   font-roboto md:text-[1.5vw]
                    ${isOpen && "w-[100%]"}
                    ${!animalRouterChecker || isOpen && "text-black"}
                    ${animalRouterChecker || isOpen && "text-white"}
