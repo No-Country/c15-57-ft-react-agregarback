@@ -15,7 +15,7 @@ export const DropDownLayout = ({ children }) => {
             <button
                 className={`
                 ${!onAnimalRouteChecker ? 'text-white' : 'text-black'} 
-                md:text-[1.3vw] lg:text-[1.7vw] rounded inline-flex items-center 
+                  md:text-[1.3vh] lg:text-[1.7vh]  2xl:text-[2vh] bottom-[] rounded inline-flex items-center 
                         `}
 
                 onClick={() => openDropdown()}

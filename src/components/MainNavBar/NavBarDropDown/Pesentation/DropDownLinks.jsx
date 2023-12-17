@@ -14,7 +14,7 @@ export const DropDownLinks = ({ routes }) => {
                             <Link
                                 className={`
                                     ${!animalRouterChecker ? "text-white" : "text-black"}
-                                 w-[7vw] text-[.75rem] text-left pl-[6px] bg-gray-200 hover:bg-gray-400 block whitespace-no-wrap
+                                 w-[7vw]  text-[2rem]  text-left pl-[6px] bg-gray-200 hover:bg-gray-400 block whitespace-no-wrap
                                 `} to={route.path}>
                                 {route.name}
                             </Link>

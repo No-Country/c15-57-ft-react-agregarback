@@ -9,7 +9,7 @@ const NavBarLinks = ({ links }) => {
             {
                 links.map(({ to, link }) => (
                     <li key={to} className={`
-                   md:text-[1.3vw] lg:text-[1.7vw]  2xl:text-xl 
+                    text-[.75rem]  md:text-[1.3vh] lg:text-[1.7vh]  2xl:text-[2vh]
                 ${ animalRouterChecker ? "text-white" : "text-black"}
                 `}>
                         <Link to={to}>{link}</Link>
