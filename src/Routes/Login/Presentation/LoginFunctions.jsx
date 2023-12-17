@@ -3,11 +3,14 @@ import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import { useState } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useUserContext } from '../../../Store/contextStore/UserContext'
 
 const FormularioComponent = () => {
   const [showPassword, setShowPassword] = useState(false)
-  const [error, setError] = useState('') // Manejar el llamdao de errores
+  const [error, setError] = useState('') // Manejar el llamdado de errores
+  const { logControl } = useUserContext()
+  const navigate = useNavigate()
   // manejar estados para local storage
   const storedPassword = window.localStorage.getItem('savedPassword' || ' ')
   const storedUser = window.localStorage.getItem('savedUser' || ' ')
@@ -44,6 +47,9 @@ const FormularioComponent = () => {
           window.localStorage.setItem('savedUser', response.data.email)
           window.localStorage.setItem('savedPassword', response.data.password)
         }
+        logControl()
+        navigate('/')
+        window.scrollTo(0, 0)
       }
     } catch (error) {
       if (error.response.status === 400 && error.response.data.error === 'Correo o contraseña invalida') {
