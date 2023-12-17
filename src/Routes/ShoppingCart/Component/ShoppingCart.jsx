@@ -5,7 +5,7 @@ import ModalDeleteItem from '../Presentation/ModalDeleteItem'
 export default function ShoppinCart () {
   return (
     <section className='w-full flex flex-col items-center justify-center md:rounded '>
-      <SubtitleInfoStore title='Tu carrito' />
+      <SubtitleInfoStore link='/Store' title='Tu carrito' />
       <div className='w-full flex flex-col  items-center justify-center md:items-start md:gap-[5%] md:flex-row md:mb-[60px]'>
         <ShoppingList />
         <PurchaseBill />

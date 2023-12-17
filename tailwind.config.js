@@ -14,6 +14,9 @@ export default {
       ],
       robotoM: [
         'Roboto Medium', 'sans-serif'
+      ],
+      robotoL: [
+        'Roboto Light', 'sans-serif'
       ]
     },
     extend: {

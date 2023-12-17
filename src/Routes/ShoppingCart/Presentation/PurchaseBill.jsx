@@ -19,13 +19,17 @@ export default function PurchaseBill () {
             <p className='font-robotoM text-itemTitle text-[1rem]'>Total</p>
             <p className='font-robotoM text-green-800 text-[1rem]'>$2400</p>
           </div>
-          <div className='w-full hidden md:inline '>
-            <Button text='Continuar compra' color='bg-green-600' hover='hover:bg-green-900' />
+          <div className='w-full hidden md:inline'>
+            <Link to='/ShoppingSuccessful'>
+              <Button text='Continuar compra' color='bg-green-600' hover='hover:bg-green-900' />
+            </Link>
           </div>
         </div>
       </div>
       <div className='w-[70%] mb-6 md:hidden '>
-        <Button text='Continuar compra' color='bg-green-600' hover='hover:bg-green-900' />
+        <Link to='/ShoppingSuccessful'>
+          <Button text='Continuar compra' color='bg-green-600' hover='hover:bg-green-900' />
+        </Link>
       </div>
     </div>
   )

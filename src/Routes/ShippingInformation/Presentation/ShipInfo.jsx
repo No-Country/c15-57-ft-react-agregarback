@@ -1,4 +1,4 @@
-import dhl from '../../../assets/DHL-logo.png'
+import { dhl } from '../../../assets/purchase'
 import { RiArrowRightDoubleFill } from 'react-icons/ri'
 
 export default function ShipInfo () {
