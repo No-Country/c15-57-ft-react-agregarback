@@ -49,13 +49,13 @@ const NavBarLayout = ({ children }) => {
                 <ul
                     className={`
                     ${animalRouterChecker
-                            ? 'z-150 md:flex  md:col-start-2 md:col-end-4 md:w-[100%]  md:h-[13.7vh] md:flex-row md:flex-nowrap	md:content-center md:items-center md:justify-around	lg:justify-between lg:w-[94.29%]  2xl:w-[82.29%] 2xl:h-[13.7vh] z-50'
-                            : 'z-150 row-span-2 top-[9%] md:flex md:col-start-2 md:col-end-4 md:w-[94.29%] md:h-[13.7vh] md:flex-row md:flex-nowrap	md:content-center md:items-center md:justify-between 2xl:w-[82.29%] 2xl:h-[13.7vh]   z-50'
+                            ? 'z-150 w-[100%]  md:flex  md:col-start-2 md:col-end-4 md:w-[100%]  md:h-[13.7vh] md:flex-row md:flex-nowrap	md:content-center md:items-center md:justify-around	lg:justify-between lg:w-[94.29%]  2xl:w-[82.29%] 2xl:h-[13.7vh] z-50'
+                            : 'z-150 row-span-2 top-[9vh] sm:top-[11%] md:flex md:col-start-2 md:col-end-4 md:w-[94.29%] md:h-[13.7vh] md:flex-row md:flex-nowrap	md:content-center md:items-center md:justify-between 2xl:w-[82.29%] 2xl:h-[13.7vh]   z-50'
 
                         }
                     ${!isOpen
                             ? 'z-150 hidden'
-                            : 'z-150  absolute bg-slate-950	top-[11vh] opacity-80 w-[100vw] h-[100vh] flex flex-col flex-no-wrap items-center justify-center content-center md:hidden'
+                            : 'z-150  absolute bg-slate-950	top-[8.7vh] opacity-80 w-[100%] h-[93vh] flex flex-col flex-no-wrap items-center justify-center content-center md:hidden'
                         }
                      `}>
                     {children}
@@ -66,9 +66,7 @@ const NavBarLayout = ({ children }) => {
 
                                     {/* shows: (login/logout) when no auth - shows: (dropdown/cart) when auth --> */}
 
-                                    <li className="
-                                            sm:grid sm:row-[span_1_/_span_6] sm:z-50
-                                            lg: col-span-3  lg:z-50">
+                                    <li className="sm:grid sm:row-[span_1_/_span_6] sm:z-50 lg: col-span-3  lg:z-50">
                                         <Dropdown />
                                     </li>
                                     <li className="flex">
