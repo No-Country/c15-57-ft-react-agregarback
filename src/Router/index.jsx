@@ -3,7 +3,7 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import { MainLayout, PrivateLayout } from '../Layouts'
 
-import { Animals, WhoWeAre, VulnerableSpecies, Thanks, Store, Register, Login, NotFound, User, MyVolunteers, MyPurchases, ResetPassword, Donations, ShippingInformation, ShoppingCart } from '../Routes'
+import { Animals, WhoWeAre, VulnerableSpecies, Store, Register, Login, NotFound, User, MyVolunteers, MyPurchases, ResetPassword, Donations, ShippingInformation, ShoppingCart, ShoppingSuccessful, EcosystemPage } from '../Routes'
 
 export const router = createBrowserRouter([
   {
@@ -93,13 +93,13 @@ export const router = createBrowserRouter([
             <ShoppingCart />
           </Suspense>)
       },
-        {
-           path: '/Ecosystems',
+      {
+        path: '/Ecosystems',
         element: (
           <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
             <EcosystemPage />
-        
-        },
+          </Suspense>)
+      },
       {
         path: '/ShoppingSuccessful',
         element: (
