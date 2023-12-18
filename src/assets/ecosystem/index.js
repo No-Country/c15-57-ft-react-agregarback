@@ -1,10 +1,9 @@
 import bannerAllEcosystems from './bannerEcosystem.png'
 import EllipseBosque from './EllipseBosque.png'
 import EllipseDesierto from './EllipseDesierto.png'
-import EllipseMontaña from './EllipseMontaña.png'
+import EllipseMontania from './EllipseMontania.png'
 import EllipseOceano from './EllipseOceano.png'
 import EllipseSabana from './EllipseSabana.png'
 import arrowRight from './arrowRight.png'
 
-
-export { bannerAllEcosystems ,EllipseOceano ,EllipseMontaña , EllipseDesierto , EllipseBosque ,arrowRight ,EllipseSabana}
+export { bannerAllEcosystems, EllipseOceano, EllipseMontania, EllipseDesierto, EllipseBosque, arrowRight, EllipseSabana }
