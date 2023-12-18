@@ -78,7 +78,7 @@ const ShippingInformationForm = () => {
               <InputForm name='Teléfono de contacto' onChange={handleChange} type='phone' placeholder='Ingrese teléfono' errors={errors} id='phone' value={values.phone} />
             </div>
             <TextArea value={values.textArea} />
-            <div className='md:mt-[84px] md:mb-[36px]'>
+            <div className='my-10 md:mt-[84px] md:mb-[36px]'>
               <Button text='Cargar datos' color='bg-green-600' hover='hover:bg-green-900' />
               {/* {error && <p className='text-red-600 text-xs italic text-center'>{error}</p>} */}
             </div>
