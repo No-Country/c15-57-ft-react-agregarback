@@ -109,6 +109,16 @@ const ContentProvider = ({ children }) => {
     }
   }
 
+  // keeping total account of products
+  const [totalCounting, setTotalCounting] = useState(0)
+  // update the total of products
+  const updateTotalCounting = (newCounting) => {
+    setTotalCounting(newCounting + totalCounting)
+  }
+
+  // check the state of shipping info
+  const [sentShippingInfo, setSentShippingInfo] = useState(false)
+
   const constextValue = {
     openDropdown,
     NavBarDropDown,
@@ -126,7 +136,12 @@ const ContentProvider = ({ children }) => {
     moreDataDonate,
     movileIndex,
     rightMovileIndex,
-    lefMovileIndex
+    lefMovileIndex,
+    totalCounting,
+    setTotalCounting,
+    updateTotalCounting,
+    sentShippingInfo,
+    setSentShippingInfo
   }
 
   return (
