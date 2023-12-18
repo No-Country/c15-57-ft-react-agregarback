@@ -38,12 +38,12 @@ export const DropDownLayout = ({ children }) => {
                 <ul className={`
                     w-[7vw] md:w-[13vw] lg:w-[9vw] rounded-md bg-gray-200
                 ${NavBarDropDown
-                        ? 'block  absolute bg-gray-200 text-black w-[8vw] pt-1 rounded-lg '
+                        ? 'block  absolute bg-gray-200 text-black w-[8vw] pt-1 rounded-lg'
                         : 'hidden'
                     }`
                 }>
                     {children}
-                    <hr className="text-black" />
+                    <hr className="bg-black" />
                     <button
                         className='text-black w-[100%] text-[1rem] md:text-[1.5vh] text-left pl-[6px] hover:bg-gray-400 block whitespace-no-wrap'
                         onClick={() => logControl()}>

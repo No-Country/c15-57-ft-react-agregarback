@@ -50,7 +50,7 @@ const NavBarLayout = ({ children }) => {
                     className={`
                     ${animalRouterChecker
                             ? 'z-150 w-[100%]  md:flex  md:col-start-2 md:col-end-4 md:w-[100%]  md:h-[13.7vh] md:flex-row md:flex-nowrap	md:content-center md:items-center md:justify-around	lg:justify-between lg:w-[94.29%]  2xl:w-[82.29%] 2xl:h-[13.7vh] z-50'
-                            : 'z-150 row-span-2 top-[9vh] sm:top-[11%] md:flex md:col-start-2 md:col-end-4 md:w-[94.29%] md:h-[13.7vh] md:flex-row md:flex-nowrap	md:content-center md:items-center md:justify-between 2xl:w-[82.29%] 2xl:h-[13.7vh]   z-50'
+                            : 'z-150 row-span-2 top-[9vh] sm:top-[11%] md:flex md:col-start-2 md:col-end-4 md:w-[94.29%] md:h-[13.7vh] md:flex-row md:flex-nowrap md:content-center md:items-center md:justify-between 2xl:w-[82.29%] 2xl:h-[13.7vh] z-50'
 
                         }
                     ${!isOpen

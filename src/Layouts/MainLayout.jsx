@@ -19,7 +19,7 @@ const MainLayout = () => {
         <NavBar />
       </header>
       <main className='row-start-2 '>
-  <Outlet />
+        <Outlet />
       </main>
       <footer>
         <Footer />

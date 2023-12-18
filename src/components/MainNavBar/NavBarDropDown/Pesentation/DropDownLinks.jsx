@@ -15,12 +15,12 @@ export const DropDownLinks = ({ routes }) => {
                         <li key={route.path}>
                             <Link
                                 className={`
-                                    "w-[10vw] text-left text-[1vh] md:text-[1.5vh] pl-[6px] block whitespace-no-wrap"
-                                    ${isOpen && "w-[100%] text-black"}
-                                    ${!animalRouterChecker || isOpen && "text-black"}
-                                    ${animalRouterChecker || isOpen && "text-black"}
-                                    ${animalRouterChecker && "text-black"}
-                                    ${!animalRouterChecker || !isOpen && "text-black"}
+                                    "w-[10vw] text-left text-[1vh] md:text-[1.5vh] pl-[6px] block whitespace-no-wrap hover:bg-gray-400"
+                                    ${isOpen && "w-[100%] text-black hover:bg-gray-400"}
+                                    ${!animalRouterChecker || isOpen && "text-black hover:bg-gray-400"}
+                                    ${animalRouterChecker || isOpen && "text-black hover:bg-gray-400"}
+                                    ${animalRouterChecker && "text-black hover:bg-gray-400"}
+                                    ${!animalRouterChecker || !isOpen && "text-black hover:bg-gray-400"}
                                 `}
                              to={route.path}>
                                 {route.name}    
