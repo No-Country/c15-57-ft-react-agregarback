@@ -3,11 +3,10 @@ import React from 'react'
 import WhoWeAreLayout from './WhoWeAreLayout'
 import WhoWeAreInfo from './WhoWeAreInfo'
 
-const WhoWeAre = ({ info }) => {
-  console.log(info)
+const WhoWeAre = () => {
   return (
     <WhoWeAreLayout>
-      <WhoWeAreInfo info={info} />
+      <WhoWeAreInfo />
     </WhoWeAreLayout>
   )
 }

@@ -1,5 +1,4 @@
-
-import MainLayout from "./MainLayout"
-import PrivateLayout from "./PrivateLayout"
+import MainLayout from './MainLayout'
+import PrivateLayout from './PrivateLayout'
 
 export { MainLayout, PrivateLayout }

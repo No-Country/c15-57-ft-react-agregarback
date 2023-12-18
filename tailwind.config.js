@@ -14,6 +14,9 @@ export default {
       ],
       robotoM: [
         'Roboto Medium', 'sans-serif'
+      ],
+      robotoL: [
+        'Roboto Light', 'sans-serif'
       ]
     },
     extend: {
@@ -21,7 +24,8 @@ export default {
         colorFooter: '#434343',
         colorInputFooter: '#4B4B4B',
         colorDonation: '#6B7280',
-        shoppingTitle: 'rgba(22, 101, 52, 0.10)'
+        shoppingTitle: 'rgba(22, 101, 52, 0.10)',
+        itemTitle: '#1E293B'
       },
       plugins: [
         require('@tailwindcss/forms'),
