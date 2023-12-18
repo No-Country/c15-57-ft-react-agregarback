@@ -4,25 +4,22 @@ import osoHormiguero from '../../../assets/OsoHormiguero.png'
 import DonateButton from '../../../components/DonateButton/Component'
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
+import { useNavigate } from 'react-router-dom'
 
 const DonationsInfo = () => {
   const [showForm, setShowForm] = useState(false)
-  const [selectedAmount, setSelectedAmount] = useState('')
   const [showCard, setShowCard] = useState(false)
+  const navigate = useNavigate()
 
   // const [error, setError] = useState('')
 
   const handleButtonClick = (amount) => {
-    setSelectedAmount(amount)
     setShowForm((prevShowForm) => !prevShowForm)
     toggleCardVisibility()
   }
 
   const handleSubmit = () => {
-    alert(`Donación realizada por:${selectedAmount}!! Muchas Gracias!!`)
-
-    setShowForm(false)
-    setSelectedAmount('')
+    navigate('/thanks')
   }
 
   const validationSchema = Yup.object().shape({
@@ -30,7 +27,9 @@ const DonationsInfo = () => {
     email: Yup.string().email('Email no válido').required('Email requerido'),
     country: Yup.string().required('País requerido'),
     card: Yup.number('Sólo números').required('Número de tarjeta requerido'),
-    CCV: Yup.number().max(4, 'Número de CCV no válido').required('Número de CCV requerido')
+    date: Yup.number().min(5, 'Fecha no válida').required('Fecha requerida'),
+    CCV: Yup.number().min(3, 'Número de CCV no válido').required('Número de CCV requerido')
+
   })
 
   const initialValues = {
@@ -48,17 +47,18 @@ const DonationsInfo = () => {
   }
 
   return (
-    <div className='relative bg h-full '>
-      <img src={osoHormiguero} alt='Jaguarete' className='object-cover min-h-full  ' />
-      <div className='absolute inset-0 flex flex-col items-center justify-center ml-[10%]'>
-        <div className='content-center relative'>
-          <div className='p-6 text-white font-roboto backdrop-blur-lg shadow-lg rounded-md max-w-[32%] '>
-            <h2 className='text-2xl mb-4'>Apoya a la Vida Silvestre</h2>
-            <p className='text-sm'>Cada donación, grande o pequeña, tiene un impacto significativo. Con tu apoyo, estamos construyendo un futuro donde las generaciones venideras puedan disfrutar de la rica biodiversidad que hace única a América Latina. ¡Únete a nosotros y sé parte del cambio positivo que nuestro planeta necesita!</p>
+    <div className='relative h-full'>
+      <img src={osoHormiguero} alt='osoHormiguero' className='object-cover min-h-full  ' />
+      <div className='md:absolute inset-0 flex flex-col items-center justify-center md:ml-[10%] h-[100%]'>
+        <div className='md:content-center inset-0 absolut font-roboto'>
+          <div className='flex flex-col md:flex-none md:relative absolute inset-0 md:inset-auto md:p-0 p-3'>
+            <h2 className='relative text-[30px] md:text-2xl pr-6 pl-6 text-white font-roboto md:backdrop-blur-lg rounded-t-lg max-w-[50%] md:max-w-[32%]'>Apoya a la Vida Silvestre</h2>
           </div>
-          <div className='text-colorDonation font-roboto bg-white p-6 mt-2 shadow-lg rounded-md max-w-[32%] h-[fit-content] overflow-y-auto sticky top-0'>
+          <div className='p-6 text-white font-roboto backdrop-blur-lg rounded-b-lg md:max-w-[32%]'>
+            <p className='text-sm leading-relaxed'>Cada donación, grande o pequeña, tiene un impacto significativo. Con tu apoyo, estamos construyendo un futuro donde las generaciones venideras puedan disfrutar de la rica biodiversidad que hace única a América Latina. ¡Únete a nosotros y sé parte del cambio positivo que nuestro planeta necesita!</p>
+          </div>
+          <div className='text-colorDonation font-roboto bg-white p-6 mt-2 shadow-lg md:rounded-md md:max-w-[32%] h-[fit-content] overflow-y-auto relative top-0'>
             <h2 className='text-sm text-black mb-4 font-robotoM'>Colaborá con una donación de:</h2>
-
             <div className='flex flex-col justify-between text-sm'>
               <div className='flex justify-center mb-2 gap-2 text-colorDonation'>
                 {/* Tres botones arriba */}
@@ -73,22 +73,22 @@ const DonationsInfo = () => {
             </div>
 
             {showForm && (
-              <Formik validationSchema={validationSchema} onSubmit={handleSubmit} initialValues={initialValues}>
+              <Formik validationSchema={validationSchema} onSubmit={handleSubmit} initialValues={initialValues} className=''>
                 {({ values }) => (
                   <Form>
+                    <p className='font-robotoM text-black pt-4 pb-3'>Datos Personales</p>
                     <InputForm name='Nombre' type='text' placeholder='Ingrese nombre' id='name' value={values.name} />
                     <InputForm name='Correo electrónico' type='email' placeholder='Ingrese correo electrónico' id='email' value={values.email} />
                     <InputForm name='País' type='text' placeholder='Ingrese pais' id='country' value={values.country} />
-                    <p className='font-robotoM text-black'>Método de Pago</p>
+                    <p className='font-robotoM text-black pb-3 pt-3'>Método de Pago</p>
                     <InputCard name='Número de Tarjeta' placeholder='**** **** **** ****' id='card' showCard={showCard} toggleCardVisibility={toggleCardVisibility} value={values.card} />
                     <div className='flex gap-4'>
                       <InputForm name='Fecha' type='text' placeholder='MM/YY' id='date' value={values.date} />
                       <div className='flex relative'>
                         <InputCCV name='CCV' type='text' placeholder='***' id='CCV' value={values.CCV} />
                       </div>
-
                     </div>
-                    <Button text='Donar' color='bg-green-600' hover='hover:bg-green-900' />
+                    <Button text='Hacer mi donación' color='bg-green-600' hover='hover:bg-green-900' />
                   </Form>
                 )}
               </Formik>

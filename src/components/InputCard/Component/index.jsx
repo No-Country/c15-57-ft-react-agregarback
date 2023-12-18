@@ -16,7 +16,7 @@ export default function InputCard ({ id, name, showCard, placeholder, errors, va
         </label>
         <div className='relative'>
           <Field
-            className={`shadow appearance-none border rounded w-full py-3 px-3 leading-tight text-[0.6rem] sm:text-[0.8rem] lg:text-[1rem] ${errors ? invalid : normal}`}
+            className={`shadow appearance-none border rounded w-full py-3 px-3 leading-tight text-[0.8rem] lg:text-[1rem] ${errors ? invalid : normal}`}
             id={id}
             type={showCard ? 'text' : 'password'}
             placeholder={placeholder}
