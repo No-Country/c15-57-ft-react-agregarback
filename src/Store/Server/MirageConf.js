@@ -53,12 +53,12 @@ export function makeServer () {
       })
       server.create('animal', {
         id: 3,
-        name: 'Gato Anduino',
+        name: 'Gato Andino',
         img: gatodelosandes,
         titular: 'Es natural de América del Sur y  se limita a las regiones montañosas.',
         detalle:
           'Esta especie está en peligro de extinción a causa del hombre, debido a la caza furtiva y destrucción de su hábitat. La especie más cercana es el Leopardus colocolo.',
-        link: 'GATO-ANDUINO',
+        link: 'GATO-ANDINO',
         icon: ballenaIcon
       })
       server.create('animal', {
