@@ -1,16 +1,23 @@
 import { Button } from '../../../components'
 import { Link } from 'react-router-dom'
+import { useContentContext } from '../../../Store/contextStore/ContentContext'
+
 export default function PurchaseBill () {
+  const { sentShippingInfo, totalCounting } = useContentContext()
   return (
     <div className='flex flex-col justify-center items-center w-[95%] md:mt-[56px] max-w-[314px]'>
       <div className='w-[95%] border-[1px] border-slate-300 rounded-xl flex flex-col items-center'>
         <h2 className='mt-3 mb-1 font-robotoM text-[1.1rem] text-itemTitle'>Resumen</h2>
         <hr className='w-[70%] text-gray-600' />
         <div className='flex w-[70%] justify-between mt-2'>
-          <p className='text-itemTitle font-light text-[0.9rem]'>Productos(3)</p>
+          <p className='text-itemTitle font-light text-[0.9rem]'>{`Productos(${totalCounting})`}</p>
           <p className='text-green-800 font-light text-[0.9rem]'>$2400</p>
         </div>
-        <Link to='/Shipping-information' className='self-start mb-2 ml-[15%] text-green-800 font-light text-[0.9rem] underline'>
+        <div className={`${sentShippingInfo ? 'flex' : 'hidden'} w-[70%] justify-between mb-2`}>
+          <p className='text-itemTitle font-light text-[0.9rem]'>Envío</p>
+          <p className='text-green-800 font-light text-[0.9rem]'>$2000</p>
+        </div>
+        <Link to='/Shipping-information' className={`${!sentShippingInfo ? 'block' : 'hidden'} self-start mb-2 ml-[15%] text-green-800 font-light text-[0.9rem] underline`}>
           Cargar envío
         </Link>
         <hr className='w-[70%] text-gray-600' />

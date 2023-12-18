@@ -1,15 +1,21 @@
 import React from 'react'
 import useRouterChecker from '../../../../Hooks/useRouterChecker'
+import { useContentContext } from '../../../../Store/contextStore/ContentContext'
 
 const CartCounterElement = () => {
   const { animalRouterChecker } = useRouterChecker()
-  return <div className={`
-  ${animalRouterChecker 
+  const { totalCounting } = useContentContext()
+  return (
+    <div className={`
+  ${animalRouterChecker
     ? 'text-black'
     : 'text-white'
   }
-  text-center pb-[1%] relative text-center bottom-[0.3vh]`
-  } >1</div>
+  relative pb-[1%]   text-center bottom-[0.3vh]`}
+    >
+      {totalCounting}
+    </div>
+  )
 }
 
 export default CartCounterElement
