@@ -33,7 +33,7 @@
 </div>
 <!-- ABOUT THE PROJECT -->
 <br>
-<h2> 
+<h2>
 <img src="Client/public/favicon.svg" width="18px">
 Acerca del Proyecto
 </h2>
@@ -196,7 +196,7 @@ Puedes comenzar registrandote en nuestro portal, luego podras iniciar sesion y a
     </td>
   </tr>
   </table>
-  
+
 <table align='center'>
   <tr>
     <td align='center'>
@@ -211,9 +211,9 @@ Puedes comenzar registrandote en nuestro portal, luego podras iniciar sesion y a
         <a href="https://github.com/JornabeDV" target="_blank">
           <img style='width:8rem' src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
         </a>
-        <a href="https://www.linkedin.com/in/jorge-nahuel-beja-rosa/" target="_blank">
+       <!--  <a href="https://www.linkedin.com/in/jorge-nahuel-beja-rosa/" target="_blank">
           <img style='width:8rem' src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
-        </a>
+        </a> -->
         </div>
       </div>
     </td>
@@ -229,16 +229,16 @@ Puedes comenzar registrandote en nuestro portal, luego podras iniciar sesion y a
         <a href="https://github.com/JRIVERADDIAZ" target="_blank">
           <img style='width:8rem' src="https://img.shields.io/static/v1?style=for-the-badge&message=GitHub&color=172B4D&logo=GitHub&logoColor=FFFFFF&label="/>
         </a>
-        <a href="https://www.linkedin.com/in/jovahin-abraham-rivera-diaz-8559bb110/" target="_blank">
+       <!--  <a href="https://www.linkedin.com/in/jovahin-abraham-rivera-diaz-8559bb110/" target="_blank">
           <img style='width:8rem' src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
-        </a>
+        </a> -->
         </div>
       </div>
     </td>
-    
+
   </tr>
   </table>
-  
+
 <table align='center'>
   <tr>
     <td align='center'>
