@@ -22,7 +22,7 @@ export default function Register () {
               <span className='w-1/5 text-center bg-white mt-5 mb-5'> o</span>
               <hr className='w-3/5' />
             </div>
-            <OtherSesion text='Iniciar sesión' to='/login' />
+            <OtherSesion text='Iniciar sesión' to='/Login' />
           </div>
         </section>
         {/* Sección de la imagen */}

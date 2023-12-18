@@ -17,7 +17,7 @@ export default function ShippingInformation () {
 
   return (
     <section className=' w-full flex flex-col items-center justify-center md:rounded'>
-      <SubtitleInfoStore title='Datos de envío' />
+      <SubtitleInfoStore link='/ShoppingCart' title='Datos de envío' />
       <div className='md:flex md:gap-12 '>
         <div className='flex items-center justify-center gap-4 mt-6 md:hidden'>
           <h2 className='text-base'>Envío por DHL Express Worldwide</h2>

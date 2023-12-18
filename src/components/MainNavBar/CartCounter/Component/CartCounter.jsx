@@ -1,8 +1,8 @@
-    import React from 'react'
-  import CartCounterContainer from '../Container/CartCounterContainer'
+import React from 'react'
+import CartCounterContainer from '../Presentation/CartCounter'
 
-    const CartCounter = () => {
-      return <CartCounterContainer />
-    }
-    
-    export default CartCounter
+const CartCounter = () => {
+  return <CartCounterContainer />
+}
+
+export default CartCounter

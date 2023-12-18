@@ -1,5 +1,5 @@
 import { createServer, Model, Response } from 'miragejs'
-import { jaguarImg, osoAnteojos, ballenasFrancas, jaguarIcon, ballenaIcon, osoIcon, ajolote, ajoleteIcon } from '../../../src/assets/img-hero'
+import { jaguarImg, osoAnteojos, gatodelosandes, jaguarIcon, ballenaIcon, osoIcon, ajolote, ajoleteIcon } from '../../../src/assets/img-hero'
 import { alojote, ballenaFranca, gatoAndino, jaguar, osoConAnteojos, aguaraGuazu } from '../../assets/animals'
 import { gorras, remeras, tazas, vasos } from '../../assets/products'
 import {
@@ -53,12 +53,12 @@ export function makeServer () {
       })
       server.create('animal', {
         id: 3,
-        name: 'BALLENA FRANCA',
-        img: ballenasFrancas,
-        titular: 'las hembras tienen sólo una cría cada tres años.',
+        name: 'Gato Anduino',
+        img: gatodelosandes,
+        titular: 'Es natural de América del Sur y  se limita a las regiones montañosas.',
         detalle:
-          'Con sus extremidades anteriores convertidas en aletas, su gruesa capa de grasa y su capacidad para bucear, algunas a grandes profundidades.',
-        link: 'BALLENA-FRANCA',
+          'Esta especie está en peligro de extinción a causa del hombre, debido a la caza furtiva y destrucción de su hábitat. La especie más cercana es el Leopardus colocolo.',
+        link: 'GATO-ANDUINO',
         icon: ballenaIcon
       })
       server.create('animal', {

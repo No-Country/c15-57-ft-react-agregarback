@@ -3,16 +3,19 @@ import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import { useState } from 'react'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const FormularioComponent = () => {
   const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState('')
-
+  const navigate = useNavigate()
   // Manejar el post del API
   const onSubmit = async (values) => {
     try {
       await axios.post('/api/users/', values)
       setError('')
+      navigate('/login')
+      window.scrollTo(0, 0)
     } catch (error) {
       if (error.response.status === 400 && error.response.data.error === 'El correo ya está registrado') {
         setError('El correo ya está registrado. Por favor use uno distinto.')
