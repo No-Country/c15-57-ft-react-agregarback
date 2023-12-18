@@ -176,13 +176,13 @@ export default function VulnerableSpeciesInfo () {
               Buscar por nombre
             </button>
             <div className='invisible hover:visible absolute bg-[#f9f9f9] max-h-[150px] overflow-y-auto shadow-[0px_8px_16px_0px_rgba(0,0,0,0.2)] z-[1] w-[374px] gap-2.5 rounded-[10px_10px_10px_10px]'>
-              <a href='#'>Jaguar</a>
-              <a href='#'>Oso con Ateojos</a>
-              <a href='#'>Manatí</a>
-              <a href='#'>Ajolote</a>
-              <a href='#'>Mono Araña de Frente Roja</a>
-              <a href='#'>Tortuga Carey</a>
-              <a href='#'>Aguará Grazú</a>
+              <Link to='#'>Jaguar</Link>
+              <Link to='#'>Oso con Ateojos</Link>
+              <Link to='#'>Manatí</Link>
+              <Link to='#'>Ajolote</Link>
+              <Link to='#'>Mono Araña de Frente Roja</Link>
+              <Link to='#'>Tortuga Carey</Link>
+              <Link to='#'>Aguará Grazú</Link>
             </div>
           </div>
         </div>
