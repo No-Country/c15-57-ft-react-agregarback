@@ -4,7 +4,7 @@ import NavBarContainer from '../Presentation/NavBar.jsx'
 const navigationLinks = [
   {
     to: '/',
-    link: 'Animales'
+    link: 'Inicio'
   },
   {
     to: '/Store',

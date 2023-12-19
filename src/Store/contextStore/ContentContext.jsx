@@ -1,11 +1,19 @@
 import axios from 'axios'
 import { createContext, useContext, useState, useEffect } from 'react'
+import useGetData from '../../Hooks/useGetData'
 
 export const ContentContext = createContext()
 
 const ContentProvider = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false)
-  const [NavBarDropDown, setNavBarDropDown] = useState(false)
+  const [navBarDropDown, setNavBarDropDown] = useState(false)
+
+  // Who we are data->
+
+  const getDataFromServer = (paramRequired) => {
+    const { data } = useGetData(`api/${paramRequired}`, paramRequired)
+    return { data }
+  }
 
   // Dropdown navbar open and close handler ->
 
@@ -14,11 +22,12 @@ const ContentProvider = ({ children }) => {
   }
 
   // open and close handler for the dropdown navbar when user is authenticated->
+
   const openDropdown = () => {
-    setNavBarDropDown(!NavBarDropDown)
+    setNavBarDropDown(!navBarDropDown)
   }
 
-  //
+  // Fetching data from the server ->
 
   const [animalInfo, setAnimalInfo] = useState([])
   const [bannerAnimals, setBannerAnimals] = useState([])
@@ -119,9 +128,17 @@ const ContentProvider = ({ children }) => {
   // check the state of shipping info
   const [sentShippingInfo, setSentShippingInfo] = useState(false)
 
+  // Get address information
+  const [country, setCountry] = useState('')
+  const [city, setCity] = useState('')
+  const [postal, setPostal] = useState('')
+  const [street, setStreet] = useState('')
+  const [streetNumber, setStreetNumber] = ('')
+
   const constextValue = {
+    getDataFromServer,
     openDropdown,
-    NavBarDropDown,
+    navBarDropDown,
     isOpen,
     toggle,
     onAnimalRouteChecker,
@@ -141,7 +158,17 @@ const ContentProvider = ({ children }) => {
     setTotalCounting,
     updateTotalCounting,
     sentShippingInfo,
-    setSentShippingInfo
+    setSentShippingInfo,
+    country,
+    setCountry,
+    city,
+    setCity,
+    postal,
+    setPostal,
+    street,
+    setStreet,
+    streetNumber,
+    setStreetNumber
   }
 
   return (
