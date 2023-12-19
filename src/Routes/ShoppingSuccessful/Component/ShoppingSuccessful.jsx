@@ -21,7 +21,7 @@ export default function ShoppingSuccessful () {
           </div>
           <TotalPurchase />
           <div className='w-full lg:w-[50%] mb-12'>
-            <Link to='/Store'>
+            <Link to='/Store' className='cursor-auto w-[70%]'>
               <Button text='Continuar comprando' color='bg-green-600' hover='hover:bg-green-900' />
             </Link>
           </div>

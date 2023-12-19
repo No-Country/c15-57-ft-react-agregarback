@@ -133,7 +133,10 @@ const ContentProvider = ({ children }) => {
   const [city, setCity] = useState('')
   const [postal, setPostal] = useState('')
   const [street, setStreet] = useState('')
-  const [streetNumber, setStreetNumber] = ('')
+  const [streetNumber, setStreetNumber] = useState('')
+
+  // check shoppingcart button state
+  const [enableButton, setEnableButton] = useState(true)
 
   const constextValue = {
     getDataFromServer,
@@ -168,7 +171,9 @@ const ContentProvider = ({ children }) => {
     street,
     setStreet,
     streetNumber,
-    setStreetNumber
+    setStreetNumber,
+    enableButton,
+    setEnableButton
   }
 
   return (
