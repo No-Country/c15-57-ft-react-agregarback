@@ -1,5 +1,11 @@
 import { Link } from 'react-router-dom'
-import animal1 from '../../../assets/vulnerableSpecies/animal1.jpg'
+import aguaraGuazu from '../../../assets/vulnerableSpecies/aguaraGuazu.jpg'
+import ajolote from '../../../assets/vulnerableSpecies/ajolote.jpg'
+import jaguar from '../../../assets/vulnerableSpecies/jaguar.jpg'
+import manati from '../../../assets/vulnerableSpecies/manati.jpg'
+import monoArania from '../../../assets/vulnerableSpecies/monoArania.jpg'
+import osoDeAnteojos from '../../../assets/vulnerableSpecies/osoDeAnteojos.jpg'
+import totugaCarey from '../../../assets/vulnerableSpecies/totugaCarey.jpg'
 import habitat1 from '../../../assets/vulnerableSpecies/habitat1.jpg'
 import habitat2 from '../../../assets/vulnerableSpecies/habitat2.jpg'
 import habitat3 from '../../../assets/vulnerableSpecies/habitat3.jpg'
@@ -16,11 +22,13 @@ export default function VulnerableSpeciesInfo () {
 
   useEffect(() => {
     setCarouselWrapper([
-      { name: 'jaguar', image: animal1 },
-      { name: 'jaguar', image: animal1 },
-      { name: 'jaguar', image: animal1 },
-      { name: 'jaguar', image: animal1 },
-      { name: 'jaguar', image: animal1 }
+      { name: 'Aguara Guazu', image: aguaraGuazu },
+      { name: 'Ajolote', image: ajolote },
+      { name: 'Jaguar', image: jaguar },
+      { name: 'Manati', image: manati },
+      { name: 'Oso De Anteojos', image: osoDeAnteojos },
+      { name: 'Totuga Carey', image: totugaCarey },
+      { name: 'Mono Arania', image: monoArania }
     ])
   }, [])
 
@@ -40,7 +48,7 @@ export default function VulnerableSpeciesInfo () {
 
   const updateCarousel = () => {
     setTranslateValue(-currentIndex * (300 + 20)) // 300px for item width and 20px for margin-right
-    setProgressPercentage((currentIndex / (carouselWrapper.children.length - 1)) * 100)
+    setProgressPercentage((currentIndex / (carouselWrapper.length - 1)) * 100)
   }
 
   return (
