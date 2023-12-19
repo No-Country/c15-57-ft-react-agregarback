@@ -1,11 +1,19 @@
 import axios from 'axios'
 import { createContext, useContext, useState, useEffect } from 'react'
+import useGetData from '../../Hooks/useGetData'
 
 export const ContentContext = createContext()
 
 const ContentProvider = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false)
-  const [NavBarDropDown, setNavBarDropDown] = useState(false)
+  const [navBarDropDown, setNavBarDropDown] = useState(false)
+
+  // Who we are data->
+
+  const getDataFromServer = (paramRequired) => {
+    const { data } =  useGetData(`api/${paramRequired}`, paramRequired)
+    return {data}
+  }
 
   // Dropdown navbar open and close handler ->
 
@@ -14,11 +22,12 @@ const ContentProvider = ({ children }) => {
   }
 
   // open and close handler for the dropdown navbar when user is authenticated->
+
   const openDropdown = () => {
-    setNavBarDropDown(!NavBarDropDown)
+    setNavBarDropDown(!navBarDropDown)
   }
 
-  //
+  // Fetching data from the server ->
 
   const [animalInfo, setAnimalInfo] = useState([])
   const [bannerAnimals, setBannerAnimals] = useState([])
@@ -120,8 +129,9 @@ const ContentProvider = ({ children }) => {
   const [sentShippingInfo, setSentShippingInfo] = useState(false)
 
   const constextValue = {
+    getDataFromServer,
     openDropdown,
-    NavBarDropDown,
+    navBarDropDown,
     isOpen,
     toggle,
     onAnimalRouteChecker,

@@ -15,6 +15,8 @@ export default function AnimalCategories () {
         throw new Error(err)
       })
   }, [])
+  
+  console.log(animals);
 
   return (
     <>
