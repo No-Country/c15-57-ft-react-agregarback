@@ -7,23 +7,23 @@ import { useContentContext } from '../../../Store/contextStore/ContentContext'
 import { useNavigate } from 'react-router-dom'
 
 const ShippingInformationForm = () => {
-  // const [userEmail, setUserEmail] = useState(false)
-  // const [selectedQuestion, setSelectedQuestion] = useState('')
-  // const [recoverPassword, setRecoverPassword] = useState('')
-  // const [error, setError] = useState('')
-  const { setSentShippingInfo } = useContentContext()
+  const { setSentShippingInfo, setCountry, setCity, setPostal, setStreet, setStreetNumber } = useContentContext()
   const navigate = useNavigate()
 
   const onSubmitInfo = async (values) => {
     try {
       const response = values
-
       if (!response) {
         console.log(`los valores son: ${response}`)
       } else {
         setSentShippingInfo(true)
         navigate('/ShoppingCart')
         window.scrollTo(0, 0)
+        setCountry(response.country)
+        setCity(response.location)
+        setPostal(response.postal)
+        setStreet(response.street)
+        setStreetNumber(response.number)
       }
     } catch (error) {
       if (error.response.status === 400 && error.response.data.error === 'Correo o contraseña invalida') {
