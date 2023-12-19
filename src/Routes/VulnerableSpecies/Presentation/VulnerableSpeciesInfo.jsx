@@ -31,7 +31,7 @@ export default function VulnerableSpeciesInfo () {
 
   useEffect(() => {
     setTranslateValue(-currentIndex * 320) // 300px for item width and 20px for margin-right
-    setProgressPercentage((currentIndex + 1 / (carouselWrapper.length)) * 100)
+    setProgressPercentage((currentIndex + 1 / carouselWrapper.length) * 100)
   }, [currentIndex])
 
   const prevBtn = () => {
@@ -58,10 +58,10 @@ export default function VulnerableSpeciesInfo () {
           </p>
         </div>
         <div className='flex flex-col items-center justify-center w-[850px]'>
-          <div className='w-full overflow-invisible hover:visible mx-auto my-0'>
+          <div className='w-screen overflow-invisible hover:visible mx-auto my-0'>
             <div
               style={{ transform: `translateX(${translateValue}px)` }}
-              className='flex transition-transform duration-[0.5s] ease-[ease-in-out]'
+              className='flex flex-nowrap transition-transform duration-[0.5s] ease-[ease-in-out]'
             >
               {carouselWrapper.map((animal) => (
                 <div

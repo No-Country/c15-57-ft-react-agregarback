@@ -10,8 +10,8 @@ export default function HabitatList () {
     { img: bosque, name: 'Bosques y Selvas' },
     { img: desierto, name: 'Desiertos' },
     { img: montania, name: 'Montañas' },
-    { img: oceano, name: 'Oceanos y Mares' },
-    { img: sabana, name: 'Sabanas' }
+    { img: oceano, name: 'Oceanos, Rios y Lagunas' },
+    { img: sabana, name: 'Sabanas y Pastizales' }
   ]
 
   return <div><HabitatListContainer habitats={habitats} /></div>
