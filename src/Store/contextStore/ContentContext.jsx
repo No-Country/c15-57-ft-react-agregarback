@@ -18,7 +18,22 @@ const ContentProvider = ({ children }) => {
     setNavBarDropDown(!NavBarDropDown)
   }
 
-  //
+  // Vulnerable species data ->
+
+  const WhoWeAreInfoContent = {
+    'mainTitle': 'Quienes somos',
+    'mainDescription': 'Preservación Animal es una organización internacional de  protección animal que trabaja en países de Americe Latina  para reducir la extinción de los animales y sus hábitats. Con un programa abierto de donaciones para proyectos a favor de la conservación ambiental y de animales.',
+    'mainPhraseLabel': 'Los animales no son propiedades o cosas, sino organimdos vivientes, sujetos de una vida, que merecen nuestra compasión, respeto, amistad y apoyo.',
+    'mainPhraseAuthor': 'Marc Bekof',
+    'mapTitleSection': 'CREADO EN LATINOAMERICA, PARA LATINOAMERICA',
+    'mapOperationsSection':'Operando en 9 paises',
+    'mapDefendersSection':'Fuentes defensores en el equipo',
+    'mapDonationsSection':'Donaciones en todo el mundo',
+    'downSectionBanner':' HEMOS SIDO CALIFICADOS COMO UNA DE LAS ONG MÁS EFECTIVAS DEL MUNDO',
+    'downSectionDescription':'2023 es el quinto año consecutivo en el que Animal Charity Evaluators (ACE) reconoce a Preservación Animmal como una de las ONG de protección animal más efectivas del mundo',
+  }
+
+  // Fetching data from the server ->
 
   const [animalInfo, setAnimalInfo] = useState([])
   const [bannerAnimals, setBannerAnimals] = useState([])
@@ -125,6 +140,7 @@ const ContentProvider = ({ children }) => {
     isOpen,
     toggle,
     onAnimalRouteChecker,
+    WhoWeAreInfoContent,
     animalInfo,
     setAnimalInfo,
     bannerAnimals,

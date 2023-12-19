@@ -1,5 +1,5 @@
-import WhoWeAre from '../Presentation/WhoWeAre'
+import WhoWeAreContainer from '../Presentation/WhoWeAre'
 
-export default function WhoWeAreContainer () {
-  return <WhoWeAre />
+export default function WhoWeAre () {
+  return <WhoWeAreContainer />
 }

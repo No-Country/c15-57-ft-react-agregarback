@@ -19,7 +19,5 @@ export default function useRouterChecker() {
             setLoginRegisterRouteChecker(false);
         }
     }, [location.pathname]);
-
-    console.log(animalRouterChecker, loginRegisterRouteChecker);
     return { animalRouterChecker, loginRegisterRouteChecker };
 }

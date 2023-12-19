@@ -31,6 +31,13 @@ export const router = createBrowserRouter([
           </Suspense>)
       },
       {
+        path: '/VulnerableSpecies',
+        element: (
+          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+            <VulnerableSpecies />
+          </Suspense>)
+      },
+      {
         path: '/Donations',
         element: (
           <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
@@ -42,13 +49,6 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
             <Thanks />
-          </Suspense>)
-      },
-      {
-        path: '/VulnerableSpecies',
-        element: (
-          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
-            <VulnerableSpecies />
           </Suspense>)
       },
       {
