@@ -3,10 +3,16 @@ import React from 'react'
 import MainSectionLayout from './MainSectionLayout'
 import MainSectionElements from './MainSectionElements'
 
-function MainSectionContainer() {
+function MainSectionContainer({ MainTitle, MainDescription, MainQuote, MainQuoteAuthor, Monkey }) {
     return (
         <MainSectionLayout>
-            <MainSectionElements />
+            <MainSectionElements
+                    MainTitle={MainTitle}
+                    MainDescription={MainDescription}
+                    MainQuote={MainQuote}
+                    MainQuoteAuthor={MainQuoteAuthor}
+                    Monkey={Monkey}
+            />
         </MainSectionLayout>
     )
 }

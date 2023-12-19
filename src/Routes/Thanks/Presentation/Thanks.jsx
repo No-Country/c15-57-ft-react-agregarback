@@ -2,10 +2,12 @@ import React from 'react'
 import ThanksLayout from './ThanksLayout'
 import ThanksInfo from './ThanksInfo'
 
-const Thanks = () => {
+const Thanks = ({ Perezoso }) => {
   return (
     <ThanksLayout>
-      <ThanksInfo />
+      <ThanksInfo
+       Perezoso={Perezoso}
+      />
     </ThanksLayout>
   )
 }

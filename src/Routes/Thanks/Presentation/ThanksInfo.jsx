@@ -1,6 +1,5 @@
-import Perezoso from '../../../assets/Perezoso.png'
 
-const ThanksInfo = () => {
+const ThanksInfo = ({Perezoso}) => {
   return (
     <div className='relative h-full'>
       <img src={Perezoso} alt='Jaguarete' className='object-cover min-h-full' />
