@@ -128,6 +128,13 @@ const ContentProvider = ({ children }) => {
   // check the state of shipping info
   const [sentShippingInfo, setSentShippingInfo] = useState(false)
 
+  // Get address information
+  const [country, setCountry] = useState('')
+  const [city, setCity] = useState('')
+  const [postal, setPostal] = useState('')
+  const [street, setStreet] = useState('')
+  const [streetNumber, setStreetNumber] = ('')
+
   const constextValue = {
     getDataFromServer,
     openDropdown,
@@ -151,7 +158,17 @@ const ContentProvider = ({ children }) => {
     setTotalCounting,
     updateTotalCounting,
     sentShippingInfo,
-    setSentShippingInfo
+    setSentShippingInfo,
+    country,
+    setCountry,
+    city,
+    setCity,
+    postal,
+    setPostal,
+    street,
+    setStreet,
+    streetNumber,
+    setStreetNumber
   }
 
   return (

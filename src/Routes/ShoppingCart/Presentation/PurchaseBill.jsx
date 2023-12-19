@@ -13,13 +13,13 @@ export default function PurchaseBill () {
           <p className='text-itemTitle font-light text-[0.9rem]'>{`Productos(${totalCounting})`}</p>
           <p className='text-green-800 font-light text-[0.9rem]'>$2400</p>
         </div>
+        <Link to='/Shipping-information' className={`self-start ${!sentShippingInfo ? 'mb-2' : 'mb-0'} ml-[15%] text-green-800 font-light text-[0.9rem] underline`}>
+          {!sentShippingInfo ? 'Cargar envío' : 'Cambiar dirección'}
+        </Link>
         <div className={`${sentShippingInfo ? 'flex' : 'hidden'} w-[70%] justify-between mb-2`}>
           <p className='text-itemTitle font-light text-[0.9rem]'>Envío</p>
           <p className='text-green-800 font-light text-[0.9rem]'>$2000</p>
         </div>
-        <Link to='/Shipping-information' className={`${!sentShippingInfo ? 'block' : 'hidden'} self-start mb-2 ml-[15%] text-green-800 font-light text-[0.9rem] underline`}>
-          Cargar envío
-        </Link>
         <hr className='w-[70%] text-gray-600' />
         <div className='flex flex-col w-full justify-center mt-2 mb-3 text-[1rem]'>
           <div className='flex w-[70%] justify-between ml-[15.5%]'>
