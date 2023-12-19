@@ -14,13 +14,17 @@ import separadorUP from './separadorUP.png'
 import rigthIcon from './ArrowRight.svg'
 import leftIcon from './Arrowleft.svg'
 import talar from './talar.jpeg'
+import productImg from './productImg.png'
+import gatodelosandes from './gatodelosandes.webp'
+
+
 
 
 
 
 
 export {
-  separadorUP,separadorDown ,rigthIcon, leftIcon,talar,
+  separadorUP,separadorDown ,rigthIcon, leftIcon,talar,productImg,gatodelosandes,
   jaguarImg,osoAnteojos,ballenasFrancas, jaguarIcon ,ballenaIcon ,osoIcon ,ajolote ,ajoleteIcon ,categoryBG ,voluntaryBG ,babyOso
 
 }

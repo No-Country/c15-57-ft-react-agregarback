@@ -1,33 +1,31 @@
-
-import { createContext, useContext, useState } from "react";
-
+import { createContext, useContext, useState } from 'react'
 
 export const UserContext = createContext()
 
 const UserProvider = ({ children }) => {
-    //firebase
-    //oauth
-    // jwt
+  // firebase
+  // oauth
+  // jwt
 
-    const [user, setUser] = useState(true)
+  const [user, setUser] = useState(true)
 
-    const logControl = () => {
-        if (user) {
-            setUser(null)
-        } else {
-            setUser(true)
-        }
+  const logControl = () => {
+    if (user) {
+      setUser(null)
+    } else {
+      setUser(true)
     }
+  }
 
-    return (
+  return (
 
-    <UserContext.Provider value={{ logControl, user }} >
+    <UserContext.Provider value={{ logControl, user }}>
       {children}
     </UserContext.Provider>
 
   )
 }
 
-export default UserProvider;
+export default UserProvider
 
-export const useUserContext = () => useContext(UserContext);
+export const useUserContext = () => useContext(UserContext)

@@ -5,7 +5,7 @@ import useRouterChecker from "../../../../Hooks/useRouterChecker.jsx";
 
 export const DropDownLayout = ({ children }) => {
 
-    const { openDropdown, NavBarDropDown, isOpen } = useContentContext();
+    const { openDropdown, navBarDropDown, isOpen } = useContentContext();
     const { logControl } = useUserContext();
     const { animalRouterChecker } = useRouterChecker();
 
@@ -37,7 +37,7 @@ export const DropDownLayout = ({ children }) => {
             <div>
                 <ul className={`
                     w-[7vw] md:w-[13vw] lg:w-[9vw] rounded-md bg-gray-200
-                ${NavBarDropDown
+                ${navBarDropDown
                         ? 'block  absolute bg-gray-200 text-black w-[8vw] pt-1 rounded-lg'
                         : 'hidden'
                     }`

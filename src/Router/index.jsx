@@ -3,7 +3,7 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import { MainLayout, PrivateLayout } from '../Layouts'
 
-import { Animals, WhoWeAre, VulnerableSpecies, Store, Register, Login, NotFound, User, MyVolunteers, MyPurchases, ResetPassword, Donations, ShippingInformation, ShoppingCart, ShoppingSuccessful } from '../Routes'
+import { Animals, WhoWeAre, VulnerableSpecies, Store, Register, Login, NotFound, User, MyVolunteers, MyPurchases, ResetPassword, Donations, ShippingInformation, ShoppingCart, Thanks, ShoppingSuccessful, EcosystemPage } from '../Routes'
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +31,13 @@ export const router = createBrowserRouter([
           </Suspense>)
       },
       {
+        path: '/VulnerableSpecies',
+        element: (
+          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+            <VulnerableSpecies />
+          </Suspense>)
+      },
+      {
         path: '/Donations',
         element: (
           <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
@@ -38,10 +45,10 @@ export const router = createBrowserRouter([
           </Suspense>)
       },
       {
-        path: '/VulnerableSpecies',
+        path: '/Thanks',
         element: (
           <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
-            <VulnerableSpecies />
+            <Thanks />
           </Suspense>)
       },
       {
@@ -84,6 +91,13 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
             <ShoppingCart />
+          </Suspense>)
+      },
+      {
+        path: '/Ecosystems',
+        element: (
+          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+            <EcosystemPage />
           </Suspense>)
       },
       {

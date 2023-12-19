@@ -8,9 +8,9 @@ export default function InputCCV ({ id, name, type, placeholder, errors, value }
   return (
     <div>
       <div className='mb-4 h-[80px]'>
-        <div className='flex justify-between'>
+        <div className='flex flex-row justify-between'>
           <label
-            className='block text-gray-700 text-sm mb-2'
+            className='block text-gray-700 text-sm mb-1'
             htmlFor={id}
           >
             {name}
@@ -18,7 +18,7 @@ export default function InputCCV ({ id, name, type, placeholder, errors, value }
           <FaRegQuestionCircle />
         </div>
         <Field
-          className={`font-roboto shadow appearance-none border rounded w-full py-3 px-3 leading-tight text-[0.6rem] sm:text-[0.8rem] lg:text-[1rem]
+          className={`font-roboto shadow appearance-none border rounded w-full py-3 px-3 leading-tight text-[0.8rem] lg:text-[1rem]
           ${errors ? invalid : normal}`}
           id={id}
           type={type}

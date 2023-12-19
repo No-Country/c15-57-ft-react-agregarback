@@ -21,7 +21,6 @@ const NavBarLinks = ({ links }) => {
                 `}>
                         <Link to={to}>{link}</Link>
                     </li>
-
                 ))}
         </>
 
