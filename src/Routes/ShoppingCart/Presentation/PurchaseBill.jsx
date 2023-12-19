@@ -32,7 +32,7 @@ export default function PurchaseBill () {
             <p className='font-robotoM text-green-800 text-[1rem]'>$2400</p>
           </div>
           <div className='w-full hidden md:flex justify-center items-center'>
-            <Link to={!enableButton ? '/ShoppingSuccessful' : ''} className='cursor-auto w-[70%]'>
+            <Link to={!enableButton ? '/ShoppingSuccessful' : ''} className='cursor-auto w-[75%]'>
               <Button text='Continuar compra' color='bg-green-600' hover='hover:bg-green-900' disabled={enableButton} />
             </Link>
           </div>
