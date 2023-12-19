@@ -17,10 +17,12 @@ const Thanks = lazy(() => import('./Thanks/Component/Thanks'))
 const ShoppingSuccessful = lazy(() => import('./ShoppingSuccessful/Component/ShoppingSuccessful'))
 
 const EcosystemPage = lazy(() => import('../Routes/AnimalsEcosystem/Componets/EcosystemPage'))
+const EcosystemPageModal = lazy(() =>  import('../Routes/EcosystemModal/Component/EcosystemModal') )
+const AnimalsEcosystemloaderData = import('../components/Ecosystem/Componet/AnimalsByEcosystem')
 // Protected Routes
 
 const User = lazy(() => import('./User/Container/User'))
 const MyVolunteers = lazy(() => import('./MyPurchases/Container/MyPurchases'))
 const MyPurchases = lazy(() => import('./MyPurchases/Container/MyPurchases'))
 
-export { Animals, WhoWeAre, VulnerableSpecies, Thanks, Login, NotFound, Register, Store, User, MyVolunteers, MyPurchases, ResetPassword, ShippingInformation, ShoppingCart, Donations, ShoppingSuccessful, EcosystemPage }
+export { Animals, WhoWeAre, VulnerableSpecies, Thanks, Login, NotFound, Register, Store, User, MyVolunteers, MyPurchases, ResetPassword, ShippingInformation, ShoppingCart, Donations, ShoppingSuccessful, EcosystemPage, AnimalsEcosystemloaderData, EcosystemPageModal }
