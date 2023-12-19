@@ -2,10 +2,10 @@ import React from 'react'
 import WhoWeAreLayout from './WhoWeAreLayout'
 import WhoWeAreInfo from './WhoWeAreInfo'
 
-const WhoWeAreContainer = () => {
+const WhoWeAreContainer = ({data}) => {
   return (
     <WhoWeAreLayout>
-       <WhoWeAreInfo />
+       <WhoWeAreInfo data={data} />
     </WhoWeAreLayout>
   )
 }

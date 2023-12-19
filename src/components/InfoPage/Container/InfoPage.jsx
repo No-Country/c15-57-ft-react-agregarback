@@ -14,6 +14,6 @@ export const loaderItem = async ({ params }) => {
     
     const animals = await axios.get(`api/animals/${params.id}`);
     const animalInfo = animals.data.animals;
-    
+    logger.info(animalInfo);
     return { animalInfo };
 }

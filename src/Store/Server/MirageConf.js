@@ -33,6 +33,7 @@ export function makeServer() {
     seeds(server) {
       // Who we are content 
       server.create('whoWeAreInfoContent', {
+        id: 1,
         MainTitle: 'QUIENES SOMOS',
         MainDescription: 'Preservación es una organización internacional de  protección animal que trabaja en países de Americe Latina  para reducir la extinción de los animales y sus hábitats. Con un programa abierto de donaciones para proyectos a favor de la conservación ambiental y de animales.',
         MainQuote: 'Los animales no son propiedades o cosas, sino organimdos vivientes, sujetos de una vida, que merecen nuestra compasión, respeto, amistad y apoyo.',
@@ -299,11 +300,12 @@ export function makeServer() {
 
     },
 
+
     routes() {
       // Who we are info content controller
-      this.namespace = 'api/WhoWeAreContent'
-      this.get('/',(schema, _never ) => {
-        return schema.whoWeAreInfoContent.all()
+      this.namespace = 'api/whoWeAreInfoContents'
+      this.get('/', schema => {
+        return schema.whoWeAreInfoContents.all()
       })
 
       // ANIMALS NAMESPACE
@@ -459,7 +461,7 @@ export function makeServer() {
         const id = request.params.id
         return schema.productCs.find(id).destroy()
       })
-      // PRODUCT CATEGORIES NAMESPACE
+      //   CATEGORIES NAMESPACE
       this.namespace = 'api/products'
 
       // TAZAS ROUTE

@@ -1,11 +1,19 @@
 import axios from 'axios'
 import { createContext, useContext, useState, useEffect } from 'react'
+import useGetData from '../../Hooks/useGetData'
 
 export const ContentContext = createContext()
 
 const ContentProvider = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false)
-  const [NavBarDropDown, setNavBarDropDown] = useState(false)
+  const [navBarDropDown, setNavBarDropDown] = useState(false)
+
+  // Who we are data->
+
+  const getDataFromServer = (paramRequired) => {
+    const { data } =  useGetData(`api/${paramRequired}`, paramRequired)
+    return {data}
+  }
 
   // Dropdown navbar open and close handler ->
 
@@ -14,23 +22,9 @@ const ContentProvider = ({ children }) => {
   }
 
   // open and close handler for the dropdown navbar when user is authenticated->
+
   const openDropdown = () => {
-    setNavBarDropDown(!NavBarDropDown)
-  }
-
-  // Vulnerable species data ->
-
-  const WhoWeAreInfoContent = {
-    'mainTitle': 'Quienes somos',
-    'mainDescription': 'Preservación Animal es una organización internacional de  protección animal que trabaja en países de Americe Latina  para reducir la extinción de los animales y sus hábitats. Con un programa abierto de donaciones para proyectos a favor de la conservación ambiental y de animales.',
-    'mainPhraseLabel': 'Los animales no son propiedades o cosas, sino organimdos vivientes, sujetos de una vida, que merecen nuestra compasión, respeto, amistad y apoyo.',
-    'mainPhraseAuthor': 'Marc Bekof',
-    'mapTitleSection': 'CREADO EN LATINOAMERICA, PARA LATINOAMERICA',
-    'mapOperationsSection':'Operando en 9 paises',
-    'mapDefendersSection':'Fuentes defensores en el equipo',
-    'mapDonationsSection':'Donaciones en todo el mundo',
-    'downSectionBanner':' HEMOS SIDO CALIFICADOS COMO UNA DE LAS ONG MÁS EFECTIVAS DEL MUNDO',
-    'downSectionDescription':'2023 es el quinto año consecutivo en el que Animal Charity Evaluators (ACE) reconoce a Preservación Animmal como una de las ONG de protección animal más efectivas del mundo',
+    setNavBarDropDown(!navBarDropDown)
   }
 
   // Fetching data from the server ->
@@ -135,12 +129,12 @@ const ContentProvider = ({ children }) => {
   const [sentShippingInfo, setSentShippingInfo] = useState(false)
 
   const constextValue = {
+    getDataFromServer,
     openDropdown,
-    NavBarDropDown,
+    navBarDropDown,
     isOpen,
     toggle,
     onAnimalRouteChecker,
-    WhoWeAreInfoContent,
     animalInfo,
     setAnimalInfo,
     bannerAnimals,

@@ -1,5 +1,5 @@
-import map from './latinoamerica-mapa.png'
-import monkey from './mono-araña.jpg'
-import certificate from './recomend.webp'
+import LatamMap from './latinoamerica-mapa.png'
+import Monkey from './mono-araña.jpg'
+import Certificate from './recomend.webp'
 
-export { map, monkey, certificate }
+export { LatamMap, Monkey, Certificate }
