@@ -48,7 +48,7 @@ export function makeServer() {
       // Animals
       server.create('animal', {
         id: 1,
-        name: 'JAGUAR',
+        name: 'Jaguar',
         img: jaguarImg,
         titular: 'Se encuentra en la Lista Roja de las especias amenazadas',
         detalle:
@@ -58,7 +58,7 @@ export function makeServer() {
       })
       server.create('animal', {
         id: 2,
-        name: 'OSO ANTEOJOS',
+        name: 'Oso de Anteojos',
         img: osoAnteojos,
         titular:
           'La deforestación son una de las principales amenazas que enfrenta.',
@@ -69,17 +69,17 @@ export function makeServer() {
       })
       server.create('animal', {
         id: 3,
-        name: 'Gato Anduino',
+        name: 'Gato Andino',
         img: gatodelosandes,
         titular: 'Es natural de América del Sur y  se limita a las regiones montañosas.',
         detalle:
           'Esta especie está en peligro de extinción a causa del hombre, debido a la caza furtiva y destrucción de su hábitat. La especie más cercana es el Leopardus colocolo.',
-        link: 'GATO-ANDUINO',
+        link: 'GATO-ANDINO',
         icon: ballenaIcon
       })
       server.create('animal', {
         id: 4,
-        name: ' AJOLOTE',
+        name: 'Ajolote',
         img: ajolote,
         titular: 'las hembras tienen sólo una cría cada tres años.',
         detalle:
