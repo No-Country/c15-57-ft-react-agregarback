@@ -1,0 +1,23 @@
+.carousel-container {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.carousel-button {
+  font-size: 20px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
