@@ -4,14 +4,14 @@ import { RxRulerHorizontal } from 'react-icons/rx'
 import { PiTreeBold } from 'react-icons/pi'
 import Button from '../../../components/Button'
 
-const InfoAnimalsInfo = ({ Animal, WorldMap1, Amenazas1, Ayuda1, Ayuda2, EspecieCircular1, EspecieCircular2, EspecieCircular3 }) => {
+const InfoAnimalsInfo = ({ Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1, Ayuda2, EspecieCircular1, EspecieCircular2, EspecieCircular3 }) => {
   return (
     <div className='font-roboto'>
-      <img src={Animal} alt='VaquitaMarina' className='object-cover min-h-full' />
-      <div className='flex bg-infoAnimals text-white justify-center'>
-        <p className=' p-3 w-[200px] mr-2 ml-2 text-center hover:bg-green-900'>Datos</p>
-        <p className=' p-3 w-[200px] mr-2 ml-2 text-center hover:bg-green-900'>Amenazas</p>
-        <p className=' p-3 w-[200px] mr-2 ml-2 text-center hover:bg-green-900'>¿Cómo puedo ayudar?</p>
+      <img src={Animal} alt='VaquitaMarina' className='object-cover w-screen' />
+      <div className='flex bg-infoAnimals text-white justify-center items-center text-sm md:text-lg'>
+        <p className=' p-3 w-[250px] mr-2 ml-2 text-center hover:bg-green-900'>Datos</p>
+        <p className=' p-3 w-[250px] mr-2 ml-2 text-center hover:bg-green-900'>Amenazas</p>
+        <p className=' p-3 w-[250px] mr-2 ml-2 text-center hover:bg-green-900'>¿Cómo puedo ayudar?</p>
       </div>
       <div className='flex justify-center items-center p-[3%]'>
         <div className='w-[60px] sm:w-[120px] h-[2px] bg-datos' />
@@ -79,7 +79,10 @@ const InfoAnimalsInfo = ({ Animal, WorldMap1, Amenazas1, Ayuda1, Ayuda2, Especie
         <h1 className='text-center p-5 text-xl md:text-4xl font-robotoM'>AMENAZAS</h1>
         <div className='w-[60px] sm:w-[120px] h-[2px] bg-datos' />
       </div>
-      <img src={Amenazas1} alt='Amenazas1' className='object-cover min-h-full' />
+      <div className='flex'>
+        <img src={Amenazas1} alt='Amenazas1' className='w-[215px] md:w-screen h-auto' />
+        <img src={Amenazas2} alt='Amenazas2' className='w-[215px] md:w-screen h-auto' />
+      </div>
       <p className='text-sm md:text-base text-white font-roboto p-[3%] pl-[7%] pr-[7%] pb-[10%] md:pb-[3%] leading-6 bg-infoAnimals'>La vaquita marina enfrenta una serie de amenazas críticas que ponen en peligro su supervivencia. La principal amenaza es la pesca ilegal de totoaba, donde las vaquitas quedan atrapadas en las redes destinadas a capturar estos peces. Este comercio ilegal, impulsado por la demanda de la vejiga natatoria de totoaba en el mercado asiático, ha llevado a una disminución drástica de la población de vaquitas. Además, la pérdida de hábitat, la contaminación y el riesgo de colisiones con embarcaciones contribuyen a su vulnerabilidad. Aunque se han implementado medidas de conservación, la crítica situación de la vaquita marina destaca la necesidad urgente de acciones coordinadas a nivel nacional e internacional para proteger este pequeño cetáceo y preservar su hábitat único en el Golfo de California
       </p>
       <div className='flex justify-center items-center p-[3%] pb-[0%] pt-[4%]'>
