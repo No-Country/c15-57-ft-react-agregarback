@@ -3,7 +3,7 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import { MainLayout, PrivateLayout } from '../Layouts'
 
-import { Animals, WhoWeAre, VulnerableSpecies, Store, Register, Login, NotFound, User, MyVolunteers, MyPurchases, ResetPassword, Donations, ShippingInformation, ShoppingCart, ShoppingSuccessful, EcosystemPage } from '../Routes'
+import { Animals, WhoWeAre, VulnerableSpecies, Store, Register, Login, NotFound, User, MyVolunteers, MyPurchases, ResetPassword, Donations, ShippingInformation, ShoppingCart, ShoppingSuccessful, EcosystemPage, Thanks } from '../Routes'
 
 export const router = createBrowserRouter([
   {
