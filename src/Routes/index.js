@@ -1,6 +1,9 @@
 import { lazy } from 'react'
 import Store from './Store/Component/Store'
 
+import EcosystemPage from '../Routes/AnimalsEcosystem/Componets/EcosystemPage'
+import EcosystemModal, { loaderPost } from '../Routes/EcosystemModal/Component/EcosystemModal'
+
 // Unprotected Routes
 
 const WhoWeAre = lazy(() => import('./WhoWeAre/Component/WhoWeAre'))
@@ -15,11 +18,6 @@ const ShoppingCart = lazy(() => import('./ShoppingCart/Component/ShoppingCart'))
 const Donations = lazy(() => import('./Donations/Component/Donations'))
 const Thanks = lazy(() => import('./Thanks/Component/Thanks'))
 const ShoppingSuccessful = lazy(() => import('./ShoppingSuccessful/Component/ShoppingSuccessful'))
-
-import EcosystemPage from '../Routes/AnimalsEcosystem/Componets/EcosystemPage'
-import EcosystemModal from '../Routes/EcosystemModal/Component/EcosystemModal'
-
-import { loaderPost } from '../../src/Routes/EcosystemModal/Component/EcosystemModal'
 // Protected Routes
 
 const User = lazy(() => import('./User/Container/User'))
