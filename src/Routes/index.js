@@ -1,6 +1,7 @@
 import { lazy } from 'react'
 import Store from './Store/Component/Store'
-import EcosystemModal, { loaderPost } from '../Routes/EcosystemModal/Component/EcosystemModal'
+import EcosystemModal from '../Routes/EcosystemModal/Component/EcosystemModal'
+import { loaderPost } from '../../src/Routes/EcosystemModal/Component/EcosystemModal'
 import InfoAnimals from './InfoAnimals/Component/InfoAnimals'
 // Unprotected Routes
 const WhoWeAre = lazy(() => import('./WhoWeAre/Component/WhoWeAre'))
