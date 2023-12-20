@@ -19,6 +19,7 @@ import {
   Donations,
   ShippingInformation,
   ShoppingCart,
+  loaderPost,
   Thanks,
   ShoppingSuccessful,
   EcosystemPage
