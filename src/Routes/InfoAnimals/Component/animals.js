@@ -1,21 +1,6 @@
 import Ayuda1 from '../../../assets/InfoAnimals/Ayuda1.png'
 import Ayuda2 from '../../../assets/InfoAnimals/Ayuda2.png'
 
-import EspecieCircular1 from '../../../assets/InfoAnimals/EspecieCircular1.png'
-import EspecieCircular2 from '../../../assets/InfoAnimals/EspecieCircular2.png'
-import EspecieCircular3 from '../../../assets/InfoAnimals/EspecieCircular3.png'
-import EspecieCircular4 from '../../../assets/InfoAnimals/EspecieCircular4.png'
-import EspecieCircular5 from '../../../assets/InfoAnimals/EspecieCircular5.png'
-import EspecieCircular6 from '../../../assets/InfoAnimals/EspecieCircular6.png'
-import EspecieCircular7 from '../../../assets/InfoAnimals/EspecieCircular7.png'
-import EspecieCircular8 from '../../../assets/InfoAnimals/EspecieCircular8.png'
-import EspecieCircular9 from '../../../assets/InfoAnimals/EspecieCircular9.png'
-import EspecieCircular10 from '../../../assets/InfoAnimals/EspecieCircular10.png'
-import EspecieCircular11 from '../../../assets/InfoAnimals/EspecieCircular11.png'
-import EspecieCircular12 from '../../../assets/InfoAnimals/EspecieCircular12.png'
-import EspecieCircular13 from '../../../assets/InfoAnimals/EspecieCircular13.png'
-import EspecieCircular14 from '../../../assets/InfoAnimals/EspecieCircular14.png'
-
 import AnimalVaquitaMarina from '../../../assets/InfoAnimals/VaquitaMarina/VaquitaMarina.png'
 import WorldMapVaquitaMarina from '../../../assets/InfoAnimals/VaquitaMarina/WorldMap1.png'
 import Amenazas1VaquitaMarina from '../../../assets/InfoAnimals/VaquitaMarina/Amenazas0.png'
@@ -90,10 +75,7 @@ export function getAnimal (animal) {
         Amenazas1: Amenazas1VaquitaMarina,
         Amenazas2: Amenazas2VaquitaMarina,
         Ayuda1,
-        Ayuda2,
-        EspecieCircular1,
-        EspecieCircular2,
-        EspecieCircular3
+        Ayuda2
       }
     case 'jaguar':
       return {
@@ -102,10 +84,7 @@ export function getAnimal (animal) {
         Amenazas1: Amenazas1Jaguar,
         Amenazas2: Amenazas2Jaguar,
         Ayuda1,
-        Ayuda2,
-        EspecieCircular1,
-        EspecieCircular2: EspecieCircular4,
-        EspecieCircular3: EspecieCircular5
+        Ayuda2
       }
     case 'manati':
       return {
@@ -114,10 +93,7 @@ export function getAnimal (animal) {
         Amenazas1: Amenazas1Manati,
         Amenazas2: Amenazas2Manati,
         Ayuda1,
-        Ayuda2,
-        EspecieCircular1: EspecieCircular4,
-        EspecieCircular2: EspecieCircular5,
-        EspecieCircular3: EspecieCircular6
+        Ayuda2
       }
     case 'oso':
       return {
@@ -126,10 +102,7 @@ export function getAnimal (animal) {
         Amenazas1: Amenazas1Oso,
         Amenazas2: Amenazas2Oso,
         Ayuda1,
-        Ayuda2,
-        EspecieCircular1: EspecieCircular5,
-        EspecieCircular2,
-        EspecieCircular3: EspecieCircular7
+        Ayuda2
       }
     case 'mono':
       return {
@@ -138,10 +111,7 @@ export function getAnimal (animal) {
         Amenazas1: Amenazas1Mono,
         Amenazas2: Amenazas2Mono,
         Ayuda1,
-        Ayuda2,
-        EspecieCircular1: EspecieCircular7,
-        EspecieCircular2,
-        EspecieCircular3
+        Ayuda2
       }
     case 'tortuga':
       return {
@@ -150,10 +120,7 @@ export function getAnimal (animal) {
         Amenazas1: Amenazas1Tortuga,
         Amenazas2: Amenazas2Tortuga,
         Ayuda1,
-        Ayuda2,
-        EspecieCircular1: EspecieCircular7,
-        EspecieCircular2: EspecieCircular8,
-        EspecieCircular3
+        Ayuda2
       }
     case 'guara':
       return {
@@ -162,10 +129,7 @@ export function getAnimal (animal) {
         Amenazas1: Amenazas1Guara,
         Amenazas2: Amenazas2Guara,
         Ayuda1,
-        Ayuda2,
-        EspecieCircular1: EspecieCircular8,
-        EspecieCircular2: EspecieCircular9,
-        EspecieCircular3
+        Ayuda2
       }
     case 'ajolote':
       return {
@@ -174,10 +138,7 @@ export function getAnimal (animal) {
         Amenazas1: Amenazas1Ajolote,
         Amenazas2: Amenazas2Ajolote,
         Ayuda1,
-        Ayuda2,
-        EspecieCircular1: EspecieCircular8,
-        EspecieCircular2: EspecieCircular9,
-        EspecieCircular3: EspecieCircular10
+        Ayuda2
       }
     case 'tapir':
       return {
@@ -186,10 +147,7 @@ export function getAnimal (animal) {
         Amenazas1: Amenazas1Tapir,
         Amenazas2: Amenazas2Tapir,
         Ayuda1,
-        Ayuda2,
-        EspecieCircular1: EspecieCircular9,
-        EspecieCircular2: EspecieCircular10,
-        EspecieCircular3: EspecieCircular11
+        Ayuda2
       }
     case 'huemul':
       return {
@@ -198,10 +156,7 @@ export function getAnimal (animal) {
         Amenazas1: Amenazas1Huemul,
         Amenazas2: Amenazas2Huemul,
         Ayuda1,
-        Ayuda2,
-        EspecieCircular1: EspecieCircular10,
-        EspecieCircular2: EspecieCircular11,
-        EspecieCircular3: EspecieCircular12
+        Ayuda2
       }
     case 'tatu':
       return {
@@ -210,10 +165,7 @@ export function getAnimal (animal) {
         Amenazas1: Amenazas1Tatu,
         Amenazas2: Amenazas2Tatu,
         Ayuda1,
-        Ayuda2,
-        EspecieCircular1: EspecieCircular11,
-        EspecieCircular2: EspecieCircular12,
-        EspecieCircular3: EspecieCircular13
+        Ayuda2
       }
     case 'cardenal':
       return {
@@ -222,10 +174,7 @@ export function getAnimal (animal) {
         Amenazas1: Amenazas1Cardenal,
         Amenazas2: Amenazas2Cardenal,
         Ayuda1,
-        Ayuda2,
-        EspecieCircular1: EspecieCircular12,
-        EspecieCircular2: EspecieCircular13,
-        EspecieCircular3: EspecieCircular14
+        Ayuda2
       }
     case 'hormiguero':
       return {
@@ -234,10 +183,7 @@ export function getAnimal (animal) {
         Amenazas1: Amenazas1Hormiguero,
         Amenazas2: Amenazas2Hormiguero,
         Ayuda1,
-        Ayuda2,
-        EspecieCircular1: EspecieCircular12,
-        EspecieCircular2: EspecieCircular13,
-        EspecieCircular3: EspecieCircular14
+        Ayuda2
       }
     default: return {
       Animal: AnimalVaquitaMarina,
@@ -245,10 +191,7 @@ export function getAnimal (animal) {
       Amenazas1: Amenazas1VaquitaMarina,
       Amenazas2: Amenazas2VaquitaMarina,
       Ayuda1,
-      Ayuda2,
-      EspecieCircular1,
-      EspecieCircular2,
-      EspecieCircular3
+      Ayuda2
     }
   }
 }

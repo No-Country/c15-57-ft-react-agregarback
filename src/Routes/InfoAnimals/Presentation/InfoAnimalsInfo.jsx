@@ -3,8 +3,39 @@ import { GiWeight } from 'react-icons/gi'
 import { RxRulerHorizontal } from 'react-icons/rx'
 import { PiTreeBold } from 'react-icons/pi'
 import Button from '../../../components/Button'
+import EspecieCircular1 from '../../../assets/InfoAnimals/EspecieCircular1.png'
+import EspecieCircular2 from '../../../assets/InfoAnimals/EspecieCircular2.png'
+import EspecieCircular3 from '../../../assets/InfoAnimals/EspecieCircular3.png'
+import EspecieCircular4 from '../../../assets/InfoAnimals/EspecieCircular4.png'
+import EspecieCircular5 from '../../../assets/InfoAnimals/EspecieCircular5.png'
+import EspecieCircular6 from '../../../assets/InfoAnimals/EspecieCircular6.png'
+import EspecieCircular7 from '../../../assets/InfoAnimals/EspecieCircular7.png'
+import EspecieCircular8 from '../../../assets/InfoAnimals/EspecieCircular8.png'
+import EspecieCircular9 from '../../../assets/InfoAnimals/EspecieCircular9.png'
+import EspecieCircular10 from '../../../assets/InfoAnimals/EspecieCircular10.png'
+import EspecieCircular11 from '../../../assets/InfoAnimals/EspecieCircular11.png'
+import EspecieCircular12 from '../../../assets/InfoAnimals/EspecieCircular12.png'
+import EspecieCircular13 from '../../../assets/InfoAnimals/EspecieCircular13.png'
+import EspecieCircular14 from '../../../assets/InfoAnimals/EspecieCircular14.png'
 
-const InfoAnimalsInfo = ({ Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1, Ayuda2, EspecieCircular1, EspecieCircular2, EspecieCircular3 }) => {
+const especiesCirculares = [
+  EspecieCircular1,
+  EspecieCircular2,
+  EspecieCircular3,
+  EspecieCircular4,
+  EspecieCircular5,
+  EspecieCircular6,
+  EspecieCircular7,
+  EspecieCircular8,
+  EspecieCircular9,
+  EspecieCircular10,
+  EspecieCircular11,
+  EspecieCircular12,
+  EspecieCircular13,
+  EspecieCircular14
+].slice().sort(() => Math.random() - 0.5).slice(0, 3)
+
+const InfoAnimalsInfo = ({ Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1, Ayuda2 }) => {
   return (
     <div className='font-roboto'>
       <img src={Animal} alt='VaquitaMarina' className='object-cover w-screen' />
@@ -116,24 +147,15 @@ const InfoAnimalsInfo = ({ Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1, Ayud
         <div className='w-[100px] sm:w-[80px] h-[2px] bg-datos' />
       </div>
       <div className='flex justify-center pb-[4%]'>
-        <div className='p-4 '>
-          <div>
-            <img src={EspecieCircular1} alt='EspecieCircular1' className='' />
-            <h1 className='text-center p-4'>Manatí del Caribe</h1>
+        {especiesCirculares.map((EspecieCircular, index) =>
+          <div className='p-4 ' key={index}>
+            <div>
+              <img src={EspecieCircular} alt='EspecieCircular1' className='' />
+              <h1 className='text-center p-4'>Manatí del Caribe</h1>
+            </div>
           </div>
-        </div>
-        <div className='p-4'>
-          <div>
-            <img src={EspecieCircular2} alt='EspecieCircular2' className='' />
-            <h1 className='text-center p-4'>Tortuga Carey</h1>
-          </div>
-        </div>
-        <div className='p-4'>
-          <div>
-            <img src={EspecieCircular3} alt='EspecieCircular3' className='' />
-            <h1 className='text-center p-4'>Ajolote</h1>
-          </div>
-        </div>
+        )}
+
       </div>
     </div>
   )
