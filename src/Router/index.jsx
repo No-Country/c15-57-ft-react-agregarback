@@ -94,7 +94,14 @@ export const router = createBrowserRouter([
           </Suspense>)
       },
       {
-        path: '/Ecosystems',
+        path: '/Ecosystems/',
+        element: (
+          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+            <EcosystemPage />
+          </Suspense>)
+      },
+      {
+        path: '/Ecosystems/:ecosystem',
         element: (
           <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
             <EcosystemPage />

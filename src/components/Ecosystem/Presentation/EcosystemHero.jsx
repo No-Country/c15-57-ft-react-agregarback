@@ -1,6 +1,6 @@
 import EcosystemVideo from "./EcosystemVideo"
 
-export default function  EcosystemHero ({mainArea, aratoShow, areaTitle ,areaBanner}){
+export default function  EcosystemHero ({  areaTitle ,areaBanner}){
 
   
   return(
@@ -9,7 +9,7 @@ export default function  EcosystemHero ({mainArea, aratoShow, areaTitle ,areaBan
        <EcosystemVideo videoToShow={areaBanner} /> 
       </figure>
       <div className="relative z-10 flex ">
-        <p className="text-gray-100 text-[32px] md:text-[58px]   lg:text-[96px] font-[300]">{areaTitle}</p>
+        <p className="text-white text-[32px] md:text-[58px]   lg:text-[96px] font-[300]">{areaTitle}</p>
       </div>
     </section>
   )

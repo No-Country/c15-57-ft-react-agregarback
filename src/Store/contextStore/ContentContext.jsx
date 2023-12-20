@@ -76,7 +76,7 @@ const ContentProvider = ({ children }) => {
   const onAnimalRouteChecker = () => {
     const [onAnimalRoute, setOnAnimalRoute] = useState(true)
     const location = useLocation()
-
+    
     useEffect(() => {
       if (location.pathname === '/') {
         setOnAnimalRoute(true)
