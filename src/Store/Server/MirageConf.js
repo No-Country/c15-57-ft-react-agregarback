@@ -30,8 +30,10 @@ export function makeServer() {
       productC: Model,
       product: Model
     },
-    seeds(server) {
-      // Who we are content 
+
+    seeds  (server) {
+      // Who we are content
+
       server.create('whoWeAreInfoContent', {
         id: 1,
         MainTitle: 'QUIENES SOMOS',
@@ -43,7 +45,9 @@ export function makeServer() {
         MapSectionDefenders: 'Fuentes defensores en el equipo',
         MapSectionDonations: 'Donaciones en todo el mundo',
         DownSectionTitle: 'HEMOS SIDO CALIFICADOS COMO UNA DE LAS ONG MÁS EFECTIVAS DEL MUNDO',
-        DownSectionDescription: '2023 es el quinto año consecutivo en el que Animal Charity Evaluators (ACE) reconoce a Preservación Animmal como una de las ONG de protección animal más efectivas del mundo',
+
+        DownSectionDescription: '2023 es el quinto año consecutivo en el que Animal Charity Evaluators (ACE) reconoce a Preservación Animmal como una de las ONG de protección animal más efectivas del mundo'
+
       })
       // Animals
       server.create('animal', {
@@ -301,7 +305,8 @@ export function makeServer() {
     },
 
 
-    routes() {
+    routes () {
+
       // Who we are info content controller
       this.namespace = 'api/whoWeAreInfoContents'
       this.get('/', schema => {

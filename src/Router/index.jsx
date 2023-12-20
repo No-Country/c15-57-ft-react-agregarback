@@ -3,7 +3,7 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import { MainLayout, PrivateLayout } from '../Layouts'
 
-import { Animals, InfoAnimals, animalLoader, WhoWeAre, VulnerableSpecies, Store, Register, Login, NotFound, User, MyVolunteers, MyPurchases, ResetPassword, Donations, ShippingInformation, ShoppingCart, Thanks, ShoppingSuccessful, EcosystemPage } from '../Routes'
+import { Animals, InfoAnimals, animalLoader, WhoWeAre, VulnerableSpecies, Store, Register, Login, NotFound, User, MyVolunteers, MyPurchases, ResetPassword, Donations, ShippingInformation, ShoppingCart, Thanks, ShoppingSuccessful, EcosystemPage, EcosystemModal, loaderPost } from '../Routes'
 
 export const router = createBrowserRouter([
   {
@@ -109,7 +109,16 @@ export const router = createBrowserRouter([
           </Suspense>)
       },
       {
-        path: '/Ecosystems',
+
+        path: '/Ecosystems/',
+        element: (
+          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+            <EcosystemPage />
+          </Suspense>)
+      },
+      {
+        path: '/Ecosystems/:ecosystem',
+
         element: (
           <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
             <EcosystemPage />

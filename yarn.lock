@@ -337,6 +337,7 @@
   resolved "https://registry.npmjs.org/@remix-run/router/-/router-1.14.0.tgz"
   integrity sha512-WOHih+ClN7N8oHk9N4JUiMxQJmRVaOxcg8w7F/oHUXzJt920ekASLI/7cYX8XkntDWRhLZtsk6LbGrkgOAvi5A==
 
+
 "@rollup/rollup-linux-x64-gnu@4.9.1":
   version "4.9.1"
   resolved "https://registry.npmjs.org/@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.9.1.tgz"
@@ -346,6 +347,7 @@
   version "4.9.1"
   resolved "https://registry.npmjs.org/@rollup/rollup-linux-x64-musl/-/rollup-linux-x64-musl-4.9.1.tgz"
   integrity sha512-t4QSR7gN+OEZLG0MiCgPqMWZGwmeHhsM4AkegJ0Kiy6TnJ9vZ8dEIwHw1LcZKhbHxTY32hp9eVCMdR3/I8MGRw==
+
 
 "@tailwindcss/forms@^0.5.7":
   version "0.5.7"
@@ -792,10 +794,11 @@ culori@^3:
   resolved "https://registry.npmjs.org/culori/-/culori-3.3.0.tgz"
   integrity sha512-pHJg+jbuFsCjz9iclQBqyL3B2HLCBF71BwVNujUYEvCeQMvV97R59MNK3R2+jgJ3a1fcZgI9B3vYgz8lzr/BFQ==
 
-daisyui@^4.4.20:
+
   version "4.4.20"
   resolved "https://registry.npmjs.org/daisyui/-/daisyui-4.4.20.tgz"
   integrity sha512-AR2fuFVVLHVTdbkV+XWAqjtymEoxXksrsEMkdzPQo2wANtWjSXuODUzePNade64gJ0Y2CdQtiQkaZI7fWcp13g==
+
   dependencies:
     css-selector-tokenizer "^0.8"
     culori "^3"
@@ -2392,7 +2395,9 @@ react-router@6.21.0:
   dependencies:
     "@remix-run/router" "1.14.0"
 
+
 react@*, react@^18.2.0, react@>=16, react@>=16.8, react@>=16.8.0:
+
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
