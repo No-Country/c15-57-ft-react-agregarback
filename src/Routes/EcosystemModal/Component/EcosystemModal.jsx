@@ -12,7 +12,7 @@ export default EcosystemModal
 
 export const loaderPost = async ({ params }) => {
   const data = await fetch(
-    `https://jsonplaceholder.typicode.com/posts/${params.id}`
+      `https://jsonplaceholder.typicode.com/posts/${params.id}`
   );
   const post = await data.json();
   return { post };
