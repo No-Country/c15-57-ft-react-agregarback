@@ -4,10 +4,10 @@ import { RxRulerHorizontal } from 'react-icons/rx'
 import { PiTreeBold } from 'react-icons/pi'
 import Button from '../../../components/Button'
 
-const InfoAnimalsInfo = ({ VaquitaMarina, WorldMap1, Amenazas1, Ayuda1, Ayuda2, EspecieCircular1, EspecieCircular2, EspecieCircular3 }) => {
+const InfoAnimalsInfo = ({ Animal, WorldMap1, Amenazas1, Ayuda1, Ayuda2, EspecieCircular1, EspecieCircular2, EspecieCircular3 }) => {
   return (
     <div className='font-roboto'>
-      <img src={VaquitaMarina} alt='VaquitaMarina' className='object-cover min-h-full' />
+      <img src={Animal} alt='VaquitaMarina' className='object-cover min-h-full' />
       <div className='flex bg-infoAnimals text-white justify-center'>
         <p className=' p-3 w-[200px] mr-2 ml-2 text-center hover:bg-green-900'>Datos</p>
         <p className=' p-3 w-[200px] mr-2 ml-2 text-center hover:bg-green-900'>Amenazas</p>

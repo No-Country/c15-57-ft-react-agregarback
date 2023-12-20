@@ -3,7 +3,7 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import { MainLayout, PrivateLayout } from '../Layouts'
 
-import { Animals, InfoAnimals, WhoWeAre, VulnerableSpecies, Store, Register, Login, NotFound, User, MyVolunteers, MyPurchases, ResetPassword, Donations, ShippingInformation, ShoppingCart, Thanks, ShoppingSuccessful, EcosystemPage } from '../Routes'
+import { Animals, InfoAnimals, animalLoader, WhoWeAre, VulnerableSpecies, Store, Register, Login, NotFound, User, MyVolunteers, MyPurchases, ResetPassword, Donations, ShippingInformation, ShoppingCart, Thanks, ShoppingSuccessful, EcosystemPage } from '../Routes'
 
 export const router = createBrowserRouter([
   {
@@ -51,12 +51,20 @@ export const router = createBrowserRouter([
             <Thanks />
           </Suspense>)
       },
+      // {
+      //   path: '/InfoAnimals',
+      //   element: (
+      //     <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+      //       <InfoAnimals />
+      //     </Suspense>)
+      // },
       {
-        path: '/InfoAnimals',
+        path: 'InfoAnimals/:animal',
         element: (
           <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
             <InfoAnimals />
           </Suspense>)
+        // ,loader: animalLoader
       },
       {
         path: '/Store',
