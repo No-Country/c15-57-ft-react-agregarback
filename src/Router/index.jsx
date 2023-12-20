@@ -3,7 +3,7 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import { MainLayout, PrivateLayout } from '../Layouts'
 
-import { Animals, WhoWeAre, VulnerableSpecies, Store, Register, Login, NotFound, User, MyVolunteers, MyPurchases, ResetPassword, Donations, ShippingInformation, ShoppingCart, Thanks, ShoppingSuccessful, EcosystemPage } from '../Routes'
+import { Animals, InfoAnimals, WhoWeAre, VulnerableSpecies, Store, Register, Login, NotFound, User, MyVolunteers, MyPurchases, ResetPassword, Donations, ShippingInformation, ShoppingCart, Thanks, ShoppingSuccessful, EcosystemPage } from '../Routes'
 
 export const router = createBrowserRouter([
   {
@@ -49,6 +49,13 @@ export const router = createBrowserRouter([
         element: (
           <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
             <Thanks />
+          </Suspense>)
+      },
+      {
+        path: '/InfoAnimals',
+        element: (
+          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+            <InfoAnimals />
           </Suspense>)
       },
       {

@@ -6,7 +6,7 @@ const Thanks = ({ Perezoso }) => {
   return (
     <ThanksLayout>
       <ThanksInfo
-       Perezoso={Perezoso}
+        Perezoso={Perezoso}
       />
     </ThanksLayout>
   )

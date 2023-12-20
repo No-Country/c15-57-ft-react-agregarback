@@ -54,7 +54,7 @@ const DonationsInfo = () => {
           <div className='flex flex-col md:flex-none md:relative absolute inset-0 md:inset-auto md:p-0 p-3'>
             <h2 className='relative text-[30px] md:text-2xl pr-6 pl-6 text-white font-roboto md:backdrop-blur-lg rounded-t-lg max-w-[50%] md:max-w-[32%]'>Apoya a la Vida Silvestre</h2>
           </div>
-          <div className='p-6 text-white font-roboto backdrop-blur-lg rounded-b-lg md:max-w-[32%]'>
+          <div className='p-6 text-infoAnimals md:text-white font-roboto backdrop-blur-lg rounded-b-lg md:max-w-[32%]'>
             <p className='text-sm leading-relaxed'>Cada donación, grande o pequeña, tiene un impacto significativo. Con tu apoyo, estamos construyendo un futuro donde las generaciones venideras puedan disfrutar de la rica biodiversidad que hace única a América Latina. ¡Únete a nosotros y sé parte del cambio positivo que nuestro planeta necesita!</p>
           </div>
           <div className='text-colorDonation font-roboto bg-white p-6 mt-2 shadow-lg md:rounded-md md:max-w-[32%] h-[fit-content] overflow-y-auto relative top-0'>
