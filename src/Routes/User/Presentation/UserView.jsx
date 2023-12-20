@@ -1,9 +1,10 @@
+import { SubtitleInfoStore } from '../../../components'
 const UserView = () => {
-    return (
-        <div>
-            <h1>UserView</h1>
-        </div>
-    );
+  return (
+    <>
+      <SubtitleInfoStore link='/' title='Perfil' />
+    </>
+  )
 }
 
-export default UserView;
+export default UserView

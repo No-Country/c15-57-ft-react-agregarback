@@ -1,18 +1,15 @@
-import {DropDownLayout} from "./DropDownLayout.jsx";
-import {DropDownLinks} from "./DropDownLinks.jsx";
+import { DropDownLayout } from './DropDownLayout.jsx'
+import { DropDownLinks } from './DropDownLinks.jsx'
 
 const routes = [{
-    name: "Mis Donaciones",
-    path:"/MyVolunteers"
-},{
-    name: "Mis Compras",
-    path: "/MyPurchases"
+  name: 'Mi Perfil',
+  path: '/User'
 }
 ]
 export const DropDownContainer = () => {
-    return (
-        <DropDownLayout>
-            <DropDownLinks routes={routes} />
-        </DropDownLayout>
-    )
-};
+  return (
+    <DropDownLayout>
+      <DropDownLinks routes={routes} />
+    </DropDownLayout>
+  )
+}
