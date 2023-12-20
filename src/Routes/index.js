@@ -19,7 +19,7 @@ const ShoppingSuccessful = lazy(() => import('./ShoppingSuccessful/Component/Sho
 import EcosystemPage from '../Routes/AnimalsEcosystem/Componets/EcosystemPage'
 import EcosystemModal from '../Routes/EcosystemModal/Component/EcosystemModal'
 
-import AnimalsEcosystemloaderData from '../components/Ecosystem/Componet/AnimalsByEcosystem'
+import loaderPost from '../Routes/EcosystemModal/Component/EcosystemModal'
 // Protected Routes
 
 const User = lazy(() => import('./User/Container/User'))
