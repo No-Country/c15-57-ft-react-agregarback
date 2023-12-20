@@ -1,4 +1,3 @@
-
 import { bosqueAnimalBottom, bosqueAnimalCenter, bosqueAnimalLeft, bosqueAnimalRightDown, bosqueAnimalRigthTop } from '../../../assets/ecosystem/bosques'
 import { desiertoAnimalBottom, desiertoAnimalCenter, desiertoAnimalLeft, desiertoAnimalRightDown, desiertoAnimalRigthTop } from '../../../assets/ecosystem/decierto'
 import { montañaAnimalBottom, montañaAnimalCenter, montañaAnimalLeft, montañaAnimalRightDown, montañaAnimalRightTop } from '../../../assets/ecosystem/montaña'
@@ -29,34 +28,34 @@ allEcosystem.push({
   text: textSabanas,
   banerFondo: videoSabana,
 
-  path:'sabana-pastizales',
-    allAnimals: {
+  path: 'sabana-pastizales',
+  allAnimals: {
 
     left: {
       img: sabanaAnimalLeft,
-      link: '#',
+      link: '/InfoAnimals/tapir',
       name: 'Tapir de Baird'
     },
     center: {
       img: sabanaAnimalCenter,
-      link: '#',
+      link: '/InfoAnimals/huemul',
       name: 'Huemul'
     },
     right: {
       top: {
         img: sabanaAnimalRightTop,
-        link: '#',
+        link: '/InfoAnimals/tatu',
         name: 'Tatú Gigante'
       },
       down: {
         img: sabanaAnimalRightDown,
-        link: '#',
+        link: '/InfoAnimals/cardenal',
         name: 'Cardenal  Amarillo'
       }
     },
     bottom: {
       img: sabanaAnimalBottom,
-      link: '#',
+      link: '/InfoAnimals/hormiguero',
       name: 'Oso homiguero gigante'
     }
   }
@@ -68,8 +67,8 @@ allEcosystem.push({
   text: textDesiertos,
   banerFondo: videoLinkDesierto,
 
-  path:'desiertos',
-    allAnimals: {
+  path: 'desiertos',
+  allAnimals: {
 
     left: {
       img: desiertoAnimalLeft,
@@ -107,7 +106,7 @@ allEcosystem.push({
   area: 'MONTAÑAS',
   text: textMintañas,
 
-  path:'montañas',
+  path: 'montañas',
   banerFondo: videoLinkMontaña,
 
   allAnimals: {
@@ -147,8 +146,8 @@ allEcosystem.push({
   text: textOceanos,
   banerFondo: videoLinkOceano,
 
-  path:'oceanos-rios',
-   allAnimals: {
+  path: 'oceanos-rios',
+  allAnimals: {
     left: {
       img: oceanoAnimalLeft,
       link: '#',
@@ -188,8 +187,8 @@ allEcosystem.push({
   text: textBosques,
   banerFondo: videoLinkBosque,
 
-  path:'bosques',
-    allAnimals: {
+  path: 'bosques',
+  allAnimals: {
 
     left: {
       img: bosqueAnimalLeft,
