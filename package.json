@@ -35,10 +35,8 @@
     "postcss": "^8.4.32",
     "standard": "^17.1.0",
     "tailwindcss": "^3.3.7",
-<<<<<<< HEAD
-    "vite": "5.0.5"
-=======
+
     "vite": "5.0.10"
->>>>>>> a6f9c97 (navbar-v2-responsiveness-counter00)
+
   }
 }

@@ -11,8 +11,10 @@ const ContentProvider = ({ children }) => {
   // Who we are data->
 
   const getDataFromServer = (paramRequired) => {
-    const { data } =  useGetData(`api/${paramRequired}`, paramRequired)
-    return {data}
+
+    const { data } = useGetData(`api/${paramRequired}`, paramRequired)
+    return { data }
+
   }
 
   // Dropdown navbar open and close handler ->
