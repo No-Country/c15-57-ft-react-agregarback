@@ -5,21 +5,17 @@ export default function HighlightBox (){
     return(
       <section className='relative   flex-col  min-w-[430px]  mb-32 sm:mb-7  w-full  sm:h-[480px]   flex justify-center mt-10  sm:m-7'>
         <div className='absolute   z-0 w-[240px] h-[670px] sm:hidden bottom-[-10px] left-24 border border-transparent border-t-gray-600 border-b-gray-600'></div>
-      <div className='min-w-[300px] h-20   mx-auto'>
-        <p className='text-[18px] sm:hidden text-center'>Al deforestación un alto riesgo para  <br/> la supervivencia de los ecosistemas.</p>
-        <p className='hidden sm:flex text-[18px] text-center'>Al deforestación un alto riesgo para   la supervivencia de los ecosistemas.</p>
-      </div>
-      <figure className='my-3  sm:w-screen sm:max-w-[1440px] sm:mx-auto sm:h-[260px] '>
-  
-      <img className='bg-category-Animals w-full sm:h-[260px] font-[300] object-cover' src={talar} alt="" />
-      </figure>
-      <p className='hidden sm:flex mt-7  max-w-[1080px] w-full h-auto mx-auto text-center'>{articulo}</p>
-      <div className='min-w-[430px] min-h-[20px] max-h-[300px]  relative w-ful  sm:max-w-[1440px]  flex  sm:mx-aut px-4'>
-        <p className=' sm:hidden text-[3.5vw] w-screen sm:max-w-[1440px] h-[400px] text-center sm:text-[19px]'>{articulo}</p>
-       
-         </div>
-  
+        <div className='min-w-[300px] h-20   mx-auto'>
+          <p className='text-[18px] sm:hidden text-center'>Al deforestación un alto riesgo para  <br/> la supervivencia de los ecosistemas.</p>
+          <p className='hidden sm:flex text-[18px] text-center'>Al deforestación un alto riesgo para   la supervivencia de los ecosistemas.</p>
+        </div>
+        <figure className='my-3  sm:w-screen sm:max-w-[1440px] sm:mx-auto sm:h-[260px] '>
+          <img className='bg-category-Animals w-full sm:h-[260px] font-[300] object-cover' src={talar} alt="" />
+        </figure>
+        <p className='hidden sm:flex mt-7  max-w-[1080px] w-full h-auto mx-auto text-center'>{articulo}</p>
+        <div className='min-w-[430px] min-h-[20px] max-h-[300px]  relative w-ful  sm:max-w-[1440px]  flex  sm:mx-aut px-4'>
+          <p className=' sm:hidden text-[3.5vw] w-screen sm:max-w-[1440px] h-[400px] text-center sm:text-[19px]'>{articulo}</p>
+        </div>  
       </section>
     )
-  
-  }
+}

@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom'
 import aguaraGuazu from '../../../assets/vulnerableSpecies/aguaraGuazu.jpg'
 import ajolote from '../../../assets/vulnerableSpecies/ajolote.jpg'
@@ -41,6 +42,7 @@ export default function VulnerableSpeciesInfo () {
   const nextBtn = () => {
     if (currentIndex < carouselWrapper.length - 1) setCurrentIndex(currentIndex + 1)
   }
+
 
   return (
     <>

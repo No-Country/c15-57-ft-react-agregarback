@@ -6,6 +6,7 @@ import DownSection from '../../../components/WhoWeAre/DownSection/Component/Down
 import { LatamMap, Monkey, Certificate } from '../../../assets/who-we-are/index'
 
 const WhoWeAreInfo = ({ data }) => {
+
   return (
     <>
       {

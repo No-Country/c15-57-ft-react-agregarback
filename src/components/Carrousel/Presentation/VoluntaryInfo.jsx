@@ -2,8 +2,7 @@ export default function VoluntaryInfo(){
   return(
     <section className={`relative w-[100%] max-w-[1440px] h-[549px] mx-auto my-16 bg-rzed-300
     bg-no-repeat bg-cover bg-[url('/src/assets/img-hero/voluntaryBG.jpeg')]
-    overflow-hidden rounded-[50px] flex justify-center items-center mt-20  `}
-    >
+    overflow-hidden rounded-[50px] flex justify-center items-center mt-20  `}>
       <div className='absolute z-0 w-full h-full bg-black bg-opacity-70'></div>
       <div className='w-[820px] flex flex-col items-center gap-6'>
         <p className='text-white text-[50px] relative z-10'>Voluntariados</p>
@@ -16,4 +15,4 @@ export default function VoluntaryInfo(){
       
     </section>
   )
-};
+}

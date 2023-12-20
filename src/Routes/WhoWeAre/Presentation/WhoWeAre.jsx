@@ -6,6 +6,7 @@ const WhoWeAreContainer = ({ data }) => {
   return (
     <WhoWeAreLayout>
       <WhoWeAreInfo data={data} />
+
     </WhoWeAreLayout>
   )
 }

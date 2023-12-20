@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom'
+
+
 
 export default function LandingLayout ({ children }) {
   const toRender = [...children]
@@ -8,7 +9,7 @@ export default function LandingLayout ({ children }) {
     <section className='w-[430px]  relative z-0 top-[-10px]'>
       {banner}
       <div className=' w-screen  flex items-center justify-center'>
-        <Link to='Ecosystems'> Link a animales Por Ecosistema {'<'}----</Link>
+
       </div>
 
       <div className='w-screen h-auto justify-center flex flex-col '>{toRender} </div>

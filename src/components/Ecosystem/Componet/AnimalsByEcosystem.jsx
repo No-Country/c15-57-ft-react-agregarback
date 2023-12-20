@@ -1,26 +1,81 @@
 import { useEffect, useState } from 'react'
-import allEcosystem, { MAIN_AREA } from './data'
+
+import allEcosystem  from './data'
+
 import EcosystemLayaout from '../Presentation/EcosystemLayaout'
 import EcosystemInfoDectail from '../Presentation/EcosystemInfoDectail'
 import EcosystemHero from '../Presentation/EcosystemHero'
 import EcosystemCollageAnimas from '../Presentation/EcosystemCollageAnimas'
 import EcosystemsLinksContainer from '../Presentation/EcosystemsLinksContainer'
 
+import { EllipseBosque, EllipseDesierto, EllipseMontania, EllipseOceano, EllipseSabana } from '../../../assets/ecosystem'
+
+import { useParams } from 'react-router-dom';
+
+
+const moreEcosystems = [
+  {
+    id:1,
+    path:'Ecosystems/sabana-pastizales',
+    img:EllipseSabana,
+    area: 'SABANAS',
+
+  },
+  {
+    id:2,
+    path:'Ecosystems/desiertos',
+    img:EllipseDesierto,
+    area: 'DESIERTOS',
+
+  },
+  {
+    id:3,
+    path:'Ecosystems/montañas',
+    img:EllipseMontania,
+    area: 'MONTAÑAS',
+
+  },
+  {
+    id:4,
+    path:'Ecosystems/oceanos-rios',
+    img:EllipseOceano,
+    area: 'OCEANOS',
+
+  },
+  {
+    id:5,
+    path:'Ecosystems/bosques',
+    img:EllipseBosque,
+    area: 'BOSQUES',
+
+  },
+]
+
 export default function AnimalsByEcosystem () {
-  const [dataEcosystems, setDataEcosystems] = useState(allEcosystem)
-  const [areaIndex, setAreaIndex] = useState(0)
+ 
+  const params = useParams()
+  const { ecosystem } = params; 
+
   const [curretArea, setCurrentArea] = useState(null)
-
   useEffect(() => {
-    setCurrentArea(dataEcosystems[areaIndex])
-  }, [dataEcosystems, areaIndex])
+  if (ecosystem == null ){
+    setCurrentArea(allEcosystem[0])
+  }else{
+    const ecosystemToShow = allEcosystem.filter(data => {
+      // 
+        return data.path === ecosystem  
+      });
+      setCurrentArea(ecosystemToShow[0])
+  }
 
+  }, [ecosystem])
   return (
     <EcosystemLayaout>
-      <EcosystemHero mainArea={MAIN_AREA} aratoShow={curretArea?.area} areaBanner={curretArea?.banerFondo} areaTitle={curretArea?.title} />
+      <EcosystemHero  aratoShow={curretArea?.area} areaBanner={curretArea?.banerFondo} areaTitle={curretArea?.title} />
       <EcosystemInfoDectail showText={curretArea?.text} />
       <EcosystemCollageAnimas getAnimals={curretArea} />
-      <EcosystemsLinksContainer areaIndex={areaIndex} setAreaIndex={setAreaIndex} otherAreas={dataEcosystems} />
+      <EcosystemsLinksContainer correctArea={ecosystem} otherAreas={moreEcosystems} />
+
     </EcosystemLayaout>
   )
 }

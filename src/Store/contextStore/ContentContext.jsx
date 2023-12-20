@@ -11,8 +11,10 @@ const ContentProvider = ({ children }) => {
   // Who we are data->
 
   const getDataFromServer = (paramRequired) => {
+
     const { data } = useGetData(`api/${paramRequired}`, paramRequired)
     return { data }
+
   }
 
   // Dropdown navbar open and close handler ->
@@ -76,7 +78,7 @@ const ContentProvider = ({ children }) => {
   const onAnimalRouteChecker = () => {
     const [onAnimalRoute, setOnAnimalRoute] = useState(true)
     const location = useLocation()
-
+    
     useEffect(() => {
       if (location.pathname === '/') {
         setOnAnimalRoute(true)

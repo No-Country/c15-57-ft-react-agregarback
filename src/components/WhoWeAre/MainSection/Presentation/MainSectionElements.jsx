@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa'
 
+
 function MainSectionElements ({ MainTitle, MainDescription, MainQuote, MainQuoteAuthor, Monkey }) {
   return (
     <>
@@ -32,3 +33,4 @@ function MainSectionElements ({ MainTitle, MainDescription, MainQuote, MainQuote
 }
 
 export default MainSectionElements
+
