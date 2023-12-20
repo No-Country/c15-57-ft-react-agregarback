@@ -138,6 +138,96 @@ const ContentProvider = ({ children }) => {
   // check shoppingcart button state
   const [enableButton, setEnableButton] = useState(true)
 
+  const purchaseData = [
+    {
+      id: '#738',
+      date: '8 sep,2022',
+      total: '$13000 ',
+      products: '(5 Productos)',
+      state: 'Procesando'
+    },
+    {
+      id: '#703',
+      date: '24 May,2022',
+      total: '$2000 ',
+      products: '(1 Producto)',
+      state: 'En camino'
+    },
+    {
+      id: '#130',
+      date: '22 Oct,2023',
+      total: '$5000 ',
+      products: '(3 Productos)',
+      state: 'Completado'
+    },
+    {
+      id: '#561',
+      date: '1 Feb,2023',
+      total: '$3500 ',
+      products: '(1 Producto)',
+      state: 'Completado'
+    },
+    {
+      id: '#536',
+      date: '21 Sep,2023',
+      total: '$500 ',
+      products: '(13 Productos)',
+      state: 'Completado'
+    },
+    {
+      id: '#492',
+      date: '22 Oct,2023',
+      total: '$300 ',
+      products: '(2 Productos)',
+      state: 'Completado'
+    }
+  ]
+
+  const donationData = [
+    {
+      id: '#738',
+      date: '8 sep,2022',
+      total: '$13000 ',
+      products: '',
+      state: 'Completada'
+    },
+    {
+      id: '#703',
+      date: '24 May,2022',
+      total: '$2500 ',
+      products: '',
+      state: 'Completada'
+    },
+    {
+      id: '#130',
+      date: '22 Oct,2023',
+      total: '$7000 ',
+      products: '',
+      state: 'Completada'
+    },
+    {
+      id: '#561',
+      date: '1 Feb,2023',
+      total: '$3500 ',
+      products: '',
+      state: 'Completada'
+    },
+    {
+      id: '#536',
+      date: '21 Sep,2023',
+      total: '$5500 ',
+      products: '',
+      state: 'Completada'
+    },
+    {
+      id: '#492',
+      date: '22 Oct,2023',
+      total: '$30000 ',
+      products: '',
+      state: 'Completada'
+    }
+  ]
+
   const constextValue = {
     getDataFromServer,
     openDropdown,
@@ -173,7 +263,9 @@ const ContentProvider = ({ children }) => {
     streetNumber,
     setStreetNumber,
     enableButton,
-    setEnableButton
+    setEnableButton,
+    purchaseData,
+    donationData
   }
 
   return (
