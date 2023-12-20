@@ -16,8 +16,6 @@ export default function AnimalCategories () {
       })
   }, [])
   
-  console.log(animals);
-
   return (
     <>
       <img

@@ -6,7 +6,10 @@ import EcosystemHero from '../Presentation/EcosystemHero'
 import EcosystemCollageAnimas from '../Presentation/EcosystemCollageAnimas'
 import EcosystemsLinksContainer from '../Presentation/EcosystemsLinksContainer'
 
-export default function AnimalsByEcosystem () {
+export default function AnimalsByEcosystem() {
+
+
+
   const [dataEcosystems, setDataEcosystems] = useState(allEcosystem)
   const [areaIndex, setAreaIndex] = useState(0)
   const [curretArea, setCurrentArea] = useState(null)
@@ -24,4 +27,3 @@ export default function AnimalsByEcosystem () {
     </EcosystemLayaout>
   )
 }
-//
