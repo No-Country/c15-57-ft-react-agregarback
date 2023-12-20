@@ -1,12 +1,12 @@
-import UserView from "./UserView"
-import UserLayout from "./UserLayout"
+import UserView from './UserView'
+import UserLayout from './UserLayout'
 
 const User = () => {
-    return (
-        <UserLayout>
-            <UserView />
-        </UserLayout>
-    )
+  return (
+    <UserLayout>
+      <UserView />
+    </UserLayout>
+  )
 }
 
-export default User;
+export default User
