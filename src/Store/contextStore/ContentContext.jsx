@@ -138,6 +138,7 @@ const ContentProvider = ({ children }) => {
   // check shoppingcart button state
   const [enableButton, setEnableButton] = useState(true)
 
+  // data used on user page
   const purchaseData = [
     {
       id: '#738',
@@ -228,6 +229,9 @@ const ContentProvider = ({ children }) => {
     }
   ]
 
+  // open and close delete modal
+  const [openDeleteModal, setOpenDeleteModal] = useState(false)
+
   const constextValue = {
     getDataFromServer,
     openDropdown,
@@ -265,7 +269,9 @@ const ContentProvider = ({ children }) => {
     enableButton,
     setEnableButton,
     purchaseData,
-    donationData
+    donationData,
+    openDeleteModal,
+    setOpenDeleteModal
   }
 
   return (
