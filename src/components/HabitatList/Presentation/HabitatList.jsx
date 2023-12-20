@@ -14,7 +14,7 @@ export default function HabitatList ({ habitats }) {
             style={{ backgroundImage: `url(${habitat.img})` }}
             className='group h-56 w-56 rounded-full    text-white '
           >
-            <div className='group-hover:bg-black/35 rounded-full h-full w-full flex text-center justify-center items-center'>
+            <div className='group-hover:bg-black/50  rounded-full h-full w-full flex text-center justify-center items-center'>
               <p className='opacity-0 group-hover:opacity-100   transition-opacity duration-300 text-center text-3xl font-bold '>
                 {habitat.name}
               </p>
