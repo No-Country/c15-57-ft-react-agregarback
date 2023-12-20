@@ -122,7 +122,8 @@ const ContentProvider = ({ children }) => {
   const [totalCounting, setTotalCounting] = useState(0)
   // update the total of products
   const updateTotalCounting = (newCounting) => {
-    setTotalCounting(newCounting + totalCounting)
+    const newCount = parseInt(newCounting)
+    setTotalCounting(newCount + totalCounting)
   }
 
   // check the state of shipping info
