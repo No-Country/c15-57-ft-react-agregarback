@@ -26,9 +26,9 @@ const DonationsInfo = () => {
     name: Yup.string().min(2, 'Mínimo 2 caracteres').max(25, 'Máximo 25 caracteres').required('Nombre requerido'),
     email: Yup.string().email('Email no válido').required('Email requerido'),
     country: Yup.string().required('País requerido'),
-    card: Yup.number('Sólo números').required('Número de tarjeta requerido'),
-    date: Yup.number().min(5, 'Fecha no válida').required('Fecha requerida'),
-    CCV: Yup.number().min(3, 'Número de CCV no válido').required('Número de CCV requerido')
+    card: Yup.number().required('Número de tarjeta requerido').max(999999999999, 'Máximo 12 caracteres'),
+    date: Yup.string().max(5, 'Fecha no válida').required('Fecha requerida'),
+    CCV: Yup.number().max(999, 'Número de CCV no válido').required('Número de CCV requerido')
 
   })
 
@@ -61,14 +61,13 @@ const DonationsInfo = () => {
             <h2 className='text-sm text-black mb-4 font-robotoM'>Colaborá con una donación de:</h2>
             <div className='flex flex-col justify-between text-sm'>
               <div className='flex justify-center mb-2 gap-2 text-colorDonation'>
-                {/* Tres botones arriba */}
                 <DonateButton text='$500' onClick={handleButtonClick} />
                 <DonateButton text='$1000' onClick={handleButtonClick} />
                 <DonateButton text='$2000' onClick={handleButtonClick} />
               </div>
               <div className='flex justify-center gap-2'>
                 <DonateButton text='$2500' onClick={handleButtonClick} />
-                <DonateButton text='Otro importe' onClick={handleButtonClick} />
+                <DonateButton text='$5000' onClick={handleButtonClick} />
               </div>
             </div>
 
@@ -88,7 +87,7 @@ const DonationsInfo = () => {
                         <InputCCV name='CCV' type='text' placeholder='***' id='CCV' value={values.CCV} />
                       </div>
                     </div>
-                    <Button text='Hacer mi donación' color='bg-green-600' hover='hover:bg-green-900' />
+                    <Button to='/thanks' text='Hacer mi donación' color='bg-green-600' hover='hover:bg-green-900' />
                   </Form>
                 )}
               </Formik>
