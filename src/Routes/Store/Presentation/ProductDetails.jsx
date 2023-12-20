@@ -1,11 +1,9 @@
 import { useLocalStorage } from '../../../components/Hooks/useStorage'
-import { useNavigate } from 'react-router-dom'
 import { useECommerceContext } from '../../../Store/contextStore/ECommerceContext'
 
 export default function ProductDetails () {
-  const navigate = useNavigate()
   const { product, setProduct } = useECommerceContext()
-  const [, setCart, remove] = useLocalStorage('cart', [])
+  const [, setCart] = useLocalStorage('cart', [])
 
   const increment = () => {
     setProduct((prevProduct) => ({
@@ -108,10 +106,11 @@ export default function ProductDetails () {
                 key={index}
                 title={color}
                 value={color}
+                style={{ backgroundColor: color }}
                 className={
                   product.color === color
-                    ? `w-6 h-6 bg-[${color}] scale-150 border-2 border-gray-200 rounded-3xl cursor-pointer`
-                    : `w-6 h-6 bg-[${color}] rounded-3xl border cursor-pointer`
+                    ? 'w-6 h-6 scale-150 border-2 border-gray-200 rounded-3xl cursor-pointer'
+                    : 'w-6 h-6 rounded-3xl border cursor-pointer'
                 }
               >
                 <input
