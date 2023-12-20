@@ -117,4 +117,3 @@ import HabitatList from '../../../components/HabitatList/Component'
       <HabitatList />
     </>
   )
-}
