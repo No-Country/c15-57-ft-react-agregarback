@@ -16,9 +16,10 @@ const Donations = lazy(() => import('./Donations/Component/Donations'))
 const Thanks = lazy(() => import('./Thanks/Component/Thanks'))
 const ShoppingSuccessful = lazy(() => import('./ShoppingSuccessful/Component/ShoppingSuccessful'))
 
-const EcosystemPage = lazy(() => import('../Routes/AnimalsEcosystem/Componets/EcosystemPage'))
-const EcosystemPageModal = lazy(() =>  import('../Routes/EcosystemModal/Component/EcosystemModal') )
-const AnimalsEcosystemloaderData = import('../components/Ecosystem/Componet/AnimalsByEcosystem')
+import EcosystemPage from '../Routes/AnimalsEcosystem/Componets/EcosystemPage'
+import EcosystemModal from '../Routes/EcosystemModal/Component/EcosystemModal'
+
+import AnimalsEcosystemloaderData from '../components/Ecosystem/Componet/AnimalsByEcosystem'
 // Protected Routes
 
 const User = lazy(() => import('./User/Container/User'))
