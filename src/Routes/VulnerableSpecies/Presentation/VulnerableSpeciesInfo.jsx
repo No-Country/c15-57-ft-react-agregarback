@@ -11,6 +11,12 @@ import selva2 from '../../../assets/vulnerableSpecies/selva2.jpeg'
 import { useState, useEffect } from 'react'
 import HabitatList from '../../../components/HabitatList/Component'
 
+export default function VulnerableSpeciesInfo () {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [carouselWrapper, setCarouselWrapper] = useState([])
+  const [translateValue, setTranslateValue] = useState(0)
+  const [progressPercentage, setProgressPercentage] = useState(0)
+
   useEffect(() => {
     setCarouselWrapper([
       { name: 'Aguara Guazu', image: aguaraGuazu },
