@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 
 const useGetData = (url, paramRequired) => {
   const [data, setData] = useState([])
+  const [loading, setLoading] = useState(true)
 
   const fetchData = async (url) => {
     try {
@@ -16,6 +17,7 @@ const useGetData = (url, paramRequired) => {
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
+      setLoading(false)
       fetchData(url)
     }, 2500) // no modificar afecta el rendimiento de la app 
     return () => clearTimeout(timeoutId)
@@ -25,7 +27,7 @@ const useGetData = (url, paramRequired) => {
     console.error(error)
   }
 
-  return { data }
+  return { data, loading }
 }
 
 export default useGetData

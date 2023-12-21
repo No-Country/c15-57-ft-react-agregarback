@@ -9,7 +9,7 @@ const ContentProvider = ({ children }) => {
 
   const [mostrar, setMostrar] = useState(1)
   const [movileIndex, setMovileIndex] = useState(0)
-  // const [onAnimalRoute, setOnAnimalRoute] = useState(true)
+
   // keeping total account of products
   const [totalCounting, setTotalCounting] = useState(0)
   // check the state of shipping info
@@ -25,21 +25,10 @@ const ContentProvider = ({ children }) => {
   // open and close delete modal
   const [openDeleteModal, setOpenDeleteModal] = useState(false)
 
-  // Esta parte de location no se estaba utilizando
-  // const location = useLocation()
-
-  // useEffect(() => {
-  //   if (location.pathname === '/') {
-  //     setOnAnimalRoute(true)
-  //   } else {
-  //     setOnAnimalRoute(false)
-  //   }
-  // }, [location.pathname])
-
   // Who we are data->
   const getDataFromServer = (paramRequired) => {
-    const { data } = useGetData(`api/${paramRequired}`, paramRequired)
-    return { data }
+    const { data, loading } = useGetData(`api/${paramRequired}`, paramRequired)
+    return { data, loading }
   }
 
   // Dropdown navbar open and close handler ->
