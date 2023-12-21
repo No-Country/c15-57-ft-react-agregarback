@@ -4,25 +4,25 @@ import { createBrowserRouter } from 'react-router-dom'
 import { MainLayout, PrivateLayout } from '../Layouts'
 
 import {
-    Animals,
-    InfoAnimals,
-    WhoWeAre,
-    VulnerableSpecies,
-    Store,
-    Register,
-    Login,
-    NotFound,
-    User,
-    MyVolunteers,
-    MyPurchases,
-    ResetPassword,
-    Donations,
-    ShippingInformation,
-    ShoppingCart,
-    Thanks,
-    ShoppingSuccessful,
-    EcosystemPage
-  } from '../Routes'
+  Animals,
+  InfoAnimals,
+  WhoWeAre,
+  VulnerableSpecies,
+  Store,
+  Register,
+  Login,
+  NotFound,
+  User,
+  MyVolunteers,
+  MyPurchases,
+  ResetPassword,
+  Donations,
+  ShippingInformation,
+  ShoppingCart,
+  Thanks,
+  ShoppingSuccessful,
+  EcosystemPage
+} from '../Routes'
 
 export const router = createBrowserRouter([
   {
@@ -76,11 +76,11 @@ export const router = createBrowserRouter([
       },
       {
         path: '/InfoAnimals',
-        element: <InfoAnimals />
+        element: <EcosystemPage />
       },
       {
         path: 'InfoAnimals/:animal',
-        element: <InfoAnimals />
+        element: <EcosystemPage />
       },
       {
         path: '/Store',

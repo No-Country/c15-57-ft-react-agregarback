@@ -152,14 +152,11 @@ allEcosystem.push({
       img: oceanoAnimalLeft,
       link: '#',
       name: 'Lobo peletero de Galápagos '
-
     },
     center: {
       img: oceanoAnimalCenter,
       link: '#',
-
       name: 'Marsopa espinosa'
-
     },
     right: {
       top: {
