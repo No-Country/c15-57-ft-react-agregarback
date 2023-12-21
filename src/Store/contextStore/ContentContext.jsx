@@ -27,7 +27,7 @@ const [onAnimalRoute, setOnAnimalRoute] = useState(true)
   const [openDeleteModal, setOpenDeleteModal] = useState(false)
 
  
-
+  // navbar controller 
    useEffect(() => {
      if (location.pathname === '/') {
        setOnAnimalRoute(true)
