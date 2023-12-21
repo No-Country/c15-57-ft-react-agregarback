@@ -31,16 +31,16 @@ const AnimalsCategory = ({ animals }) => {
             </div>
           </div>
         </div>
-        <div className='w-screen  m-w-[1440px] h-full flex flex-col items-start px-[30px] pt-[40px] overflow-auto'>
+        <div className='h-full flex flex-col items-start px-[30px] pt-[40px] '>
           <div className='w-auto h-full flex gap-[10px]   items-start'>
             <div className='h-[320px] w-10 sm:hidden flex justify-center items-center'>
-            <img
+              <img
                 className='h-6 '
                 src={leftIcon}
                 alt=''
               />
             </div>
-        
+
             {animals.map((animal, index) => (
               <CategoryCard
                 key={index}
@@ -48,7 +48,7 @@ const AnimalsCategory = ({ animals }) => {
               />
             ))}
             <div className='h-[320px] w-10 sm:hidden flex justify-center items-center'>
-            <img
+              <img
                 className='h-6'
                 src={rigthIcon}
                 alt=''
