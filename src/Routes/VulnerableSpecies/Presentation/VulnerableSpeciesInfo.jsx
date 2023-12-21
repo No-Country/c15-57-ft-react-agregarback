@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom'
 import aguaraGuazu from '../../../assets/vulnerableSpecies/aguaraGuazu.jpg'
 import ajolote from '../../../assets/vulnerableSpecies/ajolote.jpg'
@@ -32,7 +31,7 @@ export default function VulnerableSpeciesInfo () {
 
   useEffect(() => {
     setTranslateValue(-currentIndex * 320) // 300px for item width and 20px for margin-right
-    setProgressPercentage((currentIndex + 1 / carouselWrapper.length) * 100)
+    setProgressPercentage(((currentIndex + 1) / carouselWrapper.length) * 100)
   }, [currentIndex])
 
   const prevBtn = () => {
@@ -42,7 +41,6 @@ export default function VulnerableSpeciesInfo () {
   const nextBtn = () => {
     if (currentIndex < carouselWrapper.length - 1) setCurrentIndex(currentIndex + 1)
   }
-
 
   return (
     <>
@@ -87,7 +85,7 @@ export default function VulnerableSpeciesInfo () {
             </div>
             <div className='w-[600px] mx-auto my-2.5 flex-items'>
               <div
-                style={{ width: progressPercentage }}
+                style={{ width: `${progressPercentage}%` }}
                 className='h-2.5 bg-[#ddd] relative rounded-[10px_10px_10px_10px]'
               >
                 <div className='h-full bg-[#EDDD6F] w-0 rounded-[10px_10px_10px_10px]' />
