@@ -1,6 +1,5 @@
 import { createContext, useContext, useState } from 'react'
 import useGetData from '../../Hooks/useGetData'
-   const location = useLocation()
 
 export const ContentContext = createContext()
 
