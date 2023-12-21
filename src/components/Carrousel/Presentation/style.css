@@ -8,29 +8,29 @@
   transition: .6s ease-in-out;
 }
 .hero-cambiarSeccion:hover{
- transform: translateY(30px); 
+ transform: translateY(30px);
 }
 .hero-cambiarSeccion:hover .hero-icon{
   opacity: 1;
   scale: 1.5;
-  
+
 }
 @keyframes moverDiv {
   0% {
-   
+
     transform: translateX(30px) ; /* Mover -30px en el eje X */
   }
- 
+
 
   100%{
-    
+
     transform: translateX(0px)  ;
   }
 }
 
 
 .hero-info{
-  animation: moverDiv .4s ease-in-out; 
+  animation: moverDiv .4s ease-in-out;
 }
 .navbarHome{
   position: relative;
@@ -52,7 +52,7 @@ border-radius:0 80px 0 80px ;
 }
 .clase{
   transition:  .3s ease-in-out ;
- 
+
 }
 
 .loader {
@@ -75,4 +75,3 @@ border-radius:0 80px 0 80px ;
     background-position: 0% 0%, 50% 0%, 100% 0%
   }
 }
-    

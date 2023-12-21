@@ -11,7 +11,7 @@ export const DropDownLayout = ({ children }) => {
 
     return (
 
-        <div className='dropdown relative '>
+        <div className='dropdown relative md:bottom-[0.3vh] lg:bottom-[0.1vh] 2xl:bottom-[0vh]'>
             <button
                 className={`
                 ${isOpen && "text-black text-[4vh] h-[16.6%]"}
@@ -23,7 +23,7 @@ export const DropDownLayout = ({ children }) => {
                         ? 'text-white rounded inline-flex items-center '
                         : 'text-black rounded inline-flex items-center '
                     } 
-                md:text-[1.5vw] z-4500
+                md:text-[1.5vw] z-4500 font-robotoM
                         `}
                 onClick={() => openDropdown()}
                 tabIndex={0}
@@ -36,7 +36,7 @@ export const DropDownLayout = ({ children }) => {
             </button>
             <div>
                 <ul className={`
-                    w-[7vw] md:w-[13vw] lg:w-[9vw] rounded-md bg-gray-200
+                    w-[7vw] md:w-[13vw] lg:w-[9vw] rounded-md bg-gray-200 font-robotoM
                 ${navBarDropDown
                         ? 'block  absolute bg-gray-200 text-black w-[8vw] pt-1 rounded-lg'
                         : 'hidden'
@@ -45,7 +45,7 @@ export const DropDownLayout = ({ children }) => {
                     {children}
                     <hr className="bg-black" />
                     <button
-                        className='text-black w-[100%] text-[1rem] md:text-[1.5vh] text-left pl-[6px] hover:bg-gray-400 block whitespace-no-wrap'
+                        className='text-black w-[100%] font-robotoM text-[1rem] md:text-[1.5vh] text-left pl-[6px] hover:bg-gray-400 block whitespace-no-wrap'
                         onClick={() => logControl()}>
                         Close Session
                     </button>

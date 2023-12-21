@@ -10,7 +10,7 @@ export default function HabitatList ({ habitats }) {
         {habitats.map((habitat) => (
           <Link
             key={habitat.name}
-            to='#'
+            to={habitat.path}
             style={{ backgroundImage: `url(${habitat.img})` }}
             className='group h-56 w-56 rounded-full    text-white '
           >

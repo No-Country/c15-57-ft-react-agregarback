@@ -1,5 +1,5 @@
 import logoWhite from '../../../assets/LogoWhite.png'
-import { FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { FaInstagram, FaTwitter, FaYoutube, FaArrowRight } from 'react-icons/fa'
 import { IoBasketballOutline } from 'react-icons/io5'
 
 export default function Footer () {
@@ -24,9 +24,18 @@ export default function Footer () {
             <p className='pb-2'>Políticas de privacidad</p>
           </div>
         </div>
-        <div className='text-white md:p-5 flex-1 flex flex-col justify-center md:items-start items-center md:w-[400px]'>
+        <div className='text-white md:p-5 flex-1 flex flex-col justify-center md:items-center items-center md:w-[400px]'>
           <p className='pb-2 font-robotoM text-[13px] md:text-lg'>Mantente informado</p>
-          <input className='p-2 w-[60%] md:w-full rounded-md bg-colorInputFooter text-white' type='text' placeholder='Ingresa tu email' />
+          <div className='relative'>
+            <input
+              className='p-2 pl-8 w-full rounded-md bg-colorInputFooter text-white'
+              type='text'
+              placeholder='Ingresa tu email'
+            />
+            <div className='absolute inset-y-0 left-2 flex items-center pointer-pointer'>
+              <FaArrowRight className='text-white cursor-pointer' />
+            </div>
+          </div>
           <div className='flex justify-between items-end pt-1'>
             <FaInstagram className='h-[30px] w-auto m-3 border-white bg-green-900 rounded-2xl p-1 text-white' />
             <IoBasketballOutline className='h-[30px] m-3 w-auto border-white bg-green-900 rounded-2xl p-1 text-white' />

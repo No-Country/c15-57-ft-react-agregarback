@@ -29,8 +29,10 @@ export function makeServer () {
       productC: Model,
       product: Model
     },
+
     seeds  (server) {
       // Who we are content
+
       server.create('whoWeAreInfoContent', {
         id: 1,
         MainTitle: 'QUIENES SOMOS',
@@ -42,7 +44,9 @@ export function makeServer () {
         MapSectionDefenders: 'Fuentes defensores en el equipo',
         MapSectionDonations: 'Donaciones en todo el mundo',
         DownSectionTitle: 'HEMOS SIDO CALIFICADOS COMO UNA DE LAS ONG MÁS EFECTIVAS DEL MUNDO',
+
         DownSectionDescription: '2023 es el quinto año consecutivo en el que Animal Charity Evaluators (ACE) reconoce a Preservación Animmal como una de las ONG de protección animal más efectivas del mundo'
+
       })
       // Animals
       server.create('animal', {
@@ -299,15 +303,10 @@ export function makeServer () {
     },
 
     routes () {
-      // Who we are info content controller
-      this.namespace = 'api/whoWeAreInfoContents'
-      this.get('/', schema => {
-        return schema.whoWeAreInfoContents.all()
-      })
-
       // ANIMALS NAMESPACE
-      this.namespace = 'api/animals'
-      this.get('/', (schema, request) => {
+      this.namespace = 'api'
+
+      this.get('/animals', (schema, request) => {
         return schema.animals.all()
       })
       this.get('/:id', (schema, request) => {
@@ -328,6 +327,12 @@ export function makeServer () {
         const id = request.params.id
         return schema.animals.find(id).destroy()
       })
+      // Who we are info content controller
+      this.namespace = 'api/whoWeAreInfoContents'
+      this.get('/', schema => {
+        return schema.whoWeAreInfoContents.all()
+      })
+
       // USERS NAMESPACE
       this.namespace = 'api/users'
       this.get('/', (schema, request) => {

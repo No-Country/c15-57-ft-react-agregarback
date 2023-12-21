@@ -1,4 +1,3 @@
-import { EllipseBosque, EllipseDesierto, EllipseMontania, EllipseOceano, EllipseSabana } from '../../../assets/ecosystem'
 import { bosqueAnimalBottom, bosqueAnimalCenter, bosqueAnimalLeft, bosqueAnimalRightDown, bosqueAnimalRigthTop } from '../../../assets/ecosystem/bosques'
 import { desiertoAnimalBottom, desiertoAnimalCenter, desiertoAnimalLeft, desiertoAnimalRightDown, desiertoAnimalRigthTop } from '../../../assets/ecosystem/decierto'
 import { montañaAnimalBottom, montañaAnimalCenter, montañaAnimalLeft, montañaAnimalRightDown, montañaAnimalRightTop } from '../../../assets/ecosystem/montaña'
@@ -28,33 +27,35 @@ allEcosystem.push({
   area: 'SABANAS',
   text: textSabanas,
   banerFondo: videoSabana,
-  iconImg: EllipseSabana,
+
+  path: 'sabana-pastizales',
   allAnimals: {
+
     left: {
       img: sabanaAnimalLeft,
-      link: '#',
+      link: '/Animals/tapir',
       name: 'Tapir de Baird'
     },
     center: {
       img: sabanaAnimalCenter,
-      link: '#',
+      link: '/Animals/huemul',
       name: 'Huemul'
     },
     right: {
       top: {
         img: sabanaAnimalRightTop,
-        link: '#',
+        link: '/Animals/tatu',
         name: 'Tatú Gigante'
       },
       down: {
         img: sabanaAnimalRightDown,
-        link: '#',
+        link: '/Animals/cardenal',
         name: 'Cardenal  Amarillo'
       }
     },
     bottom: {
       img: sabanaAnimalBottom,
-      link: '#',
+      link: '/Animals/hormiguero',
       name: 'Oso homiguero gigante'
     }
   }
@@ -65,8 +66,10 @@ allEcosystem.push({
   area: 'DESIERTO',
   text: textDesiertos,
   banerFondo: videoLinkDesierto,
-  iconImg: EllipseDesierto,
+
+  path: 'desiertos',
   allAnimals: {
+
     left: {
       img: desiertoAnimalLeft,
       link: '#',
@@ -102,8 +105,10 @@ allEcosystem.push({
   title: 'MONTAÑAS',
   area: 'MONTAÑAS',
   text: textMintañas,
+
+  path: 'montañas',
   banerFondo: videoLinkMontaña,
-  iconImg: EllipseMontania,
+
   allAnimals: {
     left: {
       img: montañaAnimalLeft,
@@ -140,17 +145,18 @@ allEcosystem.push({
   area: 'OCEANOS',
   text: textOceanos,
   banerFondo: videoLinkOceano,
-  iconImg: EllipseOceano,
+
+  path: 'oceanos-rios',
   allAnimals: {
     left: {
       img: oceanoAnimalLeft,
       link: '#',
-      name: 'Marsopa espinosa'
+      name: 'Lobo peletero de Galápagos '
     },
     center: {
       img: oceanoAnimalCenter,
       link: '#',
-      name: 'Lobo peletero de Galápagos'
+      name: 'Marsopa espinosa'
     },
     right: {
       top: {
@@ -177,8 +183,10 @@ allEcosystem.push({
   area: 'BOSQUES',
   text: textBosques,
   banerFondo: videoLinkBosque,
-  iconImg: EllipseBosque,
+
+  path: 'bosques',
   allAnimals: {
+
     left: {
       img: bosqueAnimalLeft,
       link: '#',

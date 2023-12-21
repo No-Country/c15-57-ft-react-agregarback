@@ -1,4 +1,3 @@
-import React from 'react'
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa'
 
 function MainSectionElements ({ MainTitle, MainDescription, MainQuote, MainQuoteAuthor, Monkey }) {

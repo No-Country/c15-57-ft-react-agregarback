@@ -1,4 +1,3 @@
-import React from 'react'
 import ThanksLayout from './ThanksLayout'
 import ThanksInfo from './ThanksInfo'
 
@@ -6,7 +5,7 @@ const Thanks = ({ Perezoso }) => {
   return (
     <ThanksLayout>
       <ThanksInfo
-       Perezoso={Perezoso}
+        Perezoso={Perezoso}
       />
     </ThanksLayout>
   )

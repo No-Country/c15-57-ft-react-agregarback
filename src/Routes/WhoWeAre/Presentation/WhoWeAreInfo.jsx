@@ -21,9 +21,10 @@ const WhoWeAreInfo = ({ data }) => {
           MapSectionDefenders,
           MapSectionDonations,
           DownSectionTitle,
-          DownSectionDescription }) => (
-          <>
-            <div key={id} className='w-full flex justify-center md:hidden'>
+          DownSectionDescription
+        }) => (
+          <div key={id}>
+            <div className='w-full flex justify-center md:hidden'>
               <SubtitleInfoStore link='/' title='Perfil' />
             </div>
 
@@ -49,7 +50,7 @@ const WhoWeAreInfo = ({ data }) => {
               Certificate={Certificate}
             />
 
-          </>
+          </div>
         )
         )
       }

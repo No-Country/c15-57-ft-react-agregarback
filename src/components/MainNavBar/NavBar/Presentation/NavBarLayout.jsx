@@ -7,6 +7,7 @@ import { LoginLogoutSect } from '../../LoginLogoutSect/Component/LoginLogoutSect
 import { useContentContext } from '../../../../Store/contextStore/ContentContext.jsx'
 import { useUserContext } from '../../../../Store/contextStore/UserContext.jsx'
 import useRouterChecker from '../../../../Hooks/useRouterChecker.jsx'
+import CartSection from '../../CartSection/Componentt/CartSection.jsx'
 
 const NavBarLayout = ({ children }) => {
   const { isOpen } = useContentContext()
@@ -66,11 +67,11 @@ const NavBarLayout = ({ children }) => {
 
                                 {/* shows: (login/logout) when no auth - shows: (dropdown/cart) when auth --> */}
 
-                                <li className='sm:grid sm:row-[span_1_/_span_6] sm:z-50 lg: col-span-3  lg:z-50'>
+                                <li className='sm:grid  sm:row-[span_1_/_span_6] sm:z-50 lg:col-span-3  lg:z-50'>
                                     <Dropdown />
                                   </li>
-                                <li className='flex'>
-                                    <Cart />
+                                <li className='hidden md:flex'>
+                                    <CartSection  />
                                   </li>
 
                               </>
