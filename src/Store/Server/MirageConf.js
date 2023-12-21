@@ -172,28 +172,28 @@ export function makeServer () {
       })
       // productCs
       server.create('productC', {
-        id: 1,
+        id: crypto.randomUUID(),
         name: 'Gorras',
         img: gorras
       })
       server.create('productC', {
-        id: 2,
+        id: crypto.randomUUID(),
         name: 'Remeras',
         img: remeras
       })
       server.create('productC', {
-        id: 3,
+        id: crypto.randomUUID(),
         name: 'Tazas',
         img: tazas
       })
       server.create('productC', {
-        id: 4,
+        id: crypto.randomUUID(),
         name: 'Vasos',
         img: vasos
       })
       // products
       server.create('product', {
-        id: 1,
+        id: crypto.randomUUID(),
         name: 'taza01',
         img: taza01,
         category: 'jaguar',
@@ -202,7 +202,7 @@ export function makeServer () {
         price: 800
       })
       server.create('product', {
-        id: 2,
+        id: crypto.randomUUID(),
         name: 'taza02',
         img: taza02,
         category: 'jaguar',
@@ -211,7 +211,7 @@ export function makeServer () {
         price: 800
       })
       server.create('product', {
-        id: 3,
+        id: crypto.randomUUID(),
         name: 'taza03',
         img: taza03,
         category: 'jaguar',
@@ -220,7 +220,7 @@ export function makeServer () {
         price: 800
       })
       server.create('product', {
-        id: 4,
+        id: crypto.randomUUID(),
         name: 'taza04',
         img: taza04,
         category: 'jaguar',
@@ -229,7 +229,7 @@ export function makeServer () {
         price: 800
       })
       server.create('product', {
-        id: 5,
+        id: crypto.randomUUID(),
         name: 'taza05',
         img: taza05,
         category: 'jaguar',
@@ -238,7 +238,7 @@ export function makeServer () {
         price: 800
       })
       server.create('product', {
-        id: 6,
+        id: crypto.randomUUID(),
         name: 'taza06',
         img: taza06,
         category: 'jaguar',
@@ -247,7 +247,7 @@ export function makeServer () {
         price: 800
       })
       server.create('product', {
-        id: 7,
+        id: crypto.randomUUID(),
         name: 'remera01',
         img: remera01,
         category: 'jaguar',
@@ -256,7 +256,7 @@ export function makeServer () {
         price: 8000
       })
       server.create('product', {
-        id: 8,
+        id: crypto.randomUUID(),
         name: 'remera02',
         img: remera02,
         category: 'jaguar',
@@ -265,7 +265,7 @@ export function makeServer () {
         price: 7500
       })
       server.create('product', {
-        id: 9,
+        id: crypto.randomUUID(),
         name: 'remera03',
         img: remera03,
         category: 'jaguar',
@@ -274,7 +274,7 @@ export function makeServer () {
         price: 8000
       })
       server.create('product', {
-        id: 10,
+        id: crypto.randomUUID(),
         name: 'remera04',
         img: remera04,
         category: 'jaguar',
@@ -283,7 +283,7 @@ export function makeServer () {
         price: 7500
       })
       server.create('product', {
-        id: 11,
+        id: crypto.randomUUID(),
         name: 'remera05',
         img: remera05,
         category: 'jaguar',
@@ -292,7 +292,7 @@ export function makeServer () {
         price: 8000
       })
       server.create('product', {
-        id: 12,
+        id: crypto.randomUUID(),
         name: 'remera06',
         img: remera06,
         category: 'jaguar',

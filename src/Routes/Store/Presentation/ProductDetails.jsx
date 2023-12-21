@@ -1,41 +1,14 @@
-import { useLocalStorage } from '../../../components/Hooks/useStorage'
 import { useECommerceContext } from '../../../Store/contextStore/ECommerceContext'
 import { useNavigate } from 'react-router-dom'
+
 export default function ProductDetails () {
-  const { product, setProduct } = useECommerceContext()
-  const [, setCart] = useLocalStorage('cart', [])
+  const { increment, decrement, handleChange, product, addProduct } = useECommerceContext()
   const navigate = useNavigate()
-
-  const increment = () => {
-    setProduct((prevProduct) => ({
-      ...prevProduct,
-      quantity: prevProduct.quantity + 1
-    }))
-  }
-
-  const decrement = () => {
-    if (product.quantity > 1) {
-      setProduct((prevProduct) => ({
-        ...prevProduct,
-        quantity: prevProduct.quantity - 1
-      }))
-    }
-  }
-
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setProduct((prevProduct) => ({
-      ...prevProduct,
-      [name]: value
-    }))
-  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    setCart((prevCart) => [...prevCart, product])
-    console.table({ product })
+    addProduct()
     setTimeout(() => {
-      // Redirige después de 2000 milisegundos (2 segundos)
       navigate('/ShoppingCart')
     }, 500)
   }

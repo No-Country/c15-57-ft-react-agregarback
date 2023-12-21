@@ -59,10 +59,23 @@ const InfoAnimalsInfo = ({ Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1, Ayud
     }, 20)
   }
 
+  const [scrollPosition, setScrollPosition] = useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const position = window.pageYOffset
+      setScrollPosition(position)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
   return (
     <div className='font-roboto'>
       <img src={Animal} alt='VaquitaMarina' className='object-cover w-screen' />
-      <div className='flex bg-infoAnimals text-white justify-center items-center text-sm md:text-lg'>
+      <div className='flex bg-infoAnimals text-white justify-center items-center text-sm md:text-lg sticky  w-full top-0'>
         <p className='p-3 w-[250px] mr-2 ml-2 text-center hover:bg-green-900' onClick={() => scrollToRef(datosRef)}>
           Datos
         </p>
@@ -73,7 +86,7 @@ const InfoAnimalsInfo = ({ Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1, Ayud
           ¿Cómo puedo ayudar?
         </p>
       </div>
-      <div className='flex justify-center items-center p-[3%]' ref={datosRef} id='datosSection'>
+      <div className=' mt-[10%] md:mt-[0%] flex justify-center items-center p-[3%]' ref={datosRef} id='datosSection'>
         <div className='w-[60px] sm:w-[120px] h-[2px] bg-datos' />
         <h1 className='text-center p-5 text-4xl font-robotoM'>DATOS</h1>
         <div className='w-[60px] sm:w-[120px] h-[2px] bg-datos' />
@@ -82,7 +95,7 @@ const InfoAnimalsInfo = ({ Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1, Ayud
         <p className='flex-1 text-sm md:text-base'>
           {Texto1}
         </p>
-        <div className='flex-1 md:pl-[30%] font-roboto'>
+        <div className='flex-1 md:pl-[20%] font-roboto'>
           <div className='flex items-center md:p-2 pt-[10%] md:pt-0'>
             <p className='bg-red-600 rounded-full mr-5 p-3 md:m-1 w-[53px] h-[53px] text-center content-center text-xl text-white'>{Logo1}</p>
             <div className='text-red-600 md:pl-5'>

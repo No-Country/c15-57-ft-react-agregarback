@@ -4,7 +4,7 @@ export const HamburguerMenuIcon = () => {
   const { toggle } = useContentContext()
   return (
 
-    <button className='navbar-burger flex items-center text-black w-[30px]' onClick={() => toggle()}>
+    <button className='navbar-burger flex items-center text-gray-600 w-[30px]' onClick={() => toggle()}>
 
       <svg
         className='block h-[100%] w-[100%] fill-current md:h-[100%] md:w-[100%]' viewBox='0 0 20 20'
