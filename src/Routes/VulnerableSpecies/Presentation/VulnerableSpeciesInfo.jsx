@@ -1,12 +1,6 @@
 import { Link } from 'react-router-dom'
 
 import HabitatList from '../../../components/HabitatList/Component'
-import EspecieCircular8 from '../../../assets/InfoAnimals/EspecieCircular8.png'
-import EspecieCircular9 from '../../../assets/InfoAnimals/EspecieCircular9.png'
-import EspecieCircular10 from '../../../assets/InfoAnimals/EspecieCircular10.png'
-import EspecieCircular11 from '../../../assets/InfoAnimals/EspecieCircular11.png'
-import EspecieCircular12 from '../../../assets/InfoAnimals/EspecieCircular12.png'
-import EspecieCircular13 from '../../../assets/InfoAnimals/EspecieCircular13.png'
 import {
   aguaraGuazu,
   ajolote,
@@ -15,6 +9,12 @@ import {
   monoArania,
   osoDeAnteojos,
   totugaCarey,
+  tatu,
+  tapir,
+  hormiguero,
+  cardenal,
+  huemul,
+  vaquita,
   selva2
 } from '../../../assets/vulnerableSpecies/'
 
@@ -27,20 +27,20 @@ export default function VulnerableSpeciesInfo () {
     { img: monoArania, name: 'mono' },
     { img: aguaraGuazu, name: 'guara' },
     { img: totugaCarey, name: 'tortuga' },
-    { img: EspecieCircular8, name: 'tapir' },
-    { img: EspecieCircular9, name: 'huemul' },
-    { img: EspecieCircular10, name: 'tatu' },
-    { img: EspecieCircular11, name: 'cardenal' },
-    { img: EspecieCircular12, name: 'hormiguero' },
-    { img: EspecieCircular13, name: 'vaquitaMarina' }
+    { img: tapir, name: 'tapir' },
+    { img: huemul, name: 'huemul' },
+    { img: tatu, name: 'tatu' },
+    { img: cardenal, name: 'cardenal' },
+    { img: hormiguero, name: 'hormiguero' },
+    { img: vaquita, name: 'vaquitaMarina' }
   ]
   return (
     <>
       <section
         style={{ backgroundImage: `url(${selva2})` }}
-        className='w-screen md:h-full shrink-0 bg-cover bg-no-repeat flex sm:flex-row h-auto'
+        className='bg-cover bg-no-repeat flex flex-col sm:flex-row'
       >
-        <div className='relative z-10 w-screen h-auto max-w-[42rem] text-white flex flex-col m-14 sm:m-28 mt-16'>
+        <div className='relative z-10 w-screen h-auto max-w-[42rem] text-white flex flex-col p-8 sm:m-28'>
           <h2 className='text-4xl sm:text-7xl not-italic font-semibold leading-[4rem] sm:leading-[6rem] tracking-widest uppercase mb-9'>
             Protegiendo la vida silvestre para un planeta saludable
           </h2>
@@ -49,11 +49,12 @@ export default function VulnerableSpeciesInfo () {
             restaurar las especies y sus hábitats.
           </p>
         </div>
-        <div className='invisible sm:visible flex flex-col items-start justify-center w-min'>
+        <div className='pl-8 mb-8 flex flex-col items-start justify-center overflow-scroll sm:overflow-hidden'>
           <div className='sm:w-[105vh] mx-auto'>
             <div className='relative z-0 overflow-auto flex transition-transform duration-[0.5s] ease-[ease-in-out]'>
               {animals.map((animal) => (
-                <div
+                <Link
+                  to={`/Animals/${animal.name}`}
                   key={animal.name}
                   style={{ backgroundImage: `url(${animal.img})` }}
                   className='w-[16rem] h-[25rem] shrink-0 cursor-pointer bg-cover flex items-center text-[color:var(--White,#FFF)] flex-col justify-end mr-[43px] rounded-[20px]'
@@ -61,7 +62,7 @@ export default function VulnerableSpeciesInfo () {
                   <p className='flex-col justify-center shrink-0 text-3xl not-italic font-normal leading-[44px] pb-[34px]'>
                     {animal.name.charAt(0).toUpperCase() + animal.name.slice(1)}
                   </p>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
