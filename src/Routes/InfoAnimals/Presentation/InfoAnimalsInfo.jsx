@@ -2,7 +2,7 @@ import { BiLoaderCircle } from 'react-icons/bi'
 import { GiWeight } from 'react-icons/gi'
 import { RxRulerHorizontal } from 'react-icons/rx'
 import { PiTreeBold } from 'react-icons/pi'
-import { useRef } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import Button from '../../../components/Button'
 import EspecieCircular1 from '../../../assets/InfoAnimals/EspecieCircular1.png'
 import EspecieCircular2 from '../../../assets/InfoAnimals/EspecieCircular2.png'
@@ -20,24 +20,8 @@ import EspecieCircular13 from '../../../assets/InfoAnimals/EspecieCircular13.png
 import EspecieCircular14 from '../../../assets/InfoAnimals/EspecieCircular14.png'
 import { Link } from 'react-router-dom'
 
-const especiesCirculares = [
-  { img: EspecieCircular1, name: 'manati' },
-  { img: EspecieCircular2, name: 'tortuga' },
-  { img: EspecieCircular3, name: 'ajolote' },
-  { img: EspecieCircular4, name: 'oso' },
-  { img: EspecieCircular5, name: 'mono' },
-  { img: EspecieCircular6, name: 'tortuga' },
-  { img: EspecieCircular7, name: 'guara' },
-  { img: EspecieCircular8, name: 'tapir' },
-  { img: EspecieCircular9, name: 'huemul' },
-  { img: EspecieCircular10, name: 'tatu' },
-  { img: EspecieCircular11, name: 'cardenal' },
-  { img: EspecieCircular12, name: 'hormiguero' },
-  { img: EspecieCircular13, name: 'vaquitaMarina' },
-  { img: EspecieCircular14, name: 'jaguar' }
-].slice().sort(() => Math.random() - 0.5).slice(0, 3)
-
-const InfoAnimalsInfo = ({ data, Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1, Ayuda2, Texto1, Logo1, Texto2, Texto3, Texto4, Texto5, Texto6, Texto7, Texto8 }) => {
+const InfoAnimalsInfo = ({ Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1, Ayuda2, Texto1, Logo1, Texto2, Texto3, Texto4, Texto5, Texto6, Texto7, Texto8 }) => {
+  const [especiesCirculares, setEspeciesCirculares] = useState([])
   const datosRef = useRef(null)
   const amenazasRef = useRef(null)
   const ayudaRef = useRef(null)
@@ -46,6 +30,26 @@ const InfoAnimalsInfo = ({ data, Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1
       ref.current.scrollIntoView({ behavior: 'smooth' })
     }
   }
+
+  useEffect(() => {
+    setEspeciesCirculares([
+      { img: EspecieCircular1, name: 'manati' },
+      { img: EspecieCircular2, name: 'tortuga' },
+      { img: EspecieCircular3, name: 'ajolote' },
+      { img: EspecieCircular4, name: 'oso' },
+      { img: EspecieCircular5, name: 'mono' },
+      { img: EspecieCircular6, name: 'tortuga' },
+      { img: EspecieCircular7, name: 'guara' },
+      { img: EspecieCircular8, name: 'tapir' },
+      { img: EspecieCircular9, name: 'huemul' },
+      { img: EspecieCircular10, name: 'tatu' },
+      { img: EspecieCircular11, name: 'cardenal' },
+      { img: EspecieCircular12, name: 'hormiguero' },
+      { img: EspecieCircular13, name: 'vaquitaMarina' },
+      { img: EspecieCircular14, name: 'jaguar' }
+    ].slice().sort(() => Math.random() - 0.5).slice(0, 3))
+  }, [Animal])
+
   return (
     <div className='font-roboto'>
       <img src={Animal} alt='VaquitaMarina' className='object-cover w-screen' />
@@ -160,7 +164,7 @@ const InfoAnimalsInfo = ({ data, Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1
       <div className='flex justify-center pb-[6%]'>
         {especiesCirculares.map((EspecieCircular, index) =>
           <div className='p-4 ' key={index}>
-            <Link to={`/Animals/${EspecieCircular.name}`}>
+            <Link onClick={() => window.scroll({ top: 0 })} to={`/Animals/${EspecieCircular.name}`}>
               <img src={EspecieCircular.img} alt='EspecieCircular1' className='' />
               {/* <h1 className='text-center p-4'>Manatí del Caribe</h1> */}
             </Link>
