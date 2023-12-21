@@ -14,8 +14,8 @@ const NavBarLinks = ({ links }) => {
                     key={to} className={`
                     hover:bg-sky-700 text-center
                          font-robotoM md:text-[1.5vw]
-                   ${isOpen && 'w-[100%] text-[4vh] h-[16.6%]'}
-                   ${!animalRouterChecker || isOpen && 'text-black w-[100%] text-[4v|h] h-[16.6%]'}
+                   ${isOpen && 'w-[100%]  text-[3vh] sm:text-[4vh] h-[20%]'}
+                   ${!animalRouterChecker || isOpen && 'text-black w-[100%] text-[4v|h] h-[20%]'}
                    ${animalRouterChecker || isOpen && 'text-white'}
                    ${animalRouterChecker && 'text-gray-300'}
                    ${!animalRouterChecker || !isOpen && 'text-black'}

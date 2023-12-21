@@ -15,10 +15,12 @@ const MainLayout = () => {
     lg:grid-rows-[1r,auto,1fr]'
     >
       <header>
+        <div className='w-[100%]'>
         <NavBar />
+        </div>
       </header>
-      <main className='row-start-2 '>
-        <Outlet />
+      <main className='row-start-2'>
+         <Outlet /> 
       </main>
       <footer>
         <Footer />

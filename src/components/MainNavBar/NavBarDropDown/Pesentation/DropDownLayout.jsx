@@ -14,8 +14,8 @@ export const DropDownLayout = ({ children }) => {
         <div className='dropdown relative md:bottom-[0.3vh] lg:bottom-[0.1vh] 2xl:bottom-[0vh]'>
             <button
                 className={`
-                ${isOpen && "text-black text-[4vh] h-[16.6%]"}
-                ${!animalRouterChecker || isOpen && "text-black w-[100%] text-[4vh] h-[16.6%]"}
+                ${isOpen && "text-black text-[4vh] h-[20%]"}
+                ${!animalRouterChecker || isOpen && "text-black w-[100%] text-[4vh] h-[20%]"}
                 ${animalRouterChecker || isOpen && "text-white"}
                 ${animalRouterChecker && "text-white"}
                 ${!animalRouterChecker || !isOpen && "text-white"}
