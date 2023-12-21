@@ -17,7 +17,7 @@ const useGetData = (url, paramRequired) => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       fetchData(url)
-    }, 0)
+    }, 2500) // no modificar afecta el rendimiento de la app 
     return () => clearTimeout(timeoutId)
   }, [url])
 
