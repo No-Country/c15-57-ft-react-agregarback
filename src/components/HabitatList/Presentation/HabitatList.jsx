@@ -11,7 +11,6 @@ export default function HabitatList ({ habitats }) {
           <Link
             key={habitat.name}
             to={habitat.path}
-
             style={{ backgroundImage: `url(${habitat.img})` }}
             className='group h-56 w-56 rounded-full    text-white '
           >

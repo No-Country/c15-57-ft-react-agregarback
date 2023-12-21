@@ -1,7 +1,7 @@
 import MovileControl from './MovileControl'
 import './style.css'
 
-export default function BannerContainer ({ children, datosMostrar, classBaner }) {
+export default function BannerContainer ({ animalInfo, children, datosMostrar, classBaner }) {
   return (
     <>
       <header
@@ -22,7 +22,7 @@ export default function BannerContainer ({ children, datosMostrar, classBaner })
               )}
         </figure>
       </header>
-      <MovileControl />
+      <MovileControl animalInfo={animalInfo} />
     </>
   )
 }
