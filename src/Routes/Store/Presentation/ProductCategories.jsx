@@ -20,16 +20,16 @@ export default function ProductsCategories () {
   return (
     <>
       <section className='w-full flex flex-col gap-[1rem] md:pt-26 p-4'>
-        <ul className='carousel carousel-center md:flex md:flex-row md:items-center sm:justify-center gap-8'>
+        <ul className=' w-screen max-w-[1080px]   px-28 overflow-auto flex flex-row sm:grid sm:grid-cols-4 gap-x-[30px] justify-items-start sm:gap-[24px] md:flex md:flex-row md:items-center sm:justify-center gap-8'>
           {products.map((product) => (
             <li
               onClick={() => setCategory(product.name)}
-              className='cursor-pointer carousel-item'
+              className='cursor-pointer'
               key={product.id}
             >
-              <div className='flex flex-col items-center'>
+              <div className='w-32 h-32 flex flex-col items-center'>
                 <img
-                  className='w-[5.625rem] h-[5.625rem]'
+                  className=' sm:w-[5.625rem] sm:h-[5.625rem]'
                   src={product.img}
                   alt={product.name}
                 />

@@ -73,7 +73,6 @@ export default function AnimalsByEcosystem () {
       <EcosystemInfoDectail showText={curretArea?.text} />
       <EcosystemCollageAnimas getAnimals={curretArea} />
       <EcosystemsLinksContainer correctArea={ecosystem} otherAreas={moreEcosystems} />
-
     </EcosystemLayaout>
   )
 }

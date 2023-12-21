@@ -1,5 +1,4 @@
 import { lazy } from 'react'
-import Store from './Store/Component/Store'
 // Unprotected Routes
 const WhoWeAre = lazy(() => import('./WhoWeAre/Component/WhoWeAre'))
 const Animals = lazy(() => import('./Animals/Component/Animals'))
@@ -15,6 +14,7 @@ const Thanks = lazy(() => import('./Thanks/Component/Thanks'))
 const ShoppingSuccessful = lazy(() => import('./ShoppingSuccessful/Component/ShoppingSuccessful'))
 const EcosystemPage = lazy(() => import('./AnimalsEcosystem/Componets/EcosystemPage'))
 const InfoAnimals = lazy(() => import('./InfoAnimals/Component/InfoAnimals'))
+const Store = lazy(() => import('./Store/Component/Store'))
 
 // Protected Routes
 const User = lazy(() => import('./User/Container/User'))

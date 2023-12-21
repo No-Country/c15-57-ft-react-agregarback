@@ -303,15 +303,10 @@ export function makeServer () {
     },
 
     routes () {
-      // Who we are info content controller
-      this.namespace = 'api/whoWeAreInfoContents'
-      this.get('/', schema => {
-        return schema.whoWeAreInfoContents.all()
-      })
-
       // ANIMALS NAMESPACE
-      this.namespace = 'api/animals'
-      this.get('/', (schema, request) => {
+      this.namespace = 'api'
+
+      this.get('/animals', (schema, request) => {
         return schema.animals.all()
       })
       this.get('/:id', (schema, request) => {
@@ -332,6 +327,12 @@ export function makeServer () {
         const id = request.params.id
         return schema.animals.find(id).destroy()
       })
+      // Who we are info content controller
+      this.namespace = 'api/whoWeAreInfoContents'
+      this.get('/', schema => {
+        return schema.whoWeAreInfoContents.all()
+      })
+
       // USERS NAMESPACE
       this.namespace = 'api/users'
       this.get('/', (schema, request) => {

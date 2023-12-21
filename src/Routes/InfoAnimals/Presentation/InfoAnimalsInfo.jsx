@@ -2,7 +2,7 @@ import { BiLoaderCircle } from 'react-icons/bi'
 import { GiWeight } from 'react-icons/gi'
 import { RxRulerHorizontal } from 'react-icons/rx'
 import { PiTreeBold } from 'react-icons/pi'
-import { useRef } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import Button from '../../../components/Button'
 import EspecieCircular1 from '../../../assets/InfoAnimals/EspecieCircular1.png'
 import EspecieCircular2 from '../../../assets/InfoAnimals/EspecieCircular2.png'
@@ -18,25 +18,10 @@ import EspecieCircular11 from '../../../assets/InfoAnimals/EspecieCircular11.png
 import EspecieCircular12 from '../../../assets/InfoAnimals/EspecieCircular12.png'
 import EspecieCircular13 from '../../../assets/InfoAnimals/EspecieCircular13.png'
 import EspecieCircular14 from '../../../assets/InfoAnimals/EspecieCircular14.png'
+import { Link } from 'react-router-dom'
 
-const especiesCirculares = [
-  EspecieCircular1,
-  EspecieCircular2,
-  EspecieCircular3,
-  EspecieCircular4,
-  EspecieCircular5,
-  EspecieCircular6,
-  EspecieCircular7,
-  EspecieCircular8,
-  EspecieCircular9,
-  EspecieCircular10,
-  EspecieCircular11,
-  EspecieCircular12,
-  EspecieCircular13,
-  EspecieCircular14
-].slice().sort(() => Math.random() - 0.5).slice(0, 3)
-
-const InfoAnimalsInfo = ({ data, Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1, Ayuda2, Texto1, Logo1, Texto2, Texto3, Texto4, Texto5, Texto6, Texto7, Texto8 }) => {
+const InfoAnimalsInfo = ({ Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1, Ayuda2, Texto1, Logo1, Texto2, Texto3, Texto4, Texto5, Texto6, Texto7, Texto8 }) => {
+  const [especiesCirculares, setEspeciesCirculares] = useState([])
   const datosRef = useRef(null)
   const amenazasRef = useRef(null)
   const ayudaRef = useRef(null)
@@ -45,6 +30,37 @@ const InfoAnimalsInfo = ({ data, Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1
       ref.current.scrollIntoView({ behavior: 'smooth' })
     }
   }
+
+  useEffect(() => {
+    setEspeciesCirculares([
+      { img: EspecieCircular1, name: 'manati' },
+      { img: EspecieCircular2, name: 'tortuga' },
+      { img: EspecieCircular3, name: 'ajolote' },
+      { img: EspecieCircular4, name: 'oso' },
+      { img: EspecieCircular5, name: 'mono' },
+      { img: EspecieCircular6, name: 'tortuga' },
+      { img: EspecieCircular7, name: 'guara' },
+      { img: EspecieCircular8, name: 'tapir' },
+      { img: EspecieCircular9, name: 'huemul' },
+      { img: EspecieCircular10, name: 'tatu' },
+      { img: EspecieCircular11, name: 'cardenal' },
+      { img: EspecieCircular12, name: 'hormiguero' },
+      { img: EspecieCircular13, name: 'vaquitaMarina' },
+      { img: EspecieCircular14, name: 'jaguar' }
+    ].slice().sort(() => Math.random() - 0.5).slice(0, 3))
+  }, [Animal])
+
+  const scrollToTop = () => {
+    const scrollStep = -window.scrollY / (500 / 15)
+    const scrollInterval = setInterval(() => {
+      if (window.scrollY !== 0) {
+        window.scrollBy(0, scrollStep)
+      } else {
+        clearInterval(scrollInterval)
+      }
+    }, 20)
+  }
+
   return (
     <div className='font-roboto'>
       <img src={Animal} alt='VaquitaMarina' className='object-cover w-screen' />
@@ -68,7 +84,7 @@ const InfoAnimalsInfo = ({ data, Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1
         <p className='flex-1 text-sm md:text-base'>
           {Texto1}
         </p>
-        <div className='flex-1 md:pl-[10%] font-roboto'>
+        <div className='flex-1 md:pl-[30%] font-roboto'>
           <div className='flex items-center md:p-2 pt-[10%] md:pt-0'>
             <p className='bg-red-600 rounded-full mr-5 p-3 md:m-1 w-[53px] h-[53px] text-center content-center text-xl text-white'>{Logo1}</p>
             <div className='text-red-600 md:pl-5'>
@@ -114,7 +130,7 @@ const InfoAnimalsInfo = ({ data, Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1
           </div>
         </div>
       </div>
-      <img src={WorldMap1} alt='WorldMap1' className='object-cover min-h-full' />
+      <img src={WorldMap1} alt='WorldMap1' className='object-cover w-full min-h-full' />
       <div className='flex justify-center items-center p-[3%]' ref={amenazasRef} id='amenazasSection'>
         <div className='w-[60px] sm:w-[120px] h-[2px] bg-datos' />
         <h1 className='text-center p-5 text-xl md:text-4xl font-robotoM'>AMENAZAS</h1>
@@ -159,10 +175,10 @@ const InfoAnimalsInfo = ({ data, Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1
       <div className='flex justify-center pb-[6%]'>
         {especiesCirculares.map((EspecieCircular, index) =>
           <div className='p-4 ' key={index}>
-            <div>
-              <img src={EspecieCircular} alt='EspecieCircular1' className='' />
+            <Link onClick={() => scrollToTop()} to={`/Animals/${EspecieCircular.name}`}>
+              <img src={EspecieCircular.img} alt='EspecieCircular1' className='' />
               {/* <h1 className='text-center p-4'>Manatí del Caribe</h1> */}
-            </div>
+            </Link>
           </div>
         )}
       </div>

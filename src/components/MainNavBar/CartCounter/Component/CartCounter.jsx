@@ -1,4 +1,3 @@
-import React from 'react'
 import CartCounterContainer from '../Presentation/CartCounter'
 
 const CartCounter = () => {
