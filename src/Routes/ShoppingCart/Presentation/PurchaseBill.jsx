@@ -1,21 +1,15 @@
 import { Button } from '../../../components'
 import { Link } from 'react-router-dom'
 import { useContentContext } from '../../../Store/contextStore/ContentContext'
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 
 export default function PurchaseBill () {
-  const [error, setError] = useState('')
   const { sentShippingInfo, totalCounting, enableButton, setEnableButton } = useContentContext()
 
   useEffect(() => {
     sentShippingInfo && totalCounting ? setEnableButton(false) : setEnableButton(true)
   }, [sentShippingInfo, totalCounting])
 
-  const showError = () => {
-    if (!enableButton) {
-      setError('Necesita al menos un producto y los datos de envío para completar la compra')
-    }
-  }
   return (
     <div className='flex flex-col justify-center items-center w-[95%] md:mt-[56px] max-w-[314px]'>
       <div className='w-[95%] border-[1px] border-slate-300 rounded-xl flex flex-col items-center'>
@@ -41,15 +35,21 @@ export default function PurchaseBill () {
           <div className='w-auto hidden md:flex justify-center items-center'>
             <div className='w-[75%]'>
               <Button to={!enableButton ? '/ShoppingSuccessful' : ''} text='Continuar compra' color='bg-green-600' hover='hover:bg-green-900' disabled={enableButton} />
-              {error && <p className='text-red-600 text-xs font-roboto text-center'>{error}</p>}
+              {enableButton &&
+                <p className='text-red-600 text-xs font-roboto text-center'>
+                  Necesita al menos un producto y los datos de envío para completar la compra
+                </p>}
             </div>
           </div>
         </div>
       </div>
       <div className='w-full mb-6 md:hidden flex flex-col items-center justify-center'>
-        <div className='w-[75%]' onClick={showError}>
+        <div className='w-[75%]'>
           <Button to={!enableButton ? '/ShoppingSuccessful' : ''} text='Continuar compra' color='bg-green-600' hover='hover:bg-green-900' disabled={enableButton} />
-          {error && <p className='text-red-600 text-xs font-roboto text-center'>{error}</p>}
+          {enableButton &&
+            <p className='text-red-600 text-xs font-roboto text-center'>
+              Necesita al menos un producto y los datos de envío para completar la compra
+            </p>}
         </div>
       </div>
     </div>
