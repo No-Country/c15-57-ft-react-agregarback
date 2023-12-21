@@ -6,7 +6,7 @@ import useRouterChecker from "../../../../Hooks/useRouterChecker.jsx";
 export const DropDownLayout = ({ children }) => {
 
     const { openDropdown, navBarDropDown, isOpen } = useContentContext();
-    const { logControl } = useUserContext();
+    const { logControl, } = useUserContext();
     const { animalRouterChecker } = useRouterChecker();
 
     return (
@@ -41,11 +41,13 @@ export const DropDownLayout = ({ children }) => {
                         ? 'block  absolute bg-gray-200 text-black w-[8vw] pt-1 rounded-lg'
                         : 'hidden'
                     }`
-                }>
+                }
+                onClick={() => openDropdown()}
+                >
                     {children}
                     <hr className="bg-black" />
                     <button
-                        className='text-black w-[100%] font-robotoM text-[1rem] md:text-[1.5vh] text-left pl-[6px] hover:bg-gray-400 block whitespace-no-wrap'
+                        className=' text-black w-[100%] font-robotoM text-[1rem] md:text-[1.5vh] text-left pl-[6px] hover:bg-gray-400 block whitespace-no-wrap'
                         onClick={() => logControl()}>
                         Close Session
                     </button>

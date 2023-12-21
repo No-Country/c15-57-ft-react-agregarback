@@ -9,9 +9,9 @@ const NavBarLinks = ({ links }) => {
   return (
     <>
       {
-                links.map(({ to, link }) => (
-                  <li
-                    key={to} className={`
+        links.map(({ to, link }) => (
+          <li
+            key={to} className={`
                     hover:bg-sky-700 text-center
                          font-robotoM md:text-[1.5vw]
                    ${isOpen && 'w-[100%]  text-[3vh] sm:text-[4vh] h-[20%]'}
@@ -20,11 +20,12 @@ const NavBarLinks = ({ links }) => {
                    ${animalRouterChecker && 'text-gray-300'}
                    ${!animalRouterChecker || !isOpen && 'text-black'}
                 `}
-                  >
-                    <Link to={to}>{link}</Link>
-                  </li>
-                ))
-}
+        
+          >
+            <Link to={to}>{link}</Link>
+          </li>
+        ))
+      }
     </>
 
   )
