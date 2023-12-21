@@ -5,7 +5,14 @@ import { useContentContext } from '../../../../Store/contextStore/ContentContext
 
 const NavBarLinks = ({ links }) => {
   const { animalRouterChecker } = useRouterChecker()
-  const { isOpen } = useContentContext()
+  const { isOpen, setIsOpen } = useContentContext()
+
+  const handleClick = () => {
+    if (isOpen) {
+      setIsOpen(false)
+      closeMenu()
+    }
+  }
   return (
     <>
       {
@@ -21,7 +28,7 @@ const NavBarLinks = ({ links }) => {
                    ${!animalRouterChecker || !isOpen && 'text-black'}
                 `}
                   >
-                    <Link to={to}>{link}</Link>
+                    <Link to={to} onClick={handleClick}>{link}</Link>
                   </li>
                 ))
 }
