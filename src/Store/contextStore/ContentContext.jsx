@@ -9,7 +9,7 @@ const ContentProvider = ({ children }) => {
 
   const [mostrar, setMostrar] = useState(1)
   const [movileIndex, setMovileIndex] = useState(0)
-
+   
   // keeping total account of products
   const [totalCounting, setTotalCounting] = useState(0)
   // check the state of shipping info
@@ -24,6 +24,17 @@ const ContentProvider = ({ children }) => {
   const [enableButton, setEnableButton] = useState(true)
   // open and close delete modal
   const [openDeleteModal, setOpenDeleteModal] = useState(false)
+
+  // Esta parte de location no se estaba utilizando
+  // const location = useLocation()
+
+  // useEffect(() => {
+  //   if (location.pathname === '/') {
+  //     setOnAnimalRoute(true)
+  //   } else {
+  //     setOnAnimalRoute(false)
+  //   }
+  // }, [location.pathname])
 
   // Who we are data->
   const getDataFromServer = (paramRequired) => {
@@ -213,7 +224,6 @@ const ContentProvider = ({ children }) => {
     navBarDropDown,
     isOpen,
     toggle,
-    // onAnimalRouteChecker,
     mostrar,
     setMostrar,
     classBaner,
