@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
 import { createBrowserRouter } from 'react-router-dom'
-
+import { Loader } from '../components'
 import { MainLayout, PrivateLayout } from '../Layouts'
 
 import {
@@ -23,7 +23,7 @@ import {
   ShoppingSuccessful,
   EcosystemPage
 } from '../Routes'
-import Loader from '../components/Loader/Loader'
+
 
 export const router = createBrowserRouter([
   {
