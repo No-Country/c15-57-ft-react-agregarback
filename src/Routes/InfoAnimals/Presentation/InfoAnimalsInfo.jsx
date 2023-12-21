@@ -75,7 +75,7 @@ const InfoAnimalsInfo = ({ Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1, Ayud
   return (
     <div className='font-roboto'>
       <img src={Animal} alt='VaquitaMarina' className='object-cover w-screen' />
-      <div className={`flex bg-infoAnimals text-white justify-center items-center text-sm md:text-lg fixed w-full ${scrollPosition > 100 ? 'top-0' : ''}`}>
+      <div className='flex bg-infoAnimals text-white justify-center items-center text-sm md:text-lg sticky  w-full top-0'>
         <p className='p-3 w-[250px] mr-2 ml-2 text-center hover:bg-green-900' onClick={() => scrollToRef(datosRef)}>
           Datos
         </p>
