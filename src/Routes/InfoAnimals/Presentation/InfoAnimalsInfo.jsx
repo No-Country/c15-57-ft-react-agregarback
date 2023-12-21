@@ -21,20 +21,20 @@ import EspecieCircular14 from '../../../assets/InfoAnimals/EspecieCircular14.png
 import { Link } from 'react-router-dom'
 
 const especiesCirculares = [
-  EspecieCircular1,
-  EspecieCircular2,
-  EspecieCircular3,
-  EspecieCircular4,
-  EspecieCircular5,
-  EspecieCircular6,
-  EspecieCircular7,
-  EspecieCircular8,
-  EspecieCircular9,
-  EspecieCircular10,
-  EspecieCircular11,
-  EspecieCircular12,
-  EspecieCircular13,
-  EspecieCircular14
+  { img: EspecieCircular1, name: 'manati' },
+  { img: EspecieCircular2, name: 'tortuga' },
+  { img: EspecieCircular3, name: 'ajolote' },
+  { img: EspecieCircular4, name: 'oso' },
+  { img: EspecieCircular5, name: 'mono' },
+  { img: EspecieCircular6, name: 'tortuga' },
+  { img: EspecieCircular7, name: 'guara' },
+  { img: EspecieCircular8, name: 'tapir' },
+  { img: EspecieCircular9, name: 'huemul' },
+  { img: EspecieCircular10, name: 'tatu' },
+  { img: EspecieCircular11, name: 'cardenal' },
+  { img: EspecieCircular12, name: 'hormiguero' },
+  { img: EspecieCircular13, name: 'vaquitaMarina' },
+  { img: EspecieCircular14, name: 'jaguar' }
 ].slice().sort(() => Math.random() - 0.5).slice(0, 3)
 
 const InfoAnimalsInfo = ({ data, Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1, Ayuda2, Texto1, Logo1, Texto2, Texto3, Texto4, Texto5, Texto6, Texto7, Texto8 }) => {
@@ -160,8 +160,8 @@ const InfoAnimalsInfo = ({ data, Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1
       <div className='flex justify-center pb-[6%]'>
         {especiesCirculares.map((EspecieCircular, index) =>
           <div className='p-4 ' key={index}>
-            <Link to='/Animals/hormiguero'>
-              <img src={EspecieCircular} alt='EspecieCircular1' className='' />
+            <Link to={`/Animals/${EspecieCircular.name}`}>
+              <img src={EspecieCircular.img} alt='EspecieCircular1' className='' />
               {/* <h1 className='text-center p-4'>Manatí del Caribe</h1> */}
             </Link>
           </div>
