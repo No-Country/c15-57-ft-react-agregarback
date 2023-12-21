@@ -75,14 +75,6 @@ export const router = createBrowserRouter([
         )
       },
       {
-        path: '/InfoAnimals',
-        element: <InfoAnimals />
-      },
-      {
-        path: 'InfoAnimals/:animal',
-        element: <InfoAnimals />
-      },
-      {
         path: '/Store',
         element: (
           <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
