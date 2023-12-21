@@ -50,6 +50,17 @@ const InfoAnimalsInfo = ({ Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1, Ayud
     ].slice().sort(() => Math.random() - 0.5).slice(0, 3))
   }, [Animal])
 
+  const scrollToTop = () => {
+    const scrollStep = -window.scrollY / (500 / 15)
+    const scrollInterval = setInterval(() => {
+      if (window.scrollY !== 0) {
+        window.scrollBy(0, scrollStep)
+      } else {
+        clearInterval(scrollInterval)
+      }
+    }, 20)
+  }
+
   return (
     <div className='font-roboto'>
       <img src={Animal} alt='VaquitaMarina' className='object-cover w-screen' />
@@ -73,7 +84,7 @@ const InfoAnimalsInfo = ({ Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1, Ayud
         <p className='flex-1 text-sm md:text-base'>
           {Texto1}
         </p>
-        <div className='flex-1 md:pl-[10%] font-roboto'>
+        <div className='flex-1 md:pl-[30%] font-roboto'>
           <div className='flex items-center md:p-2 pt-[10%] md:pt-0'>
             <p className='bg-red-600 rounded-full mr-5 p-3 md:m-1 w-[53px] h-[53px] text-center content-center text-xl text-white'>{Logo1}</p>
             <div className='text-red-600 md:pl-5'>
@@ -119,7 +130,7 @@ const InfoAnimalsInfo = ({ Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1, Ayud
           </div>
         </div>
       </div>
-      <img src={WorldMap1} alt='WorldMap1' className='object-cover min-h-full' />
+      <img src={WorldMap1} alt='WorldMap1' className='object-cover w-full min-h-full' />
       <div className='flex justify-center items-center p-[3%]' ref={amenazasRef} id='amenazasSection'>
         <div className='w-[60px] sm:w-[120px] h-[2px] bg-datos' />
         <h1 className='text-center p-5 text-xl md:text-4xl font-robotoM'>AMENAZAS</h1>
@@ -164,7 +175,7 @@ const InfoAnimalsInfo = ({ Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1, Ayud
       <div className='flex justify-center pb-[6%]'>
         {especiesCirculares.map((EspecieCircular, index) =>
           <div className='p-4 ' key={index}>
-            <Link onClick={() => window.scroll({ top: 0, behavior: 'smooth' })} to={`/Animals/${EspecieCircular.name}`}>
+            <Link onClick={() => scrollToTop()} to={`/Animals/${EspecieCircular.name}`}>
               <img src={EspecieCircular.img} alt='EspecieCircular1' className='' />
               {/* <h1 className='text-center p-4'>Manatí del Caribe</h1> */}
             </Link>
