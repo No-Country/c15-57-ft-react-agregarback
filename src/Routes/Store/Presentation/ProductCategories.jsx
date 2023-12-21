@@ -19,8 +19,8 @@ export default function ProductsCategories () {
 
   return (
     <>
-      <section className='w-full flex flex-col gap-[1rem] md:pt-26 p-4'>
-        <ul className=' w-screen max-w-[1080px]   px-28 overflow-auto flex flex-row sm:grid sm:grid-cols-4 gap-x-[30px] justify-items-start sm:gap-[24px] md:flex md:flex-row md:items-center sm:justify-center gap-8'>
+      <section className='max-w-[1080px] flex flex-col  sm:pt-26 p-4'>
+        <ul className='w-screen max-w-full overflow-auto flex flex-row justify-items-start sm:flex sm:flex-row sm:items-center sm:justify-center'>
           {products.map((product) => (
             <li
               onClick={() => setCategory(product.name)}
