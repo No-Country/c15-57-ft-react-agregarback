@@ -5,7 +5,7 @@ import { MainLayout, PrivateLayout } from '../Layouts'
 
 import {
   Animals,
-  InfoAnimals,
+  InfoAnimalsContainer,
   WhoWeAre,
   VulnerableSpecies,
   Store,
@@ -77,12 +77,12 @@ export const router = createBrowserRouter([
       },
       {
         path: '/InfoAnimals',
-        element: <InfoAnimals />,
+        element: <InfoAnimalsContainer />,
         loader: loaderAnimal
       },
       {
         path: 'InfoAnimals/:animal',
-        element: <InfoAnimals />
+        element: <InfoAnimalsContainer />
       },
       {
         path: '/Store',
