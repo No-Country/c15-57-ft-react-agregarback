@@ -1,6 +1,6 @@
 import React from 'react'
 
-function EcosystemElements({post}) {
+function EcosystemElements ({ post }) {
   return (
     <div>
       <h1>

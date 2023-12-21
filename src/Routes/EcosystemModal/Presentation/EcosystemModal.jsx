@@ -1,12 +1,11 @@
-
 import React from 'react'
 import EcosystemLayout from './EcosystemLayout'
 import EcosystemElements from './EcosystemElements'
-function EcosystemModalContainer({post}) {
+function EcosystemModalContainer ({ post }) {
   return (
     <EcosystemLayout>
       <EcosystemElements
-      post={post}
+        post={post}
       />
     </EcosystemLayout>
   )
