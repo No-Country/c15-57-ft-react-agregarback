@@ -30,8 +30,7 @@ export default {
         datos: '#CFCFD0'
       },
       plugins: [
-        require('@tailwindcss/forms'),
-        require('daisyui')
+        require('@tailwindcss/forms')
       ]
     }
   }

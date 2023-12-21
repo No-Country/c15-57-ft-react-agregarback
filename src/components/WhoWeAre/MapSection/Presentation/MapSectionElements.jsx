@@ -1,6 +1,4 @@
-import React from 'react'
-
-function MapSectionElements({ MapSectionTitle, MapSectionOperations, MapSectionDefenders, MapSectionDonations, LatamMap }) {
+function MapSectionElements ({ MapSectionTitle, MapSectionOperations, MapSectionDefenders, MapSectionDonations, LatamMap }) {
   return (
     <>
       <h2 className='font-robotoM text-xl font-black text-center my-8 w-[90%] md:mt-0 '>
