@@ -9,7 +9,6 @@ import EspecieCircular2 from '../../../assets/InfoAnimals/EspecieCircular2.png'
 import EspecieCircular3 from '../../../assets/InfoAnimals/EspecieCircular3.png'
 import EspecieCircular4 from '../../../assets/InfoAnimals/EspecieCircular4.png'
 import EspecieCircular5 from '../../../assets/InfoAnimals/EspecieCircular5.png'
-import EspecieCircular6 from '../../../assets/InfoAnimals/EspecieCircular6.png'
 import EspecieCircular7 from '../../../assets/InfoAnimals/EspecieCircular7.png'
 import EspecieCircular8 from '../../../assets/InfoAnimals/EspecieCircular8.png'
 import EspecieCircular9 from '../../../assets/InfoAnimals/EspecieCircular9.png'
@@ -38,7 +37,6 @@ const InfoAnimalsInfo = ({ Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1, Ayud
       { img: EspecieCircular3, name: 'ajolote' },
       { img: EspecieCircular4, name: 'oso' },
       { img: EspecieCircular5, name: 'mono' },
-      { img: EspecieCircular6, name: 'tortuga' },
       { img: EspecieCircular7, name: 'guara' },
       { img: EspecieCircular8, name: 'tapir' },
       { img: EspecieCircular9, name: 'huemul' },
