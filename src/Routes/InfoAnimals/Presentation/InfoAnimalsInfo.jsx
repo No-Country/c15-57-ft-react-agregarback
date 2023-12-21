@@ -95,7 +95,7 @@ const InfoAnimalsInfo = ({ Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1, Ayud
         <p className='flex-1 text-sm md:text-base'>
           {Texto1}
         </p>
-        <div className='flex-1 md:pl-[30%] font-roboto'>
+        <div className='flex-1 md:pl-[20%] font-roboto'>
           <div className='flex items-center md:p-2 pt-[10%] md:pt-0'>
             <p className='bg-red-600 rounded-full mr-5 p-3 md:m-1 w-[53px] h-[53px] text-center content-center text-xl text-white'>{Logo1}</p>
             <div className='text-red-600 md:pl-5'>
