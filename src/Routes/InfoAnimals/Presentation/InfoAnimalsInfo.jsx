@@ -59,10 +59,23 @@ const InfoAnimalsInfo = ({ Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1, Ayud
     }, 20)
   }
 
+  const [scrollPosition, setScrollPosition] = useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const position = window.pageYOffset
+      setScrollPosition(position)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
   return (
     <div className='font-roboto'>
       <img src={Animal} alt='VaquitaMarina' className='object-cover w-screen' />
-      <div className='flex bg-infoAnimals text-white justify-center items-center text-sm md:text-lg'>
+      <div className={`flex bg-infoAnimals text-white justify-center items-start text-sm md:text-lg fixed w-full ${scrollPosition > 100 ? 'top-0' : ''}`}>
         <p className='p-3 w-[250px] mr-2 ml-2 text-center hover:bg-green-900' onClick={() => scrollToRef(datosRef)}>
           Datos
         </p>
@@ -73,7 +86,7 @@ const InfoAnimalsInfo = ({ Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1, Ayud
           ¿Cómo puedo ayudar?
         </p>
       </div>
-      <div className='flex justify-center items-center p-[3%]' ref={datosRef} id='datosSection'>
+      <div className=' mt-[10%] md:mt-[0%] flex justify-center items-center p-[3%]' ref={datosRef} id='datosSection'>
         <div className='w-[60px] sm:w-[120px] h-[2px] bg-datos' />
         <h1 className='text-center p-5 text-4xl font-robotoM'>DATOS</h1>
         <div className='w-[60px] sm:w-[120px] h-[2px] bg-datos' />
