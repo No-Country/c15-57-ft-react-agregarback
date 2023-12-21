@@ -24,8 +24,7 @@ export default function AnimalCategories () {
       />
       <div className='hidden md:inline-flex w-72 p-3 rounded-xl justify-center items-center gap-2.5'>
         <p className='w-60 text-center text-gray-800 text-xl font-normal font-roboto '>
-          Con la compra de uno de los productos solidarios estás contribuyendo directamente con la labor que las ONG
-          realiza en beneficio a los animales que se encuentran en Peligro de extinción en Latinoamérica
+          Con la compra de uno de los productos solidarios estás contribuyendo directamente con la labor que las ONG realiza en beneficio a los animales que se encuentran en Peligro de extinción en Latinoamérica
         </p>
       </div>
       <div className='md:block h-px border border-gray-300 ' />

@@ -19,7 +19,7 @@ const useGetData = (url, paramRequired) => {
     const timeoutId = setTimeout(() => {
       setLoading(false)
       fetchData(url)
-    }, 2500) // no modificar afecta el rendimiento de la app 
+    }, 0) // no poner timeout xq tarda mucho en cargar
     return () => clearTimeout(timeoutId)
   }, [url])
 
