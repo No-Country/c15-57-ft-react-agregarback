@@ -1,12 +1,10 @@
-import React from 'react'
 import ButtonCarrouselSection from '../../CarrouselButtonSection/Container/ButtonCarrouselSection'
 
-const VulnerableCarrouselContent = ({ 
+const VulnerableCarrouselContent = ({
   carouselWrapper,
   translateValue,
   selva2
- }) => {
-  
+}) => {
   return (
 
     <section
@@ -43,11 +41,11 @@ const VulnerableCarrouselContent = ({
             }
           </div>
         </div>
-         
+
         <ButtonCarrouselSection />
 
-        </div>
-    
+      </div>
+
     </section>
 
   )

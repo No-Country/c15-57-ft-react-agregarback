@@ -164,7 +164,7 @@ const InfoAnimalsInfo = ({ Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1, Ayud
       <div className='flex justify-center pb-[6%]'>
         {especiesCirculares.map((EspecieCircular, index) =>
           <div className='p-4 ' key={index}>
-            <Link onClick={() => window.scroll({ top: 0 })} to={`/Animals/${EspecieCircular.name}`}>
+            <Link onClick={() => window.scroll({ top: 0, behavior: 'smooth' })} to={`/Animals/${EspecieCircular.name}`}>
               <img src={EspecieCircular.img} alt='EspecieCircular1' className='' />
               {/* <h1 className='text-center p-4'>Manatí del Caribe</h1> */}
             </Link>

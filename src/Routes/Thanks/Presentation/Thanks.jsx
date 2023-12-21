@@ -1,4 +1,3 @@
-import React from 'react'
 import ThanksLayout from './ThanksLayout'
 import ThanksInfo from './ThanksInfo'
 

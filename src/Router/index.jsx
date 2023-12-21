@@ -150,7 +150,7 @@ export const router = createBrowserRouter([
         path: '/Ecosystems/:ecosystem',
         element: (
           <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
-            <InfoAnimals />
+            <EcosystemPage />
           </Suspense>
         )
       },
