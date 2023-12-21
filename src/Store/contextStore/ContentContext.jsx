@@ -119,7 +119,8 @@ const ContentProvider = ({ children }) => {
 
   // update the total of products
   const updateTotalCounting = (newCounting) => {
-    setTotalCounting(newCounting + totalCounting)
+    const newCount = parseInt(newCounting)
+    setTotalCounting(newCount + totalCounting)
   }
 
   // data used on user page
@@ -213,6 +214,10 @@ const ContentProvider = ({ children }) => {
     }
   ]
 
+  // delete iten of shoppinList
+  const [index, getIndex] = useState(null)
+  const [shoppingList, setShoppingList] = useState([])
+
   const constextValue = {
     getDataFromServer,
     openDropdown,
@@ -248,7 +253,11 @@ const ContentProvider = ({ children }) => {
     purchaseData,
     donationData,
     openDeleteModal,
-    setOpenDeleteModal
+    setOpenDeleteModal,
+    index,
+    getIndex,
+    shoppingList,
+    setShoppingList
   }
 
   return <ContentContext.Provider value={constextValue}>{children}</ContentContext.Provider>

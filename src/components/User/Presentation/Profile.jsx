@@ -13,7 +13,7 @@ const Profile = () => {
   }
 
   return (
-    <div className='min-w-[280px] max-w-[304px] min-h-[294px] flex flex-col items-center border-[1px] lg:mt-10 border-slate-400 rounded-md border-box'>
+    <div className=' mt-6 min-w-[280px] max-w-[304px] min-h-[294px] flex flex-col items-center border-[1px] lg:mt-10 border-slate-400 rounded-md border-box'>
       <CgProfile className='text-gray-300 text-[120px] mt-2' />
       <h1 className='font-robotoM text-[1.4rem] text-gray-900'>
         Juan Perez

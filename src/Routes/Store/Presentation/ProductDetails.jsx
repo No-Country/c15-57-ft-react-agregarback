@@ -1,9 +1,10 @@
 import { useLocalStorage } from '../../../components/Hooks/useStorage'
 import { useECommerceContext } from '../../../Store/contextStore/ECommerceContext'
-
+import { useNavigate } from 'react-router-dom'
 export default function ProductDetails () {
   const { product, setProduct } = useECommerceContext()
   const [, setCart] = useLocalStorage('cart', [])
+  const navigate = useNavigate()
 
   const increment = () => {
     setProduct((prevProduct) => ({
@@ -33,7 +34,10 @@ export default function ProductDetails () {
     e.preventDefault()
     setCart((prevCart) => [...prevCart, product])
     console.table({ product })
-    // navigate('/cart')
+    setTimeout(() => {
+      // Redirige después de 2000 milisegundos (2 segundos)
+      navigate('/ShoppingCart')
+    }, 500)
   }
 
   return (
@@ -128,21 +132,21 @@ export default function ProductDetails () {
         </div>
         <div className='mt-4 flex gap-5'>
           <div className='w-24 h-10 px-4 py-3 rounded-3xl border border-black justify-start items-end gap-4 inline-flex'>
-            <button
+            <span
               onClick={decrement}
-              className='w-2 h-4 text-center text-gray-800 text-sm font-medium font-display'
+              className='w-2 h-4 text-center text-gray-800 text-sm font-medium font-display cursor-pointer'
             >
               -
-            </button>
+            </span>
             <p className='w-2 h-4 text-center text-gray-800 text-sm font-medium font-display'>
               {product.quantity}
             </p>
-            <button
+            <span
               onClick={increment}
-              className='w-2 h-4 text-center text-gray-800 text-sm font-medium font-display'
+              className='w-2 h-4 text-center text-gray-800 text-sm font-medium font-display cursor-pointer'
             >
               +
-            </button>
+            </span>
           </div>
           <button
             type='submit'
