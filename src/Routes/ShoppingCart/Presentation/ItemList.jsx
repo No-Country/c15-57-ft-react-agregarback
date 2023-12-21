@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { FaTrashCan } from 'react-icons/fa6'
-// import miniature from '../../../assets/product-miniature.jpg'
+
 import { useContentContext } from '../../../Store/contextStore/ContentContext'
 
 export default function ItemList ({ title, quantity, price, description, id, img, updateTotalCounting }) {
-  const { setOpenDeleteModal } = useContentContext()
+  const { setOpenDeleteModal, getIndex } = useContentContext()
   // save number of products
   const [number, setNumber] = useState(quantity)
 
@@ -27,6 +27,7 @@ export default function ItemList ({ title, quantity, price, description, id, img
   // open delete modal
   const openModal = () => {
     setOpenDeleteModal(true)
+    getIndex(id)
   }
   return (
     <div className='w-[95%] lg:w-[100%] h-[80px] lg:h-[100px] mb-4 flex border-[1px] border-slate-300 rounded-xl box-border overflow-hidden' id={id}>

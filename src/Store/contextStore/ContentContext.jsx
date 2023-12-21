@@ -233,6 +233,10 @@ const ContentProvider = ({ children }) => {
   // open and close delete modal
   const [openDeleteModal, setOpenDeleteModal] = useState(false)
 
+  // delete iten of shoppinList
+  const [index, getIndex] = useState(null)
+  const [shoppingList, setShoppingList] = useState([])
+
   const constextValue = {
     getDataFromServer,
     openDropdown,
@@ -272,7 +276,11 @@ const ContentProvider = ({ children }) => {
     purchaseData,
     donationData,
     openDeleteModal,
-    setOpenDeleteModal
+    setOpenDeleteModal,
+    index,
+    getIndex,
+    shoppingList,
+    setShoppingList
   }
 
   return (

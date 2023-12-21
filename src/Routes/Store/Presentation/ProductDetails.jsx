@@ -37,7 +37,7 @@ export default function ProductDetails () {
     setTimeout(() => {
       // Redirige después de 2000 milisegundos (2 segundos)
       navigate('/ShoppingCart')
-    }, 1000)
+    }, 500)
   }
 
   return (
