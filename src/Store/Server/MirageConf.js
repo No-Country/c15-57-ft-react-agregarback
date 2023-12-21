@@ -1,5 +1,5 @@
 import { createServer, Model, Response } from 'miragejs'
-import { jaguarImg, osoAnteojos, ballenasFrancas, jaguarIcon, ballenaIcon, osoIcon, ajolote, ajoleteIcon } from '../../../src/assets/img-hero'
+import { jaguarImg, osoAnteojos, gatodelosandes, jaguarIcon, ballenaIcon, osoIcon, ajolote, ajoleteIcon } from '../../../src/assets/img-hero'
 import { alojote, ballenaFranca, gatoAndino, jaguar, osoConAnteojos, aguaraGuazu } from '../../assets/animals'
 import { gorras, remeras, tazas, vasos } from '../../assets/products'
 import {
@@ -22,17 +22,36 @@ import {
 export function makeServer () {
   return createServer({
     models: {
+      whoWeAreInfoContent: Model,
       animal: Model,
       user: Model,
       animalC: Model,
       productC: Model,
       product: Model
     },
-    seeds (server) {
+
+    seeds  (server) {
+      // Who we are content
+
+      server.create('whoWeAreInfoContent', {
+        id: 1,
+        MainTitle: 'QUIENES SOMOS',
+        MainDescription: 'Preservación es una organización internacional de  protección animal que trabaja en países de Americe Latina  para reducir la extinción de los animales y sus hábitats. Con un programa abierto de donaciones para proyectos a favor de la conservación ambiental y de animales.',
+        MainQuote: 'Los animales no son propiedades o cosas, sino organimdos vivientes, sujetos de una vida, que merecen nuestra compasión, respeto, amistad y apoyo.',
+        MainQuoteAuthor: '(Marc Bekoff)',
+        MapSectionTitle: 'CREADO EN LATINOAMERICA, PARA LATINOAMERICA',
+        MapSectionOperations: 'Operando en 9 paises',
+        MapSectionDefenders: 'Fuentes defensores en el equipo',
+        MapSectionDonations: 'Donaciones en todo el mundo',
+        DownSectionTitle: 'HEMOS SIDO CALIFICADOS COMO UNA DE LAS ONG MÁS EFECTIVAS DEL MUNDO',
+
+        DownSectionDescription: '2023 es el quinto año consecutivo en el que Animal Charity Evaluators (ACE) reconoce a Preservación Animmal como una de las ONG de protección animal más efectivas del mundo'
+
+      })
       // Animals
       server.create('animal', {
         id: 1,
-        name: 'JAGUAR',
+        name: 'Jaguar',
         img: jaguarImg,
         titular: 'Se encuentra en la Lista Roja de las especias amenazadas',
         detalle:
@@ -42,7 +61,7 @@ export function makeServer () {
       })
       server.create('animal', {
         id: 2,
-        name: 'OSO ANTEOJOS',
+        name: 'Oso de Anteojos',
         img: osoAnteojos,
         titular:
           'La deforestación son una de las principales amenazas que enfrenta.',
@@ -53,17 +72,17 @@ export function makeServer () {
       })
       server.create('animal', {
         id: 3,
-        name: 'BALLENA FRANCA',
-        img: ballenasFrancas,
-        titular: 'las hembras tienen sólo una cría cada tres años.',
+        name: 'Gato Andino',
+        img: gatodelosandes,
+        titular: 'Es natural de América del Sur y  se limita a las regiones montañosas.',
         detalle:
-          'Con sus extremidades anteriores convertidas en aletas, su gruesa capa de grasa y su capacidad para bucear, algunas a grandes profundidades.',
-        link: 'BALLENA-FRANCA',
+          'Esta especie está en peligro de extinción a causa del hombre, debido a la caza furtiva y destrucción de su hábitat. La especie más cercana es el Leopardus colocolo.',
+        link: 'GATO-ANDINO',
         icon: ballenaIcon
       })
       server.create('animal', {
         id: 4,
-        name: ' AJOLOTE',
+        name: 'Ajolote',
         img: ajolote,
         titular: 'las hembras tienen sólo una cría cada tres años.',
         detalle:
@@ -284,6 +303,12 @@ export function makeServer () {
     },
 
     routes () {
+      // Who we are info content controller
+      this.namespace = 'api/whoWeAreInfoContents'
+      this.get('/', schema => {
+        return schema.whoWeAreInfoContents.all()
+      })
+
       // ANIMALS NAMESPACE
       this.namespace = 'api/animals'
       this.get('/', (schema, request) => {
@@ -437,7 +462,7 @@ export function makeServer () {
         const id = request.params.id
         return schema.productCs.find(id).destroy()
       })
-      // PRODUCT CATEGORIES NAMESPACE
+      //   CATEGORIES NAMESPACE
       this.namespace = 'api/products'
 
       // TAZAS ROUTE

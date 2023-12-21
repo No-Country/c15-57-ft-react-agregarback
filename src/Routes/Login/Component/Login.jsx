@@ -26,7 +26,7 @@ const Login = () => {
             <OtherSesion />
             <div className='flex flex-col justify-center text-lg text-center lg:flex-row'>
               <p className='lg:mr-2'>¿Nuevo usuario?</p>
-              <Link to='/register' className='font-robotoM'>Registrarse</Link>
+              <Link to='/Register' className='font-robotoM'>Registrarse</Link>
             </div>
           </div>
         </section>

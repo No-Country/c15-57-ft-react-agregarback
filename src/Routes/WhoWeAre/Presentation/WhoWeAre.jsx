@@ -1,15 +1,14 @@
 import React from 'react'
-
 import WhoWeAreLayout from './WhoWeAreLayout'
 import WhoWeAreInfo from './WhoWeAreInfo'
 
-const WhoWeAre = ({ info }) => {
-  console.log(info)
+const WhoWeAreContainer = ({ data }) => {
   return (
     <WhoWeAreLayout>
-      <WhoWeAreInfo info={info} />
+      <WhoWeAreInfo data={data} />
+
     </WhoWeAreLayout>
   )
 }
 
-export default WhoWeAre
+export default WhoWeAreContainer

@@ -1,21 +1,31 @@
 import { FcGoogle } from 'react-icons/fc'
 import { BsFacebook } from 'react-icons/bs'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { useUserContext } from '../../Store/contextStore/UserContext'
 
 export default function OtherSesion ({ to, text }) {
+  const navigate = useNavigate()
+  const { logControl } = useUserContext()
   const handleGoogleLogin = async () => {
     try {
       const response = await axios.post('/api/users/google-login')
       console.log('Usuario de Google:', response.data.user)
+      logControl()
+      navigate('/')
+      window.scrollTo(0, 0)
     } catch (error) {
       console.error('Error al iniciar sesión con Google:', error.response.data.error)
     }
   }
+
   const handleFacebookLogin = async () => {
     try {
       const response = await axios.post('/api/users/facebook-login')
       console.log('Usuario de Facebook:', response.data.user)
+      logControl()
+      navigate('/')
+      window.scrollTo(0, 0)
     } catch (error) {
       console.error('Error al iniciar sesión con Facebook:', error.response.data.error)
     }

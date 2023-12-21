@@ -10,7 +10,7 @@ export default function SelectCountry () {
       <Field as='select' name='country' className='font-roboto shadow appearance-none border rounded w-full py-3 px-3 leading-tight text-[0.8rem] lg:text-[1rem] bg-white' id='question'>
         <option value=''>Seleccionar país</option>
         {countries.map((country, index) => {
-          return <option value={`opción ${index}`} key={index}>{country}</option>
+          return <option value={country} key={index}>{country}</option>
         }
         )}
       </Field>

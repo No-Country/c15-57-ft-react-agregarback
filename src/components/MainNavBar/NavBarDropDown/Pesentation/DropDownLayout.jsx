@@ -5,19 +5,26 @@ import useRouterChecker from "../../../../Hooks/useRouterChecker.jsx";
 
 export const DropDownLayout = ({ children }) => {
 
-    const { openDropdown, NavBarDropDown } = useContentContext();
+    const { openDropdown, navBarDropDown, isOpen } = useContentContext();
     const { logControl } = useUserContext();
-    const { onAnimalRouteChecker } = useRouterChecker();
+    const { animalRouterChecker } = useRouterChecker();
 
     return (
 
         <div className='dropdown relative '>
             <button
                 className={`
-                ${!onAnimalRouteChecker ? 'text-white' : 'text-black'} 
-                  md:text-[1.3vh] lg:text-[1.7vh]  2xl:text-[2vh] bottom-[] rounded inline-flex items-center 
+                ${isOpen && "text-black text-[4vh] h-[16.6%]"}
+                ${!animalRouterChecker || isOpen && "text-black w-[100%] text-[4vh] h-[16.6%]"}
+                ${animalRouterChecker || isOpen && "text-white"}
+                ${animalRouterChecker && "text-white"}
+                ${!animalRouterChecker || !isOpen && "text-white"}
+                ${animalRouterChecker
+                        ? 'text-white rounded inline-flex items-center '
+                        : 'text-black rounded inline-flex items-center '
+                    } 
+                md:text-[1.5vw] z-4500
                         `}
-
                 onClick={() => openDropdown()}
                 tabIndex={0}
             >
@@ -27,18 +34,18 @@ export const DropDownLayout = ({ children }) => {
                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                 </svg>
             </button>
-            <div className="bg-blue-100">
-                <ul className={`${NavBarDropDown
-                    ? 'block  absolute text-gray-700 pt-1 rounded-lg '
-                    : 'hidden'
-                    }
-
-                   'w-[7vw] rounded-md bg-gray-200'  `
+            <div>
+                <ul className={`
+                    w-[7vw] md:w-[13vw] lg:w-[9vw] rounded-md bg-gray-200
+                ${navBarDropDown
+                        ? 'block  absolute bg-gray-200 text-black w-[8vw] pt-1 rounded-lg'
+                        : 'hidden'
+                    }`
                 }>
                     {children}
-                    <hr />
+                    <hr className="bg-black" />
                     <button
-                        className='w-[7vw]  text-[.75rem] text-left pl-[6px] bg-gray-200 hover:bg-gray-400 block whitespace-no-wrap'
+                        className='text-black w-[100%] text-[1rem] md:text-[1.5vh] text-left pl-[6px] hover:bg-gray-400 block whitespace-no-wrap'
                         onClick={() => logControl()}>
                         Close Session
                     </button>

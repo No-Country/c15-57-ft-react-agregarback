@@ -1,9 +1,9 @@
 const UserLayout = ({ children }) => {
-    return (
-        <div>
-            {children}
-        </div>
-    );
+  return (
+    <div className='flex flex-col items-center'>
+      {children}
+    </div>
+  )
 }
 
-export default UserLayout;
+export default UserLayout

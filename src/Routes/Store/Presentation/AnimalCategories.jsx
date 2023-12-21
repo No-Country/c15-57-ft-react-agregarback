@@ -31,10 +31,9 @@ export default function AnimalCategories () {
       <h2 className='text-[0.9375rem] font-light leading-[137%] tracking-[-0.05rem] font-Roboto '>
         Categorías de productos por animales
       </h2>
-      <ul className='carousel carousel-center p-4 mx-4 rounded-box md:flex md:flex-col md:items-center md:justify-center md:flex-shrink-0 gap-3  '>
+      <ul className=' p-4 mx-4 rounded-box flex md:flex-col md:items-center md:justify-center md:flex-shrink-0 gap-3  '>
         {animals.map((animal) => (
           <li
-            className='carousel-item'
             key={animal.id}
           >
             <img

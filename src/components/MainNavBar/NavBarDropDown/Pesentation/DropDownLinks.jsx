@@ -1,27 +1,35 @@
-import { Link } from "react-router-dom";
-import useRouterChecker from "../../../../Hooks/useRouterChecker";
+import { Link } from 'react-router-dom'
+import useRouterChecker from '../../../../Hooks/useRouterChecker'
+import { useContentContext } from '../../../../Store/contextStore/ContentContext'
 
 export const DropDownLinks = ({ routes }) => {
-    /* receive the routes to link "to:" */
-    const { animalRouterChecker } = useRouterChecker()
+  /* receive the routes to link "to:" */
+  const { animalRouterChecker } = useRouterChecker()
+  const { isOpen } = useContentContext()
 
-    return (
-        <>
-            {
+  return (
+    <>
+      {
                 routes.map((route) => {
-                    return (
-                        <li key={route.path}>
-                            <Link
-                                className={`
-                                    ${!animalRouterChecker ? "text-white" : "text-black"}
-                                 w-[7vw]  text-[2rem]  text-left pl-[6px] bg-gray-200 hover:bg-gray-400 block whitespace-no-wrap
-                                `} to={route.path}>
-                                {route.name}
-                            </Link>
-                        </li>
-                    )
+                  return (
+                    <li key={route.path}>
+                      <Link
+                        className={`
+                                    "w-[10vw] text-left text-[1vh] md:text-[1.5vh] pl-[6px] block whitespace-no-wrap hover:bg-gray-400"
+                                    ${isOpen && 'w-[100%] text-black hover:bg-gray-400'}
+                                    ${(!animalRouterChecker || isOpen) && 'text-black hover:bg-gray-400'}
+                                    ${(animalRouterChecker || isOpen) && 'text-black hover:bg-gray-400'}
+                                    ${animalRouterChecker && 'text-black hover:bg-gray-400'}
+                                    ${(!animalRouterChecker || !isOpen) && 'text-black hover:bg-gray-400'}
+                                `}
+                        to={route.path}
+                      >
+                        {route.name}
+                      </Link>
+                    </li>
+                  )
                 })
             }
-        </>
-    )
+    </>
+  )
 }

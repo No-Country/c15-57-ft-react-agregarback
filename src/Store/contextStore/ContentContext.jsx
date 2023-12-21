@@ -1,11 +1,21 @@
 import axios from 'axios'
 import { createContext, useContext, useState, useEffect } from 'react'
+import useGetData from '../../Hooks/useGetData'
 
 export const ContentContext = createContext()
 
 const ContentProvider = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false)
-  const [NavBarDropDown, setNavBarDropDown] = useState(false)
+  const [navBarDropDown, setNavBarDropDown] = useState(false)
+
+  // Who we are data->
+
+  const getDataFromServer = (paramRequired) => {
+
+    const { data } = useGetData(`api/${paramRequired}`, paramRequired)
+    return { data }
+
+  }
 
   // Dropdown navbar open and close handler ->
 
@@ -14,11 +24,12 @@ const ContentProvider = ({ children }) => {
   }
 
   // open and close handler for the dropdown navbar when user is authenticated->
+
   const openDropdown = () => {
-    setNavBarDropDown(!NavBarDropDown)
+    setNavBarDropDown(!navBarDropDown)
   }
 
-  //
+  // Fetching data from the server ->
 
   const [animalInfo, setAnimalInfo] = useState([])
   const [bannerAnimals, setBannerAnimals] = useState([])
@@ -67,7 +78,7 @@ const ContentProvider = ({ children }) => {
   const onAnimalRouteChecker = () => {
     const [onAnimalRoute, setOnAnimalRoute] = useState(true)
     const location = useLocation()
-
+    
     useEffect(() => {
       if (location.pathname === '/') {
         setOnAnimalRoute(true)
@@ -109,9 +120,124 @@ const ContentProvider = ({ children }) => {
     }
   }
 
+  // keeping total account of products
+  const [totalCounting, setTotalCounting] = useState(0)
+  // update the total of products
+  const updateTotalCounting = (newCounting) => {
+    setTotalCounting(newCounting + totalCounting)
+  }
+
+  // check the state of shipping info
+  const [sentShippingInfo, setSentShippingInfo] = useState(false)
+
+  // Get address information
+  const [country, setCountry] = useState('')
+  const [city, setCity] = useState('')
+  const [postal, setPostal] = useState('')
+  const [street, setStreet] = useState('')
+  const [streetNumber, setStreetNumber] = useState('')
+
+  // check shoppingcart button state
+  const [enableButton, setEnableButton] = useState(true)
+
+  // data used on user page
+  const purchaseData = [
+    {
+      id: '#738',
+      date: '8 sep,2022',
+      total: '$13000 ',
+      products: '(5 Productos)',
+      state: 'Procesando'
+    },
+    {
+      id: '#703',
+      date: '24 May,2022',
+      total: '$2000 ',
+      products: '(1 Producto)',
+      state: 'En camino'
+    },
+    {
+      id: '#130',
+      date: '22 Oct,2023',
+      total: '$5000 ',
+      products: '(3 Productos)',
+      state: 'Completado'
+    },
+    {
+      id: '#561',
+      date: '1 Feb,2023',
+      total: '$3500 ',
+      products: '(1 Producto)',
+      state: 'Completado'
+    },
+    {
+      id: '#536',
+      date: '21 Sep,2023',
+      total: '$500 ',
+      products: '(13 Productos)',
+      state: 'Completado'
+    },
+    {
+      id: '#492',
+      date: '22 Oct,2023',
+      total: '$300 ',
+      products: '(2 Productos)',
+      state: 'Completado'
+    }
+  ]
+
+  const donationData = [
+    {
+      id: '#738',
+      date: '8 sep,2022',
+      total: '$13000 ',
+      products: '',
+      state: 'Completada'
+    },
+    {
+      id: '#703',
+      date: '24 May,2022',
+      total: '$2500 ',
+      products: '',
+      state: 'Completada'
+    },
+    {
+      id: '#130',
+      date: '22 Oct,2023',
+      total: '$7000 ',
+      products: '',
+      state: 'Completada'
+    },
+    {
+      id: '#561',
+      date: '1 Feb,2023',
+      total: '$3500 ',
+      products: '',
+      state: 'Completada'
+    },
+    {
+      id: '#536',
+      date: '21 Sep,2023',
+      total: '$5500 ',
+      products: '',
+      state: 'Completada'
+    },
+    {
+      id: '#492',
+      date: '22 Oct,2023',
+      total: '$30000 ',
+      products: '',
+      state: 'Completada'
+    }
+  ]
+
+  // open and close delete modal
+  const [openDeleteModal, setOpenDeleteModal] = useState(false)
+
   const constextValue = {
+    getDataFromServer,
     openDropdown,
-    NavBarDropDown,
+    navBarDropDown,
     isOpen,
     toggle,
     onAnimalRouteChecker,
@@ -126,7 +252,28 @@ const ContentProvider = ({ children }) => {
     moreDataDonate,
     movileIndex,
     rightMovileIndex,
-    lefMovileIndex
+    lefMovileIndex,
+    totalCounting,
+    setTotalCounting,
+    updateTotalCounting,
+    sentShippingInfo,
+    setSentShippingInfo,
+    country,
+    setCountry,
+    city,
+    setCity,
+    postal,
+    setPostal,
+    street,
+    setStreet,
+    streetNumber,
+    setStreetNumber,
+    enableButton,
+    setEnableButton,
+    purchaseData,
+    donationData,
+    openDeleteModal,
+    setOpenDeleteModal
   }
 
   return (
