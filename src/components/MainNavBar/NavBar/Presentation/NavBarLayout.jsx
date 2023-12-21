@@ -20,7 +20,7 @@ const NavBarLayout = ({ children }) => {
             {/* main navbar menu --> */}
 
             <nav className={`${animalRouterChecker
-                ? 'h-[8.49vh]  row-span-1 grid grid-cols-3 grid-rows-1 bg-gradient-to-b to-transparent  from-black from-45% absolute z-50 sm:h-[11.3vh] md:w-[100%] md:h-[13.6vh] md:absolute md:grid md:grid-cols-3 md:grid-rows-1 md:justify-items-center md:z-50 2xl:w-[100%] 2xl:h-[13.6vh]'
+                ? 'h-[13.45]  row-span-1 grid grid-cols-3 grid-rows-1 bg-gradient-to-b to-transparent  from-black from-45% absolute z-50 sm:h-[11.3vh] md:w-[100%] md:h-[13.6vh] md:absolute md:grid md:grid-cols-3 md:grid-rows-1 md:justify-items-center md:z-50 2xl:w-[100%] 2xl:h-[13.6vh]'
                 : loginRegisterRouteChecker
                     ? 'hidden'
                     : 'bg-white w-full h-[8.49vh] grid grid-cols-3 grid-rows-1 z-50 sm:h-[11.3vh] md:w-[100%] md:h-[13.6vh] md:grid md:grid-cols-3 md:grid-rows-1 md:justify-items-center md:z-50 2xl:w-[100%] 2xl:h-[13.6vh]   '
