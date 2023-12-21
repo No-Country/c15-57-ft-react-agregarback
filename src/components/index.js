@@ -9,5 +9,5 @@ import LandingPage from '../components/Carrousel/Component/LandingPage'
 import SubtitleInfoStore from './SubtitleInfoStore/Component'
 import InputCard from '../components/InputCard/Component/index'
 import InputCCV from '../components/InputCCV/Component/index'
-
-export { LandingPage, Footer, OtherSesion, InputPassword, Button, NavBar, InputForm, InputSelectForm, SubtitleInfoStore, InputCCV, InputCard }
+import Loader from './Loader/Component/Loader'
+export { LandingPage, Footer, OtherSesion, InputPassword, Button, NavBar, InputForm, InputSelectForm, SubtitleInfoStore, InputCCV, InputCard, Loader }
