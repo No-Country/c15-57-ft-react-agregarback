@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from 'react'
 import useGetData from '../../Hooks/useGetData'
+   const location = useLocation()
 
 export const ContentContext = createContext()
 
@@ -9,7 +10,7 @@ const ContentProvider = ({ children }) => {
 
   const [mostrar, setMostrar] = useState(1)
   const [movileIndex, setMovileIndex] = useState(0)
-  // const [onAnimalRoute, setOnAnimalRoute] = useState(true)
+const [onAnimalRoute, setOnAnimalRoute] = useState(true)
   // keeping total account of products
   const [totalCounting, setTotalCounting] = useState(0)
   // check the state of shipping info
@@ -25,16 +26,15 @@ const ContentProvider = ({ children }) => {
   // open and close delete modal
   const [openDeleteModal, setOpenDeleteModal] = useState(false)
 
-  // Esta parte de location no se estaba utilizando
-  // const location = useLocation()
+ 
 
-  // useEffect(() => {
-  //   if (location.pathname === '/') {
-  //     setOnAnimalRoute(true)
-  //   } else {
-  //     setOnAnimalRoute(false)
-  //   }
-  // }, [location.pathname])
+   useEffect(() => {
+     if (location.pathname === '/') {
+       setOnAnimalRoute(true)
+     } else {
+       setOnAnimalRoute(false)
+     }
+   }, [location.pathname])
 
   // Who we are data->
   const getDataFromServer = (paramRequired) => {
