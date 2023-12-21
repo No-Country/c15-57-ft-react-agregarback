@@ -2,10 +2,13 @@ import React from 'react'
 import StoreLayout from './StoreLayout'
 import StoreElements from './StoreElements'
 
-const StoreContainer = () => {
+const StoreContainer = ({ products, category }) => {
     return (
         <StoreLayout>
-            <StoreElements />
+            <StoreElements
+                products={products}
+                category={category}
+            />
         </ StoreLayout>
     )
 }

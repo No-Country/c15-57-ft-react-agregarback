@@ -188,15 +188,20 @@ export function makeServer() {
         name: 'Vasos',
         img: vasos
       })
+
       // products
+
       server.create('product', {
         id: 1,
         name: 'taza01',
         img: taza01,
         category: 'jaguar',
         type: 'Taza',
+        talle: 'na',
         description: 'Taza cerámica 200ml.',
-        price: 800
+        price: 800,
+        stock: 2,
+        cantidad: 1
       })
       server.create('product', {
         id: 2,
@@ -204,8 +209,11 @@ export function makeServer() {
         img: taza02,
         category: 'jaguar',
         type: 'Taza',
+        talle: 'na',
         description: 'Taza cerámica 200ml.',
-        price: 800
+        price: 800,
+        stock: 3,
+        cantidad: 1
       })
       server.create('product', {
         id: 3,
@@ -213,8 +221,11 @@ export function makeServer() {
         img: taza03,
         category: 'jaguar',
         type: 'Taza',
+        talle: 'na',
         description: 'Taza cerámica 200ml.',
-        price: 800
+        price: 800,
+        stock: 2,
+        cantidad: 1
       })
       server.create('product', {
         id: 4,
@@ -222,8 +233,11 @@ export function makeServer() {
         img: taza04,
         category: 'jaguar',
         type: 'Taza',
+        talle: 'na',
         description: 'Taza cerámica 200ml.',
-        price: 800
+        price: 800,
+        stock: 12,
+        cantidad: 1
       })
       server.create('product', {
         id: 5,
@@ -231,8 +245,11 @@ export function makeServer() {
         img: taza05,
         category: 'jaguar',
         type: 'Taza',
+        talle: 'na',
         description: 'Taza cerámica 200ml.',
-        price: 800
+        price: 800,
+        stock: 1,
+        cantidad: 1
       })
       server.create('product', {
         id: 6,
@@ -240,8 +257,11 @@ export function makeServer() {
         img: taza06,
         category: 'jaguar',
         type: 'Taza',
+        talle: 'na',
         description: 'Taza cerámica 200ml.',
-        price: 800
+        price: 800,
+        stock: 3,
+        cantidad: 1
       })
       server.create('product', {
         id: 7,
@@ -249,8 +269,11 @@ export function makeServer() {
         img: remera01,
         category: 'jaguar',
         type: 'Remera',
+        talle: 'S',
         description: 'Remera 100% algodon.',
-        price: 8000
+        price: 800,
+        stock: 8,
+        cantidad: 1
       })
       server.create('product', {
         id: 8,
@@ -258,8 +281,11 @@ export function makeServer() {
         img: remera02,
         category: 'jaguar',
         type: 'Remera',
+        talle: 'S',
         description: 'Remera 100% algodon.',
-        price: 7500
+        price: 750,
+        stock: 2,
+        cantidad: 1
       })
       server.create('product', {
         id: 9,
@@ -267,8 +293,11 @@ export function makeServer() {
         img: remera03,
         category: 'jaguar',
         type: 'Remera',
+        talle: 'M',
         description: 'Remera 100% algodon.',
-        price: 8000
+        price: 800,
+        stock: 3,
+        cantidad: 1
       })
       server.create('product', {
         id: 10,
@@ -276,8 +305,11 @@ export function makeServer() {
         img: remera04,
         category: 'jaguar',
         type: 'Remera',
+        talle: 'M',
         description: 'Remera 100% algodon.',
-        price: 7500
+        price: 750,
+        stock: 10,
+        cantidad: 1
       })
       server.create('product', {
         id: 11,
@@ -285,8 +317,11 @@ export function makeServer() {
         img: remera05,
         category: 'jaguar',
         type: 'Remera',
+        talle: 'XL',
         description: 'Remera 100% algodon.',
-        price: 8000
+        price: 800,
+        stock: 7,
+        cantidad: 1
       })
       server.create('product', {
         id: 12,
@@ -294,8 +329,11 @@ export function makeServer() {
         img: remera06,
         category: 'jaguar',
         type: 'Remera',
+        talle: 'L',
         description: 'Remera 100% algodon.',
-        price: 7500
+        price: 750,
+        stock: 5,
+        cantidad: 1
       })
 
     },

@@ -1,9 +1,9 @@
 import React from 'react'
-import AnimalCategories from '../Presentation/AnimalCategories'
-import Filtros from '../Presentation/Filtros'
-import ProductCategories from '../Presentation/ProductCategories'
-import Products from '../Presentation/Products'
-function StoreElements() {
+import AnimalCategories from '../../../components/Store/AnimalCategories/Component/AnimalCategories'
+import FilterCategories from '../../../components/Store/Filters/Component/FilterCategories'
+import ProductCategories from '../../../components/Store/ProductCategories/Component/ProductCategories'
+import Products from '../../../components/Store/Products/Component/Products'
+function StoreElements({ products, category }) {
     return (
         <>
             <aside className='hidden md:inline-flex md:w-80 h-full mx-6 py-12 bg-white rounded-xl shadow-[0px_4px_4px_0px_rgba(0,0,0,0.35)] flex-col justify-start items-center gap-3.5'>
@@ -18,11 +18,19 @@ function StoreElements() {
                 </article>
                 <ProductCategories />
                 <div className='hidden md:block self-stretch h-px border border-gray-300' />
-                <Filtros />
-                <Products />
+                <FilterCategories />
+                <Products
+                    products={products}
+                    category={category}
+                />
             </main>
         </>
     )
 }
 
 export default StoreElements
+
+{/*
+filtrar por tallas
+filtrar pot categoria de producto
+*/}

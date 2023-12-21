@@ -20,4 +20,3 @@ export const loaderPost = async ({ params }) => {
   const post = await data.json();
   return { post };
 };
-

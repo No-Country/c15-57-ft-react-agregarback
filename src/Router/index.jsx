@@ -95,7 +95,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/Ecosystems',
-        element: <EcosystemPage />,
+        element: <EcosystemPage />, 
       },
       {
         path: '/Ecosystems/:id',

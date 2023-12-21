@@ -1,11 +1,11 @@
-import { useECommerceContext } from '../../../Store/contextStore/ECommerceContext'
-import { useUserContext } from '../../../Store/contextStore/UserContext'
+import useGetData from '../../../Hooks/useGetData'
 import { LandingPage } from '../../../components'
 
 export default function Home() {
 
   return (
     <>
+
       <LandingPage />
     </>
   )

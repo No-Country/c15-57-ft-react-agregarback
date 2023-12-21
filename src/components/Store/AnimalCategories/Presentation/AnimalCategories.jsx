@@ -1,12 +1,14 @@
 import React from 'react'
 import AnimalCategoriesElements from './AnimalCategoriesElements'
 import AnimalCategoriesLayout from './AnimalCategoriesLayout'
-function AnimalCategories() {
+
+
+function AnimalCategoriesContainer({ animals, jaguar }) {
   return (
     <AnimalCategoriesLayout>
-      <AnimalCategoriesElements />
+      <AnimalCategoriesElements animals={animals} jaguar={jaguar} />
     </AnimalCategoriesLayout>
   )
 }
 
-export default AnimalCategories
+export default AnimalCategoriesContainer

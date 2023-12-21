@@ -1,6 +1,6 @@
 
 
-function AnimalCategoriesElements() {
+function AnimalCategoriesElements({ animals, jaguar}) {
   return (<>
     <img
       className='hidden md:block w-64 h-36 rounded-xl'
