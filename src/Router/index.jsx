@@ -19,11 +19,12 @@ import {
   Donations,
   ShippingInformation,
   ShoppingCart,
-  loaderAnimal,
   Thanks,
   ShoppingSuccessful,
   EcosystemPage
 } from '../Routes'
+
+import { loaderAnimal } from '../Routes/InfoAnimals/Component/InfoAnimals'
 
 export const router = createBrowserRouter([
   {
@@ -79,10 +80,6 @@ export const router = createBrowserRouter([
         path: '/InfoAnimals',
         element: <InfoAnimalsContainer />,
         loader: loaderAnimal
-      },
-      {
-        path: 'InfoAnimals/:animal',
-        element: <InfoAnimalsContainer />
       },
       {
         path: '/Store',
