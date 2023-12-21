@@ -9,7 +9,7 @@ export default function HabitatList () {
   const habitats = [
     { img: bosque, name: 'Bosques y Selvas', path: '/Ecosystems/bosques' },
     { img: desierto, name: 'Desiertos', path: '/Ecosystems/desiertos' },
-    { img: montania, name: 'Montañas', path: '/cosystems/montañas' },
+    { img: montania, name: 'Montañas', path: '/Ecosystems/montañas' },
     { img: oceano, name: 'Oceanos, Rios y Lagunas', path: '/Ecosystems/oceanos-rios' },
     { img: sabana, name: 'Sabanas y Pastizales', path: '/Ecosystems/sabana-pastizales' }
   ]

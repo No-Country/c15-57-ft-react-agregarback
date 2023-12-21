@@ -18,6 +18,7 @@ import EspecieCircular11 from '../../../assets/InfoAnimals/EspecieCircular11.png
 import EspecieCircular12 from '../../../assets/InfoAnimals/EspecieCircular12.png'
 import EspecieCircular13 from '../../../assets/InfoAnimals/EspecieCircular13.png'
 import EspecieCircular14 from '../../../assets/InfoAnimals/EspecieCircular14.png'
+import { Link } from 'react-router-dom'
 
 const especiesCirculares = [
   EspecieCircular1,
@@ -159,10 +160,10 @@ const InfoAnimalsInfo = ({ data, Animal, WorldMap1, Amenazas1, Amenazas2, Ayuda1
       <div className='flex justify-center pb-[6%]'>
         {especiesCirculares.map((EspecieCircular, index) =>
           <div className='p-4 ' key={index}>
-            <div>
+            <Link to='/Animals/hormiguero'>
               <img src={EspecieCircular} alt='EspecieCircular1' className='' />
               {/* <h1 className='text-center p-4'>Manatí del Caribe</h1> */}
-            </div>
+            </Link>
           </div>
         )}
       </div>
