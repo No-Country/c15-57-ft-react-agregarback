@@ -1,14 +1,21 @@
 import { Button } from '../../../components'
 import { Link } from 'react-router-dom'
 import { useContentContext } from '../../../Store/contextStore/ContentContext'
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function PurchaseBill () {
+  const [error, setError] = useState('')
   const { sentShippingInfo, totalCounting, enableButton, setEnableButton } = useContentContext()
 
   useEffect(() => {
     sentShippingInfo && totalCounting ? setEnableButton(false) : setEnableButton(true)
   }, [sentShippingInfo, totalCounting])
+
+  const showError = () => {
+    if (!enableButton) {
+      setError('Necesita al menos un producto y los datos de envío para completar la compra')
+    }
+  }
   return (
     <div className='flex flex-col justify-center items-center w-[95%] md:mt-[56px] max-w-[314px]'>
       <div className='w-[95%] border-[1px] border-slate-300 rounded-xl flex flex-col items-center'>
@@ -31,17 +38,19 @@ export default function PurchaseBill () {
             <p className='font-robotoM text-itemTitle text-[1rem]'>Total</p>
             <p className='font-robotoM text-green-800 text-[1rem]'>$2400</p>
           </div>
-          <div className='w-full hidden md:flex justify-center items-center'>
-            <Link to={!enableButton ? '/ShoppingSuccessful' : ''} className='cursor-auto w-[75%]'>
-              <Button text='Continuar compra' color='bg-green-600' hover='hover:bg-green-900' disabled={enableButton} />
-            </Link>
+          <div className='w-auto hidden md:flex justify-center items-center'>
+            <div className='w-[75%]'>
+              <Button to={!enableButton ? '/ShoppingSuccessful' : ''} text='Continuar compra' color='bg-green-600' hover='hover:bg-green-900' disabled={enableButton} />
+              {error && <p className='text-red-600 text-xs font-roboto text-center'>{error}</p>}
+            </div>
           </div>
         </div>
       </div>
       <div className='w-full mb-6 md:hidden flex flex-col items-center justify-center'>
-        <Link to={!enableButton ? '/ShoppingSuccessful' : ''} className='cursor-auto w-[70%] inline-block'>
-          <Button text='Continuar compra' color='bg-green-600' hover='hover:bg-green-900' disabled={enableButton} />
-        </Link>
+        <div className='w-[75%]' onClick={showError}>
+          <Button to={!enableButton ? '/ShoppingSuccessful' : ''} text='Continuar compra' color='bg-green-600' hover='hover:bg-green-900' disabled={enableButton} />
+          {error && <p className='text-red-600 text-xs font-roboto text-center'>{error}</p>}
+        </div>
       </div>
     </div>
   )
