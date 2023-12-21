@@ -76,11 +76,11 @@ export const router = createBrowserRouter([
       },
       {
         path: '/InfoAnimals',
-        element: <EcosystemPage />
+        element: <InfoAnimals />
       },
       {
         path: 'InfoAnimals/:animal',
-        element: <EcosystemPage />
+        element: <InfoAnimals />
       },
       {
         path: '/Store',
@@ -134,7 +134,7 @@ export const router = createBrowserRouter([
         path: '/Ecosystems/',
         element: (
           <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
-            <EcosystemPage />
+            <InfoAnimals />
           </Suspense>
         )
       },
@@ -142,7 +142,7 @@ export const router = createBrowserRouter([
         path: '/Ecosystems/:ecosystem',
         element: (
           <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
-            <EcosystemPage />
+            <InfoAnimals />
           </Suspense>
         )
       },

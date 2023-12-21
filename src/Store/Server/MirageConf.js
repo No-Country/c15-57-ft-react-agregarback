@@ -19,8 +19,7 @@ import {
   remera06
 } from '../../assets/products/remeras'
 
-
-export function makeServer() {
+export function makeServer () {
   return createServer({
     models: {
       whoWeAreInfoContent: Model,
@@ -301,12 +300,9 @@ export function makeServer() {
         description: 'Remera 100% algodon.',
         price: 7500
       })
-
     },
 
-
     routes () {
-
       // Who we are info content controller
       this.namespace = 'api/whoWeAreInfoContents'
       this.get('/', schema => {
