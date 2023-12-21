@@ -1,12 +1,20 @@
-import InfoAnimals from '../Presentation/InfoAnimals'
+import { useLoaderData } from 'react-router-dom'
 
+import InfoAnimals from '../Presentation/InfoAnimals'
 import { getAnimal } from './animals'
-import { useParams } from 'react-router-dom'
+
 
 const InfoAnimalsContainer = () => {
-  const { animal } = useParams()
-  const animalInfo = getAnimal(animal)
+
+  const { animalInfo } = useLoaderData();
+
   return <InfoAnimals {...animalInfo} />
 }
 
 export default InfoAnimalsContainer
+
+export const loaderAnimal = async () => {
+  const data = getAnimal('VaquitaMarina')
+  const animalInfo = data;
+  return { animalInfo };
+};

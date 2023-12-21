@@ -19,7 +19,7 @@ import {
   Donations,
   ShippingInformation,
   ShoppingCart,
-  loaderPost,
+  loaderAnimal,
   Thanks,
   ShoppingSuccessful,
   EcosystemPage
@@ -77,7 +77,8 @@ export const router = createBrowserRouter([
       },
       {
         path: '/InfoAnimals',
-        element: <InfoAnimals />
+        element: <InfoAnimals />,
+        loader: loaderAnimal
       },
       {
         path: 'InfoAnimals/:animal',
@@ -132,7 +133,7 @@ export const router = createBrowserRouter([
         )
       },
       {
-        path: '/Ecosystems',
+        path: '/Ecosystems/',
         element: (
           <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
             <EcosystemPage />
@@ -140,9 +141,11 @@ export const router = createBrowserRouter([
         )
       },
       {
-        path: '/Ecosystems/:id',
-        element: <EcosystemModal />,
-        loader: loaderPost
+        path: '/Ecosystems/:ecosystem',
+        element: (
+          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+            <EcosystemPage />
+          </Suspense>
         )
       },
       {

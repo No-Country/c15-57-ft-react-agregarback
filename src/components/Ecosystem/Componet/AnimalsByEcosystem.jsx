@@ -12,7 +12,6 @@ import { EllipseBosque, EllipseDesierto, EllipseMontania, EllipseOceano, Ellipse
 
 import { useParams } from 'react-router-dom';
 
-
 const moreEcosystems = [
   {
     id:1,
@@ -69,6 +68,7 @@ export default function AnimalsByEcosystem () {
   }
 
   }, [ecosystem])
+
   return (
     <EcosystemLayaout>
       <EcosystemHero  aratoShow={curretArea?.area} areaBanner={curretArea?.banerFondo} areaTitle={curretArea?.title} />
