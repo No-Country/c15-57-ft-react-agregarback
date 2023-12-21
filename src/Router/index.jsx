@@ -122,14 +122,14 @@ export const router = createBrowserRouter([
           </Suspense>
         )
       },
-      {
-        path: '/InfoAnimals/',
-        element: (
-          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
-            <InfoAnimals />
-          </Suspense>
-        )
-      },
+      // {
+      //   path: '/InfoAnimals/',
+      //   element: (
+      //     <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+      //       <InfoAnimals />
+      //     </Suspense>
+      //   )
+      // },
       {
         path: '/InfoAnimals/:animal',
         element: (
