@@ -48,7 +48,7 @@ const DonationsInfo = () => {
 
   return (
     <div className='relative h-full'>
-      <img src={osoHormiguero} alt='osoHormiguero' className='object-cover min-h-full  ' />
+      <img src={osoHormiguero} alt='osoHormiguero' className='object-cover h-min-full' />
       <div className='md:absolute inset-0 flex flex-col items-center justify-center md:ml-[10%] h-[100%]'>
         <div className='md:content-center inset-0 absolut font-roboto'>
           <div className='flex flex-col md:flex-none md:relative absolute inset-0 md:inset-auto md:p-0 p-3'>
@@ -57,7 +57,7 @@ const DonationsInfo = () => {
           <div className='p-6 text-infoAnimals md:text-white font-roboto backdrop-blur-lg rounded-b-lg md:max-w-[32%]'>
             <p className='text-sm leading-relaxed'>Cada donación, grande o pequeña, tiene un impacto significativo. Con tu apoyo, estamos construyendo un futuro donde las generaciones venideras puedan disfrutar de la rica biodiversidad que hace única a América Latina. ¡Únete a nosotros y sé parte del cambio positivo que nuestro planeta necesita!</p>
           </div>
-          <div className='text-colorDonation font-roboto bg-white p-6 mt-2 shadow-lg md:rounded-md md:max-w-[32%] h-[fit-content] overflow-y-auto relative top-0'>
+          <div className='text-colorDonation font-roboto bg-white p-6 mt-2 shadow-lg md:rounded-md md:max-w-[32%] overflow-y-auto relative top-0'>
             <h2 className='text-sm text-black mb-4 font-robotoM'>Colaborá con una donación de:</h2>
             <div className='flex flex-col justify-between text-sm'>
               <div className='flex justify-center mb-2 gap-2 text-colorDonation'>
@@ -74,7 +74,7 @@ const DonationsInfo = () => {
             {showForm && (
               <Formik validationSchema={validationSchema} onSubmit={handleSubmit} initialValues={initialValues} className=''>
                 {({ values }) => (
-                  <Form>
+                  <Form className='flex flex-col  md:relative md:h-[300px] mb-5'>
                     <p className='font-robotoM text-black pt-4 pb-3'>Datos Personales</p>
                     <InputForm name='Nombre' type='text' placeholder='Ingrese nombre' id='name' value={values.name} />
                     <InputForm name='Correo electrónico' type='email' placeholder='Ingrese correo electrónico' id='email' value={values.email} />
@@ -87,7 +87,7 @@ const DonationsInfo = () => {
                         <InputCCV name='CCV' type='text' placeholder='***' id='CCV' value={values.CCV} />
                       </div>
                     </div>
-                    <Button to='/thanks' text='Hacer mi donación' color='bg-green-600' hover='hover:bg-green-900' />
+                    <Button to='/thanks' text='Hacer mi donación' color='bg-green-600' hover='hover:bg-green-900 md:mb-[10%]' />
                   </Form>
                 )}
               </Formik>

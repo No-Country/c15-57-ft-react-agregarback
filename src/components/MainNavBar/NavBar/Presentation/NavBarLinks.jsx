@@ -12,9 +12,9 @@ const NavBarLinks = ({ links }) => {
                 links.map(({ to, link }) => (
                   <li
                     key={to} className={`
-                    hover:bg-sky-700 text-center
-                         font-robotoM md:text-[1.5vw]
-                   ${isOpen && 'w-[100%]  text-[3vh] sm:text-[4vh] h-[20%]'}
+                    md:hover:bg-green-900 md:p-2 md:rounded-xl text-center
+                         font-robotoM md:text-[21.459px] color-colorFooter md:hover:text-white
+                   ${isOpen && 'w-[100%] align-middle text-[2vh] sm:text-[4vh] h-[20%]'}
                    ${!animalRouterChecker || isOpen && 'text-black w-[100%] text-[4v|h] h-[20%]'}
                    ${animalRouterChecker || isOpen && 'text-white'}
                    ${animalRouterChecker && 'text-gray-300'}
