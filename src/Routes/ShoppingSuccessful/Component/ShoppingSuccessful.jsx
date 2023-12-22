@@ -4,9 +4,9 @@ import { catMobile, greenCheck, catDesktop } from '../../../assets/purchase'
 import TotalPurchase from '../Presentation/TotalPurchase'
 export default function ShoppingSuccessful () {
   return (
-    <section className='flex flex-col items-center'>
+    <section className='flex flex-col items-center justify-center'>
       <SubtitleInfoStore link='/ShoppingCart' title='Orden Completada' />
-      <div className='flex justify-center md:w-[95%] md:border-[1px] md:border-slate-100'>
+      <div className='flex justify-center items-center md:w-[95%] lg:w-[70%] md:border-[1px] md:border-slate-100'>
         <div className='flex overflow-hidden lg:rounded-xl lg:shadow-md lg:mt-[56px] lg:mb-[100px] lg:border-[1px] lg:border-slate-200 border-box lg:w-[85%] '>
           <img src={catDesktop} alt='gato andino' className='hidden lg:block lg:max-w-[393px] sm:max-h-[678px]' />
           <div className='flex flex-col items-center lg:max-w-[686px] border-box lg:mx-4'>
@@ -22,9 +22,7 @@ export default function ShoppingSuccessful () {
             </div>
             <TotalPurchase />
             <div className='w-full lg:w-[50%] mb-12'>
-              <Link to='/Store' className='cursor-auto w-[70%]'>
-                <Button text='Continuar comprando' color='bg-green-600' hover='hover:bg-green-900' />
-              </Link>
+              <Button to='/Store' text='Continuar comprando' color='bg-green-600' hover='hover:bg-green-900' />
             </div>
           </div>
         </div>

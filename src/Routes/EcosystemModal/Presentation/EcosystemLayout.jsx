@@ -1,6 +1,6 @@
 import React from 'react'
 
-function EcosystemLayout({children}) {
+function EcosystemLayout ({ children }) {
   return (
     <div>{children}</div>
   )

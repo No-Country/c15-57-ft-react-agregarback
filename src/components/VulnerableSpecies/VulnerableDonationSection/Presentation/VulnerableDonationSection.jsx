@@ -1,8 +1,7 @@
-import React from 'react'
 import VulnerableDonationSectionLayout from './VulnerableDonationSectionLayout'
 import VulnerableDonationElements from './VulnerableDonationElements'
 
-function VulnerableDonationSectionContainer() {
+function VulnerableDonationSectionContainer () {
   return (
     <VulnerableDonationSectionLayout>
       <VulnerableDonationElements />

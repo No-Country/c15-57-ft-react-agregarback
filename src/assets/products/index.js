@@ -1,6 +1,7 @@
-import gorras from './gorras.svg'
-import remeras from './remeras.svg'
-import tazas from './tazas.svg'
-import vasos from './vasos.svg'
+import canguros from './canguros.jpg'
+import gorras from './gorras.png'
+import remeras from './remeras.png'
+import tazas from './tazas.png'
+import vasos from './vasos.png'
 
-export { gorras, remeras, tazas, vasos }
+export { canguros, gorras, remeras, tazas, vasos }

@@ -7,7 +7,7 @@ const UserProvider = ({ children }) => {
   // oauth
   // jwt
 
-  const [user, setUser] = useState(true)
+  const [user, setUser] = useState(false)
 
   const logControl = () => {
     if (user) {

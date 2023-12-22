@@ -1,6 +1,5 @@
 import NavBarContainer from '../Presentation/NavBar.jsx'
 
-
 const navigationLinks = [
   {
     to: '/',
@@ -11,15 +10,15 @@ const navigationLinks = [
     link: 'Tienda'
   },
   {
-    to: "/WhoWeAre",
-    link: "¿Quienes Somos?"
+    to: '/WhoWeAre',
+    link: '¿Quienes Somos?'
   },
   {
-    to: "VulnerableSpecies",
-    link: "Especies Vulnerables"
+    to: 'VulnerableSpecies',
+    link: 'Especies Vulnerables'
   }
 ]
 
-export default function NavBar() {
+export default function NavBar () {
   return <NavBarContainer navigationLinks={navigationLinks} />
 }

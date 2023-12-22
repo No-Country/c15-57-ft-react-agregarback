@@ -1,4 +1,6 @@
 import { FaArrowRight } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+
 const ThanksInfo = ({ Perezoso }) => {
   return (
     <div className='relative h-full'>
@@ -17,10 +19,12 @@ const ThanksInfo = ({ Perezoso }) => {
               <h2 className='text-xs sm:text-sm text-colorFooter md:text-white font-roboto font-thin'>Mantente informado sobre nuestros proyectos.</h2>
               <h2 className='text-xs sm:text-sm text-colorFooter md:text-white font-robotoM'>¡Suscríbete a nuestro newsletter!</h2>
             </div>
-            <div className='flex'>
-              <input className='md:w-[100%] p-2 rounded sm:p-3 pr-8 sm:pr-10 bg-colorFooter md:bg-white text-white md:text-black text-xs sm:text-sm' type='text' placeholder='Ingresa tu email' />
-              <FaArrowRight className='text-white text-[32px] p-1 md:text-[44px] md:p-3 ml-3 cursor-pointer bg-colorDonation rounded items-center' />
-            </div>
+            <Link to='/'>
+              <div className='flex'>
+                <input className='md:w-[100%] p-2 rounded sm:p-3 pr-8 sm:pr-10 bg-colorFooter md:bg-white text-white md:text-black text-xs sm:text-sm' type='text' placeholder='Ingresa tu email' />
+                <FaArrowRight className='text-white text-[32px] p-1 md:text-[44px] md:p-3 ml-3 cursor-pointer bg-colorDonation rounded items-center' />
+              </div>
+            </Link>
           </div>
         </div>
       </div>

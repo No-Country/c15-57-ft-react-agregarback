@@ -1,6 +1,6 @@
-import User from "../Presentation/MyVolunteers";
+import User from '../Presentation/MyVolunteers'
 
 const MyVolunteers = () => {
-    return <User />;
+  return <User />
 }
-export default MyVolunteers;
+export default MyVolunteers

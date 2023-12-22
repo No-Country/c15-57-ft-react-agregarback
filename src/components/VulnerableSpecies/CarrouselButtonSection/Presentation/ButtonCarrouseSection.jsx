@@ -1,12 +1,11 @@
-import React from 'react'
 import ButtonCarrouselSectionItems from './ButtonCarrouselSectionItems'
 import ButtonCarrouselLayoutSection from './ButtonCarrouselLayoutSection'
-function ButtonCarrouseSectionContainer({ 
+function ButtonCarrouseSectionContainer ({
   currentIndex,
   setCurrentIndex,
   progressPercentage,
-  setProgressPercentage }) {
-    
+  setProgressPercentage
+}) {
   return (
     <ButtonCarrouselLayoutSection>
       <ButtonCarrouselSectionItems

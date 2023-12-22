@@ -1,10 +1,9 @@
-
 const MyVolunteersLayout = ({ children }) => {
-    return (
-        <div>
-            {children}
-        </div>
-    );
+  return (
+    <div>
+      {children}
+    </div>
+  )
 }
 
-export default MyVolunteersLayout;
+export default MyVolunteersLayout

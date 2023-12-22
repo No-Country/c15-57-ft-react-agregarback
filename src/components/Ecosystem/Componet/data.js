@@ -33,29 +33,29 @@ allEcosystem.push({
 
     left: {
       img: sabanaAnimalLeft,
-      link: '/InfoAnimals/tapir',
+      link: '/Animals/tapir',
       name: 'Tapir de Baird'
     },
     center: {
       img: sabanaAnimalCenter,
-      link: '/InfoAnimals/huemul',
+      link: '/Animals/huemul',
       name: 'Huemul'
     },
     right: {
       top: {
         img: sabanaAnimalRightTop,
-        link: '/InfoAnimals/tatu',
+        link: '/Animals/tatu',
         name: 'Tatú Gigante'
       },
       down: {
         img: sabanaAnimalRightDown,
-        link: '/InfoAnimals/cardenal',
+        link: '/Animals/cardenal',
         name: 'Cardenal  Amarillo'
       }
     },
     bottom: {
       img: sabanaAnimalBottom,
-      link: '/InfoAnimals/hormiguero',
+      link: '/Animals/hormiguero',
       name: 'Oso homiguero gigante'
     }
   }

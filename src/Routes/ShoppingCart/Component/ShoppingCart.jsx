@@ -2,6 +2,7 @@ import { SubtitleInfoStore } from '../../../components'
 import ShoppingList from '../Presentation/ShoppingList'
 import PurchaseBill from '../Presentation/PurchaseBill'
 import ModalDeleteItem from '../Presentation/ModalDeleteItem'
+
 export default function ShoppinCart () {
   return (
     <section className='w-full flex flex-col items-center justify-center md:rounded'>

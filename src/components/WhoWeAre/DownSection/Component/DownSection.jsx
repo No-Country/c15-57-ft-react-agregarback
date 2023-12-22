@@ -1,4 +1,3 @@
-import React from 'react'
 import DownSectionContainer from '../Presentation/DownSection'
 
 function DownSection ({ DownSectionTitle, DownSectionDescription, Certificate }) {
