@@ -47,7 +47,7 @@ export const DropDownLayout = ({ children }) => {
                     {children}
                     <hr className="bg-black" />
                     <button
-                        className='text-white md:text-black w-[100vw] text-[2rem]  md:w-[100%] h-[50%] font-robotoM text-[1rem] md:text-[1.5vh] md:text-left pl-[6px] block whitespace-no-wrap hover:bg-lime-100 md:w-[9vw] rounded'
+                        className='text-white md:text-black w-[100vw] text-[2rem]  md:w-[100%] h-[50%] font-robotoM text-[1rem] md:text-[1.5vh] md:text-left pl-[6px] block whitespace-no-wrap hover:bg-zinc-700 hover:text-white  md:w-[9vw] rounded'
                         onClick={() => logControl()}
                     >
                         Close Session

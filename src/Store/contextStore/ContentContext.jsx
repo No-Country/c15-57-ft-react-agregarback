@@ -13,7 +13,7 @@ const ContentProvider = ({ children }) => {
   const { windowSize } = useWindowReader()
 
   const closeDropDown = () => {
-    windowSize[0] < 1366 && (
+    windowSize[0] < 767 && (
         console.log('clicked'),
         setIsOpen(false),
         openDropdown())

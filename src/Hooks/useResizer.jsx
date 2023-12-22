@@ -6,7 +6,7 @@ function useResizer() {
     const {setIsOpen} = useContentContext()
     const { windowSize } = useWindowReader()
     const checkWindowSize = () => {
-        if (windowSize[0] > 1360) { setIsOpen(false) }
+        if (windowSize[0] > 767) { setIsOpen(false) }
     }
 
     useEffect(() => {

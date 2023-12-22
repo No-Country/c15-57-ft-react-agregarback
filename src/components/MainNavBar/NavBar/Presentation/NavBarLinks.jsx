@@ -21,7 +21,7 @@ const NavBarLinks = ({ links, windowSize }) => {
             ${!animalRouterChecker || (!isOpen && 'text-black')}
           `}
         >
-          {windowSize[0] > 1360 
+          {windowSize[0] > 767 
           ? (<Link to={to}>{link}</Link>)
           : (<Link to={to} onClick={toggle}>{link}</Link>)
           }
