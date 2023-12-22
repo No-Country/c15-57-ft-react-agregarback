@@ -130,7 +130,7 @@ export default function ProductDetails () {
         </div>
         <br />
         <hr />
-        <div className='mt-4 flex gap-5'>
+        <div className='invisible sm:visible mt-4 flex gap-5'>
           <span className='text-gray-800 text-base font-medium font-display'>
             Categoría:
           </span>
