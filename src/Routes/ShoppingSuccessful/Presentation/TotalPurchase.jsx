@@ -1,12 +1,11 @@
 import { dhlSmall } from '../../../assets/purchase'
-import miniature from '../../../assets/product-miniature.jpg'
 import { useContentContext } from '../../../Store/contextStore/ContentContext'
 import { useECommerceContext } from '../../../Store/contextStore/ECommerceContext'
 export default function TotalPurchase () {
   const { country, city, postal, street, streetNumber, sentShippingInfo } = useContentContext()
   const { cart, total } = useECommerceContext()
   return (
-    <section className='flex flex-col w-[350px] lg:w-[622px]'>
+    <section className='flex flex-col w-[350px] md:w-full lg:max-w-[622px]'>
       <h3 className='font-robotoM text-[0.8rem] text-itemTitle self-end mr-[2%]'>Precio</h3>
       {cart.map((prod) => (
         <div
