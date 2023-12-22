@@ -40,7 +40,7 @@ export default function VulnerableSpeciesInfo () {
         style={{ backgroundImage: `url(${selva2})` }}
         className='bg-cover bg-no-repeat flex flex-col sm:flex-row'
       >
-        <div className='relative z-10 w-screen h-auto max-w-[42rem] text-white flex flex-col p-8 sm:m-28'>
+        <div className='relative z-10 w-screen h-auto max-w-[42rem] p-8 sm:pl-0 text-white flex flex-col sm:m-28'>
           <h2 className='text-4xl sm:text-7xl not-italic font-semibold leading-[4rem] sm:leading-[6rem] tracking-widest uppercase mb-9'>
             Protegiendo la vida silvestre para un planeta saludable
           </h2>
@@ -49,7 +49,7 @@ export default function VulnerableSpeciesInfo () {
             restaurar las especies y sus hábitats.
           </p>
         </div>
-        <div className='pl-8 mb-8 flex flex-col items-start justify-center overflow-scroll sm:overflow-hidden'>
+        <div className='pl-8 sm:pl-0 mb-8 flex flex-col items-start justify-center overflow-scroll sm:overflow-hidden'>
           <div className='sm:w-[105vh] mx-auto'>
             <div className='relative z-0 overflow-auto flex transition-transform duration-[0.5s] ease-[ease-in-out]'>
               {animals.map((animal) => (
