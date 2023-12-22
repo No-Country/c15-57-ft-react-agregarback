@@ -2,13 +2,14 @@ import { Button } from '../../../components'
 import { Link } from 'react-router-dom'
 import { useContentContext } from '../../../Store/contextStore/ContentContext'
 import { useEffect } from 'react'
+import { useECommerceContext } from '../../../Store/contextStore/ECommerceContext'
 
 export default function PurchaseBill () {
-  const { sentShippingInfo, totalCounting, enableButton, setEnableButton } = useContentContext()
-
+  const { sentShippingInfo, enableButton, setEnableButton } = useContentContext()
+  const { total, cantidad } = useECommerceContext()
   useEffect(() => {
-    sentShippingInfo && totalCounting ? setEnableButton(false) : setEnableButton(true)
-  }, [sentShippingInfo, totalCounting])
+    sentShippingInfo && cantidad ? setEnableButton(false) : setEnableButton(true)
+  }, [sentShippingInfo, cantidad])
 
   return (
     <div className='flex flex-col justify-center items-center w-[95%] md:mt-[56px] max-w-[314px]'>
@@ -16,21 +17,33 @@ export default function PurchaseBill () {
         <h2 className='mt-3 mb-1 font-robotoM text-[1.1rem] text-itemTitle'>Resumen</h2>
         <hr className='w-[70%] text-gray-600' />
         <div className='flex w-[70%] justify-between mt-2'>
-          <p className='text-itemTitle font-light text-[0.9rem]'>{`Productos(${totalCounting})`}</p>
-          <p className='text-green-800 font-light text-[0.9rem]'>$2400</p>
+          <p className='text-itemTitle font-light text-[0.9rem]'>{`Productos(${cantidad})`}</p>
+          <p className='text-green-800 font-light text-[0.9rem]'>{total.toLocaleString('es-AR', {
+            style: 'currency',
+            currency: 'ARS'
+          })}
+          </p>
         </div>
         <Link to='/Shipping-information' className={`self-start ${!sentShippingInfo ? 'mb-2' : 'mb-0'} ml-[15%] text-green-800 font-light text-[0.9rem] underline`}>
           {!sentShippingInfo ? 'Cargar envío' : 'Cambiar dirección'}
         </Link>
         <div className={`${sentShippingInfo ? 'flex' : 'hidden'} w-[70%] justify-between mb-2`}>
           <p className='text-itemTitle font-light text-[0.9rem]'>Envío</p>
-          <p className='text-green-800 font-light text-[0.9rem]'>$2000</p>
+          <p className='text-green-800 font-light text-[0.9rem]'>{(parseInt('2000')).toLocaleString('es-AR', {
+            style: 'currency',
+            currency: 'ARS'
+          })}
+          </p>
         </div>
         <hr className='w-[70%] text-gray-600' />
         <div className='flex flex-col w-full justify-center  mt-2 mb-3 text-[1rem]'>
           <div className='flex w-[70%] justify-between ml-[15.5%]'>
             <p className='font-robotoM text-itemTitle text-[1rem]'>Total</p>
-            <p className='font-robotoM text-green-800 text-[1rem]'>$2400</p>
+            <p className='font-robotoM text-green-800 text-[1rem]'>{(sentShippingInfo ? total + 2000 : total).toLocaleString('es-AR', {
+              style: 'currency',
+              currency: 'ARS'
+            })}
+            </p>
           </div>
           <div className='w-auto hidden md:flex justify-center items-center'>
             <div className='w-[75%]'>

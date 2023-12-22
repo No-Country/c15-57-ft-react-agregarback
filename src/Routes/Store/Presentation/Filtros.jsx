@@ -1,8 +1,11 @@
-export default function Filtros ({ type = 'Remeras', filter = ['Talle', 'S', 'M', 'L', 'XL'] }) {
+import { useECommerceContext } from '../../../Store/contextStore/ECommerceContext'
+
+export default function Filtros ({ filter = ['Talle', 'S', 'M', 'L', 'XL'] }) {
+  const { category } = useECommerceContext()
   return (
     <>
       <p className='w-20 py-6 text-slate-800 text-xl font-medium font-display '>
-        {type}
+        {category}
       </p>
       <div className='pb-6 justify-start items-start gap-3 inline-flex'>
         <p className='text-gray-800 text-base font-normal font-roboto '>

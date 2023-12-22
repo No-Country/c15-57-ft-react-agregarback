@@ -7,7 +7,7 @@ import { useContentContext } from '../../../Store/contextStore/ContentContext'
 import { useNavigate } from 'react-router-dom'
 
 const ShippingInformationForm = () => {
-  const { setSentShippingInfo, setCountry, setCity, setPostal, setStreet, setStreetNumber } = useContentContext()
+  const { phone, setPhone, setSentShippingInfo, state, street, streetNumber, setState, country, setCountry, city, setCity, postal, setPostal, setStreet, setStreetNumber } = useContentContext()
   const navigate = useNavigate()
 
   const onSubmitInfo = async (values) => {
@@ -20,6 +20,8 @@ const ShippingInformationForm = () => {
         navigate('/ShoppingCart')
         window.scrollTo(0, 0)
         setCountry(response.country)
+        setState(response.state)
+        setPhone(response.phone)
         setCity(response.location)
         setPostal(response.postal)
         setStreet(response.street)
@@ -46,16 +48,16 @@ const ShippingInformationForm = () => {
 
   const initialValues = {
     // Definir los valores iniciales del formulario
-    country: '',
-    postal: null,
-    state: '',
-    location: '',
-    street: '',
-    number: null,
+    country: country ?? '',
+    postal: postal ?? null,
+    state: state ?? '',
+    location: city ?? '',
+    street: street ?? '',
+    number: streetNumber ?? null,
     floor: '',
     street1: '',
     street2: '',
-    phone: null,
+    phone: phone ?? null,
     textArea: ''
   }
 
