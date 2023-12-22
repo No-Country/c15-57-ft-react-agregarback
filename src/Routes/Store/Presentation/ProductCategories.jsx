@@ -29,7 +29,7 @@ export default function ProductsCategories () {
             >
               <div className='w-32 h-32 flex flex-col items-center'>
                 <img
-                  className='rounded-full sm:w-[5.625rem] sm:h-[5.625rem]'
+                  className='rounded-full w-[5.625rem] h-[5.625rem]'
                   src={product.img}
                   alt={product.name}
                 />
