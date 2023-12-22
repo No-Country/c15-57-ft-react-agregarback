@@ -17,6 +17,7 @@ export default function Products () {
     axios(url)
       .then((res) => {
         setProducts(res.data.products)
+        console.log(products)
       })
       .catch(() => {
         setProducts(null)
@@ -43,11 +44,11 @@ export default function Products () {
                 alt={product.name}
               />
               <figcaption className='w-56 left-[16.68px] top-[267.27px] absolute text-center text-gray-500 text-xs font-medium font-roboto leading-tight'>
-                {product.category}
+                {product.category.charAt(0).toUpperCase() + product.category.slice(1)}
               </figcaption>
             </figure>
             <p className='self-stretch text-center text-slate-800 text-base font-medium font-roboto leading-snug'>
-              {product.type}
+              {product.type.charAt(0).toUpperCase() + product.type.slice(1)}
             </p>
             <p className='self-stretch text-center text-slate-500 text-xs font-medium font-roboto leading-tight'>
               {product.description}

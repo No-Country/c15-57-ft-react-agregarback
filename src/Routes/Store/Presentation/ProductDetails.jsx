@@ -23,11 +23,11 @@ export default function ProductDetails () {
         name='img'
         className='cursor-default w-full h-full object-cover'
         src={product.img}
-        alt={product.title}
+        alt={product.type}
       />
       <div className='flex flex-col gap-5'>
         <h2 className='text-gray-800 text-5xl font-medium font-display'>
-          {product.title}
+          {product.type}
         </h2>
         <p className='text-gray-800 text-3xl font-medium font-display'>
           {product.price.toLocaleString('es-AR', {
@@ -35,11 +35,9 @@ export default function ProductDetails () {
             currency: 'ARS'
           })}
         </p>
-        <ul>
-          {product.descriptions?.map((description, index) => (
-            <li key={index}>{description} </li>
-          ))}
-        </ul>
+        <p className='text-gray-800 text-3xl font-medium font-display'>
+          {product.description}
+        </p>
         <div className='mt-4'>
           <h3 className='text-xl font-bold mb-2'>Size</h3>
           <div
@@ -137,7 +135,7 @@ export default function ProductDetails () {
             Categoría:
           </span>
           <span className='text-gray-500 text-base font-light font-display'>
-            {product.title} - {product.category}
+            {product.type} - {product.category}
           </span>
         </div>
       </div>
