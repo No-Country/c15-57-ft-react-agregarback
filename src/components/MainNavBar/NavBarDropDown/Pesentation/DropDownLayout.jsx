@@ -7,11 +7,6 @@ export const DropDownLayout = ({ children }) => {
   const { logControl } = useUserContext()
   const { animalRouterChecker } = useRouterChecker()
 
-
-    const { openDropdown, navBarDropDown, isOpen } = useContentContext();
-    const { logControl, } = useUserContext();
-    const { animalRouterChecker } = useRouterChecker();
-
     return (
 
         <div className='dropdown relative md:bottom-[0.3vh] lg:bottom-[0.1vh] 2xl:bottom-[0vh]'>
