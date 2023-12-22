@@ -7,7 +7,7 @@ export default function Filtros ({ filter = ['Talle', 'S', 'M', 'L', 'XL'] }) {
       <p className='w-20 py-6 text-slate-800 text-xl font-medium font-display '>
         {category}
       </p>
-      <div className='pb-6 justify-start items-start gap-3 inline-flex'>
+      <div className='hidden pb-6 justify-start items-start gap-3 '>
         <p className='text-gray-800 text-base font-normal font-roboto '>
           Filtrar por:
         </p>

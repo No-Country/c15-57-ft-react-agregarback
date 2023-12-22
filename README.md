@@ -28,29 +28,6 @@
     </a>
   </div>
 </section>
-<hr><!-- ABOUT THE PROJECT -->
-<section>
-  <div>
-    <img src="./public/logo2.svg" width="18px">
-    <h2 style='display:inline'>Acerca del Proyecto</h2>
-  </div>
-  <p><strong>Preservación Animal</strong> no es solo un proyecto; es un compromiso con la preservación de la biodiversidad en Latinoamérica. Nuestra plataforma ofrece una experiencia integral que incluye la venta de merchandising exclusivo, donaciones directas y oportunidades de voluntariado. Estamos aquí para brindarte una manera sencilla y significativa de contribuir al bienestar de la fauna silvestre mientras participas activamente en la protección de su hábitat.
-  </p>
-
-  <h2>Descubre cómo puedes ser parte del cambio:</h2>
-
-  <ol>
-    <li><strong>Merchandising Exclusivo:</strong>
-    Explora nuestra tienda en línea y descubre una variedad de productos exclusivos. Desde camisetas y gorras hasta artículos de decoración, cada compra contribuye directamente a proyectos de conservación.
-    <li><strong>Donaciones Directas:</strong>
-      Tu generosidad importa. Realiza donaciones directas a proyectos específicos de preservación animal. Cada contribución cuenta y ayuda a financiar acciones concretas para proteger la vida silvestre.
-    <li><strong>Voluntariado en Acción:</strong>
-    Únete a nuestro programa de voluntariado y vive la experiencia única de trabajar directamente en proyectos de conservación. Desde la liberación de animales rehabilitados hasta la restauración de hábitats, tu participación marca la diferencia.
-    <li><strong>Ecoviajes:</strong>
-    Estos viajes no solo serán experiencias únicas, sino que también les permitirán sumergirse en la belleza y fragilidad de nuestros diversos ecosistemas, creando recuerdos que durarán toda la vida.
-  </ol>
-</section>
-
 <hr><!-- TEAMS -->
 
 <h2> Equipo ( c15-57-ft-react-agregarback ) </h2>
@@ -195,6 +172,30 @@
     </td>
   </tr>
 </table>
+<hr>
+
+<!-- ABOUT THE PROJECT -->
+<section>
+  <div>
+    <img src="./public/logo2.svg" width="18px">
+    <h2 style='display:inline'>Acerca del Proyecto</h2>
+  </div>
+  <p><strong>Preservación Animal</strong> no es solo un proyecto; es un compromiso con la preservación de la biodiversidad en Latinoamérica. Nuestra plataforma ofrece una experiencia integral que incluye la venta de merchandising exclusivo, donaciones directas y oportunidades de voluntariado. Estamos aquí para brindarte una manera sencilla y significativa de contribuir al bienestar de la fauna silvestre mientras participas activamente en la protección de su hábitat.
+  </p>
+
+  <h2>Descubre cómo puedes ser parte del cambio:</h2>
+
+  <ol>
+    <li><strong>Merchandising Exclusivo:</strong>
+    Explora nuestra tienda en línea y descubre una variedad de productos exclusivos. Desde camisetas y gorras hasta artículos de decoración, cada compra contribuye directamente a proyectos de conservación.
+    <li><strong>Donaciones Directas:</strong>
+      Tu generosidad importa. Realiza donaciones directas a proyectos específicos de preservación animal. Cada contribución cuenta y ayuda a financiar acciones concretas para proteger la vida silvestre.
+    <li><strong>Voluntariado en Acción:</strong>
+    Únete a nuestro programa de voluntariado y vive la experiencia única de trabajar directamente en proyectos de conservación. Desde la liberación de animales rehabilitados hasta la restauración de hábitats, tu participación marca la diferencia.
+    <li><strong>Ecoviajes:</strong>
+    Estos viajes no solo serán experiencias únicas, sino que también les permitirán sumergirse en la belleza y fragilidad de nuestros diversos ecosistemas, creando recuerdos que durarán toda la vida.
+  </ol>
+</section>
 
 <hr><!-- TECH STACK -->
 <section id='tech-stack'>
