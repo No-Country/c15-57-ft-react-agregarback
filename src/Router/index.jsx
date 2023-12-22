@@ -24,7 +24,6 @@ import {
   EcosystemPage
 } from '../Routes'
 
-
 export const router = createBrowserRouter([
   {
     path: '/',
