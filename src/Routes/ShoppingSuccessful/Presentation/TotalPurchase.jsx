@@ -1,12 +1,11 @@
 import { dhlSmall } from '../../../assets/purchase'
-import miniature from '../../../assets/product-miniature.jpg'
 import { useContentContext } from '../../../Store/contextStore/ContentContext'
 import { useECommerceContext } from '../../../Store/contextStore/ECommerceContext'
 export default function TotalPurchase () {
   const { country, city, postal, street, streetNumber, sentShippingInfo } = useContentContext()
   const { cart, total } = useECommerceContext()
   return (
-    <section className='flex flex-col w-[350px] lg:w-[622px]'>
+    <section className='flex flex-col w-[350px] md:w-full lg:max-w-[622px]'>
       <h3 className='font-robotoM text-[0.8rem] text-itemTitle self-end mr-[2%]'>Precio</h3>
       {cart.map((prod) => (
         <div
@@ -45,7 +44,7 @@ export default function TotalPurchase () {
             alt='DHL logo'
             className='w-[50px] h-[90px] object-cover'
           />
-          <div className='ml-5 flex items-center justify-between w-[77%] lg:w-[88%]'>
+          <div className='ml-2 flex items-center justify-between w-[77%] lg:w-[87%]'>
             <div>
               <h4 className='font-robotoL text-[0.8rem] text-itemTitle'>Envío</h4>
               <p className='font-robotoL text-[0.7rem] text-slate-500'>{`${street} ${streetNumber}`}</p>
@@ -64,7 +63,7 @@ export default function TotalPurchase () {
       <div className='flex justify-end mt-2 gap-4 mr-4'>
         <p className='font-robotoM text-itemTitle text-[0.9rem]'>Total</p>
         <p className='font-robotoM text-green-800 text-[0.9rem]'>
-          {total.toLocaleString('es-AR', {
+          {(total + 2000).toLocaleString('es-AR', {
 					  style: 'currency',
 					  currency: 'ARS'
           })}
