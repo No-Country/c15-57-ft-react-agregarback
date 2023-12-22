@@ -1,15 +1,16 @@
 <header align="center">
-<h2>Este es un proyecto de la comunidad:</h2>
-<a href="https://www.nocountry.tech/" target="_blank">
+<h2 align='center'>Este es un proyecto de la comunidad:</h2>
+<div align='center'><a href="https://www.nocountry.tech/" target="_blank">
     <img style='background-color:black;' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsukYB3HL90LSwYv_RIR2O2OlCV8Sbkx2eNHv8nRvOu8L16FxLQ0nPzY02wQ_BJOfQZw&usqp=CAU" width="200">
 </a>
+</div>
 <hr>
 <!-- PROJECT LOGO -->
   <a href="https://github.com/No-Country/c14-22-ft-java-react" target="_blank">
     <img src="./src/assets/BannerPA.png" alt="Banner">
   </a>
   <hr>
-  <h1>Bienvenid@s a Preservacion Animal</h1>
+  <h1 align='center'>Bienvenid@s a Preservacion Animal</h1>
 </header>
 <section id='intro'>
     <p align='center'><strong>Plataforma de Preservación Animal Silvestre en Latinoamérica</strong></p>
@@ -176,10 +177,10 @@
 
 <!-- ABOUT THE PROJECT -->
 <section>
-  <div>
+  <h2>
     <img src="./public/logo2.svg" width="18px">
-    <h2 style='display:inline'>Acerca del Proyecto</h2>
-  </div>
+    <span>Acerca del Proyecto</span>
+  </h2>
   <p><strong>Preservación Animal</strong> no es solo un proyecto; es un compromiso con la preservación de la biodiversidad en Latinoamérica. Nuestra plataforma ofrece una experiencia integral que incluye la venta de merchandising exclusivo, donaciones directas y oportunidades de voluntariado. Estamos aquí para brindarte una manera sencilla y significativa de contribuir al bienestar de la fauna silvestre mientras participas activamente en la protección de su hábitat.
   </p>
 
@@ -212,7 +213,7 @@
 ![Vercel](https://img.shields.io/static/v1?style=for-the-badge&message=Vercel&color=000000&logo=Vercel&logoColor=FFFFFF&label=)
 
 <h3>Back-End</h3>
-  <a href='https://miragejs.com/'>
+  <a href='https://github.com/No-Country/c15-57-ft-react-agregarback/blob/main/src/Store/Server/MirageConf.js'>
     <img src="./src/assets/mirage.png" >
   </a>
   <h2> Organización </h2>
