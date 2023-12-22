@@ -1,5 +1,5 @@
 import { Formik, Form } from 'formik'
-import { InputForm, Button } from '../../../components/'
+import { InputForm, ButtonForm } from '../../../components/'
 import SelectCountry from './SelectCountry'
 import TextArea from './TextArea'
 import * as Yup from 'yup'
@@ -7,7 +7,7 @@ import { useContentContext } from '../../../Store/contextStore/ContentContext'
 import { useNavigate } from 'react-router-dom'
 
 const ShippingInformationForm = () => {
-  const { setSentShippingInfo, setCountry, setCity, setPostal, setStreet, setStreetNumber } = useContentContext()
+  const { phone, setPhone, setSentShippingInfo, state, street, streetNumber, setState, country, setCountry, city, setCity, postal, setPostal, setStreet, setStreetNumber } = useContentContext()
   const navigate = useNavigate()
 
   const onSubmitInfo = async (values) => {
@@ -20,13 +20,15 @@ const ShippingInformationForm = () => {
         navigate('/ShoppingCart')
         window.scrollTo(0, 0)
         setCountry(response.country)
+        setState(response.state)
+        setPhone(response.phone)
         setCity(response.location)
         setPostal(response.postal)
         setStreet(response.street)
         setStreetNumber(response.number)
       }
     } catch (error) {
-      if (error.response.status === 400 && error.response.data.error === 'Correo o contraseña invalida') {
+      if (error.response.status === 400 && error.response.data.error === 'datos no válidos') {
         console.log('Error dato no encontrado')
       } else {
         console.log('Error envio no valido')
@@ -36,26 +38,26 @@ const ShippingInformationForm = () => {
 
   const validationSchema = Yup.object().shape({
     country: Yup.string().required('El país es requerido'),
-    postal: Yup.number().required('El código postal es requerido'),
+    postal: Yup.number().min(0, 'el número no puede ser menor a cero').required('El código postal es requerido'),
     state: Yup.string().required('La provincia es requerida'),
     location: Yup.string().required('La localidad es requerida'),
     street: Yup.string().required('La calle o avenida es requerida'),
-    number: Yup.number().required('El número es requerido'),
+    number: Yup.number().min(0, 'el número no puede ser menor a cero').required('El número es requerido'),
     phone: Yup.number().required('El número de teléfono es requerido')
   })
 
   const initialValues = {
     // Definir los valores iniciales del formulario
-    country: '',
-    postal: null,
-    state: '',
-    location: '',
-    street: '',
-    number: null,
+    country: country ?? '',
+    postal: postal ?? null,
+    state: state ?? '',
+    location: city ?? '',
+    street: street ?? '',
+    number: streetNumber ?? null,
     floor: '',
     street1: '',
     street2: '',
-    phone: null,
+    phone: phone ?? null,
     textArea: ''
   }
 
@@ -95,9 +97,11 @@ const ShippingInformationForm = () => {
               <InputForm name='Teléfono de contacto' type='phone' placeholder='Ingrese teléfono' errors={errors} id='phone' value={values.phone} />
             </div>
             <TextArea value={values.textArea} />
-            <div className='my-10 md:mt-[84px] md:mb-[36px]'>
-              <Button text='Cargar datos' color='bg-green-600' hover='hover:bg-green-900' />
-              {/* {error && <p className='text-red-600 text-xs italic text-center'>{error}</p>} */}
+            <div className='my-10 md:mt-[40px] md:mb-10 md:w-[100%]'>
+              <div className='flex flex-col items-center'>
+                <ButtonForm text='Cargar datos' color='bg-green-600' hover='hover:bg-green-900' />
+                {/* {error && <p className='text-red-600 text-xs italic text-center'>{error}</p>} */}
+              </div>
             </div>
           </Form>
         )}

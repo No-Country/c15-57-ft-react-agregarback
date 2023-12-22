@@ -10,4 +10,5 @@ import SubtitleInfoStore from './SubtitleInfoStore/Component'
 import InputCard from '../components/InputCard/Component/index'
 import InputCCV from '../components/InputCCV/Component/index'
 import Loader from './Loader/Component/Loader'
-export { LandingPage, Footer, OtherSesion, InputPassword, Button, NavBar, InputForm, InputSelectForm, SubtitleInfoStore, InputCCV, InputCard, Loader }
+import ButtonForm from './ButtonForm/index'
+export { LandingPage, Footer, OtherSesion, InputPassword, Button, NavBar, InputForm, InputSelectForm, SubtitleInfoStore, InputCCV, InputCard, Loader, ButtonForm }

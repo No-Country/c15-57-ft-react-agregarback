@@ -27,6 +27,7 @@ const NavBarLinks = ({ links, windowSize }) => {
           }
         </li>
       ))}
+
     </>
   );
 };

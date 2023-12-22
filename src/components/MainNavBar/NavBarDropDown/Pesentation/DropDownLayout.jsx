@@ -1,9 +1,12 @@
-
-import { useContentContext } from "../../../../Store/contextStore/ContentContext.jsx";
-import { useUserContext } from "../../../../Store/contextStore/UserContext.jsx";
-import useRouterChecker from "../../../../Hooks/useRouterChecker.jsx";
+import { useContentContext } from '../../../../Store/contextStore/ContentContext.jsx'
+import { useUserContext } from '../../../../Store/contextStore/UserContext.jsx'
+import useRouterChecker from '../../../../Hooks/useRouterChecker.jsx'
 
 export const DropDownLayout = ({ children }) => {
+  const { openDropdown, navBarDropDown, isOpen } = useContentContext()
+  const { logControl } = useUserContext()
+  const { animalRouterChecker } = useRouterChecker()
+
 
     const { openDropdown, navBarDropDown, isOpen } = useContentContext();
     const { logControl, } = useUserContext();
@@ -39,10 +42,12 @@ export const DropDownLayout = ({ children }) => {
                
             
                 className={`
+
                     w-[7vw] md:w-[13vw] lg:w-[9vw] rounded-md bg-gray-200 font-robotoM
                 ${navBarDropDown
                         ? 'block absolute bg-gray-200 w-[100vw] h-[40vh]   text-black md:w-[8vw] md:h-[7vh] pt-1 rounded-lg'
                         : 'hidden'
+
                     }`
                 }
                 onClick={() => openDropdown()}
@@ -58,5 +63,6 @@ export const DropDownLayout = ({ children }) => {
             </div>
         </div>
 
-    );
-};
+
+  )
+}

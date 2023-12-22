@@ -1,4 +1,4 @@
-import { InputForm, Button, InputPassword, InputSelectForm } from '../../../components/'
+import { InputForm, ButtonForm, InputPassword, InputSelectForm } from '../../../components/'
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import { useState } from 'react'
@@ -72,7 +72,7 @@ const FormularioComponent = () => {
       onSubmit={onSubmit}
     >
       {({ errors, values }) => (
-        <Form className='rounded h-[610px] font-roboto'>
+        <Form className='rounded h-[550px] font-roboto'>
           {/* Campos del formulario */}
           <InputForm name='Nombre' type='text' placeholder='Ingrese nombre' errors={errors} id='name' value={values.name} />
           <InputForm name='Correo electrónico' type='email' placeholder='Ingrese correo electrónico' errors={errors} id='email' value={values.email} />
@@ -80,9 +80,11 @@ const FormularioComponent = () => {
           <InputSelectForm values={values.question} />
           <InputForm name='Respuesta secreta' type='text' placeholder='Ingrese respuesta secreta' errors={errors} id='answer' value={values.answer} />
           {/* Botón de envío del formulario */}
-          <Button text='Registrarme' color='bg-green-600' hover='hover:bg-green-900' />
-          {/* error de registro */}
-          {error && <p className='text-red-600 text-xs font-roboto text-center'>{error}</p>}
+          <div className='flex flex-col items-center'>
+            <ButtonForm text='Registrarme' color='bg-green-600' hover='hover:bg-green-900' />
+            {/* error de registro */}
+            {error && <p className='text-red-600 text-xs font-roboto text-center'>{error}</p>}
+          </div>
         </Form>
       )}
     </Formik>

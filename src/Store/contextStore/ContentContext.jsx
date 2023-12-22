@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from 'react'
 import useGetData from '../../Hooks/useGetData'
+import { useLocalStorage } from '../../components/Hooks/useStorage'
 
 export const ContentContext = createContext()
 
@@ -23,21 +24,20 @@ const ContentProvider = ({ children }) => {
   
   const [mostrar, setMostrar] = useState(1)
   const [movileIndex, setMovileIndex] = useState(0)
-   
   // keeping total account of products
   const [totalCounting, setTotalCounting] = useState(0)
   // check the state of shipping info
-  const [sentShippingInfo, setSentShippingInfo] = useState(false)
+  const [sentShippingInfo, setSentShippingInfo] = useLocalStorage('sentShippingInfo', false)
   // Get address information
-  const [country, setCountry] = useState('')
-  const [city, setCity] = useState('')
-  const [postal, setPostal] = useState('')
-  const [street, setStreet] = useState('')
-  const [streetNumber, setStreetNumber] = useState('')
-  // check shoppingcart button state
-  const [enableButton, setEnableButton] = useState(true)
-  // open and close delete modal
-  const [openDeleteModal, setOpenDeleteModal] = useState(false)
+  const [country, setCountry] = useLocalStorage('country', '')
+  const [city, setCity] = useLocalStorage('city', '')
+  const [state, setState] = useLocalStorage('state', '')
+  const [postal, setPostal] = useLocalStorage('postal', '')
+  const [street, setStreet] = useLocalStorage('street', '')
+  const [phone, setPhone] = useLocalStorage('phone', '')
+  const [streetNumber, setStreetNumber] = useLocalStorage('streetNumber', '')
+  // check shoppingcart button LocaluseLocalStorage
+  const [enableButton, setEnableButton] = useLocalStorage('enableButton', true)
 
   // Who we are data->
   const getDataFromServer = (paramRequired) => {
@@ -208,10 +208,6 @@ const ContentProvider = ({ children }) => {
     }
   ]
 
-  // delete iten of shoppinList
-  const [index, getIndex] = useState(null)
-  const [shoppingList, setShoppingList] = useState([])
-
   const constextValue = {
     getDataFromServer,
     openDropdown,
@@ -234,6 +230,9 @@ const ContentProvider = ({ children }) => {
     country,
     setCountry,
     city,
+    phone,setPhone,
+    state,
+    setState,
     setCity,
     postal,
     setPostal,
@@ -244,13 +243,7 @@ const ContentProvider = ({ children }) => {
     enableButton,
     setEnableButton,
     purchaseData,
-    donationData,
-    openDeleteModal,
-    setOpenDeleteModal,
-    index,
-    getIndex,
-    shoppingList,
-    setShoppingList
+    donationData
   }
 
   return <ContentContext.Provider value={constextValue}>{children}</ContentContext.Provider>

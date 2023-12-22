@@ -1,5 +1,5 @@
 import { Formik, Form } from 'formik'
-import { InputPassword, InputForm, Button, InputSelectForm } from '../../../components/'
+import { InputPassword, InputForm, ButtonForm, InputSelectForm } from '../../../components/'
 import * as Yup from 'yup'
 import { useState } from 'react'
 import axios from 'axios'
@@ -69,8 +69,10 @@ const ResetPasswordComponent = () => {
           <Form className='rounded pt-6'>
             {/* Campos del formulario */}
             <InputForm name='Correo electrónico' onChange={handleChange} type='email' placeholder='Ingrese correo electrónico' errors={errors} id='email' value={values.email} />
-            {!userEmail && <Button text='Buscar pregunta secreta' color='bg-green-600' hover='hover:bg-green-900' />}
-            {errorEmail && <p className='text-red-600 text-xs italic text-center'>{errorEmail}</p>}
+            <div className='flex flex-col items-center'>
+              {!userEmail && <ButtonForm text='Buscar pregunta secreta' color='bg-green-600' hover='hover:bg-green-900' />}
+              {errorEmail && <p className='text-red-600 text-xs italic text-center'>{errorEmail}</p>}
+            </div>
           </Form>
         )}
       </Formik>
@@ -86,8 +88,10 @@ const ResetPasswordComponent = () => {
               <InputForm name='Respuesta secreta' onChange={handleChange} type='text' placeholder='Ingrese respuesta secreta' errors={errors} id='answer' value={values.answer} />
               {recoverPassword && <InputPassword name='Password recuperado' placeholder='Password a recuperar' onChange={handleChange} id='password' value={recoverPassword} showPassword={showPassword} togglePasswordVisibility={togglePasswordVisibility} />}
               {/* Botón de envío del formulario */}
-              <Button text='Recuperar Contraseña' color='bg-green-600' hover='hover:bg-green-900' />
-              {errorAnswer && <p className='text-red-600 text-xs italic text-center'>{errorAnswer}</p>}
+              <div className='flex flex-col items-center'>
+                <ButtonForm text='Recuperar Contraseña' color='bg-green-600' hover='hover:bg-green-900' />
+                {errorAnswer && <p className='text-red-600 text-xs italic text-center'>{errorAnswer}</p>}
+              </div>
             </Form>
           )}
         </Formik>}
