@@ -34,8 +34,10 @@ export default function ShoppingSuccessful () {
               </p>
             </div>
             <TotalPurchase />
-            <div onClick={handleSubmit} className='flex justify-center self-center w-full lg:w-[50%] mb-12'>
-              <ButtonForm text='Continuar comprando' color='bg-green-600' hover='hover:bg-green-900' />
+            <div onClick={handleSubmit} className='w-full lg:w-[60%] mb-12'>
+              <div className='flex flex-col items-center'>
+                <ButtonForm text='Continuar comprando' color='bg-green-600' hover='hover:bg-green-900' />
+              </div>
             </div>
           </div>
         </div>
