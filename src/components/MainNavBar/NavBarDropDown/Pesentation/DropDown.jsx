@@ -3,9 +3,8 @@ import { DropDownLinks } from './DropDownLinks.jsx'
 
 export const DropDownContainer = ({ routes, windowSize }) => {
   return (
-    <DropDownLayout>
+    <DropDownLayout windowSize={windowSize}>
       <DropDownLinks
-        windowSize={windowSize}
         routes={routes}
       />
     </DropDownLayout>

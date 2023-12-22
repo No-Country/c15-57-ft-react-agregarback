@@ -10,10 +10,14 @@ import { useContentContext } from '../../../../Store/contextStore/ContentContext
 import { useUserContext } from '../../../../Store/contextStore/UserContext.jsx'
 import useRouterChecker from '../../../../Hooks/useRouterChecker.jsx'
 
-const NavBarLayout = ({ children, windowSize }) => {
-  const { isOpen } = useContentContext()
+import useResizer from '../../../../Hooks/useResizer.jsx'
+
+const NavBarLayout = ({ children }) => {
+  const { isOpen, windowSize } = useContentContext()
   const { user } = useUserContext()
   const { animalRouterChecker, loginRegisterRouteChecker } = useRouterChecker()
+  useResizer()
+
 
   return (
     <>
@@ -69,8 +73,8 @@ const NavBarLayout = ({ children, windowSize }) => {
                   {/* shows: (login/logout) when no auth - shows: (dropdown/cart) when auth --> */}
 
                   <li className='h-20% sm:grid  sm:row-[span 1 / span 6] sm:z-50 lg:col-span-3  lg:z-50'>
-                    <Dropdown 
-                    windowSize={windowSize}
+                    <Dropdown
+                      windowSize={windowSize}
                     />
                   </li>
                   <li className='hidden md:flex'>
@@ -81,7 +85,10 @@ const NavBarLayout = ({ children, windowSize }) => {
 
               )
               : (
-                <LoginLogoutSect />
+                <>
+                  <LoginLogoutSect />
+                </>
+
               )
           }
 
