@@ -5,7 +5,7 @@ export default function TotalPurchase () {
   const { country, city, postal, street, streetNumber, sentShippingInfo } = useContentContext()
   const { cart, total } = useECommerceContext()
   return (
-    <section className='flex flex-col w-[350px] md:w-full lg:max-w-[622px]'>
+    <section className='flex flex-col w-[350px] md:w-full xl:max-w-[622px]'>
       <h3 className='font-robotoM text-[0.8rem] text-itemTitle self-end mr-[2%]'>Precio</h3>
       {cart.map((prod) => (
         <div
@@ -27,7 +27,7 @@ export default function TotalPurchase () {
               <p className='font-robotoL text-[0.7rem] text-slate-500'>{prod.quantity}</p>
             </div>
             <div className='flex'>
-              <p className='min-w-[80px] font-robotoL text-green-800 text-[0.9rem] self-center mr-2 lg:mr-1'>
+              <p className='min-w-[80px] font-robotoL text-green-800 text-[0.9rem] self-center mr-2 xl:mr-1'>
                 {prod.price.toLocaleString('es-AR', {
 								  style: 'currency',
 								  currency: 'ARS'
@@ -38,20 +38,20 @@ export default function TotalPurchase () {
         </div>
       ))}
       {sentShippingInfo && (
-        <div className='h-[90px] flex border-[1px] border-slate-300 rounded-xl box-border overflow-hidden items-center max-w-[350px] lg:max-w-[622px]'>
+        <div className='h-[90px] grow flex border-[1px] border-slate-300 rounded-xl box-border overflow-hidden items-center'>
           <img
             src={dhlSmall}
             alt='DHL logo'
             className='w-[50px] h-[90px] object-cover'
           />
-          <div className='ml-2 flex items-center justify-between w-[77%] lg:w-[87%]'>
+          <div className='ml-2 flex items-center justify-between w-[90%] xl:w-[87%]'>
             <div>
               <h4 className='font-robotoL text-[0.8rem] text-itemTitle'>Envío</h4>
               <p className='font-robotoL text-[0.7rem] text-slate-500'>{`${street} ${streetNumber}`}</p>
               <p className='font-robotoL text-[0.7rem] text-slate-500'>{`${postal} - ${city}`}</p>
               <p className='font-robotoL text-[0.7rem] text-slate-500'>{country}</p>
             </div>
-            <p className='font-robotoL text-green-800 text-[0.9rem] '>
+            <p className='font-robotoL text-green-800 text-[0.9rem] mr-4 xl:mr-0 '>
               {(parseInt(2000)).toLocaleString('es-AR', {
 					  style: 'currency',
 					  currency: 'ARS'
