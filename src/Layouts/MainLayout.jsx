@@ -16,11 +16,11 @@ const MainLayout = () => {
     >
       <header>
         <div className='w-[100%]'>
-        <NavBar />
+          <NavBar />
         </div>
       </header>
       <main className='row-start-2'>
-         <Outlet /> 
+        <Outlet />
       </main>
       <footer>
         <Footer />

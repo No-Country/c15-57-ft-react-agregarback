@@ -1,14 +1,16 @@
-import { HamburguerMenu } from '../../HamburguerMenu/Component/HamburguerMenu.jsx'
+
 import { Logo } from '../../Logo/Component/Logo.jsx'
+import { HamburguerMenu } from '../../HamburguerMenu/Component/HamburguerMenu.jsx'
 import { Dropdown } from '../../NavBarDropDown/Component/DropDown.jsx'
 import { LoginLogoutSect } from '../../LoginLogoutSect/Component/LoginLogoutSect.jsx'
+import CartSection from '../../CartSection/Componentt/CartSection.jsx'
+
 
 import { useContentContext } from '../../../../Store/contextStore/ContentContext.jsx'
 import { useUserContext } from '../../../../Store/contextStore/UserContext.jsx'
 import useRouterChecker from '../../../../Hooks/useRouterChecker.jsx'
-import CartSection from '../../CartSection/Componentt/CartSection.jsx'
 
-const NavBarLayout = ({ children }) => {
+const NavBarLayout = ({ children, windowSize }) => {
   const { isOpen } = useContentContext()
   const { user } = useUserContext()
   const { animalRouterChecker, loginRegisterRouteChecker } = useRouterChecker()
@@ -66,8 +68,10 @@ const NavBarLayout = ({ children }) => {
 
                   {/* shows: (login/logout) when no auth - shows: (dropdown/cart) when auth --> */}
 
-                  <li className='h-20% sm:grid  sm:row-[span_1_/_span_6] sm:z-50 lg:col-span-3  lg:z-50'>
-                    <Dropdown />
+                  <li className='h-20% sm:grid  sm:row-[span 1 / span 6] sm:z-50 lg:col-span-3  lg:z-50'>
+                    <Dropdown 
+                    windowSize={windowSize}
+                    />
                   </li>
                   <li className='hidden md:flex'>
                     <CartSection />

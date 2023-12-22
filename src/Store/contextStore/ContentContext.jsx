@@ -5,9 +5,23 @@ import { useLocalStorage } from '../../components/Hooks/useStorage'
 export const ContentContext = createContext()
 
 const ContentProvider = ({ children }) => {
-  const [isOpen, setIsOpen] = useState(false)
+  
+  // open and close handler for the navbar ->
+  const [isOpen, setIsOpen] = useState(false) 
+  
+  // open and close handler for the dropdown navbar when user is authenticated->
   const [navBarDropDown, setNavBarDropDown] = useState(false)
-
+  
+  // Dropdown navbar open and close handler ->
+  const toggle = () => {
+    setIsOpen(!isOpen)
+  }
+  
+  // open and close handler for the dropdown navbar when user is authenticated->
+  const openDropdown = () => {
+    setNavBarDropDown(!navBarDropDown)
+  }
+  
   const [mostrar, setMostrar] = useState(1)
   const [movileIndex, setMovileIndex] = useState(0)
   // keeping total account of products
@@ -25,32 +39,12 @@ const ContentProvider = ({ children }) => {
   // check shoppingcart button LocaluseLocalStorage
   const [enableButton, setEnableButton] = useLocalStorage('enableButton', true)
 
-  // Esta parte de location no se estaba utilizando
-  // const location = useLocation()
-
-  // useEffect(() => {
-  //   if (location.pathname === '/') {
-  //     setOnAnimalRoute(true)
-  //   } else {
-  //     setOnAnimalRoute(false)
-  //   }
-  // }, [location.pathname])
-
   // Who we are data->
   const getDataFromServer = (paramRequired) => {
     const { data, loading } = useGetData(`api/${paramRequired}`, paramRequired)
     return { data, loading }
   }
 
-  // Dropdown navbar open and close handler ->
-  const toggle = () => {
-    setIsOpen(!isOpen)
-  }
-
-  // open and close handler for the dropdown navbar when user is authenticated->
-  const openDropdown = () => {
-    setNavBarDropDown(!navBarDropDown)
-  }
 
   // Fetching data from the server ->
   const classBaner = 'img-container'
