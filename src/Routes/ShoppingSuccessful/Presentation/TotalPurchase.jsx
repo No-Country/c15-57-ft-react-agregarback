@@ -44,7 +44,7 @@ export default function TotalPurchase () {
             alt='DHL logo'
             className='w-[50px] h-[90px] object-cover'
           />
-          <div className='ml-5 flex items-center justify-between w-[77%] lg:w-[88%]'>
+          <div className='ml-2 flex items-center justify-between w-[77%] lg:w-[87%]'>
             <div>
               <h4 className='font-robotoL text-[0.8rem] text-itemTitle'>Envío</h4>
               <p className='font-robotoL text-[0.7rem] text-slate-500'>{`${street} ${streetNumber}`}</p>
