@@ -1,12 +1,11 @@
 import { SubtitleInfoStore } from '../../../components'
 
-import MainSection from "../../../components/WhoWeAre/MainSection/Component/MainSection"
-import MapSection from "../../../components/WhoWeAre/MapSection/Component/MapSection"
-import DownSection from "../../../components/WhoWeAre/DownSection/Component/DownSection"
-
+import MainSection from '../../../components/WhoWeAre/MainSection/Component/MainSection'
+import MapSection from '../../../components/WhoWeAre/MapSection/Component/MapSection'
+import DownSection from '../../../components/WhoWeAre/DownSection/Component/DownSection'
 import { LatamMap, Monkey, Certificate } from '../../../assets/who-we-are/index'
-const WhoWeAreInfo = ({ data }) => {
 
+const WhoWeAreInfo = ({ data }) => {
   return (
     <>
       {
@@ -22,10 +21,10 @@ const WhoWeAreInfo = ({ data }) => {
           MapSectionDefenders,
           MapSectionDonations,
           DownSectionTitle,
-          DownSectionDescription }) => (
-          <>
-
-            <div key={id} className='w-full flex justify-center md:hidden'>
+          DownSectionDescription
+        }) => (
+          <div key={id}>
+            <div className='w-full flex justify-center md:hidden'>
               <SubtitleInfoStore link='/' title='Perfil' />
             </div>
 
@@ -51,7 +50,7 @@ const WhoWeAreInfo = ({ data }) => {
               Certificate={Certificate}
             />
 
-          </>
+          </div>
         )
         )
       }

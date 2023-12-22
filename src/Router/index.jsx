@@ -1,15 +1,35 @@
 import { Suspense } from 'react'
 import { createBrowserRouter } from 'react-router-dom'
-
+import { Loader } from '../components'
 import { MainLayout, PrivateLayout } from '../Layouts'
 
-import { Animals, WhoWeAre, VulnerableSpecies, Store, Register, Login, NotFound, User, MyVolunteers, MyPurchases, ResetPassword, Donations, ShippingInformation, ShoppingCart, Thanks, ShoppingSuccessful, EcosystemPage, EcosystemModal, loaderPost } from '../Routes'
+import {
+  Animals,
+  InfoAnimals,
+  WhoWeAre,
+  VulnerableSpecies,
+  Store,
+  Register,
+  Login,
+  NotFound,
+  User,
+  MyVolunteers,
+  MyPurchases,
+  ResetPassword,
+  Donations,
+  ShippingInformation,
+  ShoppingCart,
+  Thanks,
+  ShoppingSuccessful,
+  EcosystemPage
+} from '../Routes'
+
 
 export const router = createBrowserRouter([
   {
     path: '/',
     element: (
-      <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+      <Suspense fallback={<Loader />}>
         <MainLayout />
       </Suspense>
     ),
@@ -18,7 +38,7 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: (
-          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+          <Suspense fallback={<Loader />}>
             <Animals />
           </Suspense>
         )
@@ -26,121 +46,147 @@ export const router = createBrowserRouter([
       {
         path: '/WhoWeAre',
         element: (
-          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+          <Suspense fallback={<Loader />}>
             <WhoWeAre />
-          </Suspense>)
+          </Suspense>
+        )
       },
       {
         path: '/VulnerableSpecies',
         element: (
-          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+          <Suspense fallback={<Loader />}>
             <VulnerableSpecies />
-          </Suspense>)
+          </Suspense>
+        )
       },
       {
         path: '/Donations',
         element: (
-          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+          <Suspense fallback={<Loader />}>
             <Donations />
-          </Suspense>)
+          </Suspense>
+        )
       },
       {
         path: '/Thanks',
         element: (
-          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+          <Suspense fallback={<Loader />}>
             <Thanks />
-          </Suspense>)
+          </Suspense>
+        )
       },
       {
         path: '/Store',
         element: (
-          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+          <Suspense fallback={<Loader />}>
             <Store />
-          </Suspense>)
+          </Suspense>
+        )
       },
       {
         path: '/Register',
         element: (
-          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+          <Suspense fallback={<Loader />}>
             <Register />
-          </Suspense>)
+          </Suspense>
+        )
       },
       {
         path: '/Login',
         element: (
-          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+          <Suspense fallback={<Loader />}>
             <Login />
-          </Suspense>)
+          </Suspense>
+        )
       },
       {
         path: '/Shipping-information',
         element: (
-          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+          <Suspense fallback={<Loader />}>
             <ShippingInformation />
-          </Suspense>)
+          </Suspense>
+        )
       },
       {
         path: '/Reset-password',
         element: (
-          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+          <Suspense fallback={<Loader />}>
             <ResetPassword />
-          </Suspense>)
+          </Suspense>
+        )
       },
       {
         path: '/ShoppingCart',
         element: (
-          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+          <Suspense fallback={<Loader />}>
             <ShoppingCart />
-          </Suspense>)
+          </Suspense>
+        )
+      },
+      {
+        path: '/Animals/',
+        element: (
+          <Suspense fallback={<Loader />}>
+            <InfoAnimals />
+          </Suspense>
+        )
+      },
+      {
+        path: '/Animals/:animal',
+        element: (
+          <Suspense fallback={<Loader />}>
+            <InfoAnimals />
+          </Suspense>
+        )
       },
       {
         path: '/Ecosystems',
-        element: <EcosystemPage />, 
-      },
-      {
-        path: '/Ecosystems/:id',
-        element: <EcosystemModal />,
-        loader: loaderPost
+        element: (
+          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+            <EcosystemPage />
+          </Suspense>)
       },
       {
         path: '/ShoppingSuccessful',
         element: (
-          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+          <Suspense fallback={<Loader />}>
             <ShoppingSuccessful />
-          </Suspense>)
+          </Suspense>
+        )
       },
 
-      /*
-      * Private Routes
-      */
+      //  Private Routes
       {
         path: '/User',
         errorElement: <NotFound />,
         element: (
-          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+          <Suspense fallback={<Loader />}>
             <PrivateLayout />
-          </Suspense>),
+          </Suspense>
+        ),
         children: [
           {
             index: true,
             element: (
-              <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+              <Suspense fallback={<Loader />}>
                 <User />
-              </Suspense>)
+              </Suspense>
+            )
           }
         ]
       },
       {
         path: '/MyVolunteers',
         element: (
-          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+          <Suspense fallback={<Loader />}>
             <PrivateLayout />
-          </Suspense>),
+          </Suspense>
+        ),
         children: [
           {
             index: true,
             element: (
-              <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+              <Suspense fallback={<Loader />}>
                 <MyVolunteers />
               </Suspense>
             )
@@ -150,16 +196,18 @@ export const router = createBrowserRouter([
       {
         path: '/MyPurchases',
         element: (
-          <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+          <Suspense fallback={<Loader />}>
             <PrivateLayout />
-          </Suspense>),
+          </Suspense>
+        ),
         children: [
           {
             index: true,
             element: (
-              <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading..</div>}>
+              <Suspense fallback={<Loader />}>
                 <MyPurchases />
-              </Suspense>)
+              </Suspense>
+            )
           }
         ]
       }

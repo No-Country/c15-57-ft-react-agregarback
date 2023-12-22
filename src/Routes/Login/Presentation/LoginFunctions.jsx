@@ -1,4 +1,4 @@
-import { InputForm, Button, InputPassword } from '../../../components/'
+import { InputForm, ButtonForm, InputPassword } from '../../../components/'
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import { useState } from 'react'
@@ -99,7 +99,7 @@ const FormularioComponent = () => {
       onSubmit={onSubmit}
     >
       {({ errors, values }) => (
-        <Form className='rounded pt-6 h-[340px] font-roboto'>
+        <Form className='rounded pt-6 h-[300px] font-roboto'>
           {/* Campos del formulario */}
           <InputForm name='Correo electrónico' type='email' placeholder='Ingrese correo electrónico' errors={errors} id='email' value={values.email} />
           <InputPassword name='Contraseña' placeholder='Ingrese contraseña' id='password' value={values.password} showPassword={showPassword} togglePasswordVisibility={togglePasswordVisibility} />
@@ -112,8 +112,10 @@ const FormularioComponent = () => {
             <Link className=' text-sm font-medium text-black-900 dark:text-black-300' to='/reset-password '>¿Olvidaste tu contraseña?</Link>
           </div>
           {/* Botón de envío del formulario */}
-          <Button text='Iniciar Sesión' color='bg-green-600' hover='hover:bg-green-900' />
-          {error && <p className='text-red-600 text-xs italic text-center'>{error}</p>}
+          <div className='flex flex-col items-center'>
+            <ButtonForm text='Iniciar Sesión' color='bg-green-600' hover='hover:bg-green-900' />
+            {error && <p className='text-red-600 text-xs italic text-center'>{error}</p>}
+          </div>
         </Form>
       )}
     </Formik>

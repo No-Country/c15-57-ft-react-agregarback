@@ -1,9 +1,18 @@
-import {DropDownContainer} from "../Pesentation/DropDown.jsx";
+import { DropDownContainer } from "../Pesentation/DropDown.jsx";
 
-export const Dropdown = () => {
+
+const routes = [{
+    name: 'Mi Perfil',
+    path: '/User'
+}
+]
+
+export const Dropdown = ({ windowSize }) => {
     return (
         <>
-            <DropDownContainer />
+            <DropDownContainer
+                windowSize={windowSize}
+                routes={routes} />
         </>
     )
 };

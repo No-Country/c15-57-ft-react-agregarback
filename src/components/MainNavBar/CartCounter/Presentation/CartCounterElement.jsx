@@ -1,4 +1,3 @@
-import React from 'react'
 import useRouterChecker from '../../../../Hooks/useRouterChecker'
 import { useECommerceContext } from '../../../../Store/contextStore/ECommerceContext'
 
@@ -8,10 +7,11 @@ const CartCounterElement = () => {
   return (
     <div className={`
   ${animalRouterChecker
-        ? 'text-black'
-        : 'text-white'
-      }
-  relative pb-[1%]   text-center bottom-[0.3vh]`}
+    ? 'text-black'
+    : 'text-white'
+  }
+  text-center font-robotoM text-[1vh] relative md:text-[1.5vh] md:bottom-[.1vh] lg:text-[2vh] lg:bottom-[.3vh] 2xl:text-[1.5vh] 2xl:bottom-[0vh]
+  `}
     >
       {cartContainCounter}
     </div>

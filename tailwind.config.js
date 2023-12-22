@@ -25,11 +25,12 @@ export default {
         colorInputFooter: '#4B4B4B',
         colorDonation: '#6B7280',
         shoppingTitle: 'rgba(22, 101, 52, 0.10)',
-        itemTitle: '#1E293B'
+        itemTitle: '#1E293B',
+        infoAnimals: '#1E1E1E',
+        datos: '#CFCFD0'
       },
       plugins: [
-        require('@tailwindcss/forms'),
-        require('daisyui')
+        require('@tailwindcss/forms')
       ]
     }
   }

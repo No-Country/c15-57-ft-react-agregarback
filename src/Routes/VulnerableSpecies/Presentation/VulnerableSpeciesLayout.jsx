@@ -1,7 +1,7 @@
-export default function VulnerableSpeciesLayout({ children }) {
+export default function VulnerableSpeciesLayout ({ children }) {
   return (
     <div>
       {children}
     </div>
-    )
+  )
 }

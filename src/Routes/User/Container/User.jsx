@@ -1,6 +1,6 @@
-import User from "../Presentation/User";
+import User from '../Presentation/User'
 
 const UserContainer = () => {
-    return <User />;
+  return <User />
 }
-export default UserContainer;
+export default UserContainer

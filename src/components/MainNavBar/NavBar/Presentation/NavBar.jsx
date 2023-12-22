@@ -1,9 +1,17 @@
 import NavBarLinks from "./NavBarLinks.jsx"
 import NavBarLayout from "./NavBarLayout.jsx"
-const NavBarContainer = ({navigationLinks}) => {
+import useWindowReader from "../../../../Hooks/useWindowReader.jsx"
+
+const NavBarContainer = ({ navigationLinks }) => {
+
+    const { windowSize } = useWindowReader()
+
     return (
-        <NavBarLayout >
-           <NavBarLinks links={navigationLinks} />
+        <NavBarLayout windowSize={windowSize} >
+            <NavBarLinks
+                windowSize={windowSize}
+                links={navigationLinks}
+            />
         </NavBarLayout>
     )
 }

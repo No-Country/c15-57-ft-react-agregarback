@@ -1,10 +1,10 @@
-import {HamburguerMenuLayout} from "./HamburguerMenuLayout.jsx";
-import {HamburguerMenuIcon} from "./HamburguerMenuIcon.jsx";
+import { HamburguerMenuLayout } from './HamburguerMenuLayout.jsx'
+import { HamburguerMenuIcon } from './HamburguerMenuIcon.jsx'
 
 export const HamburguerMenuContainer = () => {
-    return (
-        <HamburguerMenuLayout>
-            <HamburguerMenuIcon />
-        </HamburguerMenuLayout>
-    )
+  return (
+    <HamburguerMenuLayout>
+      <HamburguerMenuIcon />
+    </HamburguerMenuLayout>
+  )
 }

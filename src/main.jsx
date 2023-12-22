@@ -1,20 +1,21 @@
-import ReactDOM from 'react-dom/client'
-
-import {RouterProvider} from 'react-router-dom'
-
-import {router} from './Router'
 import ContentProvider from './Store/contextStore/ContentContext'
-import UserProvider from './Store/contextStore/UserContext'
 import ECommerceProvider from './Store/contextStore/ECommerceContext'
+import ReactDOM from 'react-dom/client'
+import UserProvider from './Store/contextStore/UserContext'
+import { RouterProvider } from 'react-router-dom'
+import { StrictMode } from 'react'
 import { makeServer } from './Store/Server/MirageConf'
+import { router } from './Router'
 
 makeServer()
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <ContentProvider>
-    <ECommerceProvider>
-      <UserProvider>
-        <RouterProvider router={router} />
-      </UserProvider>
-    </ECommerceProvider>
-  </ContentProvider>
+  <StrictMode>
+    <ContentProvider>
+      <ECommerceProvider>
+        <UserProvider>
+          <RouterProvider router={router} />
+        </UserProvider>
+      </ECommerceProvider>
+    </ContentProvider>
+  </StrictMode>
 )

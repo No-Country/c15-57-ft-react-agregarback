@@ -1,9 +1,7 @@
-
-
-export const LoginLogoutSectLayout = ({children}) => {
-    return (
-            <>
-                {children}
-            </>
-    );
+export const LoginLogoutSectLayout = ({ children }) => {
+  return (
+    <>
+      {children}
+    </>
+  )
 }
