@@ -7,10 +7,12 @@ const routes = [{
 }
 ]
 
-export const Dropdown = () => {
+export const Dropdown = ({ windowSize }) => {
     return (
         <>
-            <DropDownContainer routes={routes} />
+            <DropDownContainer
+                windowSize={windowSize}
+                routes={routes} />
         </>
     )
 };

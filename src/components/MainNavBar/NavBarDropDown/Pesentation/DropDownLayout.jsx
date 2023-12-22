@@ -35,7 +35,10 @@ export const DropDownLayout = ({ children }) => {
                 </svg>
             </button>
             <div>
-                <ul className={`
+                <ul
+               
+            
+                className={`
                     w-[7vw] md:w-[13vw] lg:w-[9vw] rounded-md bg-gray-200 font-robotoM
                 ${navBarDropDown
                         ? 'block  absolute bg-gray-200 text-black w-[8vw] pt-1 rounded-lg'
@@ -47,7 +50,7 @@ export const DropDownLayout = ({ children }) => {
                     {children}
                     <hr className="bg-black" />
                     <button
-                        className=' text-black w-[100%] font-robotoM text-[1rem] md:text-[1.5vh] text-left pl-[6px] hover:bg-gray-400 block whitespace-no-wrap'
+                        className=' text-black w-[100%] font-robotoM text-[1rem] md:text-[1.5vh] text-left pl-[6px] block whitespace-no-wrap hover:bg-lime-100 w-[9vw] rounded'
                         onClick={() => logControl()}>
                         Close Session
                     </button>
