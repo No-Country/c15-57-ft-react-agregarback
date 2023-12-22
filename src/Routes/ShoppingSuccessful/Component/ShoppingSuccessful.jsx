@@ -21,7 +21,7 @@ export default function ShoppingSuccessful () {
       <SubtitleInfoStore link='/ShoppingCart' title='Orden Completada' />
       <div className='flex justify-center items-center md:w-full xl:w-[70%] md:border-[1px] md:border-slate-100'>
         <div className='flex overflow-hidden xl:rounded-xl xl:shadow-md xl:mt-[56px] xl:mb-[100px] xl:border-[1px] xl:border-slate-200 border-box xl:w-[85%] '>
-          <img src={catDesktop} alt='gato andino' className='hidden xl:block xl:max-w-[393px] xl:max-h-[678px]' />
+          <img src={catDesktop} alt='gato andino' className='hidden xl:block xl:max-w-[393px] xl:max-h-full' />
           <div className='flex flex-col items-center xl:max-w-[686px] border-box xl:mx-4'>
             <img src={catMobile} alt='gato andino' className='mt-6 mb-4 xl:hidden' />
             <img src={greenCheck} alt='checkmark' className='w-[50px] h-[46px] xl:w-[87px] xl:h-[80px] xl:mt-8' />
