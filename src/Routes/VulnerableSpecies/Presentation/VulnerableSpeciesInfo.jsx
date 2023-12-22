@@ -18,7 +18,7 @@ import {
   selva2
 } from '../../../assets/vulnerableSpecies/'
 
-export default function VulnerableSpeciesInfo () {
+export default function VulnerableSpeciesInfo() {
   const animals = [
     { img: jaguar, name: 'jaguar' },
     { img: manati, name: 'manati' },
@@ -37,7 +37,8 @@ export default function VulnerableSpeciesInfo () {
   return (
     <>
       <section
-        style={{ backgroundImage: `url(${selva2})` }}
+        style={{ backgroundImage: `url(${selva2})`,
+       }}
         className='bg-cover bg-no-repeat flex flex-col sm:flex-row'
       >
         <div className='relative z-10 w-screen h-auto max-w-[42rem] p-8 sm:pl-0 text-white flex flex-col sm:m-28'>
@@ -49,10 +50,22 @@ export default function VulnerableSpeciesInfo () {
             restaurar las especies y sus hábitats.
           </p>
         </div>
-        <div className='pl-8 sm:pl-0 mb-8 flex flex-col items-start justify-center overflow-scroll sm:overflow-hidden'>
-          <div className='sm:w-[105vh] mx-auto'>
-            <div className='relative z-0 overflow-auto flex transition-transform duration-[0.5s] ease-[ease-in-out]'>
-              {animals.map((animal) => (
+
+        <div className='relative self-center w-[55vw]'
+          style={{
+            overflow: 'scroll',
+            scrollbarColor: 'transparent',
+            scrollbarWidth: 'none',
+            '&::-webkit-scrollbar': {
+              display: 'none'
+            },
+            '-ms-overflow-style': 'none'
+          }}
+        >
+          <div className='flex '>
+
+            {animals.map((animal) => (
+              <>
                 <Link
                   to={`/Animals/${animal.name}`}
                   key={animal.name}
@@ -63,10 +76,11 @@ export default function VulnerableSpeciesInfo () {
                     {animal.name.charAt(0).toUpperCase() + animal.name.slice(1)}
                   </p>
                 </Link>
-              ))}
-            </div>
+              </>
+            ))}
           </div>
         </div>
+
       </section>
 
       <section className='flex justify-center flex-col items-center bg-[#1E1E1E] pb-[84px]'>
