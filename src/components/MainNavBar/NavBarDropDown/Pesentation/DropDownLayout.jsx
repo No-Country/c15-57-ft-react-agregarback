@@ -38,9 +38,9 @@ export const DropDownLayout = ({ children }) => {
             
                 className={`
 
-                    w-[7vw] md:w-[13vw] lg:w-[9vw] rounded-md bg-gray-200 font-robotoM
+                 w-[100%]  md:w-[7vw] md:w-[13vw] lg:w-[9vw] rounded-md bg-slate-950 md:bg-gray-200 font-robotoM
                 ${navBarDropDown
-                        ? 'block absolute bg-gray-200 w-[100vw] h-[40vh]   text-black md:w-[8vw] md:h-[7vh] pt-1 rounded-lg'
+                        ? 'block absolute bg-slate-950 md:bg-gray-200 w-[100v%] h-[40vh]   text-black md:w-[8vw] md:h-[7vh] pt-1 rounded-lg'
                         : 'hidden'
 
                     }`
@@ -50,7 +50,7 @@ export const DropDownLayout = ({ children }) => {
                     {children}
                     <hr className="bg-black" />
                     <button
-                        className=' text-black w-[100vw] text-[2rem]  md:w-[100%] h-[50%] font-robotoM text-[1rem] md:text-[1.5vh] md:text-left pl-[6px] block whitespace-no-wrap hover:bg-lime-100 md:w-[9vw] rounded'
+                        className='text-white md:text-black w-[100vw] text-[2rem]  md:w-[100%] h-[50%] font-robotoM text-[1rem] md:text-[1.5vh] md:text-left pl-[6px] block whitespace-no-wrap hover:bg-lime-100 md:w-[9vw] rounded'
                         onClick={() => logControl()}>
                         Close Session
                     </button>
