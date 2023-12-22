@@ -63,7 +63,7 @@ export default function TotalPurchase () {
       <div className='flex justify-end mt-2 gap-4 mr-4'>
         <p className='font-robotoM text-itemTitle text-[0.9rem]'>Total</p>
         <p className='font-robotoM text-green-800 text-[0.9rem]'>
-          {total.toLocaleString('es-AR', {
+          {(total + 2000).toLocaleString('es-AR', {
 					  style: 'currency',
 					  currency: 'ARS'
           })}
