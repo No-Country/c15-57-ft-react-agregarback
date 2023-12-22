@@ -3,7 +3,6 @@ import { Footer, NavBar } from '../components'
 
 import '../index.css'
 
-
 const MainLayout = () => {
   return (
     <div className='

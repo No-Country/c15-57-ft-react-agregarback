@@ -68,10 +68,9 @@ const NavBarLayout = ({ children, windowSize }) => {
 
                   {/* shows: (login/logout) when no auth - shows: (dropdown/cart) when auth --> */}
 
-                  <li className='h-20% sm:grid  sm:row-[span_1_/_span_6] sm:z-50 lg:col-span-3  lg:z-50'>
+                  <li className='h-20% sm:grid  sm:row-[span 1 / span 6] sm:z-50 lg:col-span-3  lg:z-50'>
                     <Dropdown 
                     windowSize={windowSize}
-                    
                     />
                   </li>
                   <li className='hidden md:flex'>

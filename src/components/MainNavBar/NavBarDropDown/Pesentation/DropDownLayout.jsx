@@ -14,16 +14,16 @@ export const DropDownLayout = ({ children }) => {
         <div className='dropdown relative md:bottom-[0.3vh] lg:bottom-[0.1vh] 2xl:bottom-[0vh]'>
             <button
                 className={`
-                ${isOpen && "text-black text-[4vh] h-[20%]"}
+                ${isOpen && "text-black w-[100%] text-[4vh] h-[20%]"}
                 ${!animalRouterChecker || isOpen && "text-black w-[100%] text-[4vh] h-[20%]"}
                 ${animalRouterChecker || isOpen && "text-white"}
                 ${animalRouterChecker && "text-white"}
                 ${!animalRouterChecker || !isOpen && "text-white"}
                 ${animalRouterChecker
-                        ? 'text-white rounded inline-flex items-center '
-                        : 'text-black rounded inline-flex items-center '
+                        ? 'text-white rounded inline-flex items-center justify-center '
+                        : 'text-black rounded inline-flex items-center  justify-center'
                     } 
-                md:text-[1.5vw] z-4500 font-robotoM
+                md:text-[1.5vw] z-4500 font-robotoM  transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 
                         `}
                 onClick={() => openDropdown()}
                 tabIndex={0}
@@ -34,14 +34,14 @@ export const DropDownLayout = ({ children }) => {
                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                 </svg>
             </button>
-            <div>
+            <div className="relative w-[100vw] bottom-[50vh] md:bottom-[0vh] md:w-[100%]">
                 <ul
                
             
                 className={`
                     w-[7vw] md:w-[13vw] lg:w-[9vw] rounded-md bg-gray-200 font-robotoM
                 ${navBarDropDown
-                        ? 'block  absolute bg-gray-200 text-black w-[8vw] pt-1 rounded-lg'
+                        ? 'block absolute bg-gray-200 w-[100vw] h-[40vh]   text-black md:w-[8vw] md:h-[7vh] pt-1 rounded-lg'
                         : 'hidden'
                     }`
                 }
@@ -50,7 +50,7 @@ export const DropDownLayout = ({ children }) => {
                     {children}
                     <hr className="bg-black" />
                     <button
-                        className=' text-black w-[100%] font-robotoM text-[1rem] md:text-[1.5vh] text-left pl-[6px] block whitespace-no-wrap hover:bg-lime-100 w-[9vw] rounded'
+                        className=' text-black w-[100vw] text-[2rem]  md:w-[100%] h-[50%] font-robotoM text-[1rem] md:text-[1.5vh] md:text-left pl-[6px] block whitespace-no-wrap hover:bg-lime-100 md:w-[9vw] rounded'
                         onClick={() => logControl()}>
                         Close Session
                     </button>

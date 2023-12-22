@@ -13,7 +13,7 @@ const NavBarLinks = ({ links, windowSize }) => {
           key={to}
           className={`
             text-center
-            font-robotoM md:text-[1.5vw] transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 
+            font-robotoM md:text-[1.5vw] transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 
             ${isOpen && 'w-[100%] text-[3vh] sm:text-[4vh] h-[20%]'}
             ${!animalRouterChecker || (isOpen && 'text-black w-[100%] text-[4vh] h-[20%]')}
             ${animalRouterChecker || (isOpen && 'text-white')}
