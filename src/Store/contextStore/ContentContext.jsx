@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from 'react'
 import useGetData from '../../Hooks/useGetData'
 import { useLocalStorage } from '../../components/Hooks/useStorage'
+import useWindowReader from '../../Hooks/useWindowReader'
 
 export const ContentContext = createContext()
 
@@ -9,6 +10,15 @@ const ContentProvider = ({ children }) => {
   // open and close handler for the navbar ->
   const [isOpen, setIsOpen] = useState(false) 
   
+  const { windowSize } = useWindowReader()
+
+  const closeDropDown = () => {
+    windowSize[0] < 1366 && (
+        console.log('clicked'),
+        setIsOpen(false),
+        openDropdown())
+}
+
   // open and close handler for the dropdown navbar when user is authenticated->
   const [navBarDropDown, setNavBarDropDown] = useState(false)
   
@@ -212,7 +222,11 @@ const ContentProvider = ({ children }) => {
     getDataFromServer,
     openDropdown,
     navBarDropDown,
+    closeDropDown,
+    setNavBarDropDown,
+    windowSize,
     isOpen,
+    setIsOpen,
     toggle,
     mostrar,
     setMostrar,

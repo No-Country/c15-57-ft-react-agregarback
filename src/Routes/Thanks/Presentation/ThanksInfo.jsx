@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 
 const ThanksInfo = ({ Perezoso }) => {
   return (
-    <div className='relative h-full'>
-      <img src={Perezoso} alt='Jaguarete' className='object-cover min-h-full' />
-      <div className='flex flex-col absolute inset-0 p-3 sm:p-5 pl-[10px] sm:pl-[211px]'>
-        <h2 className='text-[38px] sm:text-[68px] font-robotoM text-white'>GRACIAS</h2>
-        <h2 className='text-[21px] sm:text-[40px] text-white font-robotoM'>POR <span className='text-amber-300 pl-1'>TU APOYO</span> </h2>
+    <div className='relative w-full h-full'>
+      <img src={Perezoso} alt='Jaguarete' className='object-cover min-w-full min-h-full' />
+      <div className='flex flex-col absolute inset-0 p-3 sm:p-0 pl-[10px] sm:pl-[40px]'>
+        <span className='text-[38px] my-[-20px] sm:text-[10rem] font-robotoM text-white'>GRACIAS</span>
+        <span className='text-[21px] my-[-20px] sm:text-[6rem] text-white font-robotoM'>POR <span className='text-amber-300 pl-1'>TU APOYO</span> </span>
       </div>
       <div className=' relative md:absolute inset-0 flex flex-col items-center justify-center'>
         <div className='content-center relative'>

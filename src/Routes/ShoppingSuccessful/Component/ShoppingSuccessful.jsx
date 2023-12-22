@@ -1,8 +1,21 @@
-import { Button, SubtitleInfoStore } from '../../../components'
-import { Link } from 'react-router-dom'
+import { ButtonForm, SubtitleInfoStore } from '../../../components'
 import { catMobile, greenCheck, catDesktop } from '../../../assets/purchase'
 import TotalPurchase from '../Presentation/TotalPurchase'
+import { useECommerceContext } from '../../../Store/contextStore/ECommerceContext'
+import { useNavigate } from 'react-router-dom'
+
 export default function ShoppingSuccessful () {
+  const { clearCart } = useECommerceContext()
+  const navigate = useNavigate()
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    clearCart()
+    setTimeout(() => {
+      navigate('/Store')
+    }, 200)
+  }
+
   return (
     <section className='flex flex-col items-center justify-center'>
       <SubtitleInfoStore link='/ShoppingCart' title='Orden Completada' />
@@ -21,8 +34,8 @@ export default function ShoppingSuccessful () {
               </p>
             </div>
             <TotalPurchase />
-            <div className='w-full lg:w-[50%] mb-12'>
-              <Button to='/Store' text='Continuar comprando' color='bg-green-600' hover='hover:bg-green-900' />
+            <div onClick={handleSubmit} className='flex justify-center self-center w-full lg:w-[50%] mb-12'>
+              <ButtonForm text='Continuar comprando' color='bg-green-600' hover='hover:bg-green-900' />
             </div>
           </div>
         </div>
