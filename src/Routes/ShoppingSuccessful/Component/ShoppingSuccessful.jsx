@@ -19,9 +19,9 @@ export default function ShoppingSuccessful () {
   return (
     <section className='flex flex-col items-center justify-center'>
       <SubtitleInfoStore link='/ShoppingCart' title='Orden Completada' />
-      <div className='flex justify-center items-center md:w-[95%] lg:w-[70%] md:border-[1px] md:border-slate-100'>
+      <div className='flex justify-center items-center md:w-full lg:w-[70%] md:border-[1px] md:border-slate-100'>
         <div className='flex overflow-hidden lg:rounded-xl lg:shadow-md lg:mt-[56px] lg:mb-[100px] lg:border-[1px] lg:border-slate-200 border-box lg:w-[85%] '>
-          <img src={catDesktop} alt='gato andino' className='hidden lg:block lg:max-w-[393px] sm:max-h-[678px]' />
+          <img src={catDesktop} alt='gato andino' className='hidden lg:block lg:max-w-[393px] lg:max-h-[678px]' />
           <div className='flex flex-col items-center lg:max-w-[686px] border-box lg:mx-4'>
             <img src={catMobile} alt='gato andino' className='mt-6 mb-4 lg:hidden' />
             <img src={greenCheck} alt='checkmark' className='w-[50px] h-[46px] lg:w-[87px] lg:h-[80px] lg:mt-8' />

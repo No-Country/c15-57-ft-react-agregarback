@@ -3,9 +3,9 @@ import { useUserContext } from '../../../../Store/contextStore/UserContext.jsx'
 import useRouterChecker from '../../../../Hooks/useRouterChecker.jsx'
 
 export const DropDownLayout = ({ children }) => {
-  const { openDropdown, navBarDropDown, isOpen } = useContentContext()
-  const { logControl } = useUserContext()
-  const { animalRouterChecker } = useRouterChecker()
+    const { openDropdown, navBarDropDown, isOpen, closeDropDown } = useContentContext()
+    const { logControl } = useUserContext()
+    const { animalRouterChecker } = useRouterChecker()
 
     return (
 
@@ -34,24 +34,22 @@ export const DropDownLayout = ({ children }) => {
             </button>
             <div className="relative w-[100vw] bottom-[50vh] md:bottom-[0vh] md:w-[100%]">
                 <ul
-               
-            
-                className={`
-
+                    className={`
                  w-[100%]  md:w-[7vw] md:w-[13vw] lg:w-[9vw] rounded-md bg-slate-950 md:bg-gray-200 font-robotoM
                 ${navBarDropDown
-                        ? 'block absolute bg-slate-950 md:bg-gray-200 w-[100v%] h-[40vh]   text-black md:w-[8vw] md:h-[7vh] pt-1 rounded-lg'
-                        : 'hidden'
+                            ? 'block absolute bg-slate-950 md:bg-gray-200 w-[100v%] h-[40vh]   text-black md:w-[8vw] md:h-[7vh] pt-1 rounded-lg'
+                            : 'hidden'
+                        }`
+                    }
+                    onClick={() => closeDropDown()} // Added keyboard event listener
 
-                    }`
-                }
-                onClick={() => openDropdown()}
                 >
                     {children}
                     <hr className="bg-black" />
                     <button
                         className='text-white md:text-black w-[100vw] text-[2rem]  md:w-[100%] h-[50%] font-robotoM text-[1rem] md:text-[1.5vh] md:text-left pl-[6px] block whitespace-no-wrap hover:bg-lime-100 md:w-[9vw] rounded'
-                        onClick={() => logControl()}>
+                        onClick={() => logControl()}
+                    >
                         Close Session
                     </button>
                 </ul>
@@ -59,5 +57,5 @@ export const DropDownLayout = ({ children }) => {
         </div>
 
 
-  )
+    )
 }
