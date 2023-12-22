@@ -15,7 +15,7 @@ export const DropDownLinks = ({ routes, windowSize }) => {
             <li key={route.path}>
               <Link
                 className={`
-                     text-[2rem]    block whitespace-no-wrap hover:bg-lime-100 w-[100%] align-center text-center mt-[7vh] mb-[6vh] block whitespace-no-wrap hover:bg-lime-100 font-robotoM md:text-left text-[1vh] md:w-[100%]  md:text-[1.5vh] md:pl-[3px] md:mt-[0vh] md:mb-[0vh]  
+                     text-[2rem]  text-white md:text-black  block whitespace-no-wrap hover:bg-lime-100 w-[100%] align-center text-center mt-[7vh] mb-[6vh] block whitespace-no-wrap hover:bg-lime-100 font-robotoM md:text-left text-[1vh] md:w-[100%]  md:text-[1.5vh] md:pl-[3px] md:mt-[0vh] md:mb-[0vh]  
                                     ${isOpen && 'w-[100%] text-black '}
                                     ${(!animalRouterChecker || isOpen) && 'text-black'}
                                     ${(animalRouterChecker || isOpen) && 'text-black'}
