@@ -1,6 +1,7 @@
 import { dhlSmall } from '../../../assets/purchase'
 import { useContentContext } from '../../../Store/contextStore/ContentContext'
 import { useECommerceContext } from '../../../Store/contextStore/ECommerceContext'
+
 export default function TotalPurchase () {
   const { country, city, postal, street, streetNumber, sentShippingInfo } = useContentContext()
   const { cart, total } = useECommerceContext()
@@ -27,11 +28,8 @@ export default function TotalPurchase () {
               <p className='font-robotoL text-[0.7rem] text-slate-500'>{prod.quantity}</p>
             </div>
             <div className='flex'>
-              <p className='min-w-[80px] font-robotoL text-green-800 text-[0.9rem] self-center mr-2 xl:mr-1'>
-                {prod.price.toLocaleString('es-AR', {
-								  style: 'currency',
-								  currency: 'ARS'
-                })}
+              <p className='min-w-[80px] font-robotoL text-green-800 text-[0.9rem] self-center mr-2 lg:mr-1'>
+                {prod.price.toLocaleString('es-AR', { style: 'currency', currency: 'ARS' })}
               </p>
             </div>
           </div>
@@ -51,11 +49,8 @@ export default function TotalPurchase () {
               <p className='font-robotoL text-[0.7rem] text-slate-500'>{`${postal} - ${city}`}</p>
               <p className='font-robotoL text-[0.7rem] text-slate-500'>{country}</p>
             </div>
-            <p className='font-robotoL text-green-800 text-[0.9rem] mr-4 xl:mr-0 '>
-              {(parseInt(2000)).toLocaleString('es-AR', {
-					  style: 'currency',
-					  currency: 'ARS'
-              })}
+            <p className='font-robotoL text-green-800 text-[0.9rem] mr-4 xl:mr-0'>
+              {(parseInt(2000)).toLocaleString('es-AR', { style: 'currency', currency: 'ARS' })}
             </p>
           </div>
         </div>
@@ -63,10 +58,7 @@ export default function TotalPurchase () {
       <div className='flex justify-end mt-2 gap-4 mr-4'>
         <p className='font-robotoM text-itemTitle text-[0.9rem]'>Total</p>
         <p className='font-robotoM text-green-800 text-[0.9rem]'>
-          {(total + 2000).toLocaleString('es-AR', {
-					  style: 'currency',
-					  currency: 'ARS'
-          })}
+          {(total + 2000).toLocaleString('es-AR', { style: 'currency', currency: 'ARS' })}
         </p>
       </div>
     </section>

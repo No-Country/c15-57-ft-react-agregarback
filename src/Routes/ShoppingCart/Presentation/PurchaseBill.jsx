@@ -1,8 +1,8 @@
 import { Button } from '../../../components'
 import { Link } from 'react-router-dom'
 import { useContentContext } from '../../../Store/contextStore/ContentContext'
-import { useEffect } from 'react'
 import { useECommerceContext } from '../../../Store/contextStore/ECommerceContext'
+import { useEffect } from 'react'
 
 export default function PurchaseBill () {
   const { sentShippingInfo, enableButton, setEnableButton } = useContentContext()
@@ -18,10 +18,8 @@ export default function PurchaseBill () {
         <hr className='w-[70%] text-gray-600' />
         <div className='flex w-[70%] justify-between mt-2'>
           <p className='text-itemTitle font-light text-[0.9rem]'>{`Productos(${cantidad})`}</p>
-          <p className='text-green-800 font-light text-[0.9rem]'>{total.toLocaleString('es-AR', {
-            style: 'currency',
-            currency: 'ARS'
-          })}
+          <p className='text-green-800 font-light text-[0.9rem]'>
+            {total.toLocaleString('es-AR', { style: 'currency', currency: 'ARS' })}
           </p>
         </div>
         <Link to='/Shipping-information' className={`self-start ${!sentShippingInfo ? 'mb-2' : 'mb-0'} ml-[15%] text-green-800 font-light text-[0.9rem] underline`}>

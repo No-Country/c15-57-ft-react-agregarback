@@ -45,17 +45,13 @@ export const router = createBrowserRouter([
       {
         path: '/WhoWeAre',
         element: (
-          <Suspense fallback={<Loader />}>
             <WhoWeAre />
-          </Suspense>
         )
       },
       {
         path: '/VulnerableSpecies',
         element: (
-          <Suspense fallback={<Loader />}>
             <VulnerableSpecies />
-          </Suspense>
         )
       },
       {

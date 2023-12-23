@@ -1,9 +1,8 @@
-import { SubtitleInfoStore } from '../../../components'
-
+import DownSection from '../../../components/WhoWeAre/DownSection/Component/DownSection'
 import MainSection from '../../../components/WhoWeAre/MainSection/Component/MainSection'
 import MapSection from '../../../components/WhoWeAre/MapSection/Component/MapSection'
-import DownSection from '../../../components/WhoWeAre/DownSection/Component/DownSection'
 import { LatamMap, Monkey, Certificate } from '../../../assets/who-we-are/index'
+import { SubtitleInfoStore } from '../../../components'
 
 const WhoWeAreInfo = ({ data }) => {
   return (

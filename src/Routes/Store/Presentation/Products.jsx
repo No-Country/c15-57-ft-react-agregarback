@@ -1,8 +1,8 @@
-import axios from 'axios'
-import { useState, useEffect } from 'react'
-import ProductDetails from './ProductDetails'
 import Modal from './Modal'
+import ProductDetails from './ProductDetails'
+import axios from 'axios'
 import { useECommerceContext } from '../../../Store/contextStore/ECommerceContext'
+import { useState, useEffect } from 'react'
 
 export default function Products () {
   const { category } = useECommerceContext()
@@ -54,10 +54,7 @@ export default function Products () {
               {product.description}
             </p>
             <p className='self-stretch text-center text-green-800 text-base font-bold font-roboto leading-snug'>
-              {product.price.toLocaleString('es-AR', {
-                style: 'currency',
-                currency: 'ARS'
-              })}
+              {product.price.toLocaleString('es-AR', { style: 'currency', currency: 'ARS' })}
             </p>
           </li>
         ))}
