@@ -282,10 +282,12 @@ Recuerda que tu participación es fundamental para el éxito de nuestro proyecto
 Si encuentras algún problema durante la instalación o uso, no dudes en contactarnos a través de nuestro soporte técnico en <a href='mailto:support@preservacion-animal-latam.com'> support@preservacion-animal-latam.com.</a> ¡Juntos hacemos la diferencia!
 
 <!-- Video -->
-<h2> Video </h2>
-<p> Coming soon... </p>
-<!-- ACKNOWLEDGMENTS -->
+<h2> Promotional Video: </h2>
+<a href='https://youtu.be/LI2rAvHT0Tk'>
+  <img src='./src/assets/youtube.jpg' alt='Video Thumbnail' />
+</a>
 
+<!-- ACKNOWLEDGMENTS -->
 <div align='center'>
   <h3>Agradecimientos</h3>
   <a href="https://www.nocountry.tech/" target="_blank">

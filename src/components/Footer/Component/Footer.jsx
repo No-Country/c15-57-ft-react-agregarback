@@ -40,15 +40,15 @@ export default function Footer () {
             </div>
           </div>
           <div className='flex justify-between items-end pt-1'>
-            <Link to='https://www.instagram.com'>
+            <Link to='https://www.instagram.com/PreservacionAnimal'>
               <FaInstagram className='h-[30px] w-auto m-3 border-white bg-green-900 rounded-2xl p-1 text-white' />
             </Link>
             <IoBasketballOutline className='h-[30px] m-3 w-auto border-white bg-green-900 rounded-2xl p-1 text-white' />
-            <Link to='https://www.twitter.com'>
+            <Link to='https://www.twitter.com/PreservacionAnimal'>
               <FaTwitter className='h-[30px] w-auto m-3 border-white bg-green-900 rounded-2xl p-1 text-white' />
             </Link>
-            <Link>
-              <FaYoutube to='https://www.youtube.com' className='h-[30px] w-auto m-3 border-white bg-green-900 rounded-2xl p-1 text-white' />
+            <Link to='https://youtu.be/LI2rAvHT0Tk'>
+              <FaYoutube className='h-[30px] w-auto m-3 border-white bg-green-900 rounded-2xl p-1 text-white' />
             </Link>
 
           </div>
