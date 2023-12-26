@@ -6,7 +6,7 @@
 </div>
 <hr>
 <!-- PROJECT LOGO -->
-  <a href="https://github.com/No-Country/c14-22-ft-java-react" target="_blank">
+  <a href="https://c15-57-ft-react-agregarback.vercel.app/" target="_blank">
     <img src="./src/assets/BannerPA.png" alt="Banner">
   </a>
   <hr>
