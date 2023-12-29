@@ -7,18 +7,14 @@ const NavBarLayout = ({ children }) => {
 
     return (
         <NavBar>
-            {/* main navbar menu --> */}
 
             {/* hamburguer menu hidden when is on a smal viewport size --> */}
-
             <NavBar.HamburguerMenuSection />
 
             {/* logo nav bar adjust to the viewport size --> */}
-
             <NavBar.LogoSection />
 
             {/* links block  responsive --> */}
-
             <NavBar.NavUl>
                 
                 {children}
@@ -29,7 +25,6 @@ const NavBarLayout = ({ children }) => {
             </NavBar.NavUl>
 
             {/* cart icon shown when it is in a small vieport size -Responsive-  --> */}
-
             <NavBar.CartLogoSection />
 
         </NavBar>
