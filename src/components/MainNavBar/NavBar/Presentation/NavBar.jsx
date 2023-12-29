@@ -7,7 +7,7 @@ const NavBarContainer = ({ navigationLinks }) => {
     const { windowSize } = useWindowReader()
 
     return (
-        <NavBarLayout windowSize={windowSize} >
+        <NavBarLayout>
             <NavBarLinks
                 windowSize={windowSize}
                 links={navigationLinks}

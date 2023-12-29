@@ -7,7 +7,7 @@ const routes = [{
 }
 ]
 
-export const Dropdown = ({ windowSize }) => {
+export const Dropdown = ({ windowSize } = props) => {
     return (
         <>
             <DropDownContainer
