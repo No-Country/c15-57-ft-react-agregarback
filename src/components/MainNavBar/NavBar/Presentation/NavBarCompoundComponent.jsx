@@ -9,6 +9,7 @@ import { Dropdown } from '../../NavBarDropDown/Component/DropDown';
 import { LoginLogoutSect } from '../../LoginLogoutSect/Component/LoginLogoutSect';
 
 import CartSection from '../../CartSection/Componentt/CartSection';
+
 function NavBar({ children }) {
 
     const { animalRouterChecker, loginRegisterRouteChecker } = useRouterChecker()
