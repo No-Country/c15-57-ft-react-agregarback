@@ -30,10 +30,7 @@ export default function ProductDetails () {
           {product.type}
         </h2>
         <p className='text-gray-800 text-3xl font-medium font-display'>
-          {product.price.toLocaleString('es-AR', {
-            style: 'currency',
-            currency: 'ARS'
-          })}
+          {product.price.toLocaleString('es-AR', { style: 'currency', currency: 'ARS' })}
         </p>
         <p className='text-gray-800 text-3xl font-medium font-display'>
           {product.description}

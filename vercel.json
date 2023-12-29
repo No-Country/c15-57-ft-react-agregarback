@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/404", "destination": "/src/Routes/NotFound/Component/NotFound.jsx" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

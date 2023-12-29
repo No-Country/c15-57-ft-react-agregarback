@@ -3,7 +3,7 @@ export default function LandingLayout ({ children }) {
   const banner = toRender.splice(0, 1)
 
   return (
-    <section className='w-[430px]  relative z-0 top-[-10px]'>
+    <section className=' relative z-0 top-[-10px] overflow-hidden'>
       {banner}
       <div className='w-[99vw]  flex items-center justify-center' />
 

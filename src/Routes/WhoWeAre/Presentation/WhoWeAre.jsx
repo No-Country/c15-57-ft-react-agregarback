@@ -1,6 +1,6 @@
 import WhoWeAreLayout from './WhoWeAreLayout'
 import WhoWeAreInfo from './WhoWeAreInfo'
-import {Loader} from '../../../components'
+import { Loader } from '../../../components'
 
 const WhoWeAreContainer = ({ data, loading }) => {
   return (

@@ -39,5 +39,5 @@ export {
   User,
   MyVolunteers,
   MyPurchases,
-  NotFound,
+  NotFound
 }

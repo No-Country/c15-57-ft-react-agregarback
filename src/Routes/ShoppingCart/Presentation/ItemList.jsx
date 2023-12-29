@@ -1,6 +1,6 @@
 import { FaTrashCan } from 'react-icons/fa6'
 import { useECommerceContext } from '../../../Store/contextStore/ECommerceContext'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 export default function ItemList ({ id }) {
   const { cart, incrementCart, decrementCart, setOpenDeleteModal, setSelectedProduct } = useECommerceContext()
